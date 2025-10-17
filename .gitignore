@@ -98,3 +98,9 @@ vercel-build.log
 # turborepo cache
 .turbo
 .vercel/output
+
+
+# Ignore sensitive documentation files
+CLERK_SETUP_COMPLETE.md
+CREDENTIAL_ROTATION_CHECKLIST.md
+CREDENTIAL_ROTATION_GUIDE.md
