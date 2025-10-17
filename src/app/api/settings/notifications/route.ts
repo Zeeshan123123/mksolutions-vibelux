@@ -1,0 +1,99 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { auth, clerkClient } from '@clerk/nextjs/server';
+import { prisma } from '@/lib/prisma';
+import { logger } from '@/lib/logging/production-logger';
+export const dynamic = 'force-dynamic'
+
+export async function GET(request: NextRequest) {
+  try {
+    const { userId } = auth();
+    
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Get user's notification settings
+    const settings = await prisma.notificationSettings.findUnique({
+      where: { userId }
+    });
+
+    // Return default settings if none exist
+    if (!settings) {
+      return NextResponse.json({
+        settings: {
+          email: {
+            enabled: true,
+            equipmentOffers: true,
+            serviceBids: true,
+            userInvites: true,
+            marketplaceUpdates: false,
+            weeklyDigest: true
+          },
+          sms: {
+            enabled: false,
+            urgentOnly: true,
+            equipmentOffers: false,
+            serviceBids: false,
+            userInvites: true
+          },
+          push: {
+            enabled: true,
+            equipmentOffers: true,
+            serviceBids: true,
+            userInvites: true,
+            marketplaceUpdates: true
+          },
+          inApp: {
+            enabled: true,
+            equipmentOffers: true,
+            serviceBids: true,
+            userInvites: true,
+            marketplaceUpdates: true
+          }
+        }
+      });
+    }
+
+    return NextResponse.json({ settings: settings.settings });
+
+  } catch (error) {
+    logger.error('api', 'Failed to get notification settings', error as Error);
+    return NextResponse.json(
+      { error: 'Failed to load settings' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(request: NextRequest) {
+  try {
+    const { userId } = auth();
+    
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const { settings } = await request.json();
+
+    // Upsert notification settings
+    const updated = await prisma.notificationSettings.upsert({
+      where: { userId },
+      update: { settings },
+      create: {
+        userId,
+        settings
+      }
+    });
+
+    logger.info('api', 'Notification settings updated', { userId });
+
+    return NextResponse.json({ success: true, settings: updated.settings });
+
+  } catch (error) {
+    logger.error('api', 'Failed to update notification settings', error as Error);
+    return NextResponse.json(
+      { error: 'Failed to save settings' },
+      { status: 500 }
+    );
+  }
+}

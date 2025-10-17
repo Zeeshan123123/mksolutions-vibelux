@@ -1,0 +1,205 @@
+{
+  "project": {
+    "name": "Lange Commercial Greenhouse",
+    "location": "Brochton, Illinois 61617",
+    "client": "Lange Group",
+    "totalArea": 26847.5,
+    "structures": 5,
+    "fixtures": 987,
+    "service": "2400A @ 480Y/277V"
+  },
+  "systems": {
+    "electrical": {
+      "mainPanel": {
+        "name": "MDP-1",
+        "amperage": 2400,
+        "voltage": "480Y/277V",
+        "spaces": 84
+      },
+      "distributionPanels": [
+        {
+          "name": "DP-1",
+          "amperage": 800,
+          "feeds": "Zones 1-2"
+        },
+        {
+          "name": "DP-2",
+          "amperage": 800,
+          "feeds": "Zones 3-4"
+        },
+        {
+          "name": "DP-3",
+          "amperage": 800,
+          "feeds": "Zone 5 + Mechanical"
+        }
+      ],
+      "lightingPanels": [
+        {
+          "name": "LP-1",
+          "amperage": 400,
+          "zone": "Zone 1 - Vegetative",
+          "fixtures": 147
+        },
+        {
+          "name": "LP-2",
+          "amperage": 400,
+          "zone": "Zone 2 - Flowering",
+          "fixtures": 210
+        },
+        {
+          "name": "LP-3",
+          "amperage": 400,
+          "zone": "Zone 3 - Flowering",
+          "fixtures": 210
+        },
+        {
+          "name": "LP-4",
+          "amperage": 400,
+          "zone": "Zone 4 - Flowering",
+          "fixtures": 210
+        },
+        {
+          "name": "LP-5",
+          "amperage": 400,
+          "zone": "Zone 5 - Flowering",
+          "fixtures": 210
+        }
+      ],
+      "totalCircuits": 125,
+      "totalLoad": 1452
+    },
+    "hvac": {
+      "cooling": {
+        "chiller": {
+          "model": "AWS 290",
+          "capacity": 346,
+          "type": "Air-cooled"
+        },
+        "fanCoils": {
+          "quantity": 67,
+          "model": "Sigma Overhead"
+        },
+        "totalCooling": 4152000
+      },
+      "heating": {
+        "boilers": [
+          {
+            "model": "RBI Futera III MB2500",
+            "capacity": 2500000,
+            "quantity": 2
+          }
+        ],
+        "underBench": {
+          "type": "Delta Fin TF2",
+          "length": 10080,
+          "capacity": 1374720
+        },
+        "perimeter": {
+          "type": "Delta Fin SF125",
+          "length": 5594,
+          "capacity": 3830682
+        },
+        "totalHeating": 6579802
+      },
+      "ventilation": {
+        "hafFans": {
+          "quantity": 30,
+          "model": "Dramm AME 400/4",
+          "cfm": 6000
+        },
+        "roofVents": {
+          "zones": 20,
+          "actuators": 40
+        }
+      }
+    },
+    "irrigation": {
+      "storage": {
+        "freshWater": 7000,
+        "batchTanks": [
+          {
+            "capacity": 7000,
+            "quantity": 2
+          },
+          {
+            "capacity": 4000,
+            "quantity": 2
+          }
+        ],
+        "totalStorage": 22000
+      },
+      "treatment": {
+        "neutralizer": {
+          "type": "Priva",
+          "capacity": 40
+        },
+        "injector": {
+          "type": "Priva NutriJet",
+          "channels": 3,
+          "gpm": 50
+        }
+      },
+      "distribution": {
+        "zones": 15,
+        "drippers": 7890,
+        "dailyFlow": 5034,
+        "mainLines": 5,
+        "laterals": 310
+      }
+    }
+  },
+  "documentation": {
+    "totalSheets": 21,
+    "disciplines": [
+      "architectural",
+      "structural",
+      "electrical",
+      "mechanical",
+      "plumbing"
+    ],
+    "sheetsPerDiscipline": {
+      "architectural": 6,
+      "structural": 3,
+      "electrical": 7,
+      "mechanical": 3,
+      "plumbing": 2
+    }
+  },
+  "validation": {
+    "electricalUtilization": "72.8%",
+    "hvacCooling": "346 tons provided",
+    "hvacHeating": "6.6 MBTU/hr provided",
+    "irrigation": "5,034 GPD provided"
+  },
+  "compliance": {
+    "electrical": {
+      "NEC": {
+        "voltageDrop": "< 3%",
+        "continuousLoad": "125% factor applied",
+        "spareCircuits": "20% provided",
+        "panelLabeling": "Complete"
+      }
+    },
+    "mechanical": {
+      "IMC": {
+        "ventilation": "Adequate CFM",
+        "redundancy": "Backup systems provided",
+        "efficiency": "Energy code compliant"
+      }
+    },
+    "structural": {
+      "IBC": {
+        "windLoad": "90 mph design",
+        "snowLoad": "25 psf design",
+        "seismic": "Zone appropriate"
+      }
+    }
+  },
+  "testResults": {
+    "passed": 7,
+    "failed": 0,
+    "warnings": 0,
+    "overall": "PASS"
+  },
+  "timestamp": "2025-07-27T22:44:06.129Z"
+}

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "fileName": "Mohave_Cannabis_Co_Flower_Rooms.PDF",
+    "roomName": "Boundary Cone",
+    "projectName": "Mohave Cannabis Co. Cultivation Facility",
+    "importDate": "2025-07-26T01:16:15.783Z"
+  },
+  "dimensions": {
+    "length": 66,
+    "width": 22,
+    "height": 10,
+    "unit": "feet"
+  },
+  "area": 1452,
+  "rooms": [
+    {
+      "name": "Boundary Cone",
+      "dimensions": {
+        "length": 66,
+        "width": 22,
+        "height": 10
+      },
+      "area": 1452,
+      "type": "flower"
+    }
+  ]
+}

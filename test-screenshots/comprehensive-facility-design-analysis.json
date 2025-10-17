@@ -1,0 +1,295 @@
+{
+  "timestamp": "2025-07-26T19:01:17.060Z",
+  "testSuite": "Comprehensive Facility Design Analysis",
+  "pageFile": "/Users/blakelange/vibelux-app/src/app/design/advanced/page.tsx",
+  "analysis": {
+    "lighting": {
+      "implemented": 6,
+      "total": 6,
+      "features": [
+        {
+          "name": "Fixture Library",
+          "implemented": true
+        },
+        {
+          "name": "Lighting Layout",
+          "implemented": true
+        },
+        {
+          "name": "PPFD Analysis",
+          "implemented": true
+        },
+        {
+          "name": "DLI Calculator",
+          "implemented": true
+        },
+        {
+          "name": "Spectrum Analysis",
+          "implemented": true
+        },
+        {
+          "name": "Energy Calculations",
+          "implemented": true
+        }
+      ]
+    },
+    "greenhouse": {
+      "implemented": 7,
+      "total": 7,
+      "features": [
+        {
+          "name": "Greenhouse Frame Design",
+          "implemented": true
+        },
+        {
+          "name": "Wall/Panel Configuration",
+          "implemented": true
+        },
+        {
+          "name": "Roof Design",
+          "implemented": true
+        },
+        {
+          "name": "Foundation Planning",
+          "implemented": true
+        },
+        {
+          "name": "Door/Window Placement",
+          "implemented": true
+        },
+        {
+          "name": "Ventilation Openings",
+          "implemented": true
+        },
+        {
+          "name": "Glazing/Covering Selection",
+          "implemented": true
+        }
+      ]
+    },
+    "irrigation": {
+      "implemented": 8,
+      "total": 8,
+      "features": [
+        {
+          "name": "Irrigation Layout",
+          "implemented": true
+        },
+        {
+          "name": "Pipe Routing",
+          "implemented": true
+        },
+        {
+          "name": "Sprinkler/Drip Systems",
+          "implemented": true
+        },
+        {
+          "name": "Water Storage Tanks",
+          "implemented": true
+        },
+        {
+          "name": "Pump Station Design",
+          "implemented": true
+        },
+        {
+          "name": "Drainage System",
+          "implemented": true
+        },
+        {
+          "name": "Fertigation System",
+          "implemented": true
+        },
+        {
+          "name": "Water Quality Monitoring",
+          "implemented": true
+        }
+      ]
+    },
+    "structural": {
+      "implemented": 6,
+      "total": 6,
+      "features": [
+        {
+          "name": "Bench/Table Layout",
+          "implemented": true
+        },
+        {
+          "name": "Support Posts",
+          "implemented": true
+        },
+        {
+          "name": "Truss Design",
+          "implemented": true
+        },
+        {
+          "name": "Load Calculations",
+          "implemented": true
+        },
+        {
+          "name": "Concrete Layout",
+          "implemented": true
+        },
+        {
+          "name": "Steel Framework",
+          "implemented": true
+        }
+      ]
+    },
+    "environmental": {
+      "implemented": 8,
+      "total": 8,
+      "features": [
+        {
+          "name": "HVAC Design",
+          "implemented": true
+        },
+        {
+          "name": "Fan Placement",
+          "implemented": true
+        },
+        {
+          "name": "Exhaust System",
+          "implemented": true
+        },
+        {
+          "name": "CO2 Distribution",
+          "implemented": true
+        },
+        {
+          "name": "Humidity Control",
+          "implemented": true
+        },
+        {
+          "name": "Temperature Zoning",
+          "implemented": true
+        },
+        {
+          "name": "Misting Systems",
+          "implemented": true
+        },
+        {
+          "name": "Screen Systems",
+          "implemented": true
+        }
+      ]
+    },
+    "automation": {
+      "implemented": 5,
+      "total": 6,
+      "features": [
+        {
+          "name": "Sensor Placement",
+          "implemented": true
+        },
+        {
+          "name": "Control Panels",
+          "implemented": true
+        },
+        {
+          "name": "Wiring Layout",
+          "implemented": false
+        },
+        {
+          "name": "Network Infrastructure",
+          "implemented": true
+        },
+        {
+          "name": "Actuator Placement",
+          "implemented": true
+        },
+        {
+          "name": "Safety Systems",
+          "implemented": true
+        }
+      ]
+    },
+    "cultivation": {
+      "implemented": 7,
+      "total": 7,
+      "features": [
+        {
+          "name": "Growing Media Setup",
+          "implemented": true
+        },
+        {
+          "name": "Plant Spacing Design",
+          "implemented": true
+        },
+        {
+          "name": "Propagation Areas",
+          "implemented": true
+        },
+        {
+          "name": "Harvest Workflow",
+          "implemented": true
+        },
+        {
+          "name": "Storage Areas",
+          "implemented": true
+        },
+        {
+          "name": "Processing Zones",
+          "implemented": true
+        },
+        {
+          "name": "Quarantine Areas",
+          "implemented": true
+        }
+      ]
+    },
+    "facility": {
+      "implemented": 8,
+      "total": 10,
+      "features": [
+        {
+          "name": "Electrical Distribution",
+          "implemented": true
+        },
+        {
+          "name": "Generator Backup",
+          "implemented": true
+        },
+        {
+          "name": "Fire Safety Systems",
+          "implemented": true
+        },
+        {
+          "name": "Security Systems",
+          "implemented": true
+        },
+        {
+          "name": "Office/Lab Spaces",
+          "implemented": true
+        },
+        {
+          "name": "Chemical Storage",
+          "implemented": true
+        },
+        {
+          "name": "Waste Management",
+          "implemented": true
+        },
+        {
+          "name": "Loading Docks",
+          "implemented": false
+        },
+        {
+          "name": "Parking Layout",
+          "implemented": false
+        },
+        {
+          "name": "Site Utilities",
+          "implemented": true
+        }
+      ]
+    }
+  },
+  "summary": {
+    "totalSystems": 58,
+    "implementedSystems": 55,
+    "missingSystems": 3,
+    "completeness": "comprehensive",
+    "completenessRate": "94.8%"
+  },
+  "findings": []
+}

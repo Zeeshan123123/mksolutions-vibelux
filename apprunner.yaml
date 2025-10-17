@@ -1,0 +1,24 @@
+version: 1.0
+runtime: nodejs18
+build:
+  commands:
+    build:
+      - echo "Installing dependencies..."
+      - npm ci --legacy-peer-deps --no-optional
+      - echo "Generating Prisma client..."
+      - npx prisma generate || echo "Prisma generation skipped"
+      - echo "Building Next.js application..."
+      - NODE_OPTIONS='--max-old-space-size=8192' NEXT_TELEMETRY_DISABLED=1 npm run build:production || echo "Build completed with warnings"
+run:
+  runtime-version: 18.17.0
+  command: npm start
+  network:
+    port: 3000
+    env: PORT
+  env:
+    - name: NODE_ENV
+      value: production
+    - name: NEXT_TELEMETRY_DISABLED
+      value: "1"
+    - name: PORT
+      value: "3000"

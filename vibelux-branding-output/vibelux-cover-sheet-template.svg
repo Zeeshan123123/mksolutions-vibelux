@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2592 1728" width="36in" height="24in">
+  <defs>
+    <style>
+      .vibelux-primary { fill: #00A86B; }
+      .vibelux-secondary { fill: #2E8B57; }
+      .vibelux-text { fill: #2F4F4F; }
+      .header-text { font-family: Arial Black; font-size: 32px; font-weight: bold; }
+      .subtitle-text { font-family: Arial; font-size: 20px; }
+      .body-text { font-family: Arial; font-size: 14px; }
+      .cover-border { stroke: #00A86B; stroke-width: 4; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Cover Sheet Border -->
+  <rect x="144" y="432" width="2304" height="864" class="cover-border"/>
+  
+  <!-- Vibelux Header -->
+  <g transform="translate(216, 504)">
+    <rect width="2160" height="144" fill="#00A86B" opacity="0.1"/>
+    <text x="1080" y="72" text-anchor="middle" dominant-baseline="middle" class="vibelux-primary header-text">
+      VIBELUX
+    </text>
+    <text x="1080" y="110" text-anchor="middle" dominant-baseline="middle" class="vibelux-secondary subtitle-text">
+      Professional Greenhouse Construction Documents
+    </text>
+  </g>
+  
+  <!-- Project Title Section -->
+  <g transform="translate(216, 720)">
+    <text x="1080" y="60" text-anchor="middle" class="vibelux-text header-text">
+      COMMERCIAL GREENHOUSE COMPLEX
+    </text>
+    <text x="1080" y="90" text-anchor="middle" class="vibelux-secondary subtitle-text">
+      Advanced Growing Facility - Phase 1
+    </text>
+  </g>
+  
+  <!-- Project Details Grid -->
+  <g transform="translate(288, 864)">
+    <text x="0" y="30" class="vibelux-text body-text" font-weight="bold">Owner:</text>
+    <text x="120" y="30" class="vibelux-text body-text">GreenTech Agriculture LLC</text>
+    
+    <text x="0" y="60" class="vibelux-text body-text" font-weight="bold">Location:</text>
+    <text x="120" y="60" class="vibelux-text body-text">Sacramento County, California</text>
+    
+    <text x="0" y="90" class="vibelux-text body-text" font-weight="bold">Size:</text>
+    <text x="120" y="90" class="vibelux-text body-text">134,400 sq ft (853' x 157.5')</text>
+    
+    <text x="600" y="30" class="vibelux-text body-text" font-weight="bold">Project No:</text>
+    <text x="720" y="30" class="vibelux-text body-text">GH-2024-001</text>
+    
+    <text x="600" y="60" class="vibelux-text body-text" font-weight="bold">Date:</text>
+    <text x="720" y="60" class="vibelux-text body-text">7/27/2025</text>
+    
+    <text x="600" y="90" class="vibelux-text body-text" font-weight="bold">Phase:</text>
+    <text x="720" y="90" class="vibelux-text body-text">Construction Documents</text>
+  </g>
+  
+  <!-- Drawing Index -->
+  <g transform="translate(1656, 864)">
+    <text x="0" y="0" class="vibelux-text body-text" font-weight="bold">Drawing Index:</text>
+    <text x="0" y="30" class="vibelux-text body-text">G-001 Cover Sheet</text>
+    <text x="0" y="50" class="vibelux-text body-text">A-101 Floor Plan</text>
+    <text x="0" y="70" class="vibelux-text body-text">A-201 Elevations</text>
+    <text x="0" y="90" class="vibelux-text body-text">S-101 Foundation Plan</text>
+    <text x="200" y="30" class="vibelux-text body-text">E-101 Lighting Plan</text>
+    <text x="200" y="50" class="vibelux-text body-text">E-201 Power Plan</text>
+    <text x="200" y="70" class="vibelux-text body-text">M-101 HVAC Plan</text>
+    <text x="200" y="90" class="vibelux-text body-text">Details 1-15</text>
+  </g>
+  
+  <!-- Compliance Footer -->
+  <g transform="translate(216, 1152)">
+    <rect width="2160" height="108" stroke="#2E8B57" stroke-width="1" fill="none"/>
+    <text x="1080" y="30" text-anchor="middle" class="vibelux-text body-text" font-weight="bold">
+      PROFESSIONAL ENGINEERING & ARCHITECTURAL SERVICES
+    </text>
+    <text x="1080" y="50" text-anchor="middle" class="vibelux-text body-text">
+      Designed in accordance with IBC 2021, NEC 2023, and NGMA Standards
+    </text>
+    <text x="1080" y="70" text-anchor="middle" class="vibelux-text body-text">
+      www.vibelux.com | (555) 123-GROW | info@vibelux.com
+    </text>
+    <text x="1080" y="90" text-anchor="middle" class="vibelux-secondary body-text">
+      Quality Assured by Vibelux Professional Standards System
+    </text>
+  </g>
+  
+</svg>

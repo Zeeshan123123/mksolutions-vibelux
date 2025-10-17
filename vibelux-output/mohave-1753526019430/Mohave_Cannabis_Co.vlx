@@ -1,0 +1,800 @@
+{
+  "header": {
+    "signature": "VLX1",
+    "version": "1.0.0",
+    "created": "2025-07-26T10:33:46.494Z",
+    "checksum": "2add6051"
+  },
+  "metadata": {
+    "projectId": "mohave-1753526026497",
+    "projectName": "Mohave Cannabis Co. - Flower Rooms",
+    "client": "Mohave Cannabis Co.",
+    "location": "Arizona, USA",
+    "designType": "indoor",
+    "author": "Vibelux Design Team"
+  },
+  "geometry": {
+    "room": {
+      "dimensions": {
+        "length": 66,
+        "width": 22,
+        "height": 10
+      },
+      "unit": "feet",
+      "type": "indoor"
+    },
+    "fixtures": [
+      {
+        "id": "F001",
+        "x": 3.3,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F002",
+        "x": 9.899999999999999,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F003",
+        "x": 16.5,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F004",
+        "x": 23.1,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F005",
+        "x": 29.700000000000003,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F006",
+        "x": 36.300000000000004,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F007",
+        "x": 42.900000000000006,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F008",
+        "x": 49.50000000000001,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F009",
+        "x": 56.10000000000001,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F010",
+        "x": 62.70000000000001,
+        "y": 2.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F011",
+        "x": 3.3,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F012",
+        "x": 9.899999999999999,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F013",
+        "x": 16.5,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F014",
+        "x": 23.1,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F015",
+        "x": 29.700000000000003,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F016",
+        "x": 36.300000000000004,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F017",
+        "x": 42.900000000000006,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F018",
+        "x": 49.50000000000001,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F019",
+        "x": 56.10000000000001,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F020",
+        "x": 62.70000000000001,
+        "y": 5.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F021",
+        "x": 3.3,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F022",
+        "x": 9.899999999999999,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F023",
+        "x": 16.5,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F024",
+        "x": 23.1,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F025",
+        "x": 29.700000000000003,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F026",
+        "x": 36.300000000000004,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F027",
+        "x": 42.900000000000006,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F028",
+        "x": 49.50000000000001,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F029",
+        "x": 56.10000000000001,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F030",
+        "x": 62.70000000000001,
+        "y": 8.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F031",
+        "x": 3.3,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F032",
+        "x": 9.899999999999999,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F033",
+        "x": 16.5,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F034",
+        "x": 23.1,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F035",
+        "x": 29.700000000000003,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F036",
+        "x": 36.300000000000004,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F037",
+        "x": 42.900000000000006,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F038",
+        "x": 49.50000000000001,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F039",
+        "x": 56.10000000000001,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F040",
+        "x": 62.70000000000001,
+        "y": 11,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F041",
+        "x": 3.3,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F042",
+        "x": 9.899999999999999,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F043",
+        "x": 16.5,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F044",
+        "x": 23.1,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F045",
+        "x": 29.700000000000003,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F046",
+        "x": 36.300000000000004,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F047",
+        "x": 42.900000000000006,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F048",
+        "x": 49.50000000000001,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F049",
+        "x": 56.10000000000001,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F050",
+        "x": 62.70000000000001,
+        "y": 13.75,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F051",
+        "x": 3.3,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F052",
+        "x": 9.899999999999999,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F053",
+        "x": 16.5,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F054",
+        "x": 23.1,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F055",
+        "x": 29.700000000000003,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F056",
+        "x": 36.300000000000004,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F057",
+        "x": 42.900000000000006,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F058",
+        "x": 49.50000000000001,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F059",
+        "x": 56.10000000000001,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F060",
+        "x": 62.70000000000001,
+        "y": 16.5,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F061",
+        "x": 3.3,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F062",
+        "x": 9.899999999999999,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F063",
+        "x": 16.5,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F064",
+        "x": 23.1,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F065",
+        "x": 29.700000000000003,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F066",
+        "x": 36.300000000000004,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F067",
+        "x": 42.900000000000006,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F068",
+        "x": 49.50000000000001,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F069",
+        "x": 56.10000000000001,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      },
+      {
+        "id": "F070",
+        "x": 62.70000000000001,
+        "y": 19.25,
+        "z": 9,
+        "model": "SPYDR 2p",
+        "manufacturer": "Fluence",
+        "power": 645,
+        "ppf": 1700
+      }
+    ],
+    "tables": [
+      {
+        "id": "T1",
+        "x": 3,
+        "y": 3,
+        "width": 4,
+        "length": 16,
+        "capacity": 64
+      },
+      {
+        "id": "T2",
+        "x": 23,
+        "y": 3,
+        "width": 4,
+        "length": 16,
+        "capacity": 64
+      },
+      {
+        "id": "T3",
+        "x": 43,
+        "y": 3,
+        "width": 4,
+        "length": 16,
+        "capacity": 64
+      },
+      {
+        "id": "T4",
+        "x": 3,
+        "y": 11,
+        "width": 4,
+        "length": 16,
+        "capacity": 64
+      },
+      {
+        "id": "T5",
+        "x": 23,
+        "y": 11,
+        "width": 4,
+        "length": 16,
+        "capacity": 64
+      },
+      {
+        "id": "T6",
+        "x": 43,
+        "y": 11,
+        "width": 4,
+        "length": 16,
+        "capacity": 64
+      }
+    ]
+  },
+  "analysis": {
+    "average": 850,
+    "min": 680,
+    "max": 1020,
+    "uniformity": 0.85,
+    "dli": 36.7
+  },
+  "electrical": {
+    "totalLoad": 45150,
+    "voltage": "480V 3-Phase",
+    "circuits": 4,
+    "breakerSize": 70,
+    "wireSize": "3/0 AWG",
+    "panelSize": "100kW"
+  },
+  "financial": {
+    "totalCost": 163493,
+    "annualSavings": 13061,
+    "paybackYears": "12.5",
+    "npv": -32881
+  }
+}

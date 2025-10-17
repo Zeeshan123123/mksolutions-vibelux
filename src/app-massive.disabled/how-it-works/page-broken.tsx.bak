@@ -1,0 +1,1002 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import {
+  Zap, Leaf, Brain, Calculator, ChevronRight, Activity, 
+  DollarSign, TrendingUp, Users, Shield, Lightbulb,
+  BarChart3, Clock, CheckCircle, ArrowRight, Info,
+  Cpu, Database, Wifi, Globe, FlaskConical, Target
+} from 'lucide-react';
+import { MarketingNavigation } from '@/components/MarketingNavigation';
+import { Footer } from '@/components/Footer';
+
+export default function HowItWorksPage() {
+  const [activeTab, setActiveTab] = useState('energy');
+
+  const models = [
+    {
+      id: 'energy',
+      name: 'Energy Optimization',
+      icon: Zap,
+      color: 'green',
+      description: 'Save 20-40% on energy costs with zero upfront investment'
+    },
+    {
+      id: 'yep',
+      name: 'Yield Enhancement Protocol',
+      icon: Leaf,
+      color: 'purple',
+      description: 'Increase yields by 15-25% using proven optimization methods'
+    },
+    {
+      id: 'design',
+      name: '3D Design Studio',
+      icon: Brain,
+      color: 'blue',
+      description: 'AI-powered lighting design with professional CAD integration'
+    },
+    {
+      id: 'dutch',
+      name: 'Dutch Research Tools',
+      icon: Globe,
+      color: 'orange',
+      description: 'Advanced tomato cultivation based on proven research'
+    },
+    {
+      id: 'platform',
+      name: 'Complete Platform',
+      icon: Cpu,
+      color: 'indigo',
+      description: 'All-in-one cultivation management system'
+    }
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colors = {
+      green: {
+        bg: 'bg-green-500/10',
+        border: 'border-green-500/20',
+        text: 'text-green-400',
+        icon: 'text-green-400',
+        active: 'bg-green-500/20 border-green-500'
+      },
+      purple: {
+        bg: 'bg-purple-500/10',
+        border: 'border-purple-500/20',
+        text: 'text-purple-400',
+        icon: 'text-purple-400',
+        active: 'bg-purple-500/20 border-purple-500'
+      },
+      blue: {
+        bg: 'bg-blue-500/10',
+        border: 'border-blue-500/20',
+        text: 'text-blue-400',
+        icon: 'text-blue-400',
+        active: 'bg-blue-500/20 border-blue-500'
+      },
+      orange: {
+        bg: 'bg-orange-500/10',
+        border: 'border-orange-500/20',
+        text: 'text-orange-400',
+        icon: 'text-orange-400',
+        active: 'bg-orange-500/20 border-orange-500'
+      },
+      indigo: {
+        bg: 'bg-indigo-500/10',
+        border: 'border-indigo-500/20',
+        text: 'text-indigo-400',
+        icon: 'text-indigo-400',
+        active: 'bg-indigo-500/20 border-indigo-500'
+      }
+    };
+    return colors[color as keyof typeof colors];
+  };
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'energy':
+        return <EnergyOptimizationContent />;
+      case 'yep':
+        return <YEPContent />;
+      case 'design':
+        return <DesignStudioContent />;
+      case 'dutch':
+        return <DutchResearchContent />;
+      case 'platform':
+        return <CompletePlatformContent />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div>
+      <MarketingNavigation />
+      <div className="min-h-screen bg-gray-950">
+        {/* Header */}
+        <div className="bg-gradient-to-b from-purple-900/20 to-gray-950 border-b border-gray-800">
+          <div className="max-w-6xl mx-auto px-6 py-16">
+            <div className="text-center space-y-4">
+              <h1 className="text-4xl font-bold text-white">How VibeLux Works</h1>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Choose your path to cultivation success. Each model is designed to help you 
+                achieve specific goals with minimal risk and maximum ROI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Model Tabs */}
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {models.map((model) => {
+            const Icon = model.icon;
+            const colors = getColorClasses(model.color);
+            const isActive = activeTab === model.id;
+            
+            return (
+              <button
+                key={model.id}
+                onClick={() => setActiveTab(model.id)}
+                className={`p-4 rounded-xl border transition-all ${
+                  isActive 
+                    ? colors.active 
+                    : `${colors.bg} ${colors.border} hover:${colors.active}`
+                }`}
+              >
+                <Icon className={`w-8 h-8 ${colors.icon} mx-auto mb-2`} />
+                <h3 className="font-semibold text-white text-sm">{model.name}</h3>
+                <p className="text-xs text-gray-400 mt-1">{model.description}</p>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div className="max-w-6xl mx-auto px-6 pb-20">
+        {renderContent()}
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="bg-gray-900 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="text-center space-y-6">
+            <h2 className="text-2xl font-bold text-white">Ready to Get Started?</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Choose the model that fits your needs or combine multiple approaches for maximum impact.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/sign-up"
+                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
+              >
+                Start Free Trial
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link 
+                href="/contact"
+                className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
+              >
+                Talk to an Expert
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Energy Optimization Content
+function EnergyOptimizationContent() {
+  return (
+    <div className="space-y-12">
+      {/* Overview */}
+      <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Zap className="w-6 h-6 text-green-400" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">Energy Optimization as a Service</h2>
+            <p className="text-gray-400">
+              Reduce electricity costs by 20-40% with zero upfront investment. You only pay from actual savings.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-400 mb-1">$0</div>
+            <p className="text-sm text-gray-400">Upfront Cost</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-400 mb-1">20-40%</div>
+            <p className="text-sm text-gray-400">Energy Savings</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-400 mb-1">30%</div>
+            <p className="text-sm text-gray-400">Revenue Share</p>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Activity className="w-5 h-5 text-green-400" />
+          How Energy Optimization Works
+        </h3>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-green-400 font-bold">1</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Connect Your Systems</h4>
+                  <p className="text-sm text-gray-400">
+                    We integrate with your existing sensors and control systems. No new hardware required.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-green-400 font-bold">2</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">AI Learns Your Patterns</h4>
+                  <p className="text-sm text-gray-400">
+                    Our AI analyzes your facility's energy usage, crop needs, and utility rate structures.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-green-400 font-bold">3</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Automatic Optimization</h4>
+                  <p className="text-sm text-gray-400">
+                    System makes intelligent adjustments during peak hours while protecting crop health.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-green-400 font-bold">4</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Share the Savings</h4>
+                  <p className="text-sm text-gray-400">
+                    You keep 70% of savings, we take 30%. If you don't save, you don't pay.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* What's Optimized */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Lightbulb className="w-5 h-5 text-green-400" />
+          What Gets Optimized
+        </h3>
+        
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">Lighting Systems</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Intelligent dimming (10-20%)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Peak hour reduction</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>DLI targets maintained</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">HVAC Systems</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Temperature bands (±2°F)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>VPD protection</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Pre-cooling strategies</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">Other Equipment</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Dehumidifier cycling</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Pump scheduling</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                <span>Non-critical loads</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Protection Guarantees */}
+      <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
+        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+          <Shield className="w-5 h-5 text-green-400" />
+          Crop Protection Guarantees
+        </h4>
+        <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-300">
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+            <span>Never interrupts critical photoperiods</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+            <span>Maintains CO₂ enrichment schedules</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+            <span>Protects VPD within your ranges</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+            <span>Manual override always available</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// YEP Content
+function YEPContent() {
+  return (
+    <div className="space-y-12">
+      {/* Overview */}
+      <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Leaf className="w-6 h-6 text-purple-400" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">Yield Enhancement Protocol (YEP)</h2>
+            <p className="text-gray-400">
+              Increase yields by 15-25% through systematic optimization of genetics, environment, and cultivation practices.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-purple-400 mb-1">15-25%</div>
+            <p className="text-sm text-gray-400">Yield Increase</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-purple-400 mb-1">6-12</div>
+            <p className="text-sm text-gray-400">Month Timeline</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-purple-400 mb-1">95%</div>
+            <p className="text-sm text-gray-400">Success Rate</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Five Pillars of YEP */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Target className="w-5 h-5 text-purple-400" />
+          The Five Pillars of YEP
+        </h3>
+        
+        <div className="space-y-4">
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">1. Genetic Selection</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              AI-driven analysis of your cultivation environment to recommend optimal cultivars
+            </p>
+            <ul className="space-y-1 text-sm text-gray-400">
+              <li>• Strain-specific environmental preferences</li>
+              <li>• Historical yield data analysis</li>
+              <li>• Market demand optimization</li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">2. Environmental Optimization</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Fine-tune every environmental parameter for maximum genetic expression
+            </p>
+            <ul className="space-y-1 text-sm text-gray-400">
+              <li>• Precision VPD control by growth stage</li>
+              <li>• Optimized light spectrums and intensity</li>
+              <li>• CO₂ enrichment strategies</li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">3. Nutrient Management</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Advanced feeding strategies based on tissue analysis and growth stage
+            </p>
+            <ul className="space-y-1 text-sm text-gray-400">
+              <li>• Real-time EC/pH optimization</li>
+              <li>• Micronutrient supplementation</li>
+              <li>• Drought stress protocols</li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">4. Pest Prevention</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Proactive IPM strategies that prevent issues before they start
+            </p>
+            <ul className="space-y-1 text-sm text-gray-400">
+              <li>• Environmental pest deterrence</li>
+              <li>• Beneficial insect programs</li>
+              <li>• Early detection protocols</li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-2">5. Harvest Optimization</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Perfect timing and post-harvest handling for maximum quality
+            </p>
+            <ul className="space-y-1 text-sm text-gray-400">
+              <li>• Trichome analysis for peak potency</li>
+              <li>• Optimal drying and curing protocols</li>
+              <li>• Quality preservation techniques</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Implementation Timeline */}
+      <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-6">
+        <h4 className="font-semibold text-white mb-4">Implementation Timeline</h4>
+        <div className="space-y-3">
+          <div className="flex items-center gap-4">
+            <div className="w-20 text-sm text-purple-400 font-medium">Month 1-2</div>
+            <div className="flex-1 text-sm text-gray-300">Baseline assessment and genetic selection</div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-20 text-sm text-purple-400 font-medium">Month 3-4</div>
+            <div className="flex-1 text-sm text-gray-300">Environmental optimization and testing</div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-20 text-sm text-purple-400 font-medium">Month 5-6</div>
+            <div className="flex-1 text-sm text-gray-300">First optimized harvest and analysis</div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-20 text-sm text-purple-400 font-medium">Month 7+</div>
+            <div className="flex-1 text-sm text-gray-300">Continuous improvement and scaling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Design Studio Content
+function DesignStudioContent() {
+  return (
+    <div className="space-y-12">
+      {/* Overview */}
+      <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Brain className="w-6 h-6 text-blue-400" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">AI-Powered 3D Design Studio</h2>
+            <p className="text-gray-400">
+              Professional lighting design in minutes with photorealistic 3D visualization and DLC-certified fixtures.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-blue-400 mb-1">5 min</div>
+            <p className="text-sm text-gray-400">Design Time</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-blue-400 mb-1">1000+</div>
+            <p className="text-sm text-gray-400">DLC Fixtures</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-blue-400 mb-1">±5%</div>
+            <p className="text-sm text-gray-400">PPFD Accuracy</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Key Features */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Cpu className="w-5 h-5 text-blue-400" />
+          Key Design Features
+        </h3>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">AI Design Assistant</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Simply describe your space and goals in natural language
+            </p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>"Design a 20x30 veg room with 300 PPFD"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>"Optimize my flower room for efficiency"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>"Add vertical racks with 18 inch spacing"</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">3D Visualization</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              See exactly how your facility will look and perform
+            </p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Photorealistic rendering</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Real-time PPFD heatmaps</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Walk-through mode</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">DLC Integration</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Access to the complete DLC Qualified Products List
+            </p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Real photometric data</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Rebate eligibility info</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Efficiency comparisons</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">Professional Outputs</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Export everything you need for implementation
+            </p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>AutoCAD DWG files</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Bill of materials</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Installation guides</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Design Process */}
+      <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-6">
+        <h4 className="font-semibold text-white mb-4">Simple Design Process</h4>
+        <div className="grid md:grid-cols-4 gap-4">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span className="text-blue-400 font-bold">1</span>
+            </div>
+            <p className="text-sm text-gray-300">Define your space</p>
+          </div>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span className="text-blue-400 font-bold">2</span>
+            </div>
+            <p className="text-sm text-gray-300">Set light targets</p>
+          </div>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span className="text-blue-400 font-bold">3</span>
+            </div>
+            <p className="text-sm text-gray-300">AI optimizes layout</p>
+          </div>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span className="text-blue-400 font-bold">4</span>
+            </div>
+            <p className="text-sm text-gray-300">Export & implement</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Dutch Research Content
+function DutchResearchContent() {
+  return (
+    <div className="space-y-12">
+      {/* Overview */}
+      <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Globe className="w-6 h-6 text-orange-400" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">Advanced Dutch Research Tools</h2>
+            <p className="text-gray-400">
+              Professional tomato cultivation based on decades of proven Dutch greenhouse research and commercial success.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-orange-400 mb-1">40+</div>
+            <p className="text-sm text-gray-400">Years Research</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-orange-400 mb-1">70 kg/m²</div>
+            <p className="text-sm text-gray-400">Target Yields</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-orange-400 mb-1">95%</div>
+            <p className="text-sm text-gray-400">Grade A Fruit</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Core Tools */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <FlaskConical className="w-5 h-5 text-orange-400" />
+          Professional Cultivation Tools
+        </h3>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">Plant Physiological Monitor</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Complete plant health tracking based on Dutch research standards
+            </p>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-400">Head Width Target:</span>
+                <span className="text-orange-400 font-medium">6-9.5mm</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">VeGe Balance:</span>
+                <span className="text-orange-400 font-medium">Optimal</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Exhaustion Detection:</span>
+                <span className="text-orange-400 font-medium">Active</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">IPM Dashboard</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Zero-tolerance pest management with specific action thresholds
+            </p>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-400">Spider Mites:</span>
+                <span className="text-orange-400 font-medium">0 tolerance</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Whitefly Threshold:</span>
+                <span className="text-orange-400 font-medium">10/card/week</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Thrips Threshold:</span>
+                <span className="text-orange-400 font-medium">6/card/week</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">Climate Control</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              P-Band temperature control with momentum prevention
+            </p>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-400">HD Target:</span>
+                <span className="text-orange-400 font-medium">5 g/m³</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Air Exchanges:</span>
+                <span className="text-orange-400 font-medium">8-9/hour</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Light Integration:</span>
+                <span className="text-orange-400 font-medium">Active</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+            <h4 className="font-semibold text-white mb-3">Nutrient Management</h4>
+            <p className="text-sm text-gray-400 mb-3">
+              Complete drip and drain analysis with Dutch targets
+            </p>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-400">K Drip Target:</span>
+                <span className="text-orange-400 font-medium">6.0-8.4 mmol/l</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">NO3 Range:</span>
+                <span className="text-orange-400 font-medium">10.8-24 mmol/l</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Drain %:</span>
+                <span className="text-orange-400 font-medium">DLI-based</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Why Dutch Methods */}
+      <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-6">
+        <h4 className="font-semibold text-white mb-3">Why Dutch Methods?</h4>
+        <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
+          <div>
+            <p className="mb-2">• World's highest tomato yields (70+ kg/m²)</p>
+            <p className="mb-2">• 40+ years of research refinement</p>
+            <p>• Proven commercial success globally</p>
+          </div>
+          <div>
+            <p className="mb-2">• Science-based approach to everything</p>
+            <p className="mb-2">• Focus on plant physiology, not guesswork</p>
+            <p>• Continuous innovation and improvement</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Complete Platform Content
+function CompletePlatformContent() {
+  return (
+    <div className="space-y-12">
+      {/* Overview */}
+      <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Cpu className="w-6 h-6 text-indigo-400" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">Complete Cultivation Platform</h2>
+            <p className="text-gray-400">
+              Everything you need to run a professional growing operation in one integrated system.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-indigo-400 mb-1">25+</div>
+            <p className="text-sm text-gray-400">Calculators</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-indigo-400 mb-1">15+</div>
+            <p className="text-sm text-gray-400">Control Modules</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-indigo-400 mb-1">100+</div>
+            <p className="text-sm text-gray-400">Integrations</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-indigo-400 mb-1">24/7</div>
+            <p className="text-sm text-gray-400">Support</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Core Modules */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Database className="w-5 h-5 text-indigo-400" />
+          Core Platform Modules
+        </h3>
+        
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <BarChart3 className="w-6 h-6 text-indigo-400 mb-2" />
+            <h4 className="font-semibold text-white text-sm mb-1">Operations Intelligence</h4>
+            <p className="text-xs text-gray-400">Real-time dashboards and analytics</p>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <Calculator className="w-6 h-6 text-indigo-400 mb-2" />
+            <h4 className="font-semibold text-white text-sm mb-1">Professional Calculators</h4>
+            <p className="text-xs text-gray-400">25+ scientific cultivation tools</p>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <Wifi className="w-6 h-6 text-indigo-400 mb-2" />
+            <h4 className="font-semibold text-white text-sm mb-1">Sensor Integration</h4>
+            <p className="text-xs text-gray-400">Connect any sensor or controller</p>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <Shield className="w-6 h-6 text-indigo-400 mb-2" />
+            <h4 className="font-semibold text-white text-sm mb-1">Compliance Management</h4>
+            <p className="text-xs text-gray-400">METRC, BioTrack, state reporting</p>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <Users className="w-6 h-6 text-indigo-400 mb-2" />
+            <h4 className="font-semibold text-white text-sm mb-1">Team Collaboration</h4>
+            <p className="text-xs text-gray-400">Tasks, alerts, and communication</p>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <DollarSign className="w-6 h-6 text-indigo-400 mb-2" />
+            <h4 className="font-semibold text-white text-sm mb-1">Financial Tracking</h4>
+            <p className="text-xs text-gray-400">Cost per gram, ROI, profitability</p>
+          </div>
+        </div>
+      </div>
+
+      {/* How It All Works Together */}
+      <div>
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Activity className="w-5 h-5 text-indigo-400" />
+          How Everything Connects
+        </h3>
+        
+        <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+          <div className="space-y-4">
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-indigo-400 font-bold text-sm">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-1">Data Collection</h4>
+                <p className="text-sm text-gray-400">
+                  Sensors, controllers, and manual inputs feed real-time data into the platform
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-indigo-400 font-bold text-sm">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-1">Intelligent Processing</h4>
+                <p className="text-sm text-gray-400">
+                  AI analyzes patterns, detects anomalies, and generates recommendations
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-indigo-400 font-bold text-sm">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-1">Automated Actions</h4>
+                <p className="text-sm text-gray-400">
+                  System automatically adjusts controls, sends alerts, and creates tasks
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-indigo-400 font-bold text-sm">4</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-1">Continuous Optimization</h4>
+                <p className="text-sm text-gray-400">
+                  Machine learning improves recommendations over time based on results
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Implementation Options */}
+      <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-6">
+        <h4 className="font-semibold text-white mb-4">Flexible Implementation</h4>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div>
+            <h5 className="text-sm font-medium text-indigo-400 mb-2">Start Small</h5>
+            <p className="text-xs text-gray-300">
+              Begin with calculators and basic monitoring. Add modules as you grow.
+            </p>
+          </div>
+          <div>
+            <h5 className="text-sm font-medium text-indigo-400 mb-2">Hybrid Approach</h5>
+            <p className="text-xs text-gray-300">
+              Keep existing systems, use VibeLux for intelligence and optimization.
+            </p>
+          </div>
+          <div>
+            <h5 className="text-sm font-medium text-indigo-400 mb-2">Full Platform</h5>
+            <p className="text-xs text-gray-300">
+              Complete digital transformation with all modules and integrations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer />
+    </div>
+  );
+}

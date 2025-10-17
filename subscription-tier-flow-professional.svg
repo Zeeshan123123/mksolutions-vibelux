@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1056" height="816" viewBox="0 0 1056 816" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Professional gradients -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#312e81;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="freeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="proGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="businessGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="enterpriseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadows -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 L4,6 L2,2" fill="#475569"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1056" height="816" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1056" height="80" fill="url(#headerGradient)"/>
+  <text x="528" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="white">VibeLux Subscription Strategy &amp; Customer Journey</text>
+  <text x="528" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e0e7ff">Revenue Optimization Through Tiered Access Model</text>
+  
+  <!-- Section 1: Customer Acquisition -->
+  <text x="40" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e293b">1. Customer Acquisition</text>
+  
+  <!-- Entry point -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="140" width="200" height="80" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="140" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">New Visitor</text>
+    <text x="140" y="190" text-anchor="middle" font-size="12" fill="#64748b">Landing Page</text>
+    <text x="140" y="205" text-anchor="middle" font-size="12" fill="#64748b">Acquisition Channels</text>
+  </g>
+  
+  <!-- Decision Diamond -->
+  <g transform="translate(340, 140)">
+    <path d="M 0 40 L 40 0 L 80 40 L 40 80 Z" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+    <text x="40" y="35" text-anchor="middle" font-size="12" font-weight="600" fill="#1e293b">Value</text>
+    <text x="40" y="50" text-anchor="middle" font-size="12" font-weight="600" fill="#1e293b">Prop</text>
+  </g>
+  
+  <!-- Arrows from entry -->
+  <path d="M 240 180 L 340 180" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Section 2: Monetization Paths -->
+  <text x="40" y="270" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e293b">2. Monetization Paths</text>
+  
+  <!-- Free Path -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="290" width="220" height="120" rx="8" fill="url(#freeGradient)"/>
+    <text x="150" y="320" text-anchor="middle" font-size="16" font-weight="700" fill="white">Energy Savings Program</text>
+    <text x="150" y="340" text-anchor="middle" font-size="13" fill="white">Revenue Share Model</text>
+    <line x1="60" y1="350" x2="240" y2="350" stroke="white" stroke-opacity="0.3"/>
+    <text x="150" y="370" text-anchor="middle" font-size="12" fill="white">• 10% of energy savings</text>
+    <text x="150" y="385" text-anchor="middle" font-size="12" fill="white">• $0 upfront cost</text>
+    <text x="150" y="400" text-anchor="middle" font-size="12" fill="white">• Basic feature access</text>
+  </g>
+  
+  <!-- Professional Tier -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="290" width="220" height="120" rx="8" fill="url(#proGradient)"/>
+    <text x="400" y="320" text-anchor="middle" font-size="16" font-weight="700" fill="white">Professional</text>
+    <text x="400" y="340" text-anchor="middle" font-size="13" fill="white">$49/month</text>
+    <line x1="310" y1="350" x2="490" y2="350" stroke="white" stroke-opacity="0.3"/>
+    <text x="400" y="370" text-anchor="middle" font-size="12" fill="white">• Advanced design tools</text>
+    <text x="400" y="385" text-anchor="middle" font-size="12" fill="white">• 50 active projects</text>
+    <text x="400" y="400" text-anchor="middle" font-size="12" fill="white">• Email support</text>
+  </g>
+  
+  <!-- Business Tier -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="290" width="220" height="120" rx="8" fill="url(#businessGradient)"/>
+    <text x="650" y="320" text-anchor="middle" font-size="16" font-weight="700" fill="white">Business</text>
+    <text x="650" y="340" text-anchor="middle" font-size="13" fill="white">$149/month</text>
+    <line x1="560" y1="350" x2="740" y2="350" stroke="white" stroke-opacity="0.3"/>
+    <text x="650" y="370" text-anchor="middle" font-size="12" fill="white">• Unlimited projects</text>
+    <text x="650" y="385" text-anchor="middle" font-size="12" fill="white">• API access</text>
+    <text x="650" y="400" text-anchor="middle" font-size="12" fill="white">• Priority support</text>
+  </g>
+  
+  <!-- Enterprise Tier -->
+  <g filter="url(#shadow)">
+    <rect x="790" y="290" width="220" height="120" rx="8" fill="url(#enterpriseGradient)"/>
+    <text x="900" y="320" text-anchor="middle" font-size="16" font-weight="700" fill="white">Enterprise</text>
+    <text x="900" y="340" text-anchor="middle" font-size="13" fill="white">Custom Pricing</text>
+    <line x1="810" y1="350" x2="990" y2="350" stroke="white" stroke-opacity="0.3"/>
+    <text x="900" y="370" text-anchor="middle" font-size="12" fill="white">• White label options</text>
+    <text x="900" y="385" text-anchor="middle" font-size="12" fill="white">• Dedicated support</text>
+    <text x="900" y="400" text-anchor="middle" font-size="12" fill="white">• Custom integrations</text>
+  </g>
+  
+  <!-- Connection arrows -->
+  <path d="M 380 220 L 150 290" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 380 220 L 400 290" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 420 220 L 650 290" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 420 220 L 900 290" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Section 3: Feature Access Framework -->
+  <text x="40" y="460" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e293b">3. Feature Access Framework</text>
+  
+  <!-- Feature Matrix -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="480" width="970" height="200" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    
+    <!-- Headers -->
+    <rect x="40" y="480" width="970" height="40" rx="8" fill="#f1f5f9"/>
+    <text x="200" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">Features</text>
+    <text x="400" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#10b981">Free/Energy</text>
+    <text x="550" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#8b5cf6">Professional</text>
+    <text x="700" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#3b82f6">Business</text>
+    <text x="850" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#f59e0b">Enterprise</text>
+    
+    <!-- Feature rows -->
+    <line x1="40" y1="520" x2="1010" y2="520" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Row 1: Design Tools -->
+    <text x="200" y="545" text-anchor="middle" font-size="13" fill="#475569">Design Tools</text>
+    <text x="400" y="545" text-anchor="middle" font-size="13" fill="#10b981">Basic</text>
+    <text x="550" y="545" text-anchor="middle" font-size="13" fill="#475569">Advanced</text>
+    <text x="700" y="545" text-anchor="middle" font-size="13" fill="#475569">Advanced</text>
+    <text x="850" y="545" text-anchor="middle" font-size="13" fill="#475569">Custom</text>
+    
+    <line x1="40" y1="560" x2="1010" y2="560" stroke="#f1f5f9" stroke-width="1"/>
+    
+    <!-- Row 2: Projects -->
+    <text x="200" y="585" text-anchor="middle" font-size="13" fill="#475569">Active Projects</text>
+    <text x="400" y="585" text-anchor="middle" font-size="13" fill="#10b981">1</text>
+    <text x="550" y="585" text-anchor="middle" font-size="13" fill="#475569">50</text>
+    <text x="700" y="585" text-anchor="middle" font-size="13" fill="#475569">Unlimited</text>
+    <text x="850" y="585" text-anchor="middle" font-size="13" fill="#475569">Unlimited</text>
+    
+    <line x1="40" y1="600" x2="1010" y2="600" stroke="#f1f5f9" stroke-width="1"/>
+    
+    <!-- Row 3: Support -->
+    <text x="200" y="625" text-anchor="middle" font-size="13" fill="#475569">Support Level</text>
+    <text x="400" y="625" text-anchor="middle" font-size="13" fill="#10b981">Community</text>
+    <text x="550" y="625" text-anchor="middle" font-size="13" fill="#475569">Email</text>
+    <text x="700" y="625" text-anchor="middle" font-size="13" fill="#475569">Priority</text>
+    <text x="850" y="625" text-anchor="middle" font-size="13" fill="#475569">Dedicated</text>
+    
+    <line x1="40" y1="640" x2="1010" y2="640" stroke="#f1f5f9" stroke-width="1"/>
+    
+    <!-- Row 4: Revenue Model -->
+    <text x="200" y="665" text-anchor="middle" font-size="13" fill="#475569">Revenue Model</text>
+    <text x="400" y="665" text-anchor="middle" font-size="13" fill="#10b981">10% Share</text>
+    <text x="550" y="665" text-anchor="middle" font-size="13" fill="#475569">Fixed</text>
+    <text x="700" y="665" text-anchor="middle" font-size="13" fill="#475569">Fixed</text>
+    <text x="850" y="665" text-anchor="middle" font-size="13" fill="#475569">Negotiated</text>
+  </g>
+  
+  <!-- Section 4: Conversion Strategy -->
+  <text x="40" y="730" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e293b">4. Conversion &amp; Retention Strategy</text>
+  
+  <!-- Strategy boxes -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="750" width="230" height="50" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="2"/>
+    <text x="155" y="780" text-anchor="middle" font-size="13" font-weight="600" fill="#92400e">Demo Mode for Free Users</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="290" y="750" width="230" height="50" rx="8" fill="#ddd6fe" stroke="#a78bfa" stroke-width="2"/>
+    <text x="405" y="780" text-anchor="middle" font-size="13" font-weight="600" fill="#5b21b6">Automated Email Nurturing</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="540" y="750" width="230" height="50" rx="8" fill="#cffafe" stroke="#67e8f9" stroke-width="2"/>
+    <text x="655" y="780" text-anchor="middle" font-size="13" font-weight="600" fill="#0e7490">Usage-Based Upselling</text>
+  </g>
+  
+  <g filter="url(#shadow)">
+    <rect x="790" y="750" width="220" height="50" rx="8" fill="#fecaca" stroke="#fca5a5" stroke-width="2"/>
+    <text x="900" y="780" text-anchor="middle" font-size="13" font-weight="600" fill="#991b1b">Annual Plan Incentives</text>
+  </g>
+</svg>

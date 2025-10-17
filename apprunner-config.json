@@ -1,0 +1,35 @@
+{
+  "ServiceName": "vibelux-production-app",
+  "SourceConfiguration": {
+    "ImageRepository": {
+      "ImageIdentifier": "397139395365.dkr.ecr.us-east-1.amazonaws.com/vibelux-production:latest",
+      "ImageConfiguration": {
+        "Port": "3000",
+        "RuntimeEnvironmentVariables": {
+          "NODE_ENV": "production",
+          "NEXT_TELEMETRY_DISABLED": "1",
+          "PORT": "3000"
+        }
+      },
+      "ImageRepositoryType": "ECR"
+    },
+    "AutoDeploymentsEnabled": false,
+    "AuthenticationConfiguration": {
+      "AccessRoleArn": "arn:aws:iam::397139395365:role/AppRunnerECRAccessRole"
+    }
+  },
+  "InstanceConfiguration": {
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
+  },
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "VibeLux"
+    },
+    {
+      "Key": "Environment",
+      "Value": "production"
+    }
+  ]
+}

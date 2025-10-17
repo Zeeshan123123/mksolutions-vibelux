@@ -1,0 +1,3358 @@
+{
+  "header": {
+    "signature": "VLX1",
+    "version": "1.0.0",
+    "created": "2025-07-26T11:41:04.060Z",
+    "modified": "2025-07-26T11:41:04.061Z",
+    "checksum": "",
+    "compression": "gzip",
+    "encryption": "none"
+  },
+  "metadata": {
+    "projectId": "MOH-2025-LED-001",
+    "projectName": "Mohave Cannabis Co. LED Retrofit",
+    "clientName": "Mohave Cannabis Co.",
+    "location": "Arizona, USA",
+    "designType": "1-1 HPS Replacement",
+    "tags": [
+      "cannabis",
+      "retrofit",
+      "fluence",
+      "vypr2"
+    ],
+    "author": "Vibelux Design Team"
+  },
+  "geometry": {
+    "room": {
+      "dimensions": {
+        "length": 66,
+        "width": 22,
+        "height": 10
+      },
+      "unit": "feet",
+      "type": "indoor"
+    },
+    "fixtures": [
+      {
+        "id": "VYPR2-1",
+        "position": {
+          "x": -29.7,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-2",
+        "position": {
+          "x": -23.1,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-3",
+        "position": {
+          "x": -16.5,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-4",
+        "position": {
+          "x": -9.900000000000002,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-5",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-6",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-7",
+        "position": {
+          "x": 9.899999999999995,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-8",
+        "position": {
+          "x": 16.499999999999996,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-9",
+        "position": {
+          "x": 23.099999999999998,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-10",
+        "position": {
+          "x": 29.7,
+          "y": -8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-11",
+        "position": {
+          "x": -29.7,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-12",
+        "position": {
+          "x": -23.1,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-13",
+        "position": {
+          "x": -16.5,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-14",
+        "position": {
+          "x": -9.900000000000002,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-15",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-16",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-17",
+        "position": {
+          "x": 9.899999999999995,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-18",
+        "position": {
+          "x": 16.499999999999996,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-19",
+        "position": {
+          "x": 23.099999999999998,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-20",
+        "position": {
+          "x": 29.7,
+          "y": -5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-21",
+        "position": {
+          "x": -29.7,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-22",
+        "position": {
+          "x": -23.1,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-23",
+        "position": {
+          "x": -16.5,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-24",
+        "position": {
+          "x": -9.900000000000002,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-25",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-26",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-27",
+        "position": {
+          "x": 9.899999999999995,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-28",
+        "position": {
+          "x": 16.499999999999996,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-29",
+        "position": {
+          "x": 23.099999999999998,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-30",
+        "position": {
+          "x": 29.7,
+          "y": -2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-31",
+        "position": {
+          "x": -29.7,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-32",
+        "position": {
+          "x": -23.1,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-33",
+        "position": {
+          "x": -16.5,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-34",
+        "position": {
+          "x": -9.900000000000002,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-35",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-36",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-37",
+        "position": {
+          "x": 9.899999999999995,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-38",
+        "position": {
+          "x": 16.499999999999996,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-39",
+        "position": {
+          "x": 23.099999999999998,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-40",
+        "position": {
+          "x": 29.7,
+          "y": 0,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-41",
+        "position": {
+          "x": -29.7,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-42",
+        "position": {
+          "x": -23.1,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-43",
+        "position": {
+          "x": -16.5,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-44",
+        "position": {
+          "x": -9.900000000000002,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-45",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-46",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-47",
+        "position": {
+          "x": 9.899999999999995,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-48",
+        "position": {
+          "x": 16.499999999999996,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-49",
+        "position": {
+          "x": 23.099999999999998,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-50",
+        "position": {
+          "x": 29.7,
+          "y": 2.75,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-51",
+        "position": {
+          "x": -29.7,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-52",
+        "position": {
+          "x": -23.1,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-53",
+        "position": {
+          "x": -16.5,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-54",
+        "position": {
+          "x": -9.900000000000002,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-55",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-56",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-57",
+        "position": {
+          "x": 9.899999999999995,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-58",
+        "position": {
+          "x": 16.499999999999996,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-59",
+        "position": {
+          "x": 23.099999999999998,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-60",
+        "position": {
+          "x": 29.7,
+          "y": 5.5,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-61",
+        "position": {
+          "x": -29.7,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-62",
+        "position": {
+          "x": -23.1,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-63",
+        "position": {
+          "x": -16.5,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-64",
+        "position": {
+          "x": -9.900000000000002,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-65",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-66",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-67",
+        "position": {
+          "x": 9.899999999999995,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-68",
+        "position": {
+          "x": 16.499999999999996,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-69",
+        "position": {
+          "x": 23.099999999999998,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-70",
+        "position": {
+          "x": 29.7,
+          "y": 8.25,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-71",
+        "position": {
+          "x": -29.7,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-72",
+        "position": {
+          "x": -23.1,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-73",
+        "position": {
+          "x": -16.5,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-74",
+        "position": {
+          "x": -9.900000000000002,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-75",
+        "position": {
+          "x": -3.3000000000000007,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-76",
+        "position": {
+          "x": 3.3000000000000007,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-77",
+        "position": {
+          "x": 9.899999999999995,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-78",
+        "position": {
+          "x": 16.499999999999996,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-79",
+        "position": {
+          "x": 23.099999999999998,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      },
+      {
+        "id": "VYPR2-80",
+        "position": {
+          "x": 29.7,
+          "y": 11,
+          "z": 6
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "model": {
+          "model": "Fluence VYPR 2",
+          "series": "VYPR 2p",
+          "quantity": 80,
+          "power": 645,
+          "voltage": 277,
+          "efficacy": 2.7,
+          "ppf": 1742,
+          "spectrum": "PhysioSpec BROAD R4",
+          "lifespan": 50000,
+          "warranty": 5,
+          "dimensions": {
+            "length": 44,
+            "width": 44,
+            "height": 3
+          },
+          "weight": 30,
+          "cooling": "Passive",
+          "dimming": "0-10V",
+          "certifications": [
+            "UL",
+            "DLC Premium",
+            "IP66",
+            "RoHS"
+          ]
+        }
+      }
+    ]
+  },
+  "analysis": {
+    "ppfd": {
+      "averagePPFD": 850,
+      "minPPFD": 720,
+      "maxPPFD": 980,
+      "uniformity": 0.85,
+      "dli": 36.7,
+      "coverage": 1452,
+      "powerDensity": 35.5
+    },
+    "thermal": {
+      "roomConditions": {
+        "dimensions": {
+          "length": 66,
+          "width": 22,
+          "height": 10
+        },
+        "volume": 14520,
+        "targetTemp": 75,
+        "targetRH": 60,
+        "co2Level": 1200
+      },
+      "hpsAnalysis": {
+        "heatLoad": 273000,
+        "hotspots": 12,
+        "tempVariation": 8,
+        "airflow": "turbulent",
+        "requiredCFM": 24000,
+        "hvacTons": 22.75
+      },
+      "ledAnalysis": {
+        "heatLoad": 175680,
+        "hotspots": 0,
+        "tempVariation": 3,
+        "airflow": "laminar",
+        "requiredCFM": 15000,
+        "hvacTons": 14.64,
+        "heatReduction": 35.6
+      },
+      "airflowPattern": {
+        "inlets": 8,
+        "exhausts": 4,
+        "circulationFans": 12,
+        "airChangesPerHour": 60,
+        "velocity": 200
+      }
+    },
+    "electrical": {
+      "existing": {
+        "service": "480V 3-Phase 600A",
+        "panels": 2,
+        "circuits": 20,
+        "loadPerCircuit": 4400,
+        "totalLoad": 88000,
+        "powerFactor": 0.85,
+        "thd": 25
+      },
+      "proposed": {
+        "service": "480V 3-Phase 600A",
+        "panels": 2,
+        "circuits": 16,
+        "loadPerCircuit": 3225,
+        "totalLoad": 51600,
+        "powerFactor": 0.95,
+        "thd": 8,
+        "drivers": "Integrated high-efficiency drivers"
+      },
+      "savings": {
+        "loadReduction": 41.4,
+        "circuitReduction": 4,
+        "improvedPF": 11.8,
+        "thdReduction": 68
+      }
+    },
+    "spectral": {
+      "hps": {
+        "spectrum": "High Pressure Sodium",
+        "peaks": [
+          589,
+          595
+        ],
+        "par": 90,
+        "farRed": 5,
+        "uv": 0,
+        "colorTemp": 2100,
+        "cri": 25
+      },
+      "vypr2": {
+        "spectrum": "PhysioSpec BROAD R4",
+        "peaks": [
+          450,
+          660,
+          730
+        ],
+        "par": 95,
+        "farRed": 8,
+        "uv": 0.5,
+        "colorTemp": 3200,
+        "cri": 85,
+        "distribution": {
+          "blue": 18,
+          "green": 42,
+          "red": 32,
+          "farRed": 8
+        }
+      },
+      "benefits": [
+        "Enhanced photomorphogenesis",
+        "Improved terpene production",
+        "Better canopy penetration",
+        "Increased anthocyanin production",
+        "Optimized photosynthetic efficiency"
+      ]
+    },
+    "cultivation": {
+      "hps": {
+        "avgYield": 50,
+        "quality": "B+",
+        "cycleTime": 63,
+        "cropPerYear": 5.8,
+        "annualYield": 72600,
+        "thcContent": 22,
+        "terpeneProfile": 2.1,
+        "trimLoss": 18
+      },
+      "led": {
+        "avgYield": 65,
+        "quality": "A+",
+        "cycleTime": 60,
+        "cropPerYear": 6.1,
+        "annualYield": 94380,
+        "thcContent": 25,
+        "terpeneProfile": 2.8,
+        "trimLoss": 12,
+        "improvements": {
+          "yield": 30,
+          "quality": 15,
+          "cycleTime": -4.8,
+          "thc": 13.6,
+          "terpenes": 33.3
+        }
+      }
+    }
+  },
+  "financial": {
+    "capitalCosts": {
+      "fixtures": 103840,
+      "installation": 16000,
+      "electrical": 5000,
+      "controls": 8000,
+      "disposal": 2000,
+      "subtotal": 134840,
+      "incentives": {
+        "utilityRebate": 16000,
+        "taxCredit": 40452,
+        "totalIncentives": 56452
+      },
+      "netCost": 78388
+    },
+    "annualSavings": {
+      "energy": 16544,
+      "hvac": 8912,
+      "maintenance": 11500,
+      "labor": 3200,
+      "total": 40156
+    },
+    "revenueIncrease": {
+      "yieldIncrease": 21780,
+      "pricePerGram": 2.5,
+      "qualityPremium": 0.25,
+      "annualRevenue": 59445
+    },
+    "roi": {
+      "simplePayback": 0.98,
+      "npv10Year": 412588,
+      "irr": 122,
+      "totalBenefit10Year": 491128
+    }
+  },
+  "environmental": {
+    "energySavings": {
+      "annual": 364320,
+      "tenYear": 3643200,
+      "co2Reduction": 257.5,
+      "equivalentTo": {
+        "homesForYear": 34,
+        "carsMilesYear": 634615,
+        "treesPlanted": 3373
+      }
+    },
+    "waste": {
+      "hpsBulbsEliminated": 2400,
+      "mercuryPrevented": 480,
+      "landfillReduction": 2.4
+    },
+    "waterSavings": {
+      "reducedEvaporation": 15,
+      "annualGallons": 45000
+    }
+  }
+}

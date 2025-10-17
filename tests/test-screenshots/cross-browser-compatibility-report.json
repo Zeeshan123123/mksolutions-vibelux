@@ -1,0 +1,535 @@
+{
+  "timestamp": "2025-07-26T17:47:44.945Z",
+  "browsers": {
+    "Chromium": {
+      "tests": [
+        {
+          "page": "Professional Design Report",
+          "test": "Basic Loading",
+          "status": "PASSED",
+          "details": "Loaded in 955ms",
+          "metrics": {
+            "loadTime": 955,
+            "title": "Mohave Cannabis Co. | Professional Lighting Design Analysis"
+          }
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "CSS Compatibility",
+          "status": "PASSED",
+          "details": "All modern CSS features supported"
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "JavaScript Compatibility",
+          "status": "PASSED",
+          "details": "All JavaScript features supported"
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "HTML5 Features",
+          "status": "PASSED",
+          "details": "All HTML5 features supported"
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "Event Handling",
+          "status": "PASSED",
+          "details": "All event types handled correctly"
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "Layout Rendering",
+          "status": "PASSED",
+          "details": "Rendered 1280x5064",
+          "metrics": {
+            "hasContent": true,
+            "bodyWidth": 1280,
+            "bodyHeight": 5064,
+            "overflow": "visible",
+            "position": "static",
+            "display": "block",
+            "visibility": "visible",
+            "scrollHeight": 5064,
+            "scrollWidth": 1280
+          }
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "Browser Performance",
+          "status": "PASSED",
+          "details": "Load time: 0ms",
+          "metrics": {
+            "loadTime": 0,
+            "domContentLoaded": 0.09999999403953552,
+            "firstPaint": 340,
+            "firstContentfulPaint": 340,
+            "memoryUsage": {
+              "used": 9.5367431640625,
+              "total": 9.5367431640625,
+              "limit": 2222.0611572265625
+            }
+          }
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "API Compatibility",
+          "status": "PASSED",
+          "details": "All modern APIs supported"
+        },
+        {
+          "page": "Professional Design Report",
+          "test": "User Interaction",
+          "status": "WARNING",
+          "details": "No interactive elements found"
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "Basic Loading",
+          "status": "PASSED",
+          "details": "Loaded in 914ms",
+          "metrics": {
+            "loadTime": 914,
+            "title": "Mohave Cannabis Co. | Comprehensive Technical Analysis Report"
+          }
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "CSS Compatibility",
+          "status": "PASSED",
+          "details": "All modern CSS features supported"
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "JavaScript Compatibility",
+          "status": "PASSED",
+          "details": "All JavaScript features supported"
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "HTML5 Features",
+          "status": "PASSED",
+          "details": "All HTML5 features supported"
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "Event Handling",
+          "status": "PASSED",
+          "details": "All event types handled correctly"
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "Layout Rendering",
+          "status": "PASSED",
+          "details": "Rendered 1280x1857",
+          "metrics": {
+            "hasContent": true,
+            "bodyWidth": 1280,
+            "bodyHeight": 1857,
+            "overflow": "visible",
+            "position": "static",
+            "display": "block",
+            "visibility": "visible",
+            "scrollHeight": 1857,
+            "scrollWidth": 1280
+          }
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "Browser Performance",
+          "status": "PASSED",
+          "details": "Load time: 0ms",
+          "metrics": {
+            "loadTime": 0,
+            "domContentLoaded": 0,
+            "firstPaint": 180,
+            "firstContentfulPaint": 180,
+            "memoryUsage": {
+              "used": 9.5367431640625,
+              "total": 9.5367431640625,
+              "limit": 2222.0611572265625
+            }
+          }
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "API Compatibility",
+          "status": "PASSED",
+          "details": "All modern APIs supported"
+        },
+        {
+          "page": "Comprehensive Technical Report",
+          "test": "User Interaction",
+          "status": "WARNING",
+          "details": "No interactive elements found"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "Basic Loading",
+          "status": "PASSED",
+          "details": "Loaded in 644ms",
+          "metrics": {
+            "loadTime": 644,
+            "title": "Mohave Cannabis Co. - Complete Facility 1:1 HPS to VYPR 2p Analysis"
+          }
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "CSS Compatibility",
+          "status": "PASSED",
+          "details": "All modern CSS features supported"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "JavaScript Compatibility",
+          "status": "PASSED",
+          "details": "All JavaScript features supported"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "HTML5 Features",
+          "status": "PASSED",
+          "details": "All HTML5 features supported"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "WebGL Compatibility",
+          "status": "FAILED",
+          "details": "WebGL not supported"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "Event Handling",
+          "status": "PASSED",
+          "details": "All event types handled correctly"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "Layout Rendering",
+          "status": "PASSED",
+          "details": "Rendered 1280x734",
+          "metrics": {
+            "hasContent": true,
+            "bodyWidth": 1280,
+            "bodyHeight": 734,
+            "overflow": "hidden auto",
+            "position": "static",
+            "display": "block",
+            "visibility": "visible",
+            "scrollHeight": 734,
+            "scrollWidth": 1280
+          }
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "Browser Performance",
+          "status": "PASSED",
+          "details": "Load time: 196ms",
+          "metrics": {
+            "loadTime": 195.5,
+            "domContentLoaded": 1.6000000089406967,
+            "firstPaint": 304,
+            "firstContentfulPaint": 304,
+            "memoryUsage": {
+              "used": 9.5367431640625,
+              "total": 11.348724365234375,
+              "limit": 2222.0611572265625
+            }
+          }
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "API Compatibility",
+          "status": "PASSED",
+          "details": "All modern APIs supported"
+        },
+        {
+          "page": "3D Facility Visualization",
+          "test": "User Interaction",
+          "status": "PASSED",
+          "details": "All 5 interactions working"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "Basic Loading",
+          "status": "PASSED",
+          "details": "Loaded in 706ms",
+          "metrics": {
+            "loadTime": 706,
+            "title": "Mohave Cannabis Co. - Enhanced 3D Professional Analysis (FINAL FIX)"
+          }
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "CSS Compatibility",
+          "status": "PASSED",
+          "details": "All modern CSS features supported"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "JavaScript Compatibility",
+          "status": "PASSED",
+          "details": "All JavaScript features supported"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "HTML5 Features",
+          "status": "PASSED",
+          "details": "All HTML5 features supported"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "WebGL Compatibility",
+          "status": "FAILED",
+          "details": "WebGL not supported"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "Event Handling",
+          "status": "PASSED",
+          "details": "All event types handled correctly"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "Layout Rendering",
+          "status": "PASSED",
+          "details": "Rendered 1280x720",
+          "metrics": {
+            "hasContent": true,
+            "bodyWidth": 1280,
+            "bodyHeight": 720,
+            "overflow": "hidden",
+            "position": "static",
+            "display": "block",
+            "visibility": "visible",
+            "scrollHeight": 720,
+            "scrollWidth": 1280
+          }
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "Browser Performance",
+          "status": "PASSED",
+          "details": "Load time: 67ms",
+          "metrics": {
+            "loadTime": 67,
+            "domContentLoaded": 0.10000000894069672,
+            "firstPaint": 368,
+            "firstContentfulPaint": 368,
+            "memoryUsage": {
+              "used": 9.5367431640625,
+              "total": 9.5367431640625,
+              "limit": 2222.0611572265625
+            }
+          }
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "API Compatibility",
+          "status": "PASSED",
+          "details": "All modern APIs supported"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "User Interaction",
+          "status": "PASSED",
+          "details": "All 5 interactions working"
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "Basic Loading",
+          "status": "PASSED",
+          "details": "Loaded in 856ms",
+          "metrics": {
+            "loadTime": 856,
+            "title": "Vibelux Lighting Design | Report Builder"
+          }
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "CSS Compatibility",
+          "status": "PASSED",
+          "details": "All modern CSS features supported"
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "JavaScript Compatibility",
+          "status": "PASSED",
+          "details": "All JavaScript features supported"
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "HTML5 Features",
+          "status": "PASSED",
+          "details": "All HTML5 features supported"
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "Event Handling",
+          "status": "PASSED",
+          "details": "All event types handled correctly"
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "Layout Rendering",
+          "status": "PASSED",
+          "details": "Rendered 1280x720",
+          "metrics": {
+            "hasContent": true,
+            "bodyWidth": 1280,
+            "bodyHeight": 720,
+            "overflow": "visible",
+            "position": "static",
+            "display": "block",
+            "visibility": "visible",
+            "scrollHeight": 720,
+            "scrollWidth": 1280
+          }
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "Browser Performance",
+          "status": "PASSED",
+          "details": "Load time: 3ms",
+          "metrics": {
+            "loadTime": 3.4000000059604645,
+            "domContentLoaded": 0,
+            "firstPaint": 200,
+            "firstContentfulPaint": 200,
+            "memoryUsage": {
+              "used": 9.5367431640625,
+              "total": 9.5367431640625,
+              "limit": 2222.0611572265625
+            }
+          }
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "API Compatibility",
+          "status": "PASSED",
+          "details": "All modern APIs supported"
+        },
+        {
+          "page": "White Label Report Builder",
+          "test": "User Interaction",
+          "status": "WARNING",
+          "details": "5/8 interactions working"
+        }
+      ],
+      "summary": {
+        "passed": 42,
+        "failed": 2,
+        "warnings": 3
+      },
+      "features": {
+        "css": {
+          "issues": [],
+          "gridSupport": true,
+          "flexSupport": true,
+          "customPropSupport": true,
+          "backdropSupport": true,
+          "transformSupport": true
+        },
+        "javascript": {
+          "arrowFunctions": true,
+          "asyncAwait": true,
+          "destructuring": true,
+          "templateLiterals": true,
+          "classes": true,
+          "fetch": true,
+          "promises": true,
+          "localStorage": true,
+          "sessionStorage": true,
+          "webGL": true,
+          "requestAnimationFrame": true
+        },
+        "html5": {
+          "rangeInput": true,
+          "dateInput": true,
+          "colorInput": true,
+          "canvas": true,
+          "svg": true,
+          "audio": true,
+          "video": true,
+          "geolocation": true,
+          "fileAPI": true,
+          "dragDrop": true,
+          "websockets": true,
+          "workers": true,
+          "indexedDB": true
+        },
+        "apis": {
+          "intersectionObserver": true,
+          "mutationObserver": true,
+          "resizeObserver": true,
+          "requestIdleCallback": true,
+          "customElements": true,
+          "shadowDOM": true,
+          "modules": true,
+          "serviceWorker": true,
+          "webAssembly": true,
+          "clipboard": true
+        }
+      },
+      "issues": []
+    },
+    "Firefox": {
+      "tests": [],
+      "summary": {
+        "passed": 0,
+        "failed": 0,
+        "warnings": 0
+      },
+      "features": {},
+      "issues": [
+        {
+          "type": "BROWSER_LAUNCH_FAILED",
+          "message": "browserType.launch: Executable doesn't exist at /Users/blakelange/Library/Caches/ms-playwright/firefox-1489/firefox/Nightly.app/Contents/MacOS/firefox\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+        }
+      ]
+    },
+    "WebKit": {
+      "tests": [],
+      "summary": {
+        "passed": 0,
+        "failed": 0,
+        "warnings": 0
+      },
+      "features": {},
+      "issues": [
+        {
+          "type": "BROWSER_LAUNCH_FAILED",
+          "message": "browserType.launch: Executable doesn't exist at /Users/blakelange/Library/Caches/ms-playwright/webkit-2191/pw_run.sh\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "totalTests": 47,
+    "passed": 42,
+    "failed": 2,
+    "warnings": 3,
+    "compatibility": "GOOD"
+  },
+  "recommendations": [],
+  "analysis": {
+    "compatibilityScore": 89.36170212765957,
+    "commonIssues": [],
+    "browserSpecificIssues": {
+      "Chromium": [
+        {
+          "page": "3D Facility Visualization",
+          "test": "WebGL Compatibility",
+          "status": "FAILED",
+          "details": "WebGL not supported"
+        },
+        {
+          "page": "Enhanced 3D Professional Analysis",
+          "test": "WebGL Compatibility",
+          "status": "FAILED",
+          "details": "WebGL not supported"
+        }
+      ]
+    }
+  }
+}

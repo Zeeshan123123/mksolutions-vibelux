@@ -1,0 +1,29 @@
+
+FINANCIAL ANALYSIS
+Mohave Cannabis Co. - Lighting Upgrade ROI
+
+CAPITAL INVESTMENT
+LED Fixtures (70 units): $119,805
+Installation Labor: $24,937.5
+Electrical Infrastructure: $18,750
+─────────────────────────────────────────
+TOTAL INVESTMENT: $163,493
+
+OPERATIONAL SAVINGS (ANNUAL)
+Energy Cost Reduction: $13,061
+Maintenance Savings: $3,500
+HVAC Load Reduction: $3,265
+─────────────────────────────────────────
+TOTAL ANNUAL SAVINGS: $16,326
+
+RETURN ON INVESTMENT
+Simple Payback: 12.5 years
+10-Year NPV: $-32,881
+Internal Rate of Return: 35.8%
+
+ADDITIONAL BENEFITS (NOT QUANTIFIED)
+• Improved crop quality and yield
+• Better spectral control for different growth phases
+• Reduced heat stress on plants
+• Longer fixture lifespan (50,000+ hours)
+• Utility rebates may be available

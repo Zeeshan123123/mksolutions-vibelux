@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="792" height="612" viewBox="0 0 792 612" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="396" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold">VibeLux Subscription Tier Flow</text>
+  
+  <!-- Entry Point -->
+  <circle cx="396" cy="80" r="20" fill="#10b981" stroke="#065f46" stroke-width="2"/>
+  <text x="396" y="86" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Start</text>
+  
+  <!-- Initial Decision -->
+  <path d="M 396 100 L 396 130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="296" y="130" width="200" height="60" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="396" y="155" text-anchor="middle" font-size="14" font-weight="bold">User Visits VibeLux</text>
+  <text x="396" y="175" text-anchor="middle" font-size="12">New or Existing User?</text>
+  
+  <!-- Branch 1: Free/Energy Savings Path -->
+  <path d="M 296 160 L 150 160 L 150 220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="200" y="155" font-size="12" fill="#333">Free Path</text>
+  
+  <rect x="50" y="220" width="200" height="80" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="150" y="245" text-anchor="middle" font-size="14" font-weight="bold">Energy Savings Program</text>
+  <text x="150" y="265" text-anchor="middle" font-size="11">• Free Forever</text>
+  <text x="150" y="280" text-anchor="middle" font-size="11">• 10% Revenue Share</text>
+  <text x="150" y="295" text-anchor="middle" font-size="11">• Basic Features</text>
+  
+  <!-- Branch 2: Paid Subscription Path -->
+  <path d="M 496 160 L 640 160 L 640 220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="550" y="155" font-size="12" fill="#333">Paid Path</text>
+  
+  <!-- Subscription Tiers -->
+  <rect x="540" y="220" width="200" height="60" rx="5" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="640" y="245" text-anchor="middle" font-size="14" font-weight="bold">Choose Subscription Tier</text>
+  <text x="640" y="265" text-anchor="middle" font-size="12">Pro, Business, or Enterprise</text>
+  
+  <!-- Tier Options -->
+  <path d="M 640 280 L 640 320" stroke="#333" stroke-width="2"/>
+  
+  <!-- Professional Tier -->
+  <path d="M 640 320 L 480 320 L 480 350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="380" y="350" width="200" height="70" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="480" y="370" text-anchor="middle" font-size="13" font-weight="bold">Professional ($49/mo)</text>
+  <text x="480" y="387" text-anchor="middle" font-size="11">• Design Tools</text>
+  <text x="480" y="402" text-anchor="middle" font-size="11">• 50 Projects</text>
+  <text x="480" y="417" text-anchor="middle" font-size="11">• Basic Support</text>
+  
+  <!-- Business Tier -->
+  <path d="M 640 320 L 640 350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="540" y="350" width="200" height="70" rx="5" fill="#ddd6fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="640" y="370" text-anchor="middle" font-size="13" font-weight="bold">Business ($149/mo)</text>
+  <text x="640" y="387" text-anchor="middle" font-size="11">• All Pro Features</text>
+  <text x="640" y="402" text-anchor="middle" font-size="11">• Unlimited Projects</text>
+  <text x="640" y="417" text-anchor="middle" font-size="11">• Priority Support</text>
+  
+  <!-- Enterprise Tier -->
+  <path d="M 640 320 L 800 320 L 800 350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <rect x="700" y="350" width="200" height="70" rx="5" fill="#fecaca" stroke="#ef4444" stroke-width="2" transform="translate(-200, 0)"/>
+  <text x="600" y="370" text-anchor="middle" font-size="13" font-weight="bold" transform="translate(200, 0)">Enterprise (Custom)</text>
+  <text x="600" y="387" text-anchor="middle" font-size="11" transform="translate(200, 0)">• All Features</text>
+  <text x="600" y="402" text-anchor="middle" font-size="11" transform="translate(200, 0)">• Custom Integration</text>
+  <text x="600" y="417" text-anchor="middle" font-size="11" transform="translate(200, 0)">• Dedicated Support</text>
+  
+  <!-- Feature Access Decision -->
+  <path d="M 150 300 L 150 450 L 396 450" stroke="#333" stroke-width="2"/>
+  <path d="M 480 420 L 480 450 L 396 450" stroke="#333" stroke-width="2"/>
+  <path d="M 640 420 L 640 450 L 396 450" stroke="#333" stroke-width="2"/>
+  <path d="M 800 420 L 800 450 L 396 450" stroke="#333" stroke-width="2"/>
+  
+  <path d="M 396 450 L 396 470" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Feature Gate -->
+  <path d="M 396 470 L 346 520 L 396 570 L 446 520 Z" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="396" y="525" text-anchor="middle" font-size="12">Feature</text>
+  <text x="396" y="540" text-anchor="middle" font-size="12">Access?</text>
+  
+  <!-- Demo Mode Path -->
+  <path d="M 346 520 L 200 520" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="273" y="515" font-size="11" fill="#333">Limited/Demo</text>
+  
+  <rect x="50" y="490" width="150" height="60" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="125" y="515" text-anchor="middle" font-size="12" font-weight="bold">Demo Mode</text>
+  <text x="125" y="535" text-anchor="middle" font-size="11">Limited Features</text>
+  
+  <!-- Full Access Path -->
+  <path d="M 446 520 L 590 520" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="515" font-size="11" fill="#333">Full Access</text>
+  
+  <rect x="590" y="490" width="150" height="60" rx="5" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="665" y="515" text-anchor="middle" font-size="12" font-weight="bold">Full Features</text>
+  <text x="665" y="535" text-anchor="middle" font-size="11">All Tier Features</text>
+  
+  <!-- Email Flow -->
+  <rect x="296" y="580" width="200" height="40" rx="5" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="396" y="605" text-anchor="middle" font-size="12" font-weight="bold">Email Notifications</text>
+  
+  <!-- Legend -->
+  <text x="30" y="590" font-size="14" font-weight="bold">Key Features by Tier:</text>
+  <text x="30" y="605" font-size="11">• Free: Basic design, 1 project, energy calculator</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

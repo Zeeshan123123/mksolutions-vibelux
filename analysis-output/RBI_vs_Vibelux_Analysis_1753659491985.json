@@ -1,0 +1,312 @@
+{
+  "rbiAnalysis": {
+    "projectInfo": {
+      "client": "Lange Group",
+      "address": "16360 North 600th Street, Brochton, Illinois 61617",
+      "supplier": "Rough Brothers",
+      "supplierAddress": "5513 Vine Street, Cincinnati, Ohio 45217",
+      "jobNumber": "RBI #14041",
+      "totalSheets": 17,
+      "drawingDate": "2014-09-22",
+      "projectType": "Commercial Greenhouse Facility"
+    },
+    "drawingSet": [
+      {
+        "number": "0.0",
+        "title": "Cover Sheet",
+        "category": "administrative",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.0",
+        "title": "Floor/Equipment Plan",
+        "category": "layout",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.0A",
+        "title": "Grow Light Layout Plan",
+        "category": "electrical",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.0B",
+        "title": "Bench Layout Plan",
+        "category": "equipment",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.0C",
+        "title": "Headhouse Layout Plan",
+        "category": "equipment",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.0D",
+        "title": "Post Layout Plan",
+        "category": "structural",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.02",
+        "title": "Framing Plan",
+        "category": "structural",
+        "quality": "excellent"
+      },
+      {
+        "number": "1.1",
+        "title": "Bracing Details",
+        "category": "structural",
+        "quality": "excellent"
+      },
+      {
+        "number": "2.0",
+        "title": "Gable Elevations",
+        "category": "elevations",
+        "quality": "excellent"
+      },
+      {
+        "number": "2.1",
+        "title": "Gable Partition Elevation",
+        "category": "elevations",
+        "quality": "excellent"
+      },
+      {
+        "number": "3.0",
+        "title": "East Sidewall Elevations",
+        "category": "elevations",
+        "quality": "excellent"
+      },
+      {
+        "number": "3.1",
+        "title": "West Sidewall Partition Elevation",
+        "category": "elevations",
+        "quality": "excellent"
+      },
+      {
+        "number": "4.0",
+        "title": "Bar Joist Sections",
+        "category": "structural",
+        "quality": "excellent"
+      },
+      {
+        "number": "5.0",
+        "title": "Roof Glazing Plan and Details",
+        "category": "details",
+        "quality": "excellent"
+      },
+      {
+        "number": "6.0",
+        "title": "Equipment Cross Sections",
+        "category": "equipment",
+        "quality": "excellent"
+      },
+      {
+        "number": "8.0",
+        "title": "Shade System Layout",
+        "category": "systems",
+        "quality": "excellent"
+      },
+      {
+        "number": "9.0",
+        "title": "Irrigation Schematic",
+        "category": "irrigation",
+        "quality": "excellent"
+      }
+    ],
+    "professionalFeatures": {
+      "titleBlock": {
+        "companyLogo": true,
+        "professionalBranding": true,
+        "projectInformation": true,
+        "drawingInformation": true,
+        "revisionTracking": true,
+        "engineeringNotes": true,
+        "stampArea": true,
+        "contactInformation": true
+      },
+      "drawingStandards": {
+        "lineWeights": "Multiple professional line weights (0.002\" to 0.024\")",
+        "dimensioning": "Complete dimensional control with tolerances",
+        "annotations": "Comprehensive notes and specifications",
+        "symbols": "Standard architectural/engineering symbols",
+        "scaling": "Consistent and appropriate scales",
+        "layouts": "Dense, information-rich technical drawings",
+        "detailing": "Construction-ready details and sections",
+        "schedules": "Complete equipment and material schedules"
+      },
+      "technicalQuality": {
+        "structuralDetails": "Complete structural engineering with connections",
+        "electricalPlans": "Detailed lighting layouts with fixture schedules",
+        "equipmentPlans": "Comprehensive equipment placement and specifications",
+        "irrigationDesign": "Professional irrigation system schematics",
+        "glazingDetails": "Detailed glazing specifications and installation",
+        "foundationPlans": "Complete foundation design with anchor details",
+        "materialSpecs": "Detailed material specifications and callouts",
+        "buildableDetails": "Construction-ready detail drawings"
+      }
+    },
+    "greenhouseSpecifications": {
+      "overallDimensions": {
+        "totalLength": "853 feet (5 houses)",
+        "totalWidth": "157.5 feet",
+        "individualHouse": "170.6' x 31.5'",
+        "gutterHeight": "18 feet",
+        "ridgeHeight": "24 feet approximate"
+      },
+      "structuralSystem": {
+        "frameType": "Aluminum greenhouse structure",
+        "foundationType": "Concrete with anchor bolts",
+        "glazingType": "Tempered glass panels",
+        "structuralBays": "31.5' clear span typical",
+        "postSpacing": "21' on center typical"
+      },
+      "equipmentSystems": {
+        "growLights": {
+          "total": "Approximately 1700+ fixtures",
+          "type": "High-pressure sodium (HPS)",
+          "mounting": "Overhead suspension system",
+          "layout": "Grid pattern with uniform spacing"
+        },
+        "benches": {
+          "type": "Rolling bench system",
+          "size": "4' x 16' typical",
+          "material": "Aluminum construction",
+          "quantity": "Multiple per house"
+        },
+        "irrigation": {
+          "type": "Overhead and sub-irrigation systems",
+          "control": "Zone-based automated control",
+          "distribution": "Motorized boom systems"
+        },
+        "ventilation": {
+          "roofVents": "Continuous roof ventilation",
+          "sidewallVents": "Automated sidewall louvers",
+          "fanSystems": "HAF circulation fans"
+        }
+      }
+    }
+  },
+  "vibeluxCapabilities": {
+    "currentStrengths": [
+      "Automated design generation and optimization",
+      "Integrated lighting calculations and analysis",
+      "3D visualization and modeling capabilities",
+      "Energy cost analysis and ROI calculations",
+      "Multi-zone climate control design",
+      "Equipment placement optimization",
+      "Digital workflow and file generation",
+      "Real-time design iteration",
+      "Advanced horticultural calculations (PPFD, DLI)",
+      "Integrated electrical load calculations"
+    ],
+    "drawingCapabilities": {
+      "titleBlocks": {
+        "current": "Basic title blocks with project info",
+        "needed": "Professional branding and engineering stamps",
+        "score": 7
+      },
+      "planDrawings": {
+        "current": "Good layout and equipment plans",
+        "needed": "More detailed construction annotations",
+        "score": 8
+      },
+      "elevations": {
+        "current": "Basic elevation views",
+        "needed": "Detailed material callouts and connections",
+        "score": 6
+      },
+      "details": {
+        "current": "Limited construction details",
+        "needed": "Comprehensive detail library",
+        "score": 5
+      },
+      "schedules": {
+        "current": "Basic equipment schedules",
+        "needed": "Complete material and specification schedules",
+        "score": 7
+      },
+      "annotations": {
+        "current": "Basic dimensional and notes",
+        "needed": "Professional specification writing",
+        "score": 6
+      }
+    },
+    "technicalGaps": [
+      "Professional engineering stamp integration",
+      "Comprehensive construction detail library",
+      "Code compliance annotation system",
+      "Professional material specification database",
+      "Advanced dimensioning and tolerance control",
+      "Buildable construction documentation standards",
+      "Professional quality control and checking systems",
+      "Integration with standard CAD practices"
+    ],
+    "uniqueAdvantages": [
+      "Automated design optimization algorithms",
+      "Real-time energy and cost calculations",
+      "Integrated environmental modeling",
+      "Advanced lighting design calculations",
+      "Digital workflow automation",
+      "Cloud-based collaboration tools",
+      "AI-assisted design recommendations",
+      "Rapid design iteration capabilities"
+    ]
+  },
+  "scores": {
+    "rbi": {
+      "professional": 95,
+      "technical": 95,
+      "buildable": 95,
+      "complete": 95,
+      "overall": 95
+    },
+    "vibelux": {
+      "professional": 65,
+      "technical": 85,
+      "buildable": 65,
+      "complete": 75,
+      "automation": 95,
+      "overall": 77
+    }
+  },
+  "roadmap": {
+    "phase1": {
+      "title": "IMMEDIATE IMPROVEMENTS (0-3 months)",
+      "items": [
+        "Enhanced title block system with professional branding",
+        "Expanded construction detail library",
+        "Professional line weight and font standardization",
+        "Improved dimensioning and annotation tools",
+        "Basic code compliance note templates"
+      ]
+    },
+    "phase2": {
+      "title": "MEDIUM-TERM ENHANCEMENTS (3-6 months)",
+      "items": [
+        "Professional engineering stamp integration",
+        "Comprehensive material specification database",
+        "Advanced construction detail generation",
+        "Quality control and checking systems",
+        "CAD standard compliance tools"
+      ]
+    },
+    "phase3": {
+      "title": "ADVANCED FEATURES (6-12 months)",
+      "items": [
+        "AI-powered detail generation",
+        "Automated code compliance checking",
+        "Professional peer review workflows",
+        "Integration with professional CAD systems",
+        "Advanced building information modeling (BIM)"
+      ]
+    }
+  },
+  "conclusion": {
+    "canRecreateRBI": true,
+    "currentGap": 18,
+    "timeToEquivalence": "6-12 months with focused development",
+    "competitiveAdvantage": "Superior automation + professional quality"
+  },
+  "generatedAt": "2025-07-27T23:38:11.980Z"
+}

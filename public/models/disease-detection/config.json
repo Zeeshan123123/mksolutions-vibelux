@@ -1,0 +1,62 @@
+{
+  "inputFeatures": [
+    "temperature",
+    "humidity",
+    "ppfd",
+    "co2",
+    "vpd",
+    "water_stress",
+    "crop_lettuce",
+    "crop_tomato",
+    "crop_cucumber",
+    "crop_strawberry",
+    "crop_basil",
+    "crop_cannabis"
+  ],
+  "preprocessing": {
+    "normalization": {
+      "temperature": {
+        "mean": 24,
+        "std": 3.5
+      },
+      "humidity": {
+        "mean": 65,
+        "std": 10
+      },
+      "ppfd": {
+        "mean": 400,
+        "std": 150
+      },
+      "co2": {
+        "mean": 800,
+        "std": 200
+      },
+      "vpd": {
+        "mean": 1.2,
+        "std": 0.3
+      },
+      "water_stress": {
+        "mean": 0.2,
+        "std": 0.2
+      }
+    }
+  },
+  "diseases": [
+    "powdery_mildew",
+    "botrytis",
+    "spider_mites",
+    "aphids",
+    "root_rot",
+    "thrips"
+  ],
+  "thresholds": {
+    "powdery_mildew": 0.3,
+    "botrytis": 0.25,
+    "spider_mites": 0.35,
+    "aphids": 0.4,
+    "root_rot": 0.2,
+    "thrips": 0.45
+  },
+  "modelAccuracy": 0.87,
+  "trainingSamples": 8000
+}

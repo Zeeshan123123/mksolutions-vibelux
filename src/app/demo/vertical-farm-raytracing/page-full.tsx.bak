@@ -1,0 +1,854 @@
+'use client';
+
+import * as React from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
+import { 
+  Layers, 
+  Sun, 
+  Activity, 
+  BarChart3, 
+  Zap, 
+  Leaf, 
+  Droplets,
+  Thermometer,
+  Eye,
+  PlayCircle,
+  PauseCircle,
+  Download,
+  Info
+} from 'lucide-react';
+import { MultiLayerCanopyRayTracer, CanopyLayer, LeafOpticalProperties, SpectralPowerDistribution } from '@/lib/photonics/multi-layer-canopy-raytracer';
+import { vec3 } from 'gl-matrix';
+
+interface LayerConfig {
+  id: string;
+  name: string;
+  height: number;
+  thickness: number;
+  lai: number;
+  leafAngleType: 'spherical' | 'planophile' | 'erectophile' | 'plagiophile';
+  growthStage: 'seedling' | 'vegetative' | 'flowering' | 'mature';
+  species: string;
+}
+
+interface LightConfig {
+  position: [number, number, number];
+  intensity: number;
+  spectrum: 'fullSpectrum' | 'redBlue' | 'farRed' | 'custom';
+  beamAngle: number;
+}
+
+export default function VerticalFarmRayTracingDemo() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const rayTracerRef = useRef<MultiLayerCanopyRayTracer | null>(null);
+  const animationRef = useRef<number | null>(null);
+  
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [currentFrame, setCurrentFrame] = useState(0);
+  const [results, setResults] = useState<any>(null);
+  
+  // Room configuration
+  const [roomWidth, setRoomWidth] = useState(10); // meters
+  const [roomLength, setRoomLength] = useState(20);
+  const [roomHeight, setRoomHeight] = useState(8);
+  const [wallReflectance, setWallReflectance] = useState(0.7);
+  
+  // Layer configuration
+  const [layers, setLayers] = useState<LayerConfig[]>([
+    {
+      id: 'top',
+      name: 'Top Canopy',
+      height: 6,
+      thickness: 0.8,
+      lai: 3.5,
+      leafAngleType: 'planophile',
+      growthStage: 'mature',
+      species: 'Lettuce'
+    },
+    {
+      id: 'middle',
+      name: 'Middle Layer',
+      height: 4,
+      thickness: 0.6,
+      lai: 2.8,
+      leafAngleType: 'spherical',
+      growthStage: 'vegetative',
+      species: 'Basil'
+    },
+    {
+      id: 'bottom',
+      name: 'Bottom Layer',
+      height: 2,
+      thickness: 0.5,
+      lai: 2.0,
+      leafAngleType: 'erectophile',
+      growthStage: 'seedling',
+      species: 'Microgreens'
+    }
+  ]);
+  
+  // Light configuration
+  const [lights, setLights] = useState<LightConfig[]>([
+    { position: [5, 10, 7.5], intensity: 2000, spectrum: 'fullSpectrum', beamAngle: 120 },
+    { position: [5, 5, 7.5], intensity: 1500, spectrum: 'redBlue', beamAngle: 90 }
+  ]);
+  
+  // Ray tracing settings
+  const [raysPerPixel, setRaysPerPixel] = useState(1000);
+  const [maxBounces, setMaxBounces] = useState(10);
+  const [enableFluorescence, setEnableFluorescence] = useState(true);
+  const [enableScattering, setEnableScattering] = useState(true);
+  const [gridResolution, setGridResolution] = useState(0.2);
+
+  useEffect(() => {
+    initializeRayTracer();
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
+  const initializeRayTracer = () => {
+    rayTracerRef.current = new MultiLayerCanopyRayTracer({
+      raysPerPixel,
+      maxBounces,
+      wavelengthSamples: 31,
+      enableVolumetricScattering: enableScattering,
+      enableFluorescence,
+      convergenceThreshold: 0.01
+    });
+    
+    // Set room dimensions
+    rayTracerRef.current.setRoom(roomWidth, roomLength, roomHeight, wallReflectance);
+  };
+
+  const createLeafOpticalProperties = (stage: string): LeafOpticalProperties => {
+    // Generate realistic wavelength-dependent properties
+    const reflectance = new Array(401);
+    const transmittance = new Array(401);
+    const absorptance = new Array(401);
+    
+    for (let i = 0; i < 401; i++) {
+      const wavelength = 380 + i;
+      
+      // Simplified chlorophyll absorption model
+      if (wavelength >= 400 && wavelength <= 500) { // Blue
+        reflectance[i] = 0.05;
+        transmittance[i] = 0.05;
+        absorptance[i] = 0.9;
+      } else if (wavelength >= 500 && wavelength <= 600) { // Green
+        reflectance[i] = 0.15;
+        transmittance[i] = 0.1;
+        absorptance[i] = 0.75;
+      } else if (wavelength >= 600 && wavelength <= 700) { // Red
+        reflectance[i] = 0.05;
+        transmittance[i] = 0.05;
+        absorptance[i] = 0.9;
+      } else { // Far-red
+        reflectance[i] = 0.4;
+        transmittance[i] = 0.4;
+        absorptance[i] = 0.2;
+      }
+    }
+    
+    return {
+      reflectance,
+      transmittance,
+      absorptance,
+      chlorophyllContent: stage === 'mature' ? 45 : stage === 'vegetative' ? 35 : 20,
+      carotenoidContent: stage === 'mature' ? 8 : 5,
+      waterContent: 800,
+      dryMatter: 50
+    };
+  };
+
+  const createSpectralDistribution = (type: string): SpectralPowerDistribution => {
+    const spectrum = new Float32Array(401);
+    
+    switch (type) {
+      case 'fullSpectrum':
+        // Simulate white LED
+        for (let i = 0; i < 401; i++) {
+          const wavelength = 380 + i;
+          if (wavelength >= 400 && wavelength <= 700) {
+            spectrum[i] = 1.0 + 0.2 * Math.sin((wavelength - 400) * 0.02);
+          }
+        }
+        break;
+      case 'redBlue':
+        // Typical horticultural LED
+        for (let i = 0; i < 401; i++) {
+          const wavelength = 380 + i;
+          // Blue peak at 450nm
+          spectrum[i] += Math.exp(-Math.pow(wavelength - 450, 2) / (2 * 20 * 20));
+          // Red peak at 660nm
+          spectrum[i] += 2 * Math.exp(-Math.pow(wavelength - 660, 2) / (2 * 20 * 20));
+        }
+        break;
+      case 'farRed':
+        // Far-red supplemental
+        for (let i = 0; i < 401; i++) {
+          const wavelength = 380 + i;
+          spectrum[i] = Math.exp(-Math.pow(wavelength - 730, 2) / (2 * 30 * 30));
+        }
+        break;
+    }
+    
+    return new SpectralPowerDistribution(spectrum);
+  };
+
+  const runRayTracing = async () => {
+    if (!rayTracerRef.current) return;
+    
+    setIsCalculating(true);
+    setResults(null);
+    
+    try {
+      // Clear previous layers and lights
+      rayTracerRef.current = new MultiLayerCanopyRayTracer({
+        raysPerPixel,
+        maxBounces,
+        wavelengthSamples: 31,
+        enableVolumetricScattering: enableScattering,
+        enableFluorescence,
+        convergenceThreshold: 0.01
+      });
+      
+      rayTracerRef.current.setRoom(roomWidth, roomLength, roomHeight, wallReflectance);
+      
+      // Add layers
+      layers.forEach(layer => {
+        const canopyLayer: CanopyLayer = {
+          id: layer.id,
+          height: layer.height,
+          thickness: layer.thickness,
+          lai: layer.lai,
+          leafAngleDistribution: {
+            type: layer.leafAngleType
+          },
+          leafOpticalProperties: createLeafOpticalProperties(layer.growthStage),
+          plantDensity: 100,
+          growthStage: layer.growthStage,
+          species: layer.species
+        };
+        rayTracerRef.current!.addLayer(canopyLayer);
+      });
+      
+      // Add light sources
+      lights.forEach((light, index) => {
+        rayTracerRef.current!.addLightSource({
+          position: vec3.fromValues(...light.position),
+          spectrum: createSpectralDistribution(light.spectrum),
+          intensity: light.intensity,
+          distribution: 'lambertian',
+          beamAngle: light.beamAngle
+        });
+      });
+      
+      // Run simulation
+      const result = await rayTracerRef.current.trace(gridResolution);
+      setResults(result);
+      
+      // Visualize results
+      visualizeResults(result);
+      
+    } catch (error) {
+      console.error('Ray tracing error:', error);
+    } finally {
+      setIsCalculating(false);
+    }
+  };
+
+  const visualizeResults = (result: any) => {
+    if (!canvasRef.current) return;
+    
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    // Clear canvas
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw room outline
+    const scale = Math.min(canvas.width / roomWidth, canvas.height / roomHeight) * 0.8;
+    const offsetX = (canvas.width - roomWidth * scale) / 2;
+    const offsetY = (canvas.height - roomHeight * scale) / 2;
+    
+    // Draw layers
+    layers.forEach(layer => {
+      const y = offsetY + (roomHeight - layer.height) * scale;
+      const height = layer.thickness * scale;
+      
+      ctx.fillStyle = `rgba(0, 255, 0, 0.2)`;
+      ctx.fillRect(offsetX, y - height/2, roomWidth * scale, height);
+      
+      ctx.strokeStyle = '#0f0';
+      ctx.strokeRect(offsetX, y - height/2, roomWidth * scale, height);
+      
+      // Label
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px monospace';
+      ctx.fillText(layer.name, offsetX + 5, y);
+    });
+    
+    // Draw light sources
+    lights.forEach(light => {
+      const x = offsetX + light.position[0] * scale;
+      const y = offsetY + (roomHeight - light.position[2]) * scale;
+      
+      ctx.fillStyle = '#ff0';
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Draw beam cone
+      const beamRadius = Math.tan(light.beamAngle * Math.PI / 360) * roomHeight * scale;
+      ctx.strokeStyle = 'rgba(255, 255, 0, 0.3)';
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x - beamRadius, offsetY + roomHeight * scale);
+      ctx.lineTo(x + beamRadius, offsetY + roomHeight * scale);
+      ctx.closePath();
+      ctx.stroke();
+    });
+    
+    // Draw PPFD heatmap (simplified)
+    if (result.ppfdByLayer.size > 0) {
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, 'rgba(255, 0, 0, 0.5)');
+      gradient.addColorStop(0.5, 'rgba(255, 255, 0, 0.5)');
+      gradient.addColorStop(1, 'rgba(0, 255, 0, 0.5)');
+      
+      // Overlay gradient on layers
+      ctx.fillStyle = gradient;
+      layers.forEach(layer => {
+        const ppfd = result.ppfdByLayer.get(layer.id) || 0;
+        const normalized = Math.min(ppfd / 1000, 1); // Normalize to 0-1
+        const y = offsetY + (roomHeight - layer.height) * scale;
+        const height = layer.thickness * scale;
+        
+        ctx.globalAlpha = normalized * 0.7;
+        ctx.fillRect(offsetX, y - height/2, roomWidth * scale, height);
+      });
+      ctx.globalAlpha = 1;
+    }
+  };
+
+  const downloadResults = () => {
+    if (!results) return;
+    
+    const data = {
+      timestamp: new Date().toISOString(),
+      configuration: {
+        room: { width: roomWidth, length: roomLength, height: roomHeight, wallReflectance },
+        layers,
+        lights,
+        rayTracingSettings: { raysPerPixel, maxBounces, enableFluorescence, enableScattering }
+      },
+      results: {
+        ppfdByLayer: Object.fromEntries(results.ppfdByLayer),
+        absorptionByLayer: Object.fromEntries(results.absorptionByLayer),
+        uniformityByLayer: Object.fromEntries(results.uniformityByLayer),
+        scatteringContribution: results.scatteringContribution
+      }
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `vertical-farm-raytracing-${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="container mx-auto p-6 max-w-7xl">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Layers className="h-6 w-6" />
+            Multi-Layer Canopy Ray Tracing for Vertical Farms
+          </CardTitle>
+          <CardDescription>
+            Advanced photonics simulation with spectral resolution, fluorescence, and volumetric scattering
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Tabs defaultValue="configuration" className="space-y-4">
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="configuration">Configuration</TabsTrigger>
+              <TabsTrigger value="visualization">Visualization</TabsTrigger>
+              <TabsTrigger value="results">Results</TabsTrigger>
+              <TabsTrigger value="analysis">Analysis</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="configuration" className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Room Configuration */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Room Dimensions</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <Label>Width: {roomWidth}m</Label>
+                      <Slider 
+                        value={[roomWidth]} 
+                        onValueChange={([v]) => setRoomWidth(v)}
+                        min={5} 
+                        max={30} 
+                        step={1}
+                      />
+                    </div>
+                    <div>
+                      <Label>Length: {roomLength}m</Label>
+                      <Slider 
+                        value={[roomLength]} 
+                        onValueChange={([v]) => setRoomLength(v)}
+                        min={10} 
+                        max={50} 
+                        step={1}
+                      />
+                    </div>
+                    <div>
+                      <Label>Height: {roomHeight}m</Label>
+                      <Slider 
+                        value={[roomHeight]} 
+                        onValueChange={([v]) => setRoomHeight(v)}
+                        min={4} 
+                        max={12} 
+                        step={0.5}
+                      />
+                    </div>
+                    <div>
+                      <Label>Wall Reflectance: {(wallReflectance * 100).toFixed(0)}%</Label>
+                      <Slider 
+                        value={[wallReflectance]} 
+                        onValueChange={([v]) => setWallReflectance(v)}
+                        min={0} 
+                        max={1} 
+                        step={0.05}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Ray Tracing Settings */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Ray Tracing Settings</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <Label>Rays per Pixel: {raysPerPixel}</Label>
+                      <Slider 
+                        value={[raysPerPixel]} 
+                        onValueChange={([v]) => setRaysPerPixel(v)}
+                        min={100} 
+                        max={5000} 
+                        step={100}
+                      />
+                    </div>
+                    <div>
+                      <Label>Max Bounces: {maxBounces}</Label>
+                      <Slider 
+                        value={[maxBounces]} 
+                        onValueChange={([v]) => setMaxBounces(v)}
+                        min={1} 
+                        max={20} 
+                        step={1}
+                      />
+                    </div>
+                    <div>
+                      <Label>Grid Resolution: {gridResolution}m</Label>
+                      <Slider 
+                        value={[gridResolution]} 
+                        onValueChange={([v]) => setGridResolution(v)}
+                        min={0.05} 
+                        max={0.5} 
+                        step={0.05}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <input 
+                          type="checkbox" 
+                          checked={enableFluorescence}
+                          onChange={(e) => setEnableFluorescence(e.target.checked)}
+                          className="h-4 w-4"
+                        />
+                        <Label>Enable Chlorophyll Fluorescence</Label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input 
+                          type="checkbox" 
+                          checked={enableScattering}
+                          onChange={(e) => setEnableScattering(e.target.checked)}
+                          className="h-4 w-4"
+                        />
+                        <Label>Enable Volumetric Scattering</Label>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              {/* Layer Configuration */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Canopy Layers</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {layers.map((layer, index) => (
+                      <div key={layer.id} className="p-4 border rounded-lg space-y-3">
+                        <div className="flex items-center justify-between">
+                          <h4 className="font-medium">{layer.name}</h4>
+                          <Badge variant="outline">{layer.species}</Badge>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                          <div>
+                            <Label className="text-xs">Height</Label>
+                            <div>{layer.height}m</div>
+                          </div>
+                          <div>
+                            <Label className="text-xs">Thickness</Label>
+                            <div>{layer.thickness}m</div>
+                          </div>
+                          <div>
+                            <Label className="text-xs">LAI</Label>
+                            <div>{layer.lai}</div>
+                          </div>
+                          <div>
+                            <Label className="text-xs">Leaf Angle</Label>
+                            <div className="capitalize">{layer.leafAngleType}</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="visualization" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Ray Tracing Visualization</CardTitle>
+                  <CardDescription>
+                    Cross-section view of light distribution through canopy layers
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex gap-4 mb-4">
+                    <Button 
+                      onClick={runRayTracing} 
+                      disabled={isCalculating}
+                      className="flex items-center gap-2"
+                    >
+                      {isCalculating ? (
+                        <>
+                          <Activity className="h-4 w-4 animate-spin" />
+                          Calculating...
+                        </>
+                      ) : (
+                        <>
+                          <PlayCircle className="h-4 w-4" />
+                          Run Ray Tracing
+                        </>
+                      )}
+                    </Button>
+                    
+                    {results && (
+                      <Button 
+                        onClick={downloadResults}
+                        variant="outline"
+                        className="flex items-center gap-2"
+                      >
+                        <Download className="h-4 w-4" />
+                        Export Results
+                      </Button>
+                    )}
+                  </div>
+                  
+                  <canvas 
+                    ref={canvasRef}
+                    width={800}
+                    height={600}
+                    className="w-full border rounded-lg bg-black"
+                  />
+                  
+                  <Alert>
+                    <Info className="h-4 w-4" />
+                    <AlertTitle>Visualization Features</AlertTitle>
+                    <AlertDescription>
+                      <ul className="text-sm space-y-1 mt-2">
+                        <li>• Green layers represent canopy positions</li>
+                        <li>• Yellow circles show light source positions</li>
+                        <li>• Cones indicate light beam angles</li>
+                        <li>• Color intensity represents PPFD levels</li>
+                      </ul>
+                    </AlertDescription>
+                  </Alert>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="results" className="space-y-4">
+              {results ? (
+                <div className="grid md:grid-cols-2 gap-4">
+                  {/* PPFD by Layer */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Sun className="h-5 w-5" />
+                        PPFD by Layer
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {layers.map(layer => {
+                          const ppfd = results.ppfdByLayer.get(layer.id) || 0;
+                          return (
+                            <div key={layer.id} className="flex items-center justify-between">
+                              <span className="font-medium">{layer.name}</span>
+                              <div className="text-right">
+                                <div className="text-lg font-bold">{ppfd.toFixed(0)}</div>
+                                <div className="text-xs text-muted-foreground">μmol/m²/s</div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Light Absorption */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Activity className="h-5 w-5" />
+                        PAR Absorption
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {layers.map(layer => {
+                          const absorption = results.absorptionByLayer.get(layer.id);
+                          if (!absorption) return null;
+                          return (
+                            <div key={layer.id} className="space-y-2">
+                              <div className="font-medium">{layer.name}</div>
+                              <div className="grid grid-cols-3 gap-2 text-sm">
+                                <div>
+                                  <div className="text-blue-600 font-medium">{absorption.blue.toFixed(1)}</div>
+                                  <div className="text-xs text-muted-foreground">Blue</div>
+                                </div>
+                                <div>
+                                  <div className="text-red-600 font-medium">{absorption.red.toFixed(1)}</div>
+                                  <div className="text-xs text-muted-foreground">Red</div>
+                                </div>
+                                <div>
+                                  <div className="text-orange-600 font-medium">{absorption.farRed.toFixed(1)}</div>
+                                  <div className="text-xs text-muted-foreground">Far-Red</div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Uniformity Metrics */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <BarChart3 className="h-5 w-5" />
+                        Uniformity Metrics
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {layers.map(layer => {
+                          const uniformity = results.uniformityByLayer.get(layer.id);
+                          if (!uniformity) return null;
+                          return (
+                            <div key={layer.id} className="space-y-2">
+                              <div className="font-medium">{layer.name}</div>
+                              <div className="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                  <div className="flex justify-between">
+                                    <span className="text-muted-foreground">Min/Max:</span>
+                                    <span>{uniformity.min.toFixed(0)}/{uniformity.max.toFixed(0)}</span>
+                                  </div>
+                                  <div className="flex justify-between">
+                                    <span className="text-muted-foreground">Average:</span>
+                                    <span>{uniformity.avg.toFixed(0)}</span>
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="flex justify-between">
+                                    <span className="text-muted-foreground">CV:</span>
+                                    <span>{(uniformity.cv * 100).toFixed(1)}%</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* System Performance */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Zap className="h-5 w-5" />
+                        Ray Tracing Performance
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Total Rays Traced:</span>
+                          <span className="font-medium">
+                            {(raysPerPixel * Math.ceil(roomWidth / gridResolution) * Math.ceil(roomLength / gridResolution)).toLocaleString()}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Scattering Contribution:</span>
+                          <span className="font-medium">{(results.scatteringContribution * 100).toFixed(1)}%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Grid Points:</span>
+                          <span className="font-medium">
+                            {Math.ceil(roomWidth / gridResolution)} × {Math.ceil(roomLength / gridResolution)}
+                          </span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ) : (
+                <Alert>
+                  <Info className="h-4 w-4" />
+                  <AlertTitle>No Results Yet</AlertTitle>
+                  <AlertDescription>
+                    Configure your vertical farm setup and run the ray tracing simulation to see results.
+                  </AlertDescription>
+                </Alert>
+              )}
+            </TabsContent>
+            
+            <TabsContent value="analysis" className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Photonics Features</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <Leaf className="h-5 w-5 text-green-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium">Beer-Lambert Law</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Light extinction through canopy layers based on LAI and leaf angle distribution
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Sun className="h-5 w-5 text-yellow-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium">Spectral Resolution</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Full 380-780nm spectrum with 1nm resolution for accurate PAR calculations
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Activity className="h-5 w-5 text-red-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium">Chlorophyll Fluorescence</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Models re-emission at 685nm and 740nm peaks from absorbed blue/red light
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Eye className="h-5 w-5 text-blue-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium">Volumetric Scattering</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Monte Carlo simulation of light scattering between and within layers
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Optimization Insights</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {results ? (
+                      <div className="space-y-3">
+                        <Alert>
+                          <Thermometer className="h-4 w-4" />
+                          <AlertDescription>
+                            {(() => {
+                              const topPPFD = results.ppfdByLayer.get('top') || 0;
+                              const bottomPPFD = results.ppfdByLayer.get('bottom') || 0;
+                              const ratio = bottomPPFD / topPPFD;
+                              
+                              if (ratio < 0.3) {
+                                return "Consider increasing light intensity or adding inter-canopy lighting for better penetration.";
+                              } else if (ratio > 0.7) {
+                                return "Excellent light penetration! Current setup provides good uniformity across layers.";
+                              } else {
+                                return "Moderate light penetration. Bottom layers receive adequate but not optimal light.";
+                              }
+                            })()}
+                          </AlertDescription>
+                        </Alert>
+                        
+                        <Alert>
+                          <Droplets className="h-4 w-4" />
+                          <AlertDescription>
+                            {enableFluorescence 
+                              ? "Chlorophyll fluorescence is contributing to far-red enrichment in lower canopy layers."
+                              : "Enable fluorescence modeling to account for far-red enrichment effects."}
+                          </AlertDescription>
+                        </Alert>
+                      </div>
+                    ) : (
+                      <p className="text-sm text-muted-foreground">
+                        Run the simulation to get optimization insights for your vertical farm configuration.
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

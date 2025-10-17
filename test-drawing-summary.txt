@@ -1,0 +1,109 @@
+🎨 VIBELUX DRAWING TYPE SYSTEM SUMMARY
+
+=== DESIGN DRAWINGS (For Planning & Approvals) ===
+
+📐 CONCEPTUAL (6 sheets)
+   • Cover Sheet & Project Overview  
+   • Site Plan
+   • Overall Floor Plan
+   • Electrical System Overview
+   • HVAC System Concept
+   • Irrigation System Layout
+   Purpose: Initial planning and client presentations
+
+📐 SCHEMATIC (9 sheets)
+   • Cover Sheet
+   • Site Plan with Utilities
+   • Floor Plans by Zone
+   • Electrical Single Line Diagram
+   • Panel Schedule Summary
+   • HVAC Equipment Layout
+   • Mechanical System Diagram
+   • Irrigation Zone Plan
+   • Control System Overview
+   Purpose: Permit applications and design development
+
+📐 DESIGN DEVELOPMENT (11 sheets)
+   • Cover Sheet & Specifications
+   • Site Plan & Utilities
+   • Architectural Plans
+   • Electrical System Design
+   • Panel Schedules
+   • Load Analysis
+   • HVAC Design
+   • Equipment Schedules
+   • Irrigation Design
+   • Control Systems
+   • Energy Analysis
+   Purpose: Final design approval and bidding
+
+=== CONSTRUCTION DRAWINGS (For Building) ===
+
+🔨 BASIC CONSTRUCTION (9 sheets)
+   • Cover Sheet & General Notes
+   • Site Plan with Dimensions
+   • Foundation Plan
+   • Floor Plan with Details
+   • Electrical Plan with Circuits
+   • Panel Schedules Complete
+   • HVAC Plan with Ductwork
+   • Plumbing/Irrigation Plan
+   • Details & Sections
+   Purpose: Basic construction with experienced contractors
+
+🔨 DETAILED CONSTRUCTION (23 sheets)
+   • Complete architectural set (6 sheets)
+   • Structural drawings (3 sheets)
+   • Electrical drawings (7 sheets)
+   • Mechanical drawings (3 sheets)
+   • Plumbing drawings (2 sheets)
+   • General notes (2 sheets)
+   Purpose: Standard commercial construction
+
+🔨 COMPLETE CONSTRUCTION (45 sheets)
+   • General (3 sheets)
+   • Architectural (8 sheets)
+   • Structural (6 sheets)
+   • Electrical (12 sheets)
+   • Mechanical (10 sheets)
+   • Plumbing (4 sheets)
+   • Fire Protection (2 sheets)
+   Purpose: Complex projects with every installation detail
+
+=== KEY DIFFERENCES ===
+
+DESIGN DRAWINGS:
+   ✓ Conceptual layouts and system sizing
+   ✓ Equipment selection and specifications
+   ✓ Code analysis and load calculations
+   ✓ Energy performance analysis
+   ✓ Smaller format (18" x 24")
+   ✓ "NOT FOR CONSTRUCTION" notes
+
+CONSTRUCTION DRAWINGS:
+   ✓ Exact installation details and dimensions
+   ✓ Material specifications and connection details
+   ✓ Code compliance verification
+   ✓ Testing and commissioning requirements
+   ✓ Full size format (24" x 36")
+   ✓ "ISSUED FOR CONSTRUCTION" stamps
+
+=== VIBELUX USER WORKFLOW ===
+
+1. Export Design Drawings for:
+   • Client presentations
+   • Permit applications
+   • Design approval
+   • Contractor bidding
+
+2. Export Construction Drawings for:
+   • Actual building
+   • Field installation
+   • Inspection
+   • Commissioning
+
+✅ COMPLETE SEPARATION ACHIEVED\!
+   Users now have clear choice between design and construction phases
+   Each drawing type serves specific project needs
+   Professional quality maintained for both phases
+EOF < /dev/null

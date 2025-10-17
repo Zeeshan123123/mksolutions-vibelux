@@ -1,0 +1,40 @@
+
+VIBELUX LIGHTING DESIGN OUTPUT
+==============================
+Generated: 2025-07-26T01:03:55.548Z
+Project: Boundary Cone Cultivation Facility
+
+ROOM SPECIFICATIONS
+------------------
+Name: Boundary Cone Room
+Dimensions: 66' × 22'
+Total Area: 1,452 sq ft
+
+TABLE LAYOUT
+------------
+Table Count: 9
+Table Size: 8' × 21.3' (64' total length divided)
+Total Canopy Area: 1,536 sq ft
+Space Utilization: 105.8%
+
+LIGHTING SYSTEM - FLUENCE SPYDR 2p
+----------------------------------
+Fixture Count: 20
+Wattage per Fixture: 645W
+Total Power: 12,900W (12.9 kW)
+Power Density: 8.9 W/sq ft
+Average PPFD: 238 μmol/m²/s
+Grid Spacing: 6' × 6'
+
+FINANCIAL ANALYSIS
+-----------------
+Equipment Cost: $29,980
+Annual Energy: 56,502 kWh
+Annual Energy Cost: $6,780.24
+
+HPS COMPARISON
+--------------
+HPS 1000W Fixtures Replaced: 59 (@ 25 sq ft coverage)
+HPS Total Power: 59000W
+Power Difference: -46,100W
+HVAC Savings: 30% reduction in cooling costs

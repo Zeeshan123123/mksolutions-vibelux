@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- V shape icon - purple and teal -->
+  <defs>
+    <linearGradient id="purpleGradientIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tealGradientIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#0F172A"/>
+  
+  <!-- V shape scaled for icon -->
+  <path d="M 64 64 L 192 384 L 256 256 L 192 64 Z" fill="url(#purpleGradientIcon)" />
+  <path d="M 256 256 L 320 64 L 448 64 L 256 448 Z" fill="url(#tealGradientIcon)" />
+</svg>

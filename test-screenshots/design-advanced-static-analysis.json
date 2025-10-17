@@ -1,0 +1,324 @@
+{
+  "timestamp": "2025-07-26T18:26:20.851Z",
+  "testSuite": "Design Advanced Static Analysis",
+  "pageFile": "/Users/blakelange/vibelux-app/src/app/design/advanced/page.tsx",
+  "analysis": {
+    "codeStructure": {
+      "lines": 1600,
+      "imports": 12,
+      "components": 2,
+      "hooks": 74,
+      "functions": 87,
+      "interfaces": 5,
+      "types": 2,
+      "exports": 3
+    },
+    "features": {
+      "Page Load": {
+        "implemented": true,
+        "category": "core",
+        "pattern": "/export default|function.*Page/i"
+      },
+      "Authentication Check": {
+        "implemented": true,
+        "category": "core",
+        "pattern": "/useAuth|clerk/i"
+      },
+      "Designer Interface": {
+        "implemented": true,
+        "category": "core",
+        "pattern": "/(AdvancedDesignerProfessional|SimpleDesigner)/i"
+      },
+      "Tool Palette": {
+        "implemented": true,
+        "category": "core",
+        "pattern": "/FixtureLibrary|toolbar/i"
+      },
+      "Canvas Interaction": {
+        "implemented": true,
+        "category": "core",
+        "pattern": "/canvas|design.*area/i"
+      },
+      "Fixture Library": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/FixtureLibrary/i"
+      },
+      "Room Editor": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/room.*edit|dimensions/i"
+      },
+      "Fixture Placement": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/handleFixtureAdd|position/i"
+      },
+      "Fixture Selection": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/selectedFixture|onSelectFixture/i"
+      },
+      "Fixture Movement": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/position.*update|move/i"
+      },
+      "Fixture Rotation": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/rotation/i"
+      },
+      "Fixture Deletion": {
+        "implemented": true,
+        "category": "design",
+        "pattern": "/handleFixtureRemove|delete/i"
+      },
+      "3D Visualization": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/Interactive3DVisualization|three.*d/i"
+      },
+      "Heat Map Analysis": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/HeatMapCanvas|heatmap/i"
+      },
+      "Spectrum Analysis": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/SpectrumAnalysisPanel|spectrum/i"
+      },
+      "DLI Optimizer": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/DLIOptimizerPanel|dli/i"
+      },
+      "Energy Calculator": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/EnergyCostCalculator|energy/i"
+      },
+      "Environmental Monitor": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/EnvironmentalMonitor|environment/i"
+      },
+      "AI Recommendations": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/AISpectrumRecommendations|ai.*recommend/i"
+      },
+      "Yield Predictor": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/CropYieldPredictor|yield/i"
+      },
+      "Lighting Scheduler": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/LightingScheduler|schedule/i"
+      },
+      "Heat Load Calculator": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/HeatLoadCalculator|heat.*load/i"
+      },
+      "Electrical Load Balancer": {
+        "implemented": true,
+        "category": "advanced",
+        "pattern": "/ElectricalLoadBalancer|electrical/i"
+      },
+      "Metrics Panel": {
+        "implemented": true,
+        "category": "analysis",
+        "pattern": "/MetricsPanel|metrics/i"
+      },
+      "ROI Calculator": {
+        "implemented": true,
+        "category": "analysis",
+        "pattern": "/ROICalculator|roi/i"
+      },
+      "Cost Estimator": {
+        "implemented": true,
+        "category": "analysis",
+        "pattern": "/CostEstimator|cost/i"
+      },
+      "Report Generation": {
+        "implemented": true,
+        "category": "analysis",
+        "pattern": "/generateHTMLReport|export.*report/i"
+      },
+      "Project Templates": {
+        "implemented": true,
+        "category": "project",
+        "pattern": "/ProjectTemplates|template/i"
+      },
+      "Save/Load Project": {
+        "implemented": true,
+        "category": "project",
+        "pattern": "/handleSaveProject|handleLoadProject/i"
+      },
+      "Export Design": {
+        "implemented": true,
+        "category": "project",
+        "pattern": "/handleExport|export.*design/i"
+      },
+      "Share Project": {
+        "implemented": true,
+        "category": "project",
+        "pattern": "/ShareDialog|share/i"
+      },
+      "Undo/Redo": {
+        "implemented": true,
+        "category": "project",
+        "pattern": "/undo|redo|designReducer/i"
+      },
+      "Collapsible Sidebar": {
+        "implemented": true,
+        "category": "ui",
+        "pattern": "/CollapsibleSidebar|sidebar/i"
+      },
+      "View Mode Switching": {
+        "implemented": true,
+        "category": "ui",
+        "pattern": "/viewMode|setViewMode/i"
+      },
+      "Keyboard Shortcuts": {
+        "implemented": true,
+        "category": "ui",
+        "pattern": "/useHotkeys|KeyboardShortcuts/i"
+      },
+      "Grid Toggle": {
+        "implemented": true,
+        "category": "ui",
+        "pattern": "/gridEnabled|grid.*toggle/i"
+      },
+      "Layer Management": {
+        "implemented": true,
+        "category": "ui",
+        "pattern": "/layer|layers/i"
+      },
+      "AI Design Assistant": {
+        "implemented": true,
+        "category": "ai",
+        "pattern": "/AI.*Assistant|showAIAssistant/i"
+      },
+      "AI Credit Estimator": {
+        "implemented": true,
+        "category": "ai",
+        "pattern": "/AIDesignCreditEstimator|userCredits/i"
+      },
+      "Smart Optimization": {
+        "implemented": true,
+        "category": "ai",
+        "pattern": "/generateOptimalLayout|auto.*layout/i"
+      },
+      "Mobile Responsiveness": {
+        "implemented": false,
+        "category": "mobile",
+        "pattern": "/mobile|responsive/i"
+      },
+      "Touch Interactions": {
+        "implemented": true,
+        "category": "mobile",
+        "pattern": "/touch|tap/i"
+      },
+      "Load Performance": {
+        "implemented": true,
+        "category": "performance",
+        "pattern": "/lazy|Suspense|useMemo/i"
+      },
+      "Memory Usage": {
+        "implemented": true,
+        "category": "performance",
+        "pattern": "/useCallback|cache|worker/i"
+      },
+      "Rendering Performance": {
+        "implemented": true,
+        "category": "performance",
+        "pattern": "/debounce|throttle|optimize/i"
+      }
+    },
+    "components": {
+      "lazy": [
+        "AdvancedDesignerProfessional",
+        "SimpleDesigner",
+        "DesignOnboarding",
+        "SmartGreenhouseSetupWizard",
+        "AIDesignCreditEstimator",
+        "HeatMapCanvas",
+        "MetricsPanel",
+        "SpectrumAnalysisPanel",
+        "DLIOptimizerPanel",
+        "EnergyCostCalculator",
+        "EnvironmentalMonitor",
+        "AISpectrumRecommendations",
+        "CropYieldPredictor",
+        "LightingScheduler",
+        "HeatLoadCalculator",
+        "ElectricalLoadBalancer",
+        "Interactive3DVisualization",
+        "ROICalculator",
+        "CostEstimator",
+        "ProjectTemplates",
+        "ExportDialog",
+        "ShareDialog",
+        "KeyboardShortcuts"
+      ],
+      "imported": 3,
+      "total": 26
+    },
+    "dependencies": {
+      "react": true,
+      "nextjs": false,
+      "clerk": true,
+      "lucideReact": true,
+      "customHooks": true,
+      "customComponents": true,
+      "customLib": true,
+      "workers": true,
+      "external": 2
+    },
+    "functionality": {
+      "stateManagement": {
+        "useState": 23,
+        "useReducer": true,
+        "localStorage": true,
+        "context": false
+      },
+      "eventHandlers": {
+        "clickHandlers": 33,
+        "changeHandlers": 1,
+        "keyboardHandlers": 9,
+        "formHandlers": 0
+      },
+      "performance": {
+        "memoization": 15,
+        "lazyLoading": 46,
+        "debouncing": true,
+        "caching": true
+      },
+      "errorHandling": {
+        "errorBoundary": true,
+        "tryCatch": 14,
+        "logging": true,
+        "toasts": true
+      },
+      "navigation": {
+        "routing": false,
+        "modals": 1,
+        "dialogs": 6,
+        "sidebar": true
+      }
+    }
+  },
+  "summary": {
+    "totalFeatures": 45,
+    "implementedFeatures": 44,
+    "missingFeatures": 1,
+    "codeQuality": "excellent",
+    "successRate": "97.8%"
+  },
+  "findings": []
+}

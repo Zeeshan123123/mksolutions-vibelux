@@ -1,0 +1,23 @@
+version: 1
+applications:
+  - appRoot: .
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - echo "Installing dependencies..."
+            - npm ci
+        build:
+          commands:
+            - echo "Building VibeLux platform with Next.js SSG..."
+            - NODE_OPTIONS='--max-old-space-size=20480' npm run build
+            - echo "Build completed successfully"
+      artifacts:
+        baseDirectory: out
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+          - .next/cache/**/*
+EOF < /dev/null

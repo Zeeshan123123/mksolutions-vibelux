@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-07-26T17:17:45.853Z",
+  "summary": {
+    "totalIssues": 11,
+    "critical": 1,
+    "high": 6,
+    "medium": 4,
+    "low": 0
+  },
+  "issues": {
+    "CRITICAL": [
+      {
+        "page": "Enhanced 3D Professional Analysis",
+        "issue": "Z-index layering problems: 4 buttons blocked by other elements",
+        "details": [
+          {
+            "button": "\n                    🔌 Conduit Routing\n                    \n                ",
+            "blocker": "unknown"
+          },
+          {
+            "button": "\n                    ⚡ Circuit Distribution\n                    \n                ",
+            "blocker": "unknown"
+          },
+          {
+            "button": "\n                    📋 Electrical Panels\n                    \n                ",
+            "blocker": "unknown"
+          },
+          {
+            "button": "\n                    📊 Load Analysis\n                    \n                ",
+            "blocker": "unknown"
+          }
+        ]
+      }
+    ],
+    "HIGH": [
+      {
+        "page": "3D Facility Visualization",
+        "issue": "Data integrity issues: 1 elements with invalid values",
+        "details": [
+          {
+            "element": "SCRIPT",
+            "class": "",
+            "text": "\n        // Facility data from analysis\n        co"
+          }
+        ]
+      },
+      {
+        "page": "3D Facility Visualization",
+        "issue": "Accessibility violations",
+        "details": [
+          "8 touch targets < 44px"
+        ]
+      },
+      {
+        "page": "Enhanced 3D Professional Analysis",
+        "issue": "Data integrity issues: 1 elements with invalid values",
+        "details": [
+          {
+            "element": "SCRIPT",
+            "class": "",
+            "text": "\n        // Enhanced facility data with electrical"
+          }
+        ]
+      },
+      {
+        "page": "Enhanced 3D Professional Analysis",
+        "issue": "Accessibility violations",
+        "details": [
+          "16 touch targets < 44px"
+        ]
+      },
+      {
+        "page": "White Label Report Builder",
+        "issue": "Data integrity issues: 1 elements with invalid values",
+        "details": [
+          {
+            "element": "SCRIPT",
+            "class": "",
+            "text": "\n        // Report customization functions\n       "
+          }
+        ]
+      },
+      {
+        "page": "White Label Report Builder",
+        "issue": "Accessibility violations",
+        "details": [
+          "28 touch targets < 44px"
+        ]
+      }
+    ],
+    "MEDIUM": [
+      {
+        "page": "Professional Design Report",
+        "issue": "Mobile compatibility issues",
+        "details": [
+          "Horizontal scroll on mobile"
+        ]
+      },
+      {
+        "page": "Comprehensive Technical Report",
+        "issue": "Mobile compatibility issues",
+        "details": [
+          "Horizontal scroll on mobile"
+        ]
+      },
+      {
+        "page": "3D Facility Visualization",
+        "issue": "Mobile compatibility issues",
+        "details": [
+          "Horizontal scroll on mobile"
+        ]
+      },
+      {
+        "page": "Enhanced 3D Professional Analysis",
+        "issue": "Mobile compatibility issues",
+        "details": [
+          "94 elements with font size < 12px"
+        ]
+      }
+    ],
+    "LOW": []
+  }
+}

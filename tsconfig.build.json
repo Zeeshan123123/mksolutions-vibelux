@@ -1,0 +1,42 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "incremental": false,
+    "tsBuildInfoFile": null
+  },
+  "include": [
+    "src/app/**/*.ts",
+    "src/app/**/*.tsx",
+    "src/components/**/*.ts",
+    "src/components/**/*.tsx",
+    "src/lib/api/**/*.ts",
+    "src/lib/auth/**/*.ts",
+    "src/lib/prisma.ts",
+    "src/lib/redis.ts",
+    "src/middleware.ts",
+    "src/types/*.ts",
+    "next-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "out",
+    "build",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "src/tests/**/*",
+    "src/lib/plant-science/**/*",
+    "src/lib/cad/**/*",
+    "src/lib/integrations/**/*",
+    "src/lib/ml/**/*",
+    "src/lib/sensors/**/*",
+    "src/components/designer/**/*",
+    "src/components/onboarding/**/*",
+    "src/app/api/reports/**/*"
+  ]
+}

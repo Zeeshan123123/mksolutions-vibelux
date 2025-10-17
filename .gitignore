@@ -1,0 +1,100 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variables - NEVER commit these!
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.*.template
+.env.local
+.env.local.*
+.env.development
+.env.production
+.env.staging
+.env.test
+
+# Docker service credentials
+docker-services.json
+
+# Sensitive configuration files
+*.local
+*.production
+*.secret
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+/src/generated/prisma
+
+# clerk configuration (can include secrets)
+/.clerk/
+
+# Documentation and backup files
+# *.md  # Allowing markdown files for documentation
+*.log
+*.backup
+*.gz
+*.jpg
+# *.png  # Commented out to allow vibelux-logo.png
+!public/vibelux-logo.png
+!public/founder/*.jpg
+temp-disabled/
+temp_disabled/
+prisma.backup/
+influxdb-data/
+monitoring/
+k8s/
+contracts/
+/docs/
+scripts/
+!scripts/setup-stripe-products.js
+!scripts/add-stripe-to-vercel.sh
+!scripts/STRIPE_QUICK_SETUP.md
+*.py
+*.html
+*.js.backup
+*.tsx.backup
+*.ts.backup
+*.json.backup
+*.css.backup
+build.log
+dev*.log
+vercel-build.log
+ 
+# turborepo cache
+.turbo
+.vercel/output

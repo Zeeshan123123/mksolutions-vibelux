@@ -1,0 +1,47 @@
+{
+  "serviceName": "vibelux-production-service",
+  "cluster": "production-vibelux-cluster",
+  "taskDefinition": "vibelux-production-task",
+  "desiredCount": 2,
+  "launchType": "FARGATE",
+  "platformVersion": "LATEST",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-{PRIVATE_SUBNET_1_ID}",
+        "subnet-{PRIVATE_SUBNET_2_ID}"
+      ],
+      "securityGroups": [
+        "sg-{ECS_SECURITY_GROUP_ID}"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:{ACCOUNT_ID}:targetgroup/vibelux-production-tg/{TARGET_GROUP_ID}",
+      "containerName": "vibelux-app",
+      "containerPort": 3000
+    }
+  ],
+  "serviceTags": [
+    {
+      "key": "Environment",
+      "value": "production"
+    },
+    {
+      "key": "Project",
+      "value": "VibeLux"
+    }
+  ],
+  "enableExecuteCommand": true,
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 100,
+    "deploymentCircuitBreaker": {
+      "enable": true,
+      "rollback": true
+    }
+  },
+  "enableLogging": true
+}

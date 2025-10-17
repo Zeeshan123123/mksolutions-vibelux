@@ -1,0 +1,84 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+.nyc_output
+cypress
+cypress.json
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+__tests__
+test
+tests
+
+# Development files
+*.md
+!README.md
+.github
+.husky
+.vscode
+.idea
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Source maps
+**/*.map
+
+# Build artifacts from local
+.next
+out
+dist
+build
+
+# Environment files (Vercel will inject these)
+.env*.local
+
+# Documentation (but not component folders)
+/docs
+*.mdx
+!src/**/*.mdx
+!src/components/docs/**
+
+# Storybook
+.storybook
+storybook-static
+
+# Archives and backups
+.archive-backup
+*.zip
+*.tar.gz
+backups
+
+# Development scripts
+scripts/dev-*
+test-*.js
+test-*.mjs
+comprehensive-*.js
+verify-*.js
+top-500-*.js
+
+# Large assets that should be CDN hosted
+public/videos
+public/downloads
+**/*.mp4
+**/*.mov
+**/*.avi
+
+# Unused legacy code
+src/legacy
+src/deprecated
+
+# Heavy development dependencies we don't need for build
+playwright.config.ts
+jest.config.js
+babel.config.js
+.eslintrc.json
+.prettierrc

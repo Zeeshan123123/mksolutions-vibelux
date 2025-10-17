@@ -1,0 +1,124 @@
+{
+  "family": "vibelux-production-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "2048",
+  "memory": "4096",
+  "executionRoleArn": "arn:aws:iam::{ACCOUNT_ID}:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::{ACCOUNT_ID}:role/ecsTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "vibelux-app",
+      "image": "{ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/vibelux-app:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "name": "NEXT_PUBLIC_APP_URL",
+          "value": "https://vibelux.ai"
+        },
+        {
+          "name": "NEXT_PUBLIC_DOMAIN",
+          "value": "vibelux.ai"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "DATABASE_URL",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/database-url"
+        },
+        {
+          "name": "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/clerk-publishable-key"
+        },
+        {
+          "name": "CLERK_SECRET_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/clerk-secret-key"
+        },
+        {
+          "name": "NEXTAUTH_SECRET",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/nextauth-secret"
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/openai-api-key"
+        },
+        {
+          "name": "STRIPE_SECRET_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/stripe-secret-key"
+        },
+        {
+          "name": "ANTHROPIC_API_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/anthropic-api-key"
+        },
+        {
+          "name": "REDIS_URL",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/redis-url"
+        },
+        {
+          "name": "TWILIO_ACCOUNT_SID",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/twilio-account-sid"
+        },
+        {
+          "name": "TWILIO_AUTH_TOKEN",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/twilio-auth-token"
+        },
+        {
+          "name": "SENDGRID_API_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/sendgrid-api-key"
+        },
+        {
+          "name": "UTILITYAPI_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/utilityapi-key"
+        },
+        {
+          "name": "UTILITYAPI_SECRET",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/utilityapi-secret"
+        },
+        {
+          "name": "UTILITY_ENCRYPTION_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/utility-encryption-key"
+        },
+        {
+          "name": "PUSHER_APP_ID",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/pusher-app-id"
+        },
+        {
+          "name": "PUSHER_SECRET",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/pusher-secret"
+        },
+        {
+          "name": "RESEND_API_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:{ACCOUNT_ID}:parameter/vibelux/production/resend-api-key"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/vibelux-production",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "healthCheck": {
+        "command": [
+          "CMD-SHELL",
+          "curl -f http://localhost:3000/api/health || exit 1"
+        ],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 60
+      }
+    }
+  ]
+}

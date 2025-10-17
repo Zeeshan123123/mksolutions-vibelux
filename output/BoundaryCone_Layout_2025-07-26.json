@@ -1,0 +1,190 @@
+{
+  "room": {
+    "name": "Boundary Cone Room",
+    "width": 66,
+    "height": 22,
+    "area": 1452
+  },
+  "tables": [
+    {
+      "id": "table_1",
+      "x": 1,
+      "y": 1,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_2",
+      "x": 1,
+      "y": 25.333333333333332,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_3",
+      "x": 1,
+      "y": 49.666666666666664,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_4",
+      "x": 12,
+      "y": 1,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_5",
+      "x": 12,
+      "y": 25.333333333333332,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_6",
+      "x": 12,
+      "y": 49.666666666666664,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_7",
+      "x": 23,
+      "y": 1,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_8",
+      "x": 23,
+      "y": 25.333333333333332,
+      "width": 8,
+      "length": 21.333333333333332
+    },
+    {
+      "id": "table_9",
+      "x": 23,
+      "y": 49.666666666666664,
+      "width": 8,
+      "length": 21.333333333333332
+    }
+  ],
+  "lights": [
+    {
+      "x": 3,
+      "y": 3,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 3,
+      "y": 9,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 3,
+      "y": 15,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 3,
+      "y": 21,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 9,
+      "y": 9,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 9,
+      "y": 15,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 9,
+      "y": 21,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 15,
+      "y": 3,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 15,
+      "y": 9,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 15,
+      "y": 15,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 15,
+      "y": 21,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 21,
+      "y": 3,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 21,
+      "y": 9,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 21,
+      "y": 15,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 21,
+      "y": 21,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 27,
+      "y": 3,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 27,
+      "y": 9,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 27,
+      "y": 15,
+      "fixture": "SPYDR 2p"
+    },
+    {
+      "x": 27,
+      "y": 21,
+      "fixture": "SPYDR 2p"
+    }
+  ],
+  "metrics": {
+    "fixtureCount": 20,
+    "totalPower": 12900,
+    "powerDensity": 8.884297520661157,
+    "avgPPFD": 238.265625,
+    "totalCanopyArea": 1536,
+    "utilizationRate": 105.78512396694215
+  },
+  "fixture": {
+    "model": "Fluence SPYDR 2p",
+    "wattage": 645,
+    "ppf": 1700,
+    "coverage": 16,
+    "price": 1499
+  }
+}

@@ -1,0 +1,1573 @@
+'use client';
+
+import React, { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
+import { 
+  ArrowLeft, 
+  Layers, 
+  Calculator, 
+  Lightbulb, 
+  Settings, 
+  Eye,
+  Download,
+  Zap,
+  Brain,
+  Users,
+  Building,
+  Thermometer,
+  Droplets,
+  Target,
+  BarChart3,
+  Grid3x3,
+  Camera,
+  Share2,
+  FileText,
+  Cpu,
+  Database,
+  FlaskConical,
+  Package,
+  Map,
+  Shield,
+  Bot,
+  Atom,
+  Microscope,
+  Wrench,
+  GitBranch,
+  Sun,
+  Monitor,
+  PieChart,
+  TrendingUp,
+  ChevronDown,
+  ChevronRight,
+  X,
+  Plus,
+  Save,
+  Upload,
+  Maximize,
+  Minimize,
+  ChevronLeft,
+  Info,
+  Lock,
+  Ruler,
+  Box
+} from 'lucide-react';
+import { getSolarDataForZipCode, calculateSupplementalLighting, GREENHOUSE_TYPES } from '@/lib/solar-calculations';
+import { AutodeskViewerReal } from '@/components/AutodeskViewerReal';
+import { CADImportModal } from '@/components/designer/CADImportModal';
+import { EnhancedCADIntegration } from '@/components/EnhancedCADIntegration';
+import { CADFixturePlacer } from '@/components/designer/CADFixturePlacer';
+import { AnalysisEngine } from '@/components/designer/analysis/AnalysisEngine';
+import { SimulationEngine } from '@/components/designer/simulation/SimulationEngine';
+import { OutputEngine } from '@/components/designer/output/OutputEngine';
+import { DesignUpload } from '@/components/CloudinaryUpload';
+import { DesignOnboarding } from '@/components/designer/DesignOnboarding';
+
+export default function AdvancedDesignerPage() {
+  const [selectedTool, setSelectedTool] = useState('select');
+  const [openPanels, setOpenPanels] = useState<Record<string, boolean>>({});
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [rightPanelCollapsed, setRightPanelCollapsed] = useState(false);
+  const [currentMode, setCurrentMode] = useState<'design' | 'analyze' | 'simulate' | 'output'>('design');
+  const [selectedCrop, setSelectedCrop] = useState('cannabis');
+  const [projectName, setProjectName] = useState('Untitled Project');
+  
+  // CAD Integration states
+  const [cadImportOpen, setCadImportOpen] = useState(false);
+  const [currentCADFile, setCurrentCADFile] = useState<any>(null);
+  const [viewerUrn, setViewerUrn] = useState<string>('');
+  const [showCADIntegration, setShowCADIntegration] = useState(false);
+  const [cadLayers, setCadLayers] = useState<any[]>([]);
+  const [viewer3D, setViewer3D] = useState<any>(null);
+  const [placedFixtures, setPlacedFixtures] = useState<any[]>([]);
+  const [selectedFixture, setSelectedFixture] = useState<any>(null);
+  
+  // Analysis and simulation states
+  const [analysisResults, setAnalysisResults] = useState<any>(null);
+  const [simulationResults, setSimulationResults] = useState<any>(null);
+  
+  // Portfolio generation states
+  const [portfolioImages, setPortfolioImages] = useState<string[]>([]);
+  const [isGeneratingPortfolio, setIsGeneratingPortfolio] = useState(false);
+  const [lastPortfolioUrl, setLastPortfolioUrl] = useState<string | null>(null);
+  
+  // AI Assistant states
+  const [aiChatOpen, setAiChatOpen] = useState(false);
+  const [aiMessages, setAiMessages] = useState<Array<{role: 'user' | 'assistant', content: string}>>([]);
+  const [aiInput, setAiInput] = useState('');
+  
+  // Right panel tab state
+  const [activeRightTab, setActiveRightTab] = useState<'properties' | 'calculations' | 'analysis'>('properties');
+  
+  // Onboarding flow state
+  const [showOnboarding, setShowOnboarding] = useState(true);
+  const [designConfig, setDesignConfig] = useState<any>(null);
+  
+  // Mock fixture library (in production, this would come from a real database)
+  const fixtureLibrary = [
+    {
+      id: 'led-bar-320w',
+      manufacturer: 'Fluence',
+      model: 'SPYDR 2i',
+      wattage: 320,
+      ppf: 860,
+      efficacy: 2.7,
+      width: 2,
+      length: 4,
+      height: 0.5,
+      spectrum: 'Full Spectrum',
+      beamAngle: 120
+    },
+    {
+      id: 'led-panel-150w',
+      manufacturer: 'Gavita',
+      model: 'LED 1700e',
+      wattage: 150,
+      ppf: 425,
+      efficacy: 2.8,
+      width: 1.5,
+      length: 1.5,
+      height: 0.3,
+      spectrum: 'Full Spectrum',
+      beamAngle: 110
+    }
+  ];
+  
+  // Crop parameter states
+  const [targetDLI, setTargetDLI] = useState(40);
+  const [targetPPFD, setTargetPPFD] = useState(800);
+  const [photoperiod, setPhotoperiod] = useState(12);
+  
+  // Room dimensions for analysis
+  const [roomDimensions, setRoomDimensions] = useState({
+    length: 20,
+    width: 15,
+    height: 10
+  });
+  
+  // Greenhouse calculation states
+  const [zipCode, setZipCode] = useState('');
+  const [greenhouseType, setGreenhouseType] = useState('glass');
+  const [solarDLI, setSolarDLI] = useState(0);
+  const [calculatedPPFD, setCalculatedPPFD] = useState(0);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [useWinterValues, setUseWinterValues] = useState(false);
+  const [monthlyDLI, setMonthlyDLI] = useState<number[]>([]);
+
+  // CAD operation handlers
+  const handleCADImport = (geometry: any) => {
+    setCurrentCADFile(geometry);
+    setViewerUrn(geometry.urn || '');
+    setCadLayers(geometry.layers || []);
+    setCadImportOpen(false);
+    setShowCADIntegration(true);
+    setSelectedTool('select');
+  };
+
+  const handleCADExport = () => {
+    // Trigger CAD export functionality
+    console.log('Exporting to CAD format...');
+  };
+
+  const openCADImport = () => {
+    setCadImportOpen(true);
+  };
+
+  const handleFixturePlaced = (fixture: any) => {
+    setPlacedFixtures(prev => [...prev, fixture]);
+    console.log('Fixture placed:', fixture);
+  };
+
+  const handleViewerLoad = (viewer: any) => {
+    setViewer3D(viewer);
+    console.log('Viewer loaded:', viewer);
+  };
+
+  // Project management handlers
+  const handleSaveProject = () => {
+    const projectData = {
+      name: projectName,
+      mode: currentMode,
+      selectedCrop,
+      targetDLI,
+      targetPPFD,
+      photoperiod,
+      roomDimensions,
+      placedFixtures,
+      cadLayers,
+      timestamp: new Date().toISOString()
+    };
+    
+    // In production, this would save to backend
+    localStorage.setItem('vibelux_project', JSON.stringify(projectData));
+    console.log('Project saved:', projectData);
+    
+    // Show success feedback (you could add a toast notification here)
+    alert('Project saved successfully!');
+  };
+
+  const handleShareProject = () => {
+    const shareData = {
+      title: `VibeLux Project: ${projectName}`,
+      text: `Check out my lighting design project: ${projectName}`,
+      url: window.location.href
+    };
+    
+    if (navigator.share) {
+      navigator.share(shareData).catch(console.error);
+    } else {
+      // Fallback: copy URL to clipboard
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Project URL copied to clipboard!');
+      }).catch(() => {
+        console.log('Share URL:', window.location.href);
+        alert('Share URL: ' + window.location.href);
+      });
+    }
+  };
+
+  const handleExportProject = () => {
+    const exportData = {
+      project: {
+        name: projectName,
+        mode: currentMode,
+        crop: selectedCrop,
+        specifications: {
+          targetDLI,
+          targetPPFD,
+          photoperiod,
+          roomDimensions
+        },
+        fixtures: placedFixtures,
+        analysis: analysisResults,
+        simulation: simulationResults
+      },
+      exportDate: new Date().toISOString()
+    };
+    
+    // Create and download JSON file
+    const dataStr = JSON.stringify(exportData, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${projectName.replace(/\s+/g, '_')}_export.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    URL.revokeObjectURL(url);
+    console.log('Project exported:', exportData);
+  };
+
+  const handleGeneratePortfolio = async () => {
+    if (portfolioImages.length === 0) {
+      alert('Please upload design images first to generate a portfolio.');
+      return;
+    }
+
+    setIsGeneratingPortfolio(true);
+    
+    try {
+      const response = await fetch('/api/cloudinary/generate-portfolio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          designImages: portfolioImages,
+          projectInfo: {
+            name: projectName,
+            specifications: {
+              targetDLI,
+              targetPPFD,
+              photoperiod,
+              roomDimensions
+            },
+            fixtures: placedFixtures,
+            analysis: analysisResults
+          }
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Portfolio generation failed');
+      }
+
+      const portfolioData = await response.json();
+      setLastPortfolioUrl(portfolioData.portfolioPDF);
+      
+      // Automatically download the portfolio
+      if (portfolioData.portfolioPDF) {
+        const link = document.createElement('a');
+        link.href = portfolioData.portfolioPDF;
+        link.download = `${projectName.replace(/\s+/g, '_')}_portfolio.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      alert('Professional portfolio generated successfully!');
+      
+    } catch (error) {
+      console.error('Portfolio generation error:', error);
+      alert('Failed to generate portfolio. Please try again.');
+    } finally {
+      setIsGeneratingPortfolio(false);
+    }
+  };
+
+  const handleDesignImageUpload = (uploadResult: any) => {
+    setPortfolioImages(prev => [...prev, uploadResult.secure_url]);
+    console.log('Design image added to portfolio:', uploadResult.secure_url);
+  };
+
+  // CAD Layer management handlers
+  const toggleLayerVisibility = (layerName: string) => {
+    setCadLayers(prev => prev.map(layer => 
+      layer.name === layerName 
+        ? { ...layer, visible: !layer.visible }
+        : layer
+    ));
+    console.log('Toggled visibility for layer:', layerName);
+  };
+
+  const toggleLayerLock = (layerName: string) => {
+    setCadLayers(prev => prev.map(layer => 
+      layer.name === layerName 
+        ? { ...layer, locked: !layer.locked }
+        : layer
+    ));
+    console.log('Toggled lock for layer:', layerName);
+  };
+
+  // Professional tools categories
+  const toolCategories = {
+    design: {
+      name: 'Design Tools',
+      icon: Layers,
+      tools: [
+        { id: 'select', name: 'Select', icon: Layers },
+        { id: 'fixture', name: 'Fixtures', icon: Lightbulb },
+        { id: 'array', name: 'Array Tool', icon: Grid3x3 },
+        { id: 'ppfd-array', name: 'PPFD Array', icon: Target },
+        { id: 'quick-array', name: 'Quick Array', icon: Zap },
+        { id: 'batch-placement', name: 'Batch Placement', icon: Package }
+      ]
+    },
+    cad: {
+      name: 'CAD Tools',
+      icon: FileText,
+      tools: [
+        { id: 'layers', name: 'Layer Manager', icon: Layers },
+        { id: 'dimensions', name: 'Dimensions', icon: Ruler },
+        { id: 'annotations', name: 'Annotations', icon: FileText },
+        { id: '3d-view', name: '3D View', icon: Box },
+        { id: 'snap-grid', name: 'Snap to Grid', icon: Grid3x3 },
+        { id: 'measure', name: 'Measure Tool', icon: Ruler }
+      ]
+    },
+    analysis: {
+      name: 'Analysis',
+      icon: BarChart3,
+      tools: [
+        { id: 'photometric', name: 'Photometric Engine', icon: Calculator },
+        { id: 'ppfd-mapping', name: 'PPFD Mapping', icon: Map },
+        { id: 'thermal', name: 'Thermal Analysis', icon: Thermometer },
+        { id: 'spectrum', name: 'Spectrum Analysis', icon: Sun },
+        { id: 'cfd', name: 'CFD Analysis', icon: Cpu },
+        { id: 'ray-tracing', name: 'Ray Tracing', icon: Eye }
+      ]
+    },
+    equipment: {
+      name: 'Equipment',
+      icon: Package,
+      tools: [
+        { id: 'fans', name: 'Fans', icon: Cpu },
+        { id: 'dehumidifiers', name: 'Dehumidifiers', icon: Droplets },
+        { id: 'hvac', name: 'HVAC Systems', icon: Building },
+        { id: 'co2', name: 'CO2 Systems', icon: FlaskConical },
+        { id: 'irrigation', name: 'Irrigation', icon: Droplets },
+        { id: 'electrical', name: 'Electrical', icon: Zap }
+      ]
+    },
+    automation: {
+      name: 'Automation',
+      icon: Bot,
+      tools: [
+        { id: 'ai-assistant', name: 'AI Assistant', icon: Brain },
+        { id: 'workflow', name: 'Workflows', icon: GitBranch },
+        { id: 'modbus', name: 'Modbus Control', icon: Database },
+        { id: 'sensors', name: 'Sensor Fusion', icon: Microscope },
+        { id: 'alerts', name: 'Alert System', icon: Shield },
+        { id: 'commissioning', name: 'Commissioning', icon: Wrench }
+      ]
+    }
+  };
+
+  // Professional panels
+  const professionalPanels = [
+    { id: 'project-manager', name: 'Project Manager', icon: FileText, category: 'core' },
+    { id: 'fixture-library', name: 'Fixture Library', icon: Database, category: 'core' },
+    { id: 'calculations', name: 'Live Calculations', icon: Calculator, category: 'core' },
+    { id: 'layers', name: 'Layers', icon: Layers, category: 'core' },
+    { id: '3d-visualization', name: '3D Visualization', icon: Monitor, category: 'visualization' },
+    { id: 'ppfd-heatmaps', name: 'PPFD Heat Maps', icon: TrendingUp, category: 'visualization' },
+    { id: 'thermal-view', name: 'Thermal View', icon: Thermometer, category: 'visualization' },
+    { id: 'advanced-3d', name: 'Advanced 3D', icon: Atom, category: 'advanced' },
+    { id: 'monte-carlo', name: 'Monte Carlo Simulation', icon: PieChart, category: 'advanced' },
+    { id: 'gpu-raytracing', name: 'GPU Ray Tracing', icon: Cpu, category: 'advanced' },
+    { id: 'plant-biology', name: 'Plant Biology Integration', icon: FlaskConical, category: 'biology' },
+    { id: 'multi-zone', name: 'Multi-Zone Control', icon: Map, category: 'controls' },
+    { id: 'research-tools', name: 'Research Tools', icon: Microscope, category: 'research' },
+    { id: 'predictive-roi', name: 'Predictive ROI', icon: TrendingUp, category: 'business' },
+    { id: 'professional-reports', name: 'Professional Reports', icon: FileText, category: 'output' },
+    { id: 'standards-compliance', name: 'Standards Compliance', icon: Shield, category: 'output' },
+    { id: 'collaboration', name: 'Real-time Collaboration', icon: Users, category: 'collaboration' }
+  ];
+
+  const togglePanel = (panelId: string) => {
+    setOpenPanels(prev => ({
+      ...prev,
+      [panelId]: !prev[panelId]
+    }));
+  };
+
+  // Solar location data
+  const [solarLocation, setSolarLocation] = useState('');
+
+  const cropPresets = {
+    cannabis: { name: 'Cannabis', dli: 40, ppfd: 800, photoperiod: 12 },
+    tomatoes: { name: 'Tomatoes', dli: 25, ppfd: 450, photoperiod: 12 },
+    lettuce: { name: 'Lettuce', dli: 14, ppfd: 250, photoperiod: 16 },
+    herbs: { name: 'Herbs', dli: 20, ppfd: 350, photoperiod: 16 },
+    strawberries: { name: 'Strawberries', dli: 18, ppfd: 300, photoperiod: 16 }
+  };
+
+  // Update values when crop selection changes
+  useEffect(() => {
+    const preset = cropPresets[selectedCrop as keyof typeof cropPresets];
+    if (preset) {
+      setTargetDLI(preset.dli);
+      setTargetPPFD(preset.ppfd);
+      setPhotoperiod(preset.photoperiod);
+    }
+  }, [selectedCrop]);
+
+  // Calculate solar DLI based on ZIP code
+  const calculateSolarDLI = async () => {
+    if (!zipCode || zipCode.length !== 5) return;
+    
+    setIsCalculating(true);
+    try {
+      const solarData = await getSolarDataForZipCode(zipCode);
+      setMonthlyDLI(solarData.monthlyDLI);
+      setSolarLocation(solarData.location);
+      
+      // Use winter minimum if selected, otherwise annual average
+      const winterDLI = Math.min(...solarData.monthlyDLI);
+      const dliToUse = useWinterValues ? winterDLI : solarData.annualAvgDLI;
+      setSolarDLI(dliToUse);
+      
+      // Auto-calculate required PPFD
+      calculateRequiredPPFD(dliToUse);
+      
+    } catch (error) {
+      console.error('Error calculating solar DLI:', error);
+    } finally {
+      setIsCalculating(false);
+    }
+  };
+
+  // Calculate required supplemental PPFD
+  const calculateRequiredPPFD = useCallback((solarDLIValue?: number) => {
+    const currentSolarDLI = solarDLIValue || solarDLI;
+    if (currentSolarDLI === 0) return;
+    
+    const transmission = GREENHOUSE_TYPES[greenhouseType as keyof typeof GREENHOUSE_TYPES].transmission;
+    const result = calculateSupplementalLighting(
+      targetDLI,
+      currentSolarDLI,
+      transmission,
+      photoperiod
+    );
+    
+    setCalculatedPPFD(result.requiredPPFD);
+    
+    // Auto-update target PPFD if greenhouse calculations are active
+    if (currentSolarDLI > 0) {
+      setTargetPPFD(result.requiredPPFD);
+    }
+  }, [solarDLI, targetDLI, greenhouseType, photoperiod]);
+
+  // Recalculate PPFD when relevant values change
+  useEffect(() => {
+    if (solarDLI > 0) {
+      calculateRequiredPPFD();
+    }
+  }, [solarDLI, calculateRequiredPPFD]);
+  
+  // Update DLI when switching between winter/annual
+  useEffect(() => {
+    if (monthlyDLI.length > 0) {
+      const winterDLI = Math.min(...monthlyDLI);
+      const annualAvgDLI = monthlyDLI.reduce((a, b) => a + b, 0) / monthlyDLI.length;
+      const dliToUse = useWinterValues ? winterDLI : annualAvgDLI;
+      setSolarDLI(dliToUse);
+      calculateRequiredPPFD(dliToUse);
+    }
+  }, [useWinterValues, monthlyDLI, calculateRequiredPPFD]);
+
+  // Professional interface modes
+  const modes = [
+    { id: 'design', name: 'Design', icon: Layers, description: 'Create and edit lighting layouts' },
+    { id: 'analyze', name: 'Analyze', icon: BarChart3, description: 'Photometric analysis and calculations' },
+    { id: 'simulate', name: 'Simulate', icon: Eye, description: 'Real-time simulations and modeling' },
+    { id: 'output', name: 'Output', icon: FileText, description: 'Reports and export tools' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+      {/* Professional Header */}
+      <div className="bg-gray-800 border-b border-gray-700 px-4 py-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Link 
+              href="/design" 
+              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back
+            </Link>
+            <div className="h-5 w-px bg-gray-600" />
+            <input 
+              value={projectName}
+              onChange={(e) => setProjectName(e.target.value)}
+              className="bg-transparent text-lg font-semibold outline-none border-none"
+            />
+            <span className="text-xs text-gray-400 bg-gray-700 px-2 py-1 rounded">ADVANCED</span>
+          </div>
+          
+          {/* Mode Selector */}
+          <div className="flex items-center gap-1 bg-gray-700 rounded-lg p-1">
+            {modes.map(mode => {
+              const isDisabled = (mode.id === 'analyze' || mode.id === 'simulate') && placedFixtures.length === 0;
+              return (
+                <button
+                  key={mode.id}
+                  onClick={() => {
+                    if (isDisabled) {
+                      alert(`Please place fixtures in Design mode before using ${mode.name} mode.`);
+                      return;
+                    }
+                    setCurrentMode(mode.id as any);
+                  }}
+                  className={`px-3 py-1.5 rounded text-sm font-medium transition-colors flex items-center gap-2 ${
+                    currentMode === mode.id 
+                      ? 'bg-purple-600 text-white' 
+                      : isDisabled
+                      ? 'text-gray-500 hover:text-gray-400 cursor-not-allowed'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-600'
+                  }`}
+                  title={isDisabled ? `${mode.name} requires fixtures to be placed first` : mode.description}
+                >
+                  <mode.icon className="w-4 h-4" />
+                  {mode.name}
+                </button>
+              );
+            })}
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={() => {
+                setShowOnboarding(true);
+                setDesignConfig(null);
+                setPlacedFixtures([]);
+                setCurrentCADFile(null);
+                setViewerUrn('');
+                setCadLayers([]);
+                setShowCADIntegration(false);
+                setProjectName('Untitled Project');
+                setCurrentMode('design');
+              }}
+              className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 rounded text-sm transition-colors flex items-center gap-2"
+            >
+              <Plus className="w-4 h-4" />
+              Start New Design
+            </button>
+            <button 
+              onClick={openCADImport}
+              className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors flex items-center gap-2"
+            >
+              <Upload className="w-4 h-4" />
+              Import CAD
+            </button>
+            <button 
+              onClick={handleSaveProject}
+              className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors flex items-center gap-2"
+              title="Save project to browser (temporary)"
+            >
+              <Save className="w-4 h-4" />
+              Save Locally
+            </button>
+            <div className="relative group">
+              <button 
+                className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 rounded text-sm transition-colors flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Export
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              <div className="absolute top-full right-0 mt-1 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg invisible group-hover:visible">
+                <button 
+                  onClick={handleCADExport}
+                  className="w-full px-3 py-2 text-sm text-left hover:bg-gray-700 flex items-center gap-2"
+                >
+                  <FileText className="w-4 h-4" />
+                  Export as DWG/DXF
+                </button>
+                <button 
+                  onClick={handleExportProject}
+                  className="w-full px-3 py-2 text-sm text-left hover:bg-gray-700 flex items-center gap-2"
+                >
+                  <Database className="w-4 h-4" />
+                  Export Project Data
+                </button>
+                <button 
+                  onClick={() => window.print()}
+                  className="w-full px-3 py-2 text-sm text-left hover:bg-gray-700 flex items-center gap-2"
+                >
+                  <FileText className="w-4 h-4" />
+                  Export as PDF
+                </button>
+              </div>
+            </div>
+            <button 
+              onClick={handleShareProject}
+              className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors flex items-center gap-2"
+              title="Share project link"
+            >
+              <Share2 className="w-4 h-4" />
+              Share
+            </button>
+            <div className="flex items-center gap-2 pl-2 border-l border-gray-600">
+              <DesignUpload 
+                onUpload={handleDesignImageUpload}
+                buttonText="📸 Upload Images"
+                multiple={true}
+              />
+              <button 
+                onClick={handleGeneratePortfolio}
+                disabled={isGeneratingPortfolio || portfolioImages.length === 0}
+                className="px-3 py-1.5 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 disabled:opacity-50 disabled:cursor-not-allowed rounded text-sm transition-colors flex items-center gap-2"
+                title={portfolioImages.length === 0 ? "Upload images first to generate portfolio" : "Generate professional portfolio PDF"}
+              >
+                {isGeneratingPortfolio ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Generating...
+                  </>
+                ) : (
+                  <>
+                    <FileText className="w-4 h-4" />
+                    Generate Portfolio {portfolioImages.length > 0 && `(${portfolioImages.length})`}
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-1 overflow-hidden">
+        {/* Left Sidebar - Professional Tools */}
+        <div className={`bg-gray-800 border-r border-gray-700 transition-all duration-300 ${
+          sidebarCollapsed ? 'w-16' : 'w-80'
+        }`}>
+          {/* Sidebar Header */}
+          <div className="p-4 border-b border-gray-700 flex items-center justify-between">
+            {!sidebarCollapsed && <h3 className="font-semibold">Professional Tools</h3>}
+            <button 
+              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+              className="p-1 hover:bg-gray-700 rounded"
+            >
+              {sidebarCollapsed ? <Maximize className="w-4 h-4" /> : <Minimize className="w-4 h-4" />}
+            </button>
+          </div>
+
+          {sidebarCollapsed ? (
+            /* Collapsed Sidebar - Icon Only */
+            <div className="p-2 space-y-2">
+              {Object.entries(toolCategories).map(([key, category]) => (
+                <button
+                  key={key}
+                  onClick={() => setSidebarCollapsed(false)}
+                  className="w-full p-3 rounded-lg hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  title={`${category.name} - Click to expand`}
+                >
+                  <category.icon className="w-5 h-5" />
+                </button>
+              ))}
+            </div>
+          ) : (
+            /* Full Sidebar */
+            <div className="p-4 space-y-6 overflow-y-auto h-full">
+              {/* Tool Categories */}
+              {Object.entries(toolCategories).map(([categoryKey, category]) => (
+                <div key={categoryKey}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <category.icon className="w-4 h-4 text-purple-400" />
+                    <h4 className="font-medium text-sm text-gray-300">{category.name}</h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {category.tools.map(tool => (
+                      <button
+                        key={tool.id}
+                        onClick={() => {
+                          setSelectedTool(tool.id);
+                          // Handle special tool actions
+                          if (tool.id === '3d-view') {
+                            setShowCADIntegration(true);
+                          } else if (tool.id === 'fixture') {
+                            // Auto-select first fixture for placement
+                            if (fixtureLibrary.length > 0 && !selectedFixture) {
+                              setSelectedFixture(fixtureLibrary[0]);
+                            }
+                          } else if (tool.id === 'layers') {
+                            togglePanel('layers');
+                          }
+                        }}
+                        className={`p-3 rounded-lg text-xs transition-colors flex flex-col items-center gap-1 ${
+                          selectedTool === tool.id 
+                            ? 'bg-purple-600 text-white' 
+                            : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                        }`}
+                      >
+                        <tool.icon className="w-4 h-4" />
+                        <span>{tool.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {/* Professional Panels */}
+              <div>
+                <h4 className="font-medium text-sm text-gray-300 mb-3 flex items-center gap-2">
+                  <Monitor className="w-4 h-4 text-purple-400" />
+                  Professional Panels
+                </h4>
+                <div className="space-y-1">
+                  {professionalPanels.map(panel => (
+                    <button
+                      key={panel.id}
+                      onClick={() => togglePanel(panel.id)}
+                      className={`w-full p-2 rounded text-xs text-left transition-colors flex items-center gap-2 ${
+                        openPanels[panel.id] 
+                          ? 'bg-purple-600 text-white' 
+                          : 'hover:bg-gray-700 text-gray-300'
+                      }`}
+                    >
+                      <panel.icon className="w-3 h-3" />
+                      <span className="flex-1">{panel.name}</span>
+                      {openPanels[panel.id] ? 
+                        <ChevronDown className="w-3 h-3" /> : 
+                        <ChevronRight className="w-3 h-3" />
+                      }
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Center Canvas Area */}
+        <div className="flex-1 bg-gray-950 relative">
+          {/* Canvas Toolbar */}
+          <div className="absolute top-4 left-4 bg-gray-800 rounded-lg shadow-lg p-2 flex items-center gap-2 z-50">
+            <select 
+              value={selectedCrop}
+              onChange={(e) => setSelectedCrop(e.target.value)}
+              className="bg-gray-700 text-sm rounded px-2 py-1 border-0"
+            >
+              {Object.entries(cropPresets).map(([key, preset]) => (
+                <option key={key} value={key}>{preset.name}</option>
+              ))}
+            </select>
+            <div className="text-xs text-gray-400">
+              DLI: {cropPresets[selectedCrop as keyof typeof cropPresets].dli}
+            </div>
+          </div>
+
+          {/* Mode-based Content Display */}
+          <div className="absolute inset-0">
+            {currentMode === 'design' ? (
+              /* Design Mode - CAD Integration */
+              <>
+            {showCADIntegration && viewerUrn ? (
+              <div className="relative w-full h-full">
+                <AutodeskViewerReal
+                  urn={viewerUrn}
+                  className="w-full h-full"
+                  showToolbar={true}
+                  enableMeasurements={true}
+                  enableSectioning={true}
+                  onModelLoad={handleViewerLoad}
+                  onSelectionChange={(selection) => {
+                    console.log('Selection changed:', selection);
+                  }}
+                />
+                {viewer3D && (
+                  <CADFixturePlacer
+                    viewer={viewer3D}
+                    selectedTool={selectedTool}
+                    onFixturePlaced={handleFixturePlaced}
+                    fixtureLibrary={fixtureLibrary}
+                    selectedFixture={selectedFixture}
+                  />
+                )}
+              </div>
+            ) : showCADIntegration ? (
+              <EnhancedCADIntegration />
+            ) : showOnboarding ? (
+              <DesignOnboarding 
+                onComplete={(config) => {
+                  setDesignConfig(config);
+                  setShowOnboarding(false);
+                  setShowCADIntegration(true);
+                  setProjectName(`${config.spaceType} Design - ${config.dimensions.length}x${config.dimensions.width}x${config.dimensions.height}${config.unit}`);
+                }}
+                onCADImport={() => {
+                  setShowOnboarding(false);
+                  setCadImportOpen(true);
+                }}
+              />
+            ) : (
+              <div className="flex items-center justify-center h-full">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-gray-800 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <FileText className="w-12 h-12 text-purple-400" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3">Professional CAD Designer</h3>
+                  <p className="text-gray-400 max-w-lg mb-6">
+                    Import your architectural drawings and create professional lighting designs with AutoCAD integration.
+                    Start by importing a CAD file or use the design tools to begin.
+                  </p>
+                  <div className="flex gap-3 justify-center">
+                    <button 
+                      onClick={openCADImport}
+                      className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+                    >
+                      <Upload className="w-4 h-4" />
+                      Import CAD File
+                    </button>
+                    <button 
+                      onClick={() => {
+                        // Clear any existing design and start fresh
+                        setPlacedFixtures([]);
+                        setCurrentCADFile(null);
+                        setViewerUrn('');
+                        setCadLayers([]);
+                        setShowCADIntegration(true);
+                        setProjectName('Untitled Project');
+                      }}
+                      className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+                    >
+                      <Grid3x3 className="w-4 h-4" />
+                      Start Blank Design
+                    </button>
+                    <Link 
+                      href="/calculators"
+                      className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+                    >
+                      <Target className="w-4 h-4" />
+                      Open Calculators
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+            </>
+            ) : currentMode === 'analyze' ? (
+              /* Analysis Mode */
+              <AnalysisEngine
+                placedFixtures={placedFixtures}
+                roomDimensions={{
+                  length: roomDimensions.length || 20,
+                  width: roomDimensions.width || 15,
+                  height: roomDimensions.height || 10
+                }}
+                targetPPFD={targetPPFD}
+                targetDLI={targetDLI}
+                onAnalysisComplete={(results) => setAnalysisResults(results)}
+              />
+            ) : currentMode === 'simulate' ? (
+              /* Simulation Mode */
+              <SimulationEngine
+                placedFixtures={placedFixtures}
+                roomDimensions={{
+                  length: roomDimensions.length || 20,
+                  width: roomDimensions.width || 15,
+                  height: roomDimensions.height || 10
+                }}
+                onSimulationUpdate={(results) => setSimulationResults(results)}
+              />
+            ) : currentMode === 'output' ? (
+              /* Output Mode */
+              <OutputEngine
+                placedFixtures={placedFixtures}
+                analysisResults={analysisResults}
+                simulationResults={simulationResults}
+                roomDimensions={{
+                  length: roomDimensions.length || 20,
+                  width: roomDimensions.width || 15,
+                  height: roomDimensions.height || 10
+                }}
+                projectName={projectName}
+              />
+            ) : null}
+          </div>
+
+          {/* Live Status Indicators */}
+          <div className="absolute bottom-4 left-4 bg-gray-800 rounded-lg p-3 text-xs">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Live Calculations</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span>3D Rendering</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                <span>AI Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* AI Assistant Chat Interface */}
+        {aiChatOpen && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl w-full max-w-2xl h-[600px] flex flex-col">
+              {/* Chat Header */}
+              <div className="p-4 border-b border-gray-700 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <Bot className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">AI Design Assistant</h3>
+                    <p className="text-xs text-gray-400">Powered by VibeLux AI</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setAiChatOpen(false)}
+                  className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
+
+              {/* Chat Messages */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                {aiMessages.length === 0 ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Bot className="w-8 h-8 text-purple-400" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Welcome to AI Design Assistant</h4>
+                    <p className="text-gray-400 mb-6 max-w-md mx-auto">
+                      I can help you design optimal lighting layouts, calculate PPFD requirements, 
+                      place fixtures efficiently, and answer questions about your cultivation setup.
+                    </p>
+                    <div className="grid grid-cols-1 gap-2 max-w-md mx-auto">
+                      <button 
+                        onClick={() => {
+                          const message = "Design a lighting layout for my 20x15 ft flowering room with cannabis, targeting 800 PPFD";
+                          setAiMessages([{ role: 'user', content: message }]);
+                          setAiInput('');
+                          // Simulate AI response
+                          setTimeout(() => {
+                            setAiMessages(prev => [...prev, { 
+                              role: 'assistant', 
+                              content: "I'll help you design an optimal lighting layout for your 20x15 ft cannabis flowering room targeting 800 PPFD. Based on your room dimensions (300 sq ft), I recommend:\n\n**Layout Strategy:**\n• 12-16 high-efficiency LED fixtures (320W each)\n• 4x3 or 4x4 grid arrangement for even coverage\n• Mounting height: 18-24 inches above canopy\n• Target spacing: 4-5 ft centers\n\n**Recommended Fixtures:**\n• Fluence SPYDR 2i (320W, 860 PPF, 2.7 μmol/J)\n• Total system: ~4,000W, 11,000+ total PPF\n\n**Expected Results:**\n• Average PPFD: 800-850 μmol/m²/s\n• Uniformity ratio: 0.8:1 or better\n• DLI: 34.6 mol/m²/day (12hr photoperiod)\n\nWould you like me to place these fixtures in your design canvas or adjust any parameters?" 
+                            }]);
+                          }, 2000);
+                        }}
+                        className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left text-sm text-gray-300 transition-colors"
+                      >
+                        💡 Design a lighting layout for my flowering room
+                      </button>
+                      <button 
+                        onClick={() => {
+                          const message = "What PPFD should I target for cannabis in late flowering?";
+                          setAiMessages([{ role: 'user', content: message }]);
+                          setAiInput('');
+                          setTimeout(() => {
+                            setAiMessages(prev => [...prev, { 
+                              role: 'assistant', 
+                              content: "For cannabis in late flowering (weeks 6-8), I recommend:\n\n**PPFD Targets:**\n• **Optimal:** 600-800 μmol/m²/s\n• **Maximum:** 900 μmol/m²/s (with CO2 supplementation)\n• **Minimum:** 400 μmol/m²/s\n\n**Key Considerations:**\n• Lower PPFD than vegetative stage (reduce from 800-1000 to 600-800)\n• Focus on consistent light distribution over maximum intensity\n• Watch for light burn - yellowing upper leaves indicate excess light\n• Maintain 12/12 photoperiod for proper flowering\n\n**DLI Calculation:**\n• Target DLI: 26-35 mol/m²/day\n• At 800 PPFD × 12 hours = 34.6 mol/m²/day (optimal)\n\nYour current crop setting shows cannabis with 800 PPFD target - this is perfect for late flowering! Would you like me to analyze your current light distribution?" 
+                            }]);
+                          }, 2000);
+                        }}
+                        className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left text-sm text-gray-300 transition-colors"
+                      >
+                        📊 What PPFD should I target for cannabis flowering?
+                      </button>
+                      <button 
+                        onClick={() => {
+                          const message = "Calculate supplemental lighting needed for my greenhouse in winter";
+                          setAiMessages([{ role: 'user', content: message }]);
+                          setAiInput('');
+                          setTimeout(() => {
+                            setAiMessages(prev => [...prev, { 
+                              role: 'assistant', 
+                              content: "I'll help you calculate winter supplemental lighting for your greenhouse. First, I need a few details:\n\n**Required Information:**\n• ZIP code (for solar data)\n• Greenhouse type (glass, polycarbonate, etc.)\n• Crop type and target DLI\n• Photoperiod (hours of operation)\n\n**Current Analysis:**\nI see you have the solar calculator in the right panel. Here's how to use it:\n\n1. **Enter your ZIP code** in the solar analysis section\n2. **Select greenhouse type** (affects light transmission)\n3. **Choose calculation mode:**\n   - Winter (worst case) - designs for December/January\n   - Annual average - year-round optimization\n\n**Winter Considerations:**\n• Use worst-case month (typically December)\n• Account for lower light transmission in winter\n• Plan for backup power during extended cloudy periods\n• Consider energy costs during peak winter usage\n\nOnce you enter your ZIP code, I can provide specific PPFD recommendations and fixture layouts!" 
+                            }]);
+                          }, 2000);
+                        }}
+                        className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-left text-sm text-gray-300 transition-colors"
+                      >
+                        🌱 Calculate greenhouse supplemental lighting
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  aiMessages.map((message, index) => (
+                    <div key={index} className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                      {message.role === 'assistant' && (
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Bot className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                      <div className={`max-w-md p-3 rounded-lg ${
+                        message.role === 'user' 
+                          ? 'bg-purple-600 text-white' 
+                          : 'bg-gray-800 text-gray-100'
+                      }`}>
+                        <div className="text-sm whitespace-pre-wrap">{message.content}</div>
+                      </div>
+                      {message.role === 'user' && (
+                        <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Users className="w-4 h-4 text-gray-400" />
+                        </div>
+                      )}
+                    </div>
+                  ))
+                )}
+              </div>
+
+              {/* Chat Input */}
+              <div className="p-4 border-t border-gray-700">
+                <div className="flex gap-3">
+                  <input
+                    value={aiInput}
+                    onChange={(e) => setAiInput(e.target.value)}
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        if (aiInput.trim()) {
+                          const userMessage = aiInput.trim();
+                          setAiMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+                          setAiInput('');
+                          
+                          // Simulate AI response
+                          setTimeout(() => {
+                            let response = "I understand you're asking about: \"" + userMessage + "\"\n\n";
+                            
+                            if (userMessage.toLowerCase().includes('ppfd') || userMessage.toLowerCase().includes('lighting')) {
+                              response += "For lighting design and PPFD calculations, I recommend:\n\n• Use the solar calculator on the right panel to determine supplemental lighting needs\n• Target PPFD varies by crop and growth stage\n• Cannabis flowering: 600-800 PPFD\n• Vegetative growth: 400-600 PPFD\n• Seedlings: 200-300 PPFD\n\nWould you like me to help calculate specific requirements for your setup?";
+                            } else if (userMessage.toLowerCase().includes('fixture') || userMessage.toLowerCase().includes('layout')) {
+                              response += "For fixture placement and layout optimization:\n\n• Consider room dimensions and mounting height\n• Aim for uniform light distribution (0.8:1 ratio or better)\n• Account for wall reflectance and crop canopy\n• Use the fixture library to select appropriate models\n\nI can help you place fixtures in the design canvas. What are your room dimensions?";
+                            } else if (userMessage.toLowerCase().includes('greenhouse') || userMessage.toLowerCase().includes('solar')) {
+                              response += "For greenhouse lighting and solar analysis:\n\n• Use the ZIP code calculator to get local solar DLI data\n• Account for greenhouse transmission factors\n• Plan for worst-case winter conditions\n• Consider energy costs and utility incentives\n\nEnter your ZIP code in the solar analysis section to get started!";
+                            } else {
+                              response += "I'm here to help with:\n\n• Lighting design and layout optimization\n• PPFD and DLI calculations\n• Fixture selection and placement\n• Greenhouse solar analysis\n• Energy efficiency optimization\n\nWhat specific aspect of your cultivation lighting would you like assistance with?";
+                            }
+                            
+                            setAiMessages(prev => [...prev, { role: 'assistant', content: response }]);
+                          }, 1500);
+                        }
+                      }
+                    }}
+                    placeholder="Ask about lighting design, PPFD calculations, fixture placement..."
+                    className="flex-1 px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-sm focus:outline-none focus:border-purple-500"
+                  />
+                  <button 
+                    onClick={() => {
+                      if (aiInput.trim()) {
+                        const userMessage = aiInput.trim();
+                        setAiMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+                        setAiInput('');
+                        
+                        setTimeout(() => {
+                          setAiMessages(prev => [...prev, { 
+                            role: 'assistant', 
+                            content: "I received your message: \"" + userMessage + "\"\n\nI'm a demo AI assistant for lighting design. In the full version, I would provide detailed analysis and recommendations based on your specific requirements." 
+                          }]);
+                        }, 1500);
+                      }
+                    }}
+                    className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <span className="text-sm">Send</span>
+                  </button>
+                </div>
+                <div className="mt-2 text-xs text-gray-500">
+                  Press Enter to send • This is a demo AI assistant
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Right Panel - Properties & Analysis */}
+        {!rightPanelCollapsed && (
+          <div className="w-96 bg-gray-800 border-l border-gray-700 flex flex-col">
+            {/* Panel Header */}
+            <div className="p-4 border-b border-gray-700 flex items-center justify-between">
+              <h3 className="font-semibold">Properties & Analysis</h3>
+              <button 
+                onClick={() => setRightPanelCollapsed(true)}
+                className="p-1 hover:bg-gray-700 rounded"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            
+            {/* Panel Content */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-6">
+              {/* Live Calculations Summary */}
+              {placedFixtures.length > 0 && (
+                <div className="bg-purple-900/20 border border-purple-600/50 rounded-lg p-4">
+                  <h4 className="font-medium text-sm text-purple-300 mb-2 flex items-center gap-2">
+                    <Calculator className="w-4 h-4" />
+                    Live Calculations
+                  </h4>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="bg-gray-800 rounded p-2">
+                      <div className="text-gray-400">Total Fixtures</div>
+                      <div className="text-lg font-semibold text-white">{placedFixtures.length}</div>
+                    </div>
+                    <div className="bg-gray-800 rounded p-2">
+                      <div className="text-gray-400">Total Power</div>
+                      <div className="text-lg font-semibold text-yellow-400">
+                        {placedFixtures.reduce((sum, f) => sum + (f.wattage || 0), 0)}W
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Room Configuration */}
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <Building className="w-4 h-4" />
+                    Room Configuration
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-xs text-gray-400 mb-1">Length (ft)</label>
+                        <input type="number" defaultValue="20" className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" />
+                      </div>
+                      <div>
+                        <label className="block text-xs text-gray-400 mb-1">Width (ft)</label>
+                        <input type="number" defaultValue="15" className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs text-gray-400 mb-1">Height (ft)</label>
+                      <input type="number" defaultValue="10" className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Crop Settings */}
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <FlaskConical className="w-4 h-4" />
+                    Crop Parameters
+                  </h4>
+                  <div className="space-y-3">
+                    <div>
+                      <label className="block text-xs text-gray-400 mb-1">Target DLI</label>
+                      <input 
+                        type="number" 
+                        value={targetDLI}
+                        onChange={(e) => setTargetDLI(Number(e.target.value))}
+                        min="0"
+                        max="100"
+                        className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs text-gray-400 mb-1">Target PPFD</label>
+                      <input 
+                        type="number" 
+                        value={targetPPFD}
+                        onChange={(e) => setTargetPPFD(Number(e.target.value))}
+                        min="0"
+                        max="2000"
+                        className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs text-gray-400 mb-1">Photoperiod (hours)</label>
+                      <input 
+                        type="number" 
+                        value={photoperiod}
+                        onChange={(e) => setPhotoperiod(Number(e.target.value))}
+                        min="0"
+                        max="24"
+                        step="0.5"
+                        className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" 
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Greenhouse Calculations */}
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <Sun className="w-4 h-4" />
+                    Greenhouse Settings
+                    <div className="group relative">
+                      <Info className="w-3 h-3 text-gray-400 cursor-help" />
+                      <div className="absolute z-10 invisible group-hover:visible bg-gray-800 text-xs rounded-lg p-3 w-64 -right-2 top-5 border border-gray-600">
+                        <div className="text-gray-300 space-y-2">
+                          <p>Calculate supplemental lighting needs based on:</p>
+                          <ul className="list-disc list-inside text-gray-400">
+                            <li>Your location's solar radiation</li>
+                            <li>Greenhouse material transmission</li>
+                            <li>Target DLI for your crop</li>
+                            <li>Photoperiod (hours of light)</li>
+                          </ul>
+                          <p className="mt-2 text-gray-300">The calculator will determine how much artificial light is needed to reach your target DLI.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </h4>
+                  <div className="space-y-3">
+                    <div>
+                      <label className="block text-xs text-gray-400 mb-1">ZIP Code</label>
+                      <div className="flex gap-2">
+                        <input 
+                          type="text" 
+                          value={zipCode}
+                          onChange={(e) => setZipCode(e.target.value)}
+                          placeholder="Enter ZIP code"
+                          maxLength={5}
+                          className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm" 
+                        />
+                        <button 
+                          onClick={() => calculateSolarDLI()}
+                          disabled={!zipCode || zipCode.length !== 5 || isCalculating}
+                          className="px-3 py-2 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed rounded text-sm transition-colors"
+                        >
+                          {isCalculating ? 'Loading...' : 'Calculate'}
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs text-gray-400 mb-1">Greenhouse Type</label>
+                      <select 
+                        value={greenhouseType}
+                        onChange={(e) => setGreenhouseType(e.target.value)}
+                        className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm"
+                      >
+                        {Object.entries(GREENHOUSE_TYPES).map(([key, type]) => (
+                          <option key={key} value={key}>
+                            {type.name} ({Math.round(type.transmission * 100)}%)
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    {solarDLI > 0 && (
+                      <>
+                        <div className="flex items-center justify-between">
+                          <label className="text-xs text-gray-400">Calculation Mode</label>
+                          <button
+                            onClick={() => setUseWinterValues(!useWinterValues)}
+                            className={`text-xs px-3 py-1 rounded-full transition-colors ${
+                              useWinterValues 
+                                ? 'bg-blue-600 text-white' 
+                                : 'bg-gray-600 text-gray-300'
+                            }`}
+                          >
+                            {useWinterValues ? 'Winter (Worst Case)' : 'Annual Average'}
+                          </button>
+                        </div>
+                        <div className="bg-blue-900/20 border border-blue-700 rounded p-3 text-sm">
+                          <div className="text-blue-400 mb-2">Solar Analysis Results:</div>
+                          {solarLocation && (
+                            <div className="text-xs text-gray-300 mb-2">Location: {solarLocation}</div>
+                          )}
+                          <div className="space-y-1 text-xs">
+                            <div>{useWinterValues ? 'Winter Min' : 'Annual Avg'} Solar DLI: <span className="text-blue-300">{solarDLI.toFixed(1)} mol/m²/day</span></div>
+                            <div>After Transmission: <span className="text-blue-300">{(solarDLI * GREENHOUSE_TYPES[greenhouseType as keyof typeof GREENHOUSE_TYPES].transmission).toFixed(1)} mol/m²/day</span></div>
+                            <div>Required Supplemental DLI: <span className="text-yellow-300">{Math.max(0, targetDLI - (solarDLI * GREENHOUSE_TYPES[greenhouseType as keyof typeof GREENHOUSE_TYPES].transmission)).toFixed(1)} mol/m²/day</span></div>
+                            <div className="mt-2 pt-2 border-t border-blue-700">
+                              <div>Recommended PPFD: <span className="text-green-300">{calculatedPPFD} μmol/m²/s</span></div>
+                              <div className="text-gray-400 mt-1">
+                                Solar provides {Math.round((solarDLI * GREENHOUSE_TYPES[greenhouseType as keyof typeof GREENHOUSE_TYPES].transmission / targetDLI) * 100)}% of target DLI
+                              </div>
+                              <button
+                                onClick={() => setTargetPPFD(calculatedPPFD)}
+                                className="mt-2 w-full px-3 py-1.5 bg-blue-600 hover:bg-blue-700 rounded text-xs transition-colors"
+                              >
+                                Apply to Design
+                              </button>
+                            </div>
+                          </div>
+                          {monthlyDLI.length > 0 && (
+                            <div className="mt-3 pt-3 border-t border-blue-700">
+                              <div className="text-blue-400 mb-2 text-xs">Monthly Solar DLI (mol/m²/day):</div>
+                              <div className="grid grid-cols-3 gap-1 text-xs">
+                                {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map((month, i) => {
+                                  const monthDLI = monthlyDLI[i] || 0;
+                                  const afterTransmission = monthDLI * GREENHOUSE_TYPES[greenhouseType as keyof typeof GREENHOUSE_TYPES].transmission;
+                                  const isWorstMonth = monthDLI === Math.min(...monthlyDLI);
+                                  return (
+                                    <div key={month} className={`p-1 rounded text-center ${isWorstMonth ? 'bg-red-900/30 border border-red-700' : 'bg-gray-700'}`}>
+                                      <div className="text-gray-300">{month}</div>
+                                      <div className={isWorstMonth ? 'text-red-300 font-bold' : 'text-blue-300'}>{afterTransmission.toFixed(1)}</div>
+                                      {isWorstMonth && <div className="text-red-400 text-xs">WORST</div>}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              <div className="mt-2 text-xs text-gray-400">
+                                Design based on worst month ({['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][monthlyDLI.indexOf(Math.min(...monthlyDLI))]}) ensures year-round target DLI
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Live Metrics */}
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4" />
+                    Live Metrics
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="bg-gray-700 rounded p-3">
+                      <div className="text-xs text-gray-400">Average PPFD</div>
+                      <div className="text-lg font-semibold text-green-400">0 μmol/m²/s</div>
+                    </div>
+                    <div className="bg-gray-700 rounded p-3">
+                      <div className="text-xs text-gray-400">Uniformity Ratio</div>
+                      <div className="text-lg font-semibold text-blue-400">0:1</div>
+                    </div>
+                    <div className="bg-gray-700 rounded p-3">
+                      <div className="text-xs text-gray-400">Energy Efficiency</div>
+                      <div className="text-lg font-semibold text-purple-400">0 μmol/J</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Fixture Library */}
+                {selectedTool === 'fixture' && (
+                  <div>
+                    <h4 className="font-medium mb-3 flex items-center gap-2">
+                      <Lightbulb className="w-4 h-4" />
+                      Fixture Library
+                    </h4>
+                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                      {fixtureLibrary.map((fixture) => (
+                        <button
+                          key={fixture.id}
+                          onClick={() => setSelectedFixture(fixture)}
+                          className={`w-full p-2 rounded text-left text-xs transition-colors ${
+                            selectedFixture?.id === fixture.id
+                              ? 'bg-purple-600 text-white'
+                              : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                          }`}
+                        >
+                          <div className="font-medium">{fixture.manufacturer} {fixture.model}</div>
+                          <div className="text-gray-400">
+                            {fixture.wattage}W • {fixture.ppf} PPF • {fixture.efficacy} μmol/J
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* CAD Layer Management */}
+                {cadLayers.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-3 flex items-center gap-2">
+                      <Layers className="w-4 h-4" />
+                      CAD Layers ({cadLayers.length})
+                    </h4>
+                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                      {cadLayers.map((layer: any, index: number) => (
+                        <div key={index} className="flex items-center justify-between p-2 bg-gray-700 rounded text-xs">
+                          <div className="flex items-center gap-2">
+                            <div 
+                              className="w-3 h-3 rounded"
+                              style={{ backgroundColor: layer.color || '#888888' }}
+                            />
+                            <span className="text-gray-300">{layer.name}</span>
+                            <span className="text-gray-500">({layer.entities || 0})</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <button 
+                              onClick={() => toggleLayerVisibility(layer.name)}
+                              className="p-1 hover:bg-gray-600 rounded"
+                              title="Toggle layer visibility"
+                            >
+                              <Eye className="w-3 h-3 text-gray-400" />
+                            </button>
+                            <button 
+                              onClick={() => toggleLayerLock(layer.name)}
+                              className="p-1 hover:bg-gray-600 rounded"
+                              title="Toggle layer lock"
+                            >
+                              <Lock className="w-3 h-3 text-gray-400" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Placed Fixtures */}
+                {placedFixtures.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-3 flex items-center gap-2">
+                      <Target className="w-4 h-4" />
+                      Placed Fixtures ({placedFixtures.length})
+                    </h4>
+                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                      {placedFixtures.map((fixture) => (
+                        <div key={fixture.id} className="p-2 bg-gray-700 rounded text-xs">
+                          <div className="font-medium text-gray-300">{fixture.model.model}</div>
+                          <div className="text-gray-400">
+                            Position: ({fixture.position.x.toFixed(1)}, {fixture.position.y.toFixed(1)}, {fixture.position.z.toFixed(1)})
+                          </div>
+                          <div className="text-gray-400">
+                            {fixture.wattage}W • {fixture.enabled ? 'ON' : 'OFF'}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Quick Actions */}
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <Zap className="w-4 h-4" />
+                    Quick Actions
+                  </h4>
+                  <div className="space-y-2">
+                    <button 
+                      onClick={() => togglePanel('photometric')}
+                      className="w-full px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm text-left transition-colors flex items-center gap-2"
+                    >
+                      <Calculator className="w-4 h-4" />
+                      Run Photometric Analysis
+                    </button>
+                    <button 
+                      onClick={() => togglePanel('3d-visualization')}
+                      className="w-full px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm text-left transition-colors flex items-center gap-2"
+                    >
+                      <Eye className="w-4 h-4" />
+                      Generate 3D View
+                    </button>
+                    <button 
+                      onClick={() => togglePanel('professional-reports')}
+                      className="w-full px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm text-left transition-colors flex items-center gap-2"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Generate Report
+                    </button>
+                    <Link 
+                      href="/calculators/environmental-control"
+                      className="w-full px-3 py-2 bg-purple-600 hover:bg-purple-700 rounded text-sm text-left transition-colors flex items-center gap-2"
+                    >
+                      <Target className="w-4 h-4" />
+                      Advanced Calculators
+                    </Link>
+                  </div>
+                </div>
+            </div>
+          </div>
+        )}
+
+        {/* Collapsed Right Panel Toggle */}
+        {rightPanelCollapsed && (
+          <button 
+            onClick={() => setRightPanelCollapsed(false)}
+            className="w-8 bg-gray-800 border-l border-gray-700 flex items-center justify-center hover:bg-gray-700"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+        )}
+      </div>
+
+      {/* Floating AI Assistant Button */}
+      <button
+        onClick={() => setAiChatOpen(true)}
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-105 z-40"
+        title="Open AI Design Assistant"
+      >
+        <Bot className="w-7 h-7 text-white" />
+      </button>
+
+      {/* Floating Panels Notifications */}
+      {Object.entries(openPanels).some(([key, isOpen]) => isOpen) && (
+        <div className="fixed bottom-24 right-4 bg-gray-800 rounded-lg p-4 shadow-lg border border-gray-700 max-w-sm">
+          <div className="flex items-center justify-between mb-2">
+            <h4 className="font-medium text-sm">Active Professional Panels</h4>
+            <button 
+              onClick={() => setOpenPanels({})}
+              className="text-gray-400 hover:text-white"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          <div className="space-y-1">
+            {Object.entries(openPanels)
+              .filter(([key, isOpen]) => isOpen)
+              .map(([key, isOpen]) => {
+                const panel = professionalPanels.find(p => p.id === key);
+                return panel ? (
+                  <div key={key} className="flex items-center gap-2 text-xs text-gray-300">
+                    <panel.icon className="w-3 h-3" />
+                    <span>{panel.name}</span>
+                    <button 
+                      onClick={() => togglePanel(key)}
+                      className="ml-auto text-gray-400 hover:text-white"
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                ) : null;
+              })}
+          </div>
+          <div className="mt-3 text-xs text-gray-400">
+            Professional panels are simulated. Use calculators for working tools.
+          </div>
+        </div>
+      )}
+
+      {/* CAD Import Modal */}
+      <CADImportModal
+        isOpen={cadImportOpen}
+        onClose={() => setCadImportOpen(false)}
+        onImport={handleCADImport}
+      />
+    </div>
+  );
+}

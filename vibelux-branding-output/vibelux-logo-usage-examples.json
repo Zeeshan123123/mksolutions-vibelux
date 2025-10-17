@@ -1,0 +1,171 @@
+{
+  "vibelux_logo_integration": {
+    "version": "1.0",
+    "last_updated": "2025-07-28T00:06:27.103Z",
+    "brand_configuration": {
+      "company_name": "Vibelux",
+      "company_tagline": "Professional Greenhouse Solutions",
+      "logo_file": "/assets/vibelux-logo.svg",
+      "colors": {
+        "primary": "#00A86B",
+        "secondary": "#2E8B57",
+        "accent": "#32CD32",
+        "neutral": "#708090",
+        "text": "#2F4F4F"
+      },
+      "typography": {
+        "primary_font": "Arial",
+        "heading_font": "Arial Black",
+        "font_sizes": {
+          "title": 14,
+          "heading": 12,
+          "body": 10,
+          "caption": 8
+        }
+      }
+    },
+    "title_block_templates": [
+      {
+        "id": "GREENHOUSE-ARCH-D",
+        "name": "Greenhouse Construction - ARCH D",
+        "size": "24x36",
+        "logo_placement": {
+          "position": [
+            0.25,
+            3.5
+          ],
+          "size": [
+            3,
+            1
+          ],
+          "format": "svg",
+          "color_mode": "full-color"
+        },
+        "branding_zones": [
+          {
+            "type": "primary_logo",
+            "coordinates": [
+              0.25,
+              3.5,
+              3.25,
+              4.5
+            ],
+            "content": "Vibelux logo and tagline"
+          },
+          {
+            "type": "contact_info",
+            "coordinates": [
+              0.25,
+              4.5,
+              3.25,
+              5
+            ],
+            "content": "Website and phone number"
+          },
+          {
+            "type": "quality_mark",
+            "coordinates": [
+              6.5,
+              0.75,
+              8.25,
+              1.5
+            ],
+            "content": "Quality assurance stamp"
+          }
+        ]
+      },
+      {
+        "id": "COVER-SHEET-ARCH-D",
+        "name": "Project Cover Sheet - ARCH D",
+        "size": "24x36",
+        "logo_placement": {
+          "position": [
+            10,
+            4.5
+          ],
+          "size": [
+            6,
+            1.5
+          ],
+          "format": "svg",
+          "color_mode": "full-color",
+          "prominence": "primary"
+        },
+        "branding_zones": [
+          {
+            "type": "header_logo",
+            "coordinates": [
+              1,
+              4.5,
+              19,
+              6
+            ],
+            "content": "Large Vibelux header with company information"
+          },
+          {
+            "type": "compliance_footer",
+            "coordinates": [
+              1,
+              0.25,
+              19,
+              1.25
+            ],
+            "content": "Professional standards and contact information"
+          }
+        ]
+      }
+    ],
+    "usage_guidelines": {
+      "minimum_size": "80px width",
+      "maximum_size": "25% of title block width",
+      "clear_space": "0.5x logo height on all sides",
+      "color_modes": [
+        "full-color",
+        "single-color",
+        "grayscale"
+      ],
+      "file_formats": [
+        "svg",
+        "png",
+        "eps"
+      ],
+      "placement_zones": [
+        "primary",
+        "secondary",
+        "watermark"
+      ]
+    },
+    "compliance_integration": {
+      "professional_seals": {
+        "placement": "Adjacent to logo, non-overlapping",
+        "standards": [
+          "State PE requirements",
+          "Architect licensing"
+        ],
+        "clearance": "Minimum 0.25 inches from logo"
+      },
+      "code_compliance": {
+        "marks": [
+          "IBC 2021",
+          "NEC 2023",
+          "NGMA",
+          "Local amendments"
+        ],
+        "placement": "Dedicated compliance zone",
+        "verification": "Automated checking system"
+      },
+      "quality_standards": {
+        "vibelux_qa": "Professional quality assurance marks",
+        "iso_compliance": "ISO 9001 quality management",
+        "peer_review": "Professional review requirements"
+      }
+    },
+    "implementation_notes": {
+      "cad_integration": "SVG format for vector-based CAD systems",
+      "print_quality": "300 DPI minimum for raster formats",
+      "color_accuracy": "CMYK for print, RGB for digital",
+      "scalability": "Vector graphics maintain quality at all sizes",
+      "accessibility": "High contrast ratios for professional legibility"
+    }
+  }
+}

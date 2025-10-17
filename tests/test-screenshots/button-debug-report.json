@@ -1,0 +1,985 @@
+{
+  "timestamp": "2025-07-26T16:27:53.263Z",
+  "analysis": {
+    "allButtons": [
+      {
+        "index": 0,
+        "text": "🏢 Facility Overview",
+        "position": {
+          "top": 168.5,
+          "left": 37,
+          "width": 225,
+          "height": 37.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "inline-block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "control-button active",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button active",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "text": "🆕 New Addition (140-146)",
+        "position": {
+          "top": 213.6875,
+          "left": 37,
+          "width": 225,
+          "height": 37.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "inline-block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "control-button",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "text": "🏢 Existing Building (127-134)",
+        "position": {
+          "top": 258.875,
+          "left": 37,
+          "width": 225,
+          "height": 37.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "inline-block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "control-button",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "text": "⚡ Electrical Systems",
+        "position": {
+          "top": 304.0625,
+          "left": 37,
+          "width": 225,
+          "height": 37.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "inline-block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "control-button",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "text": "🔆 VYPR 2p Fixtures",
+        "position": {
+          "top": 428.25,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "SPAN",
+          "class": "",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button active",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "text": "🔥 PPFD Heatmap",
+        "position": {
+          "top": 471.4375,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "SPAN",
+          "class": "",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "text": "🏷️ Fixture Labels",
+        "position": {
+          "top": 514.625,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "SPAN",
+          "class": "",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "text": "📡 Light Coverage",
+        "position": {
+          "top": 557.8125,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "SPAN",
+          "class": "",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "text": "🔌 Conduit Routing",
+        "position": {
+          "top": 684,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "SPAN",
+          "class": "",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "text": "⚡ Circuit Distribution",
+        "position": {
+          "top": 727.1875,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": false,
+        "elementAtPoint": null,
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "text": "📋 Electrical Panels",
+        "position": {
+          "top": 770.375,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": false,
+        "elementAtPoint": null,
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "text": "📊 Load Analysis",
+        "position": {
+          "top": 813.5625,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": false,
+        "elementAtPoint": null,
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "text": "Overview",
+        "position": {
+          "top": 16,
+          "left": 947,
+          "width": 78.25,
+          "height": 33.6875
+        },
+        "styles": {
+          "zIndex": "auto",
+          "position": "static",
+          "display": "block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "tab active",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "DIV",
+            "class": "right-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "text": "Rooms",
+        "position": {
+          "top": 16,
+          "left": 1026.25,
+          "width": 78.25,
+          "height": 33.6875
+        },
+        "styles": {
+          "zIndex": "auto",
+          "position": "static",
+          "display": "block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "tab",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "DIV",
+            "class": "right-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "text": "Fixtures",
+        "position": {
+          "top": 16,
+          "left": 1105.5,
+          "width": 78.25,
+          "height": 33.6875
+        },
+        "styles": {
+          "zIndex": "auto",
+          "position": "static",
+          "display": "block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "tab",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "DIV",
+            "class": "right-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "text": "Electrical",
+        "position": {
+          "top": 16,
+          "left": 1184.75,
+          "width": 78.25,
+          "height": 33.6875
+        },
+        "styles": {
+          "zIndex": "auto",
+          "position": "static",
+          "display": "block",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": true,
+        "elementAtPoint": {
+          "tag": "BUTTON",
+          "class": "tab",
+          "id": ""
+        },
+        "hierarchy": [
+          {
+            "tag": "DIV",
+            "class": "right-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      }
+    ],
+    "blockedButtons": [
+      {
+        "index": 9,
+        "text": "⚡ Circuit Distribution",
+        "position": {
+          "top": 727.1875,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": false,
+        "elementAtPoint": null,
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "text": "📋 Electrical Panels",
+        "position": {
+          "top": 770.375,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": false,
+        "elementAtPoint": null,
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "text": "📊 Load Analysis",
+        "position": {
+          "top": 813.5625,
+          "left": 37,
+          "width": 225,
+          "height": 39.1875
+        },
+        "styles": {
+          "zIndex": "250",
+          "position": "relative",
+          "display": "flex",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "opacity": "1"
+        },
+        "isClickable": false,
+        "elementAtPoint": null,
+        "hierarchy": [
+          {
+            "tag": "BUTTON",
+            "class": "control-button toggle-button",
+            "zIndex": "250",
+            "position": "relative"
+          },
+          {
+            "tag": "DIV",
+            "class": "left-panel",
+            "zIndex": "10",
+            "position": "relative"
+          }
+        ]
+      }
+    ],
+    "overlappingElements": [],
+    "zIndexHierarchy": [
+      {
+        "tag": "DIV",
+        "class": "status-overlay",
+        "id": "",
+        "zIndex": 1000,
+        "position": "absolute",
+        "rect": {
+          "x": 321,
+          "y": 20,
+          "width": 608,
+          "height": 127,
+          "top": 20,
+          "right": 929,
+          "bottom": 147,
+          "left": 321
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "legend-overlay",
+        "id": "",
+        "zIndex": 999,
+        "position": "absolute",
+        "rect": {
+          "x": 734.0703125,
+          "y": 519,
+          "width": 174.9296875,
+          "height": 181,
+          "top": 519,
+          "right": 909,
+          "bottom": 700,
+          "left": 734.0703125
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button active",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 168.5,
+          "width": 225,
+          "height": 37.1875,
+          "top": 168.5,
+          "right": 262,
+          "bottom": 205.6875,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 213.6875,
+          "width": 225,
+          "height": 37.1875,
+          "top": 213.6875,
+          "right": 262,
+          "bottom": 250.875,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 258.875,
+          "width": 225,
+          "height": 37.1875,
+          "top": 258.875,
+          "right": 262,
+          "bottom": 296.0625,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 304.0625,
+          "width": 225,
+          "height": 37.1875,
+          "top": 304.0625,
+          "right": 262,
+          "bottom": 341.25,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button active",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 428.25,
+          "width": 225,
+          "height": 39.1875,
+          "top": 428.25,
+          "right": 262,
+          "bottom": 467.4375,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 471.4375,
+          "width": 225,
+          "height": 39.1875,
+          "top": 471.4375,
+          "right": 262,
+          "bottom": 510.625,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 514.625,
+          "width": 225,
+          "height": 39.1875,
+          "top": 514.625,
+          "right": 262,
+          "bottom": 553.8125,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 557.8125,
+          "width": 225,
+          "height": 39.1875,
+          "top": 557.8125,
+          "right": 262,
+          "bottom": 597,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 684,
+          "width": 225,
+          "height": 39.1875,
+          "top": 684,
+          "right": 262,
+          "bottom": 723.1875,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 727.1875,
+          "width": 225,
+          "height": 39.1875,
+          "top": 727.1875,
+          "right": 262,
+          "bottom": 766.375,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 770.375,
+          "width": 225,
+          "height": 39.1875,
+          "top": 770.375,
+          "right": 262,
+          "bottom": 809.5625,
+          "left": 37
+        }
+      },
+      {
+        "tag": "BUTTON",
+        "class": "control-button toggle-button",
+        "id": "",
+        "zIndex": 250,
+        "position": "relative",
+        "rect": {
+          "x": 37,
+          "y": 813.5625,
+          "width": 225,
+          "height": 39.1875,
+          "top": 813.5625,
+          "right": 262,
+          "bottom": 852.75,
+          "left": 37
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "left-panel",
+        "id": "",
+        "zIndex": 10,
+        "position": "relative",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 300,
+          "height": 720,
+          "top": 0,
+          "right": 300,
+          "bottom": 720,
+          "left": 0
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "right-panel",
+        "id": "",
+        "zIndex": 10,
+        "position": "relative",
+        "rect": {
+          "x": 930,
+          "y": 0,
+          "width": 350,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 930
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "",
+        "id": "threejs-container",
+        "zIndex": 1,
+        "position": "relative",
+        "rect": {
+          "x": 301,
+          "y": 0,
+          "width": 628,
+          "height": 720,
+          "top": 0,
+          "right": 929,
+          "bottom": 720,
+          "left": 301
+        }
+      }
+    ]
+  },
+  "fixes": [
+    {
+      "description": "Ensure parent containers don't hide overflow",
+      "code": ".left-panel {\n    overflow: visible;\n}\n\n.control-section {\n    overflow: visible;\n}"
+    },
+    {
+      "description": "Use CSS isolation to create new stacking context",
+      "code": ".control-section {\n    isolation: isolate;\n    position: relative;\n    z-index: 1000;\n}"
+    }
+  ]
+}

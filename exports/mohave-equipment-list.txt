@@ -1,0 +1,71 @@
+MOHAVE CANNABIS CO. - EQUIPMENT LIST
+=====================================
+
+LIGHTING EQUIPMENT
+------------------
+• 765× Fluence VYPR 2p LED Fixtures (645W each)
+• 14× Zone Controllers
+• Wireless DMX Control System
+• Light Sensors (16 units)
+
+GREENHOUSE STRUCTURE
+--------------------
+• Aluminum Alloy 6061-T6 Frame System
+• 16mm Triple-wall Polycarbonate Glazing System
+• Foundation: Reinforced concrete slab
+• Ventilation: 6 × 48" variable speed
+
+IRRIGATION EQUIPMENT
+--------------------
+• 500 gallons gallon Main Tank
+• 500 gallons gallon Secondary Tank
+• Primary Pump: 85 GPM @ 60 PSI
+• 2× Booster Pumps
+• 4× Zone Valves
+• 2,400 linear feet Piping System
+
+HVAC EQUIPMENT
+--------------
+• 120,000 BTU/hr (10 tons) Cooling System
+• 150,000 BTU/hr total Heating System
+• 3× Dehumidifiers
+• CO₂ Generator: 24 lbs/day
+• 6 × 48" variable speed (24,000 CFM total)
+• 4 × 36" variable speed (18,000 CFM total)
+
+ELECTRICAL EQUIPMENT
+--------------------
+• Main Service: 800A @ 480V, 3-phase, 4-wire
+• Main Distribution Panel: 800A
+• 3× Sub-Panels
+• Emergency Generator: 500 kW
+• UPS System: 50 kW
+
+AUTOMATION EQUIPMENT
+--------------------
+• 24× Temperature Sensors
+• 24× Humidity Sensors
+• 8× CO₂ Sensors
+• 4× pH Sensors
+• 4× EC Sensors
+• 6× WiFi Access Points
+• 3× Network Gateways
+
+SAFETY EQUIPMENT
+----------------
+• Fire Alarm System: Addressable fire alarm system
+• 24 photoelectric detectors
+• Wet pipe sprinkler system
+• LED emergency lighting
+• LED exit signs with battery backup
+
+CULTIVATION EQUIPMENT
+---------------------
+• 8 × 4ft × 8ft benches Propagation Benches
+• 16 × 4ft × 8ft benches Vegetative Benches
+• 24 × 4ft × 8ft benches Flowering Benches
+• 20 stainless steel racks Drying Racks
+• 12× Trimming Workstations
+
+Generated: 2025-07-26T19:19:24.345Z
+Total Equipment Items: 100+ major components

@@ -1,0 +1,1402 @@
+/**
+ * VibeLux Professional CAD UI Design System
+ * Comprehensive styling for greenhouse design platform
+ */
+
+/* ===========================
+   CSS Variables & Theme
+   =========================== */
+:root {
+  /* Primary Colors */
+  --vb-primary: #0066cc;
+  --vb-primary-hover: #0052a3;
+  --vb-primary-active: #004080;
+  --vb-primary-light: #e6f2ff;
+  
+  /* Secondary Colors */
+  --vb-secondary: #6c757d;
+  --vb-secondary-hover: #5a6268;
+  --vb-secondary-active: #495057;
+  
+  /* Status Colors */
+  --vb-success: #28a745;
+  --vb-warning: #ffc107;
+  --vb-danger: #dc3545;
+  --vb-info: #17a2b8;
+  
+  /* UI Colors */
+  --vb-background: #1e1e1e;
+  --vb-surface: #252526;
+  --vb-surface-light: #2d2d30;
+  --vb-surface-hover: #3e3e42;
+  --vb-surface-active: #094771;
+  
+  /* Text Colors */
+  --vb-text-primary: #cccccc;
+  --vb-text-secondary: #969696;
+  --vb-text-disabled: #5a5a5a;
+  --vb-text-inverse: #1e1e1e;
+  
+  /* Border Colors */
+  --vb-border: #464647;
+  --vb-border-light: #3c3c3c;
+  --vb-border-focus: #007acc;
+  
+  /* Spacing */
+  --vb-spacing-xs: 4px;
+  --vb-spacing-sm: 8px;
+  --vb-spacing-md: 16px;
+  --vb-spacing-lg: 24px;
+  --vb-spacing-xl: 32px;
+  
+  /* Typography */
+  --vb-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --vb-font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+  --vb-font-size-xs: 11px;
+  --vb-font-size-sm: 12px;
+  --vb-font-size-base: 13px;
+  --vb-font-size-md: 14px;
+  --vb-font-size-lg: 16px;
+  
+  /* Shadows */
+  --vb-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --vb-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --vb-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --vb-shadow-focus: 0 0 0 2px var(--vb-border-focus);
+  
+  /* Transitions */
+  --vb-transition-fast: 150ms ease-in-out;
+  --vb-transition-base: 200ms ease-in-out;
+  --vb-transition-slow: 300ms ease-in-out;
+  
+  /* Z-Index Scale */
+  --vb-z-base: 1;
+  --vb-z-dropdown: 1000;
+  --vb-z-sticky: 1020;
+  --vb-z-fixed: 1030;
+  --vb-z-modal-backdrop: 1040;
+  --vb-z-modal: 1050;
+  --vb-z-popover: 1060;
+  --vb-z-tooltip: 1070;
+}
+
+/* Light Theme Override */
+.vibelux-light-theme {
+  --vb-background: #f3f3f3;
+  --vb-surface: #ffffff;
+  --vb-surface-light: #f8f8f8;
+  --vb-surface-hover: #e8e8e8;
+  --vb-surface-active: #d4e6f7;
+  --vb-text-primary: #1e1e1e;
+  --vb-text-secondary: #6e6e6e;
+  --vb-text-disabled: #a0a0a0;
+  --vb-text-inverse: #ffffff;
+  --vb-border: #e1e1e1;
+  --vb-border-light: #f0f0f0;
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
+.adsk-viewing-viewer {
+  background-color: var(--vb-background);
+  font-family: var(--vb-font-family);
+  font-size: var(--vb-font-size-base);
+  color: var(--vb-text-primary);
+}
+
+/* ===========================
+   Professional Toolbar
+   =========================== */
+.adsk-viewing-viewer .adsk-toolbar {
+  background: var(--vb-surface);
+  border-bottom: 1px solid var(--vb-border);
+  box-shadow: var(--vb-shadow-sm);
+  padding: var(--vb-spacing-xs);
+}
+
+.vibelux-toolbar-group {
+  background: var(--vb-surface-light);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  padding: 2px;
+  margin: 0 var(--vb-spacing-xs);
+  display: inline-flex;
+  gap: 1px;
+}
+
+.vibelux-toolbar-group::before {
+  content: '';
+  display: block;
+  width: 2px;
+  background: var(--vb-border);
+  margin: 4px 6px;
+}
+
+.adsk-button,
+.vibelux-tool-button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: var(--vb-text-primary);
+  cursor: pointer;
+  font-size: var(--vb-font-size-sm);
+  height: 28px;
+  min-width: 28px;
+  padding: 0 var(--vb-spacing-sm);
+  position: relative;
+  transition: all var(--vb-transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vb-spacing-xs);
+}
+
+.adsk-button:hover,
+.vibelux-tool-button:hover {
+  background: var(--vb-surface-hover);
+  border-color: var(--vb-border-light);
+}
+
+.adsk-button:active,
+.vibelux-tool-button:active,
+.adsk-button.active,
+.vibelux-tool-button.active {
+  background: var(--vb-surface-active);
+  border-color: var(--vb-border-focus);
+  color: #ffffff;
+}
+
+.adsk-button[disabled],
+.vibelux-tool-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Tool Icons */
+.adsk-button .adsk-icon,
+.vibelux-tool-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Toolbar Separators */
+.vibelux-toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--vb-border);
+  margin: 0 var(--vb-spacing-xs);
+  align-self: center;
+}
+
+/* Dropdown Menus */
+.vibelux-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  box-shadow: var(--vb-shadow-md);
+  min-width: 180px;
+  padding: var(--vb-spacing-xs);
+  margin-top: 2px;
+  z-index: var(--vb-z-dropdown);
+  display: none;
+}
+
+.vibelux-dropdown.show {
+  display: block;
+}
+
+.vibelux-dropdown-item {
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background var(--vb-transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--vb-spacing-sm);
+}
+
+.vibelux-dropdown-item:hover {
+  background: var(--vb-surface-hover);
+}
+
+/* ===========================
+   Panels & Docking
+   =========================== */
+.docking-panel {
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  box-shadow: var(--vb-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--vb-font-size-sm);
+}
+
+.docking-panel-title {
+  background: var(--vb-surface-light);
+  border-bottom: 1px solid var(--vb-border);
+  color: var(--vb-text-primary);
+  font-size: var(--vb-font-size-md);
+  font-weight: 500;
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  cursor: move;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.docking-panel-close {
+  background: transparent;
+  border: none;
+  color: var(--vb-text-secondary);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: all var(--vb-transition-fast);
+}
+
+.docking-panel-close:hover {
+  background: var(--vb-danger);
+  color: white;
+}
+
+.docking-panel-container {
+  flex: 1;
+  overflow: auto;
+  padding: var(--vb-spacing-md);
+}
+
+/* Panel Tabs */
+.vibelux-panel-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--vb-border);
+  background: var(--vb-surface-light);
+  padding: 0 var(--vb-spacing-sm);
+}
+
+.vibelux-panel-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--vb-text-secondary);
+  cursor: pointer;
+  font-size: var(--vb-font-size-sm);
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  position: relative;
+  transition: all var(--vb-transition-fast);
+}
+
+.vibelux-panel-tab:hover {
+  color: var(--vb-text-primary);
+  background: var(--vb-surface-hover);
+}
+
+.vibelux-panel-tab.active {
+  color: var(--vb-primary);
+  border-bottom-color: var(--vb-primary);
+  background: var(--vb-surface);
+}
+
+/* ===========================
+   CAD-Specific UI Elements
+   =========================== */
+
+/* Grid Overlay */
+.vibelux-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vibelux-grid-line {
+  stroke: var(--vb-border-light);
+  stroke-width: 0.5;
+  opacity: 0.3;
+}
+
+.vibelux-grid-major {
+  stroke: var(--vb-border);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+/* Snap Indicators */
+.vibelux-snap-indicator {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--vb-warning);
+  background: rgba(255, 193, 7, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+  animation: snap-pulse 0.5s ease-in-out;
+}
+
+@keyframes snap-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.vibelux-snap-label {
+  position: absolute;
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-warning);
+  border-radius: 3px;
+  color: var(--vb-warning);
+  font-size: var(--vb-font-size-xs);
+  font-weight: 500;
+  padding: 2px 6px;
+  white-space: nowrap;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Dimension Display */
+.vibelux-dimension {
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.vibelux-dimension-line {
+  stroke: var(--vb-primary);
+  stroke-width: 1;
+  fill: none;
+}
+
+.vibelux-dimension-arrow {
+  fill: var(--vb-primary);
+}
+
+.vibelux-dimension-text {
+  fill: var(--vb-text-primary);
+  font-size: var(--vb-font-size-sm);
+  font-family: var(--vb-font-mono);
+  text-anchor: middle;
+  background: var(--vb-surface);
+  padding: 2px 4px;
+}
+
+/* Array Preview */
+.vibelux-array-preview {
+  position: absolute;
+  border: 1px dashed var(--vb-primary);
+  background: rgba(0, 102, 204, 0.1);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.vibelux-array-count {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--vb-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: var(--vb-font-size-xs);
+  font-weight: 500;
+}
+
+/* ===========================
+   Input Controls
+   =========================== */
+.vibelux-input-group {
+  margin-bottom: var(--vb-spacing-md);
+}
+
+.vibelux-label {
+  display: block;
+  color: var(--vb-text-secondary);
+  font-size: var(--vb-font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--vb-spacing-xs);
+}
+
+.vibelux-input,
+.vibelux-select,
+.vibelux-textarea {
+  background: var(--vb-background);
+  border: 1px solid var(--vb-border);
+  border-radius: 3px;
+  color: var(--vb-text-primary);
+  font-family: var(--vb-font-family);
+  font-size: var(--vb-font-size-sm);
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  width: 100%;
+  transition: all var(--vb-transition-fast);
+}
+
+.vibelux-input:hover,
+.vibelux-select:hover,
+.vibelux-textarea:hover {
+  border-color: var(--vb-border-light);
+}
+
+.vibelux-input:focus,
+.vibelux-select:focus,
+.vibelux-textarea:focus {
+  border-color: var(--vb-border-focus);
+  box-shadow: var(--vb-shadow-focus);
+  outline: none;
+}
+
+.vibelux-input[disabled],
+.vibelux-select[disabled],
+.vibelux-textarea[disabled] {
+  background: var(--vb-surface-light);
+  color: var(--vb-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Number Input with Units */
+.vibelux-input-with-unit {
+  display: flex;
+  align-items: stretch;
+}
+
+.vibelux-input-with-unit .vibelux-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.vibelux-unit {
+  background: var(--vb-surface-light);
+  border: 1px solid var(--vb-border);
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  color: var(--vb-text-secondary);
+  display: flex;
+  align-items: center;
+  font-size: var(--vb-font-size-sm);
+  padding: 0 var(--vb-spacing-sm);
+}
+
+/* Toggle Switch */
+.vibelux-toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: var(--vb-spacing-sm);
+}
+
+.vibelux-toggle-switch {
+  background: var(--vb-background);
+  border: 1px solid var(--vb-border);
+  border-radius: 12px;
+  height: 20px;
+  position: relative;
+  width: 36px;
+  transition: all var(--vb-transition-fast);
+}
+
+.vibelux-toggle-slider {
+  background: var(--vb-text-secondary);
+  border-radius: 50%;
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 2px;
+  width: 14px;
+  transition: all var(--vb-transition-fast);
+}
+
+.vibelux-toggle input:checked + .vibelux-toggle-switch {
+  background: var(--vb-primary);
+  border-color: var(--vb-primary);
+}
+
+.vibelux-toggle input:checked + .vibelux-toggle-switch .vibelux-toggle-slider {
+  background: white;
+  left: 17px;
+}
+
+.vibelux-toggle input {
+  display: none;
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+.vibelux-btn {
+  background: var(--vb-surface-light);
+  border: 1px solid var(--vb-border);
+  border-radius: 3px;
+  color: var(--vb-text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--vb-font-family);
+  font-size: var(--vb-font-size-sm);
+  font-weight: 500;
+  gap: var(--vb-spacing-xs);
+  padding: var(--vb-spacing-xs) var(--vb-spacing-md);
+  transition: all var(--vb-transition-fast);
+  white-space: nowrap;
+}
+
+.vibelux-btn:hover {
+  background: var(--vb-surface-hover);
+  border-color: var(--vb-border-light);
+}
+
+.vibelux-btn:active {
+  transform: translateY(1px);
+}
+
+.vibelux-btn:focus {
+  box-shadow: var(--vb-shadow-focus);
+  outline: none;
+}
+
+/* Button Variants */
+.vibelux-btn-primary {
+  background: var(--vb-primary);
+  border-color: var(--vb-primary);
+  color: white;
+}
+
+.vibelux-btn-primary:hover {
+  background: var(--vb-primary-hover);
+  border-color: var(--vb-primary-hover);
+}
+
+.vibelux-btn-success {
+  background: var(--vb-success);
+  border-color: var(--vb-success);
+  color: white;
+}
+
+.vibelux-btn-danger {
+  background: var(--vb-danger);
+  border-color: var(--vb-danger);
+  color: white;
+}
+
+.vibelux-btn-sm {
+  font-size: var(--vb-font-size-xs);
+  padding: 2px var(--vb-spacing-sm);
+}
+
+.vibelux-btn-lg {
+  font-size: var(--vb-font-size-md);
+  padding: var(--vb-spacing-sm) var(--vb-spacing-lg);
+}
+
+.vibelux-btn-icon {
+  padding: var(--vb-spacing-xs);
+  width: 32px;
+  height: 32px;
+}
+
+/* Button Groups */
+.vibelux-btn-group {
+  display: inline-flex;
+  gap: -1px;
+}
+
+.vibelux-btn-group .vibelux-btn {
+  border-radius: 0;
+}
+
+.vibelux-btn-group .vibelux-btn:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.vibelux-btn-group .vibelux-btn:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+/* ===========================
+   Cards & Containers
+   =========================== */
+.vibelux-card {
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  margin-bottom: var(--vb-spacing-md);
+  overflow: hidden;
+}
+
+.vibelux-card-header {
+  background: var(--vb-surface-light);
+  border-bottom: 1px solid var(--vb-border);
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  font-weight: 500;
+}
+
+.vibelux-card-body {
+  padding: var(--vb-spacing-md);
+}
+
+/* Accordion */
+.vibelux-accordion-item {
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  margin-bottom: var(--vb-spacing-xs);
+}
+
+.vibelux-accordion-header {
+  background: var(--vb-surface-light);
+  border: none;
+  color: var(--vb-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--vb-font-size-sm);
+  font-weight: 500;
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  text-align: left;
+  width: 100%;
+  transition: all var(--vb-transition-fast);
+}
+
+.vibelux-accordion-header:hover {
+  background: var(--vb-surface-hover);
+}
+
+.vibelux-accordion-header::after {
+  content: '▼';
+  font-size: 10px;
+  transition: transform var(--vb-transition-fast);
+}
+
+.vibelux-accordion-item.collapsed .vibelux-accordion-header::after {
+  transform: rotate(-90deg);
+}
+
+.vibelux-accordion-body {
+  padding: var(--vb-spacing-md);
+  border-top: 1px solid var(--vb-border);
+}
+
+/* ===========================
+   Status & Feedback
+   =========================== */
+.vibelux-alert {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  margin-bottom: var(--vb-spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--vb-spacing-sm);
+  font-size: var(--vb-font-size-sm);
+}
+
+.vibelux-alert-info {
+  background: rgba(23, 162, 184, 0.1);
+  border-color: var(--vb-info);
+  color: var(--vb-info);
+}
+
+.vibelux-alert-success {
+  background: rgba(40, 167, 69, 0.1);
+  border-color: var(--vb-success);
+  color: var(--vb-success);
+}
+
+.vibelux-alert-warning {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: var(--vb-warning);
+  color: var(--vb-warning);
+}
+
+.vibelux-alert-danger {
+  background: rgba(220, 53, 69, 0.1);
+  border-color: var(--vb-danger);
+  color: var(--vb-danger);
+}
+
+/* Progress Bar */
+.vibelux-progress {
+  background: var(--vb-background);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vibelux-progress-bar {
+  background: var(--vb-primary);
+  height: 100%;
+  transition: width var(--vb-transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.vibelux-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1rem 1rem;
+  }
+}
+
+/* Loading Spinner */
+.vibelux-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--vb-border);
+  border-top-color: var(--vb-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===========================
+   Tooltips
+   =========================== */
+.vibelux-tooltip {
+  position: absolute;
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 3px;
+  box-shadow: var(--vb-shadow-md);
+  color: var(--vb-text-primary);
+  font-size: var(--vb-font-size-xs);
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  pointer-events: none;
+  z-index: var(--vb-z-tooltip);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all var(--vb-transition-fast);
+}
+
+.vibelux-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vibelux-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--vb-border);
+}
+
+/* ===========================
+   Calculation Display
+   =========================== */
+.vibelux-calc-overlay {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  box-shadow: var(--vb-shadow-lg);
+  padding: var(--vb-spacing-md);
+  min-width: 250px;
+  max-width: 350px;
+  z-index: var(--vb-z-sticky);
+}
+
+.vibelux-calc-title {
+  font-size: var(--vb-font-size-md);
+  font-weight: 500;
+  margin-bottom: var(--vb-spacing-sm);
+  color: var(--vb-primary);
+}
+
+.vibelux-calc-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--vb-spacing-xs) 0;
+  font-size: var(--vb-font-size-sm);
+}
+
+.vibelux-calc-label {
+  color: var(--vb-text-secondary);
+}
+
+.vibelux-calc-value {
+  font-family: var(--vb-font-mono);
+  font-weight: 500;
+  color: var(--vb-text-primary);
+}
+
+.vibelux-calc-total {
+  border-top: 1px solid var(--vb-border);
+  margin-top: var(--vb-spacing-sm);
+  padding-top: var(--vb-spacing-sm);
+  font-weight: 500;
+}
+
+/* ===========================
+   Measurement Tools
+   =========================== */
+.vibelux-measure-tooltip {
+  position: absolute;
+  background: var(--vb-primary);
+  color: white;
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  border-radius: 3px;
+  font-size: var(--vb-font-size-sm);
+  font-family: var(--vb-font-mono);
+  font-weight: 500;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: var(--vb-z-tooltip);
+}
+
+.vibelux-measure-line {
+  stroke: var(--vb-primary);
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+  fill: none;
+  pointer-events: none;
+}
+
+.vibelux-measure-point {
+  fill: var(--vb-primary);
+  stroke: white;
+  stroke-width: 2;
+  r: 4;
+}
+
+/* ===========================
+   Context Menu
+   =========================== */
+.vibelux-context-menu {
+  position: fixed;
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  box-shadow: var(--vb-shadow-lg);
+  padding: var(--vb-spacing-xs);
+  min-width: 180px;
+  z-index: var(--vb-z-dropdown);
+  display: none;
+}
+
+.vibelux-context-menu.show {
+  display: block;
+}
+
+.vibelux-context-item {
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: var(--vb-font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--vb-spacing-sm);
+  transition: background var(--vb-transition-fast);
+}
+
+.vibelux-context-item:hover {
+  background: var(--vb-surface-hover);
+}
+
+.vibelux-context-separator {
+  height: 1px;
+  background: var(--vb-border);
+  margin: var(--vb-spacing-xs) 0;
+}
+
+/* ===========================
+   Command Palette
+   =========================== */
+.vibelux-command-palette {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  box-shadow: var(--vb-shadow-lg);
+  width: 500px;
+  max-width: 90vw;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  z-index: var(--vb-z-modal);
+}
+
+.vibelux-command-input {
+  border: none;
+  border-bottom: 1px solid var(--vb-border);
+  padding: var(--vb-spacing-md);
+  font-size: var(--vb-font-size-md);
+  background: transparent;
+}
+
+.vibelux-command-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--vb-spacing-xs);
+}
+
+.vibelux-command-item {
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background var(--vb-transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vibelux-command-item:hover,
+.vibelux-command-item.selected {
+  background: var(--vb-surface-hover);
+}
+
+.vibelux-command-shortcut {
+  color: var(--vb-text-secondary);
+  font-size: var(--vb-font-size-xs);
+  font-family: var(--vb-font-mono);
+}
+
+/* ===========================
+   Properties Panel
+   =========================== */
+.vibelux-properties {
+  font-size: var(--vb-font-size-sm);
+}
+
+.vibelux-property-group {
+  margin-bottom: var(--vb-spacing-md);
+}
+
+.vibelux-property-header {
+  background: var(--vb-surface-light);
+  border: 1px solid var(--vb-border);
+  border-radius: 3px;
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  margin-bottom: var(--vb-spacing-xs);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vibelux-property-header:hover {
+  background: var(--vb-surface-hover);
+}
+
+.vibelux-property-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--vb-spacing-sm);
+  padding: var(--vb-spacing-xs) var(--vb-spacing-sm);
+  align-items: center;
+}
+
+.vibelux-property-label {
+  color: var(--vb-text-secondary);
+  font-size: var(--vb-font-size-xs);
+}
+
+.vibelux-property-value {
+  display: flex;
+  align-items: center;
+  gap: var(--vb-spacing-xs);
+}
+
+/* ===========================
+   Status Bar
+   =========================== */
+.vibelux-status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--vb-surface);
+  border-top: 1px solid var(--vb-border);
+  padding: var(--vb-spacing-xs) var(--vb-spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--vb-font-size-xs);
+  z-index: var(--vb-z-sticky);
+}
+
+.vibelux-status-section {
+  display: flex;
+  align-items: center;
+  gap: var(--vb-spacing-md);
+}
+
+.vibelux-status-item {
+  display: flex;
+  align-items: center;
+  gap: var(--vb-spacing-xs);
+  color: var(--vb-text-secondary);
+}
+
+.vibelux-status-item strong {
+  color: var(--vb-text-primary);
+}
+
+/* ===========================
+   Layer Manager Styles
+   =========================== */
+.vibelux-layer-panel {
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  width: 280px;
+}
+
+.vibelux-layer-header {
+  background: var(--vb-surface-light);
+  border-bottom: 1px solid var(--vb-border);
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vibelux-layer-actions {
+  display: flex;
+  gap: var(--vb-spacing-xs);
+}
+
+.vibelux-layer-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.vibelux-layer-item {
+  display: flex;
+  align-items: center;
+  padding: var(--vb-spacing-sm) var(--vb-spacing-md);
+  border-bottom: 1px solid var(--vb-border-light);
+  transition: background var(--vb-transition-fast);
+  cursor: pointer;
+}
+
+.vibelux-layer-item:hover {
+  background: var(--vb-surface-hover);
+}
+
+.vibelux-layer-item.active {
+  background: var(--vb-surface-active);
+}
+
+.vibelux-layer-visibility {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--vb-spacing-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vibelux-layer-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: var(--vb-spacing-sm);
+}
+
+.vibelux-layer-name {
+  flex: 1;
+  font-size: var(--vb-font-size-sm);
+}
+
+.vibelux-layer-count {
+  color: var(--vb-text-secondary);
+  font-size: var(--vb-font-size-xs);
+}
+
+/* ===========================
+   Modal Dialog
+   =========================== */
+.vibelux-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: var(--vb-z-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vibelux-modal {
+  background: var(--vb-surface);
+  border: 1px solid var(--vb-border);
+  border-radius: 4px;
+  box-shadow: var(--vb-shadow-lg);
+  max-width: 600px;
+  max-height: 80vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  z-index: var(--vb-z-modal);
+}
+
+.vibelux-modal-header {
+  background: var(--vb-surface-light);
+  border-bottom: 1px solid var(--vb-border);
+  padding: var(--vb-spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vibelux-modal-title {
+  font-size: var(--vb-font-size-lg);
+  font-weight: 500;
+  margin: 0;
+}
+
+.vibelux-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--vb-spacing-md);
+}
+
+.vibelux-modal-footer {
+  background: var(--vb-surface-light);
+  border-top: 1px solid var(--vb-border);
+  padding: var(--vb-spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--vb-spacing-sm);
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+  .docking-panel {
+    width: 100% !important;
+    height: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+  
+  .vibelux-toolbar-group {
+    flex-wrap: wrap;
+  }
+  
+  .vibelux-status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--vb-spacing-xs);
+  }
+}
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+  .adsk-toolbar,
+  .docking-panel,
+  .vibelux-status-bar,
+  .vibelux-context-menu {
+    display: none !important;
+  }
+  
+  .adsk-viewing-viewer {
+    background: white;
+  }
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.vibelux-hidden {
+  display: none !important;
+}
+
+.vibelux-invisible {
+  visibility: hidden !important;
+}
+
+.vibelux-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.vibelux-text-center {
+  text-align: center;
+}
+
+.vibelux-text-right {
+  text-align: right;
+}
+
+.vibelux-text-muted {
+  color: var(--vb-text-secondary);
+}
+
+.vibelux-text-small {
+  font-size: var(--vb-font-size-xs);
+}
+
+.vibelux-mt-sm { margin-top: var(--vb-spacing-sm); }
+.vibelux-mt-md { margin-top: var(--vb-spacing-md); }
+.vibelux-mb-sm { margin-bottom: var(--vb-spacing-sm); }
+.vibelux-mb-md { margin-bottom: var(--vb-spacing-md); }
+
+.vibelux-flex {
+  display: flex;
+}
+
+.vibelux-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vibelux-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vibelux-gap-sm { gap: var(--vb-spacing-sm); }
+.vibelux-gap-md { gap: var(--vb-spacing-md); }
+
+/* ===========================
+   Animations
+   =========================== */
+.vibelux-fade-in {
+  animation: fadeIn var(--vb-transition-base);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.vibelux-slide-up {
+  animation: slideUp var(--vb-transition-base);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===========================
+   Custom Scrollbar
+   =========================== */
+.vibelux-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vibelux-scrollbar::-webkit-scrollbar-track {
+  background: var(--vb-background);
+}
+
+.vibelux-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--vb-border);
+  border-radius: 4px;
+}
+
+.vibelux-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--vb-border-light);
+}
+
+/* ===========================
+   Focus States
+   =========================== */
+.vibelux-focus-visible:focus {
+  outline: 2px solid var(--vb-border-focus);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   High Contrast Mode
+   =========================== */
+@media (prefers-contrast: high) {
+  :root {
+    --vb-border: #ffffff;
+    --vb-text-primary: #ffffff;
+    --vb-text-secondary: #cccccc;
+  }
+}

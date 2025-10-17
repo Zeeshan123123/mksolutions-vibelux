@@ -1,0 +1,246 @@
+{
+  "timestamp": "2025-07-26T18:15:40.662Z",
+  "testSuite": "Design Advanced Functionality",
+  "baseUrl": "http://localhost:3000",
+  "path": "/design/advanced",
+  "tests": [
+    {
+      "name": "Page Load",
+      "status": "PASSED",
+      "details": "Loaded in 2020ms",
+      "metrics": {
+        "loadTime": 2020,
+        "title": "ShakaPT - AI-Powered Family Fitness Platform"
+      },
+      "timestamp": "2025-07-26T18:15:44.418Z"
+    },
+    {
+      "name": "Page Load",
+      "status": "FAILED",
+      "details": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"design-advanced\"], .design-advanced, main') to be visible\u001b[22m\n",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.426Z"
+    },
+    {
+      "name": "Authentication Check",
+      "status": "PASSED",
+      "details": "No authentication required",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.431Z"
+    },
+    {
+      "name": "Designer Interface",
+      "status": "FAILED",
+      "details": "Design interface not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.432Z"
+    },
+    {
+      "name": "Tool Palette",
+      "status": "WARNING",
+      "details": "Tool palette not clearly identified",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.437Z"
+    },
+    {
+      "name": "Canvas Interaction",
+      "status": "WARNING",
+      "details": "Canvas not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.437Z"
+    },
+    {
+      "name": "Fixture Library",
+      "status": "WARNING",
+      "details": "Fixture library not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.439Z"
+    },
+    {
+      "name": "3D Visualization",
+      "status": "FAILED",
+      "details": "page.$: Unexpected token \".3d-view\" while parsing css selector \".three-d, .3d-view, [data-testid=\"3d\"]\". Did you mean to CSS.escape it?",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.440Z"
+    },
+    {
+      "name": "Heat Map Analysis",
+      "status": "WARNING",
+      "details": "Feature component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.441Z"
+    },
+    {
+      "name": "Spectrum Analysis",
+      "status": "WARNING",
+      "details": "Feature component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.442Z"
+    },
+    {
+      "name": "DLI Optimizer",
+      "status": "WARNING",
+      "details": "Feature component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.443Z"
+    },
+    {
+      "name": "Energy Calculator",
+      "status": "WARNING",
+      "details": "Feature component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.443Z"
+    },
+    {
+      "name": "Environmental Monitor",
+      "status": "WARNING",
+      "details": "Feature component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.444Z"
+    },
+    {
+      "name": "AI Recommendations",
+      "status": "WARNING",
+      "details": "AI features not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.445Z"
+    },
+    {
+      "name": "Metrics Panel",
+      "status": "WARNING",
+      "details": "Analysis component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.446Z"
+    },
+    {
+      "name": "ROI Calculator",
+      "status": "WARNING",
+      "details": "Analysis component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.446Z"
+    },
+    {
+      "name": "Cost Estimator",
+      "status": "WARNING",
+      "details": "Analysis component not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.448Z"
+    },
+    {
+      "name": "Save/Load Project",
+      "status": "WARNING",
+      "details": "Save button not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.449Z"
+    },
+    {
+      "name": "Export Design",
+      "status": "WARNING",
+      "details": "Export button not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.449Z"
+    },
+    {
+      "name": "Undo/Redo",
+      "status": "WARNING",
+      "details": "Undo/Redo controls not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.453Z"
+    },
+    {
+      "name": "Collapsible Sidebar",
+      "status": "WARNING",
+      "details": "Sidebar not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.455Z"
+    },
+    {
+      "name": "View Mode Switching",
+      "status": "WARNING",
+      "details": "View mode buttons not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:54.455Z"
+    },
+    {
+      "name": "Keyboard Shortcuts",
+      "status": "PASSED",
+      "details": "Keyboard shortcuts tested",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:55.372Z"
+    },
+    {
+      "name": "AI Design Assistant",
+      "status": "WARNING",
+      "details": "AI components not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:55.380Z"
+    },
+    {
+      "name": "AI Credit Estimator",
+      "status": "WARNING",
+      "details": "Credit system not found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:55.380Z"
+    },
+    {
+      "name": "Mobile Responsiveness",
+      "status": "PASSED",
+      "details": "Interface adapts to mobile",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:56.426Z"
+    },
+    {
+      "name": "Touch Interactions",
+      "status": "WARNING",
+      "details": "No touchable canvas found",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:56.429Z"
+    },
+    {
+      "name": "Load Performance",
+      "status": "PASSED",
+      "details": "Load time: 0ms",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:56.468Z"
+    },
+    {
+      "name": "Memory Usage",
+      "status": "WARNING",
+      "details": "Memory: 69.8MB (high)",
+      "metrics": {},
+      "timestamp": "2025-07-26T18:15:56.473Z"
+    }
+  ],
+  "summary": {
+    "total": 29,
+    "passed": 5,
+    "failed": 3,
+    "warnings": 21,
+    "skipped": 0
+  },
+  "features": {},
+  "performance": {
+    "loadTime": 0,
+    "domContentLoaded": 0,
+    "firstPaint": 1120,
+    "firstContentfulPaint": 1120
+  },
+  "errors": [
+    {
+      "type": "network_error",
+      "url": "http://localhost:3000/design/advanced",
+      "status": 404,
+      "timestamp": "2025-07-26T18:15:43.013Z"
+    },
+    {
+      "type": "console_error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-07-26T18:15:43.016Z"
+    },
+    {
+      "type": "console_error",
+      "message": "Warning: Prop `%s` did not match. Server: %s Client: %s%s style \"null\" \"opacity:0;transform:translateY(-20px)\" \n    at div\n    at MotionComponent (webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/cjs/create-Ch9BUY4E.js:5198:22)\n    at div\n    at div\n    at ErrorLayout (webpack-internal:///(app-pages-browser)/./src/components/errors/ErrorLayout.tsx:15:11)\n    at NotFound\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at Suspense\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at AuthProvider (webpack-internal:///(app-pages-browser)/./src/hooks/useAuth.tsx:69:11)\n    at Providers (webpack-internal:///(app-pages-browser)/./src/components/providers.tsx:10:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "timestamp": "2025-07-26T18:15:43.704Z"
+    }
+  ]
+}

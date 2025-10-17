@@ -1,0 +1,547 @@
+{
+  "project": {
+    "name": "Mohave Cannabis Co. - Comprehensive Facility Design",
+    "client": "Mohave Cannabis Co.",
+    "location": "Mohave County, Arizona",
+    "date": "2025-07-26T19:19:24.308Z",
+    "designTeam": "Vibelux Engineering + Claude Code",
+    "facilityType": "Indoor Cannabis Cultivation Facility",
+    "dimensions": {
+      "length": 120,
+      "width": 60,
+      "height": 16,
+      "totalArea": 7200,
+      "growingArea": 5400,
+      "supportArea": 1800
+    },
+    "zoning": "Agricultural/Industrial",
+    "permits": [
+      "Building",
+      "Electrical",
+      "Mechanical",
+      "Cannabis License"
+    ]
+  },
+  "lighting": {
+    "designPhilosophy": "1:1 HPS to LED replacement for maximum efficiency",
+    "technology": "Fluence VYPR 2p LED Fixtures",
+    "manufacturer": "Fluence Bioengineering",
+    "specifications": {
+      "fixtureCount": 765,
+      "fixtureWattage": 645,
+      "totalWattage": 493875,
+      "efficacy": "2.7 μmol/J",
+      "spectrum": "Full spectrum with enhanced red",
+      "lifespan": "54,000+ hours",
+      "dimming": "0-100% continuous"
+    },
+    "performance": {
+      "ppfdTarget": "800-850 μmol/m²/s",
+      "ppfdUniformity": "±10%",
+      "dliTarget": "34.6-35.4 mol/m²/day",
+      "coverage": "100% uniform distribution",
+      "energySavings": "35% vs 1000W HPS",
+      "heatReduction": "50% vs HPS"
+    },
+    "layout": {
+      "propagationPPFD": 200,
+      "vegetativePPFD": 500,
+      "floweringPPFD": 825,
+      "spacing": "4ft × 4ft grid",
+      "mounting": "Fixed height with adjustable intensity"
+    },
+    "controls": {
+      "system": "Wireless DMX control",
+      "zones": 14,
+      "automation": "Sunrise/sunset simulation",
+      "scheduling": "Growth stage optimized",
+      "monitoring": "Real-time PPFD logging"
+    }
+  },
+  "greenhouse": {
+    "structuralDesign": {
+      "frameType": "Gable Frame Structure",
+      "frameMaterial": "Aluminum Alloy 6061-T6",
+      "frameFinish": "Powder coated white",
+      "bays": 6,
+      "baySpacing": "20 feet O.C.",
+      "clearSpan": "60 feet",
+      "length": "120 feet",
+      "sidewallHeight": "12 feet",
+      "ridgeHeight": "16 feet"
+    },
+    "covering": {
+      "roofGlazing": "16mm Triple-wall Polycarbonate",
+      "sidewallGlazing": "16mm Triple-wall Polycarbonate",
+      "endwallGlazing": "16mm Triple-wall Polycarbonate",
+      "lightTransmission": "83%",
+      "rValue": "2.3",
+      "hailResistance": "1.75\" @ 50 mph",
+      "warranty": "15 years"
+    },
+    "foundation": {
+      "type": "Reinforced concrete slab",
+      "thickness": "6 inches",
+      "reinforcement": "#4 rebar @ 12\" O.C.",
+      "vapor_barrier": "6mil polyethylene",
+      "footings": "Continuous perimeter",
+      "footingDepth": "42 inches below grade"
+    },
+    "structural_loads": {
+      "windLoad": "120 mph design",
+      "snowLoad": "40 PSF",
+      "deadLoad": "15 PSF",
+      "liveLoad": "20 PSF",
+      "hangerLoad": "100 PSF for equipment",
+      "seismic": "IBC 2021 compliant"
+    },
+    "ventilation": {
+      "naturalVent": "Ridge and sidewall vents",
+      "ridgeVentArea": "240 sq ft",
+      "sidewallVentArea": "280 sq ft",
+      "exhaustFans": "6 × 48\" variable speed",
+      "intakeLouvers": "6 × 48\" motorized",
+      "airExchangeRate": "1.5 per hour minimum"
+    }
+  },
+  "irrigation": {
+    "systemDesign": {
+      "type": "Hybrid Fertigation System",
+      "mainTankCapacity": "500 gallons",
+      "secondaryTankCapacity": "500 gallons",
+      "totalCapacity": "1000 gallons",
+      "materialConstruction": "HDPE food grade",
+      "mixing": "Venturi injection system"
+    },
+    "pumpSystem": {
+      "primaryPump": {
+        "capacity": "85 GPM @ 60 PSI",
+        "type": "Centrifugal multistage",
+        "motor": "5 HP, 3-phase",
+        "efficiency": "85%",
+        "backup": "Automatic switchover"
+      },
+      "boosterPumps": {
+        "count": 2,
+        "capacity": "25 GPM @ 40 PSI each",
+        "application": "Zone-specific pressure"
+      }
+    },
+    "distribution": {
+      "mainLines": "4-inch PVC Schedule 40",
+      "branchLines": "2-inch PVC Schedule 40",
+      "dropLines": "1-inch PVC Schedule 40",
+      "totalLength": "2,400 linear feet",
+      "valves": "Hunter PGV series zone valves",
+      "pressure_regulation": "Senninger PR-30 regulators"
+    },
+    "zones": {
+      "total": 4,
+      "propagationZone": {
+        "area": "800 sq ft",
+        "flowRate": "12.5 GPM",
+        "pressure": "25 PSI",
+        "emitters": "Misting heads"
+      },
+      "vegetativeZone": {
+        "area": "1200 sq ft",
+        "flowRate": "18.2 GPM",
+        "pressure": "30 PSI",
+        "emitters": "Drip irrigation"
+      },
+      "floweringZone": {
+        "area": "2000 sq ft",
+        "flowRate": "25.8 GPM",
+        "pressure": "35 PSI",
+        "emitters": "Drip-to-waste"
+      },
+      "motherPlantZone": {
+        "area": "600 sq ft",
+        "flowRate": "8.4 GPM",
+        "pressure": "28 PSI",
+        "emitters": "Micro sprinklers"
+      }
+    },
+    "controls": {
+      "automation": "Hunter Pro-C commercial controller",
+      "zones": "24-station capability",
+      "scheduling": "Multi-program with seasonal adjust",
+      "monitoring": "Flow sensors on each zone",
+      "fertigation": "Automated nutrient injection",
+      "phControl": "pH monitoring and adjustment",
+      "ecControl": "EC monitoring and logging"
+    },
+    "drainage": {
+      "floorDrains": "12 × 6-inch floor drains",
+      "runoffCollection": "Perimeter collection system",
+      "pumpOut": "Automatic sump pump system",
+      "waterRecapture": "70% recirculation capability"
+    }
+  },
+  "environmental": {
+    "hvacDesign": {
+      "systemType": "Multi-zone Variable Air Volume",
+      "zones": 3,
+      "designTemperature": {
+        "summer": "95°F outdoor / 75°F indoor",
+        "winter": "10°F outdoor / 70°F indoor"
+      },
+      "designHumidity": {
+        "summer": "85% RH outdoor / 55% RH indoor",
+        "winter": "20% RH outdoor / 60% RH indoor"
+      }
+    },
+    "equipment": {
+      "coolingSystem": {
+        "type": "Air-cooled chiller with FCU",
+        "capacity": "120,000 BTU/hr (10 tons)",
+        "efficiency": "16 SEER",
+        "refrigerant": "R-410A",
+        "backup": "100% redundancy"
+      },
+      "heatingSystem": {
+        "type": "Natural gas unit heaters",
+        "capacity": "150,000 BTU/hr total",
+        "efficiency": "92% AFUE",
+        "units": "6 × 25,000 BTU/hr",
+        "controls": "Modulating gas valves"
+      },
+      "dehumidification": {
+        "type": "Desiccant dehumidifiers",
+        "capacity": "150 pints/day each",
+        "units": 3,
+        "totalCapacity": "450 pints/day",
+        "energyRecovery": "Integrated heat recovery"
+      },
+      "co2System": {
+        "type": "CO₂ generator",
+        "capacity": "24 lbs/day",
+        "fuel": "Natural gas",
+        "distribution": "Perforated poly tubing",
+        "monitoring": "CO₂ sensors in each zone"
+      }
+    },
+    "ventilation": {
+      "airExchangeRate": "1.5 per hour minimum",
+      "exhaustFans": "6 × 48\" variable speed (24,000 CFM total)",
+      "supplyFans": "4 × 36\" variable speed (18,000 CFM total)",
+      "filtration": "MERV 13 final filters",
+      "heatRecovery": "Sensible heat recovery wheels"
+    },
+    "controls": {
+      "system": "Johnson Controls Metasys BAS",
+      "sensors": "24 temperature/humidity sensors",
+      "co2Sensors": "8 NDIR CO₂ sensors",
+      "programming": "Growth stage optimized profiles",
+      "alarms": "SMS and email notifications",
+      "trending": "Historical data logging"
+    }
+  },
+  "electrical": {
+    "service": {
+      "utility": "Mohave Electric Cooperative",
+      "voltage": "480V, 3-phase, 4-wire",
+      "amperage": "800A",
+      "serviceType": "Overhead to underground transition",
+      "metering": "Smart meter with demand tracking"
+    },
+    "distribution": {
+      "mainPanel": {
+        "type": "Main Distribution Panel",
+        "amperage": "800A",
+        "voltage": "480V",
+        "busbar": "Copper",
+        "manufacturer": "Square D"
+      },
+      "subPanels": {
+        "lightingPanel": {
+          "amperage": "225A",
+          "voltage": "277V",
+          "circuits": 24,
+          "application": "LED lighting circuits"
+        },
+        "hvacPanel": {
+          "amperage": "400A",
+          "voltage": "480V",
+          "circuits": 12,
+          "application": "HVAC equipment"
+        },
+        "irrigationPanel": {
+          "amperage": "100A",
+          "voltage": "240V",
+          "circuits": 8,
+          "application": "Irrigation pumps and controls"
+        }
+      }
+    },
+    "circuits": {
+      "total": 45,
+      "lighting": 24,
+      "hvac": 8,
+      "irrigation": 4,
+      "receptacles": 6,
+      "equipment": 3
+    },
+    "loadAnalysis": {
+      "connectedLoad": "625 kW",
+      "demandLoad": "500 kW",
+      "loadFactor": "80%",
+      "peakDemand": "475 kW",
+      "powerFactor": "0.95 minimum"
+    },
+    "backupPower": {
+      "generator": {
+        "capacity": "500 kW",
+        "fuel": "Natural gas",
+        "runtime": "72 hours continuous",
+        "transfer": "Automatic transfer switch",
+        "startup": "10 seconds"
+      },
+      "ups": {
+        "capacity": "50 kW",
+        "runtime": "2 hours",
+        "application": "Critical controls and monitoring",
+        "batteryType": "Sealed lead acid"
+      }
+    },
+    "safetyEquipment": {
+      "fireAlarm": "Addressable fire alarm system",
+      "smokeDetectors": "24 photoelectric detectors",
+      "sprinklerSystem": "Wet pipe sprinkler system",
+      "emergencyLighting": "LED emergency lighting",
+      "exitSigns": "LED exit signs with battery backup"
+    }
+  },
+  "cultivation": {
+    "facilityLayout": {
+      "propagationArea": {
+        "size": "400 sq ft",
+        "capacity": "2000 plants",
+        "benches": "8 × 4ft × 8ft benches",
+        "environment": "72-78°F, 70-85% RH",
+        "lighting": "200 μmol/m²/s PPFD",
+        "cycle": "14 days"
+      },
+      "vegetativeArea": {
+        "size": "800 sq ft",
+        "capacity": "500 plants",
+        "benches": "16 × 4ft × 8ft benches",
+        "environment": "70-75°F, 60-75% RH",
+        "lighting": "500 μmol/m²/s PPFD",
+        "cycle": "28 days"
+      },
+      "floweringArea": {
+        "size": "1200 sq ft",
+        "capacity": "300 plants",
+        "benches": "24 × 4ft × 8ft benches",
+        "environment": "65-72°F, 45-60% RH",
+        "lighting": "825 μmol/m²/s PPFD",
+        "cycle": "63 days"
+      },
+      "processingAreas": {
+        "dryingRoom": {
+          "size": "300 sq ft",
+          "capacity": "200 lbs",
+          "racks": "20 stainless steel racks",
+          "environment": "60-70°F, 45-55% RH",
+          "duration": "10 days"
+        },
+        "trimmingArea": {
+          "size": "600 sq ft",
+          "workstations": 12,
+          "equipment": "Trim tables, scales, vacuum sealer",
+          "environment": "65-72°F, 45-55% RH",
+          "throughput": "50 lbs/day"
+        },
+        "curingStorage": {
+          "size": "200 sq ft",
+          "capacity": "1000 lbs",
+          "environment": "60-65°F, 55-62% RH",
+          "duration": "21+ days",
+          "security": "Biometric access control"
+        }
+      }
+    },
+    "workflow": {
+      "totalCycleTime": "147 days",
+      "harvestsPerYear": 6.5,
+      "productionCapacity": {
+        "annualYield": "12,500 lbs",
+        "monthlyAverage": "1,040 lbs",
+        "peakMonthly": "1,250 lbs"
+      },
+      "qualityControl": {
+        "propagationQC": "Root development, health assessment",
+        "vegetativeQC": "Height, node development, pest inspection",
+        "floweringQC": "Trichome development, pistil color",
+        "harvestQC": "Harvest timing, proper cutting",
+        "dryingQC": "Moisture content, stem snap test",
+        "trimmingQC": "Trim quality, final weight",
+        "curingQC": "Moisture stabilization, aroma development"
+      }
+    },
+    "automation": {
+      "environmentalControls": "Automated climate management",
+      "irrigationScheduling": "Growth stage specific watering",
+      "lightingSchedules": "Photoperiod automation",
+      "dataLogging": "Continuous environmental monitoring",
+      "alerting": "SMS/email notifications for issues"
+    }
+  },
+  "automation": {
+    "networkArchitecture": {
+      "backbone": "Gigabit Ethernet",
+      "wireless": "WiFi 6 (802.11ax)",
+      "iot_protocols": [
+        "WiFi",
+        "Zigbee",
+        "BACnet",
+        "Modbus"
+      ],
+      "coverage": "95% facility",
+      "reliability": "99.2% uptime"
+    },
+    "devices": {
+      "total": 47,
+      "sensors": {
+        "temperature": 24,
+        "humidity": 24,
+        "co2": 8,
+        "light": 16,
+        "ph": 4,
+        "ec": 4,
+        "soilMoisture": 12,
+        "pressure": 6
+      },
+      "controllers": {
+        "mainController": "Industrial automation controller",
+        "lightingController": "DMX lighting controller",
+        "irrigationController": "Multi-zone irrigation controller",
+        "hvacController": "Building automation system"
+      },
+      "networking": {
+        "mainSwitch": "24-port managed switch",
+        "wifiAccessPoints": 6,
+        "gateways": 3,
+        "routers": 2
+      }
+    },
+    "software": {
+      "platform": "Custom facility management system",
+      "database": "Time-series database for sensor data",
+      "visualization": "Real-time dashboards",
+      "analytics": "Historical trending and analysis",
+      "mobile": "Mobile app for remote monitoring"
+    },
+    "automationRules": {
+      "total": 15,
+      "environmental": 8,
+      "irrigation": 4,
+      "lighting": 2,
+      "security": 1
+    },
+    "dataManagement": {
+      "dailyDataPoints": 15420,
+      "storageRetention": "5 years",
+      "backupFrequency": "Real-time replication",
+      "reportGeneration": "Automated daily/weekly reports"
+    }
+  },
+  "facility": {
+    "electricalInfrastructure": {
+      "mainService": "800A @ 480V",
+      "panels": 4,
+      "circuits": 45,
+      "grounding": "Ufer ground system",
+      "surge_protection": "Type 1 and Type 2 SPDs"
+    },
+    "safetyCompliance": {
+      "fireAlarm": "Addressable system with 24 devices",
+      "sprinklerSystem": "Wet pipe system, design density 0.15 GPM/sq ft",
+      "emergencyLighting": "90-minute battery backup",
+      "smokeDetectors": "Photoelectric type",
+      "exitSigns": "LED with battery backup"
+    },
+    "securitySystems": {
+      "accessControl": "Biometric and card reader system",
+      "cameras": "16 IP cameras with night vision",
+      "monitoring": "24/7 remote monitoring",
+      "alarms": "Intrusion detection system",
+      "vault": "UL-rated secure storage"
+    },
+    "utilities": {
+      "water": "Municipal water service",
+      "sewer": "Municipal sewer connection",
+      "gas": "Natural gas service for heating and CO₂",
+      "internet": "Fiber optic business connection",
+      "telephone": "VoIP system"
+    },
+    "wasteManagement": {
+      "organic": "Composting system for plant waste",
+      "recycling": "Comprehensive recycling program",
+      "hazardous": "Licensed disposal for chemicals",
+      "water": "Water treatment and recapture system"
+    }
+  },
+  "performance": {
+    "energy": {
+      "dailyConsumption": "12,000 kWh",
+      "annualConsumption": "4,380,000 kWh",
+      "peakDemand": "475 kW",
+      "efficiencyRating": "ENERGY STAR equivalent",
+      "renewableOffset": "25% solar ready"
+    },
+    "water": {
+      "dailyUsage": "2,847 gallons",
+      "annualUsage": "1,039,155 gallons",
+      "recycling": "70% recapture rate",
+      "efficiency": "EPA WaterSense practices"
+    },
+    "production": {
+      "annualYield": "12,500 lbs",
+      "yieldPerSqFt": "1.74 lbs/sq ft/year",
+      "harvestCycles": 6.5,
+      "qualityGrade": "Premium indoor grade"
+    },
+    "economics": {
+      "constructionCost": "$2.8M estimated",
+      "operationalCost": "$47,500/month",
+      "roi": "18-24 months",
+      "paybackPeriod": "22 months",
+      "irr": "45%"
+    }
+  },
+  "compliance": {
+    "buildingCodes": {
+      "ibc": "International Building Code 2021",
+      "irc": "International Residential Code 2021",
+      "local": "Mohave County Building Code"
+    },
+    "electrical": {
+      "nec": "National Electrical Code 2023",
+      "ieee": "IEEE 1584 arc flash study",
+      "nfpa70e": "Electrical safety standards"
+    },
+    "mechanical": {
+      "imc": "International Mechanical Code 2021",
+      "ashrae": "ASHRAE 90.1 energy efficiency",
+      "smacna": "SMACNA ductwork standards"
+    },
+    "structural": {
+      "asce7": "ASCE 7-16 load standards",
+      "aisc": "AISC steel construction",
+      "aci": "ACI 318 concrete design"
+    },
+    "environmental": {
+      "epa": "EPA air quality standards",
+      "water": "Clean Water Act compliance",
+      "waste": "RCRA hazardous waste standards"
+    },
+    "cannabis": {
+      "state": "Arizona Cannabis Control Department",
+      "local": "Mohave County cannabis ordinance",
+      "tracking": "Seed-to-sale tracking system",
+      "security": "State security requirements"
+    }
+  }
+}

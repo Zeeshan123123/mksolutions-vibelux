@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2592 1728" width="36in" height="24in">
+  <defs>
+    <style>
+      .title-block-border { stroke: #000000; stroke-width: 2; fill: none; }
+      .vibelux-primary { fill: #00A86B; }
+      .vibelux-secondary { fill: #2E8B57; }
+      .vibelux-text { fill: #2F4F4F; }
+      .field-text { font-family: Arial; font-size: 12px; }
+      .title-text { font-family: Arial Black; font-size: 16px; font-weight: bold; }
+      .logo-bg { fill: #00A86B; opacity: 0.1; }
+    </style>
+  </defs>
+  
+  <!-- Title Block Border -->
+  <rect x="1980" y="1404" width="612" height="324" class="title-block-border"/>
+  
+  <!-- Vibelux Branding Zone -->
+  <g transform="translate(1998, 1584)">
+    <rect width="216" height="72" class="logo-bg"/>
+    <text x="108" y="36" text-anchor="middle" dominant-baseline="middle" class="vibelux-primary title-text">
+      VIBELUX
+    </text>
+    <text x="108" y="56" text-anchor="middle" dominant-baseline="middle" class="vibelux-text field-text">
+      Professional Greenhouse Solutions
+    </text>
+  </g>
+  
+  <!-- Project Information Zone -->
+  <g transform="translate(2250, 1584)">
+    <text x="0" y="20" class="vibelux-text title-text">Commercial Greenhouse Project</text>
+    <text x="0" y="40" class="vibelux-text field-text">Project No: GH-2024-001</text>
+    <text x="0" y="60" class="vibelux-text field-text">Date: 7/27/2025</text>
+  </g>
+  
+  <!-- Drawing Information -->
+  <g transform="translate(1998, 1512)">
+    <text x="0" y="20" class="vibelux-text title-text">Foundation Plan</text>
+    <text x="0" y="40" class="vibelux-text field-text">Drawing No: A-101</text>
+    <text x="200" y="40" class="vibelux-text field-text">Scale: 1/4" = 1'-0"</text>
+  </g>
+  
+  <!-- Professional Seal Zone -->
+  <rect x="2448" y="1512" width="126" height="126" stroke="#2E8B57" stroke-width="2" fill="none"/>
+  <text x="2511" y="1575" text-anchor="middle" dominant-baseline="middle" class="vibelux-text field-text">
+    Professional
+  </text>
+  <text x="2511" y="1590" text-anchor="middle" dominant-baseline="middle" class="vibelux-text field-text">
+    Engineer Seal
+  </text>
+  
+  <!-- Compliance Marks -->
+  <g transform="translate(2448, 1658)">
+    <rect width="126" height="30" stroke="#2E8B57" stroke-width="1" fill="none"/>
+    <text x="63" y="20" text-anchor="middle" dominant-baseline="middle" class="vibelux-text field-text">
+      IBC 2021 Compliant
+    </text>
+  </g>
+  
+  <!-- Revision Table -->
+  <g transform="translate(1998, 1422)">
+    <rect width="576" height="72" stroke="#2F4F4F" stroke-width="1" fill="white"/>
+    <text x="288" y="15" text-anchor="middle" class="vibelux-text field-text" font-weight="bold">
+      REVISIONS
+    </text>
+    <!-- Revision table content would be dynamically generated -->
+  </g>
+  
+</svg>

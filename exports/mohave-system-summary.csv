@@ -1,0 +1,25 @@
+System,Component,Specification,Value,Unit
+Lighting,Technology,Fixture Type,Fluence VYPR 2p,
+Lighting,Quantity,Fixture Count,765,units
+Lighting,Power,Total Wattage,493875,W
+Lighting,Performance,PPFD Target,800-850 μmol/m²/s,μmol/m²/s
+Greenhouse,Frame,Type,Gable Frame Structure,
+Greenhouse,Material,Frame Material,Aluminum Alloy 6061-T6,
+Greenhouse,Dimensions,Length,120 feet,ft
+Greenhouse,Dimensions,Width,60 feet,ft
+Irrigation,Storage,Total Capacity,1000 gallons,gallons
+Irrigation,Pump,Primary Capacity,85 GPM @ 60 PSI,
+Irrigation,Zones,Total Zones,4,zones
+Environmental,HVAC,Type,Multi-zone Variable Air Volume,
+Environmental,Cooling,Capacity,120,000 BTU/hr (10 tons),
+Environmental,Heating,Capacity,150,000 BTU/hr total,
+Electrical,Service,Amperage,800A,A
+Electrical,Service,Voltage,480V, 3-phase, 4-wire,V
+Electrical,Load,Connected Load,625 kW,
+Electrical,Backup,Generator,500 kW,
+Automation,Devices,Total Count,47,devices
+Automation,Sensors,Temperature,24,sensors
+Automation,Network,Protocols,WiFi;Zigbee;BACnet;Modbus,
+Performance,Energy,Daily Consumption,12,000 kWh,kWh
+Performance,Water,Daily Usage,2,847 gallons,gallons
+Performance,Production,Annual Yield,12,500 lbs,lbs

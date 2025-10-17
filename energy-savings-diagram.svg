@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="1900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define gradients and styles -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="1900" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="700" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    VibeLux Energy Savings Revenue Share Model
+  </text>
+  <text x="700" y="85" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#6b7280">
+    70/30 Split - Customer Keeps 70% of Savings
+  </text>
+  
+  <!-- Main Flow -->
+  <!-- Customer Signs Up -->
+  <rect x="550" y="120" width="300" height="60" rx="30" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="700" y="155" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    Customer Signs Up
+  </text>
+  
+  <!-- Arrow -->
+  <line x1="700" y1="180" x2="700" y2="220" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Connect Utility -->
+  <rect x="550" y="220" width="300" height="60" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="700" y="255" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    Connect Utility Account
+  </text>
+  
+  <!-- OAuth Branch -->
+  <path d="M 700 280 L 700 320 L 550 370 L 700 420 L 850 370 Z" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  <text x="700" y="355" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1a1a1a">
+    OAuth
+  </text>
+  <text x="700" y="375" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1a1a1a">
+    Authorization
+  </text>
+  
+  <!-- Data Sync -->
+  <rect x="150" y="460" width="250" height="80" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="275" y="495" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+    Sync Historical
+  </text>
+  <text x="275" y="515" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+    Usage Data
+  </text>
+  
+  <!-- Analysis Phase -->
+  <rect x="500" y="460" width="400" height="150" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="700" y="490" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e3a8a">
+    AI Analysis Phase
+  </text>
+  <text x="700" y="520" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1e40af">
+    • Establish 12-24 month baseline
+  </text>
+  <text x="700" y="545" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1e40af">
+    • Identify usage patterns & peaks
+  </text>
+  <text x="700" y="570" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1e40af">
+    • Find savings opportunities
+  </text>
+  <text x="700" y="595" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1e40af">
+    • Calculate optimization potential
+  </text>
+  
+  <!-- Implementation -->
+  <rect x="550" y="650" width="300" height="60" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="700" y="685" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    Implement VibeLux System
+  </text>
+  
+  <!-- Monitoring -->
+  <rect x="550" y="750" width="300" height="60" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="700" y="785" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    Continuous Monitoring
+  </text>
+  
+  <!-- Real-time tracking -->
+  <rect x="950" y="730" width="250" height="100" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+  <text x="1075" y="765" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">
+    Real-Time Tracking
+  </text>
+  <text x="1075" y="790" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#047857">
+    15-minute intervals
+  </text>
+  <text x="1075" y="810" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#047857">
+    Compare to baseline
+  </text>
+  
+  <!-- Calculate Savings -->
+  <rect x="550" y="870" width="300" height="60" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="700" y="905" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    Calculate Monthly Savings
+  </text>
+  
+  <!-- Verify with IPMVP -->
+  <path d="M 700 930 L 700 970 L 600 1020 L 700 1070 L 800 1020 Z" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  <text x="700" y="1010" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1a1a1a">
+    Verify Savings
+  </text>
+  <text x="700" y="1030" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1a1a1a">
+    IPMVP Protocol
+  </text>
+  
+  <!-- Revenue Split -->
+  <rect x="550" y="1110" width="300" height="80" rx="8" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="700" y="1145" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    Revenue Split
+  </text>
+  <text x="700" y="1170" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    Calculation
+  </text>
+  
+  <!-- Customer 70% -->
+  <rect x="100" y="1250" width="300" height="120" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="3"/>
+  <text x="250" y="1285" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#059669">
+    Customer: 70%
+  </text>
+  <text x="250" y="1315" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#065f46">
+    • Lower energy bills
+  </text>
+  <text x="250" y="1335" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#065f46">
+    • No upfront costs
+  </text>
+  <text x="250" y="1355" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#065f46">
+    • Sustainability goals
+  </text>
+  
+  <!-- Partners 30% Total -->
+  <rect x="500" y="1250" width="300" height="80" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/>
+  <text x="650" y="1280" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e40af">
+    Partners: 30% Total
+  </text>
+  <text x="650" y="1305" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#2563eb">
+    Revenue Share Split
+  </text>
+  
+  <!-- VibeLux 15% -->
+  <rect x="450" y="1380" width="180" height="100" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+  <text x="540" y="1410" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#059669">
+    VibeLux: 15%
+  </text>
+  <text x="540" y="1435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#065f46">
+    • Platform & AI
+  </text>
+  <text x="540" y="1455" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#065f46">
+    • Technology
+  </text>
+  
+  <!-- Ensave 15% -->
+  <rect x="670" y="1380" width="180" height="100" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+  <text x="760" y="1410" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#059669">
+    Ensave: 15%
+  </text>
+  <text x="760" y="1435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#065f46">
+    • Account mgmt
+  </text>
+  <text x="760" y="1455" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#065f46">
+    • Continuous audit
+  </text>
+  
+  <!-- Monthly Report -->
+  <rect x="550" y="1530" width="300" height="60" rx="30" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="700" y="1565" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    Monthly Savings Report
+  </text>
+  
+  <!-- Key Metrics Box -->
+  <rect x="100" y="1650" width="1200" height="180" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="700" y="1690" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Key Performance Metrics
+  </text>
+  
+  <!-- Metric Cards -->
+  <rect x="150" y="1720" width="250" height="80" rx="8" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+  <text x="275" y="1750" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#059669">
+    20-35%
+  </text>
+  <text x="275" y="1775" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#6b7280">
+    Average Energy Savings
+  </text>
+  
+  <rect x="450" y="1720" width="250" height="80" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="575" y="1750" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2563eb">
+    $0
+  </text>
+  <text x="575" y="1775" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#6b7280">
+    Upfront Cost
+  </text>
+  
+  <rect x="750" y="1720" width="250" height="80" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+  <text x="875" y="1750" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#d97706">
+    IPMVP
+  </text>
+  <text x="875" y="1775" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#6b7280">
+    Verified Methodology
+  </text>
+  
+  <rect x="1050" y="1720" width="200" height="80" rx="8" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+  <text x="1150" y="1750" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#059669">
+    Monthly
+  </text>
+  <text x="1150" y="1775" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#6b7280">
+    Billing Cycle
+  </text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Connecting lines -->
+  <line x1="700" y1="420" x2="275" y2="460" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="275" y1="540" x2="700" y2="610" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="710" x2="700" y2="750" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="850" y1="780" x2="950" y2="780" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="810" x2="700" y2="870" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="1070" x2="700" y2="1110" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="625" y1="1190" x2="250" y2="1250" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="775" y1="1190" x2="650" y2="1250" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="1330" x2="540" y2="1380" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="1330" x2="760" y2="1380" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="250" y1="1370" x2="600" y2="1530" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="540" y1="1480" x2="650" y2="1530" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="760" y1="1480" x2="750" y2="1530" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Footer -->
+  <text x="700" y="1870" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#6b7280">
+    © 2025 VibeLux - AI-Powered Energy Intelligence Platform
+  </text>
+</svg>

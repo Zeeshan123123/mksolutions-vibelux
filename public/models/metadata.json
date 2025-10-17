@@ -1,0 +1,19 @@
+{
+  "generated": "2025-07-22T02:42:46.739Z",
+  "models": {
+    "yield-prediction": {
+      "version": "1.0.0",
+      "accuracy": 0.89,
+      "inputs": 15,
+      "outputs": 1,
+      "type": "regression"
+    },
+    "disease-detection": {
+      "version": "1.0.0",
+      "accuracy": 0.87,
+      "inputs": 12,
+      "outputs": 6,
+      "type": "multi-label-classification"
+    }
+  }
+}

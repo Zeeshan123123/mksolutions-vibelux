@@ -1,0 +1,15 @@
+{
+  "name": "vibelux-lambda-functions",
+  "version": "1.0.0",
+  "description": "AWS Lambda functions for VibeLux IoT and analytics processing",
+  "main": "sensor-data-processor.js",
+  "dependencies": {
+    "aws-sdk": "^2.1691.0"
+  },
+  "scripts": {
+    "package": "zip -r sensor-data-processor.zip sensor-data-processor.js node_modules/",
+    "deploy": "aws lambda update-function-code --function-name vibelux-sensor-processor --zip-file fileb://sensor-data-processor.zip"
+  },
+  "keywords": ["vibelux", "iot", "horticulture", "sensors", "lambda"],
+  "author": "VibeLux Platform"
+}

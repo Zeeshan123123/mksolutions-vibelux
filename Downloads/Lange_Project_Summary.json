@@ -1,0 +1,26 @@
+{
+  "project": "Lange Commercial Greenhouse",
+  "generatedAt": "2025-07-27T16:12:58.260Z",
+  "statistics": {
+    "totalSheets": 8,
+    "totalArea": 26847.5,
+    "fixtures": 987,
+    "electricalService": "2400A @ 480Y/277V",
+    "coolingCapacity": "346 tons",
+    "heatingCapacity": "6.58 MBTU/hr",
+    "irrigationCapacity": "5,034 GPD",
+    "panels": {
+      "main": 1,
+      "distribution": 3,
+      "lighting": 5,
+      "total": 9
+    },
+    "circuits": {
+      "lighting": 50,
+      "mechanical": 15,
+      "receptacle": 20,
+      "spare": 40,
+      "total": 125
+    }
+  }
+}

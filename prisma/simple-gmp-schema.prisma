@@ -1,0 +1,165 @@
+// Simplified GMP schema for quick deployment
+// This can be imported/merged with main schema later
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum GMPDocumentType {
+  SOP
+  BATCH_RECORD
+  SPECIFICATION
+  PROTOCOL
+  REPORT
+  POLICY
+  FORM
+}
+
+enum GMPDocumentStatus {
+  DRAFT
+  REVIEW
+  APPROVED
+  EFFECTIVE
+  OBSOLETE
+}
+
+enum GMPSignatureType {
+  AUTHOR
+  REVIEWER
+  APPROVER
+  QA
+  QU
+}
+
+enum GMPBatchStatus {
+  IN_PROGRESS
+  COMPLETED
+  RELEASED
+  REJECTED
+  ON_HOLD
+}
+
+enum DeviationSeverity {
+  MINOR
+  MAJOR
+  CRITICAL
+}
+
+enum DeviationStatus {
+  OPEN
+  UNDER_INVESTIGATION
+  CAPA_REQUIRED
+  CLOSED
+}
+
+model GMPDocument {
+  id                    String                @id @default(cuid())
+  documentNumber        String                @unique
+  title                 String
+  version               String                @default("1.0")
+  type                  GMPDocumentType
+  status                GMPDocumentStatus     @default(DRAFT)
+  effectiveDate         DateTime?
+  expiryDate            DateTime?
+  content               String
+  facilityId            String
+  authorId              String
+  reviewerId            String?
+  approverId            String?
+  createdAt             DateTime              @default(now())
+  updatedAt             DateTime              @updatedAt
+
+  signatures            ElectronicSignature[]
+
+  @@index([facilityId])
+  @@index([status])
+  @@index([type])
+}
+
+model ElectronicSignature {
+  id                String           @id @default(cuid())
+  documentId        String
+  userId            String
+  signatureType     GMPSignatureType
+  timestamp         DateTime         @default(now())
+  ipAddress         String
+  userAgent         String
+  biometricData     Json?
+  reason            String?
+  isValid           Boolean          @default(true)
+
+  document          GMPDocument      @relation(fields: [documentId], references: [id])
+
+  @@index([documentId])
+  @@index([userId])
+}
+
+model BatchRecord {
+  id                        String              @id @default(cuid())
+  batchNumber               String              @unique
+  productName               String
+  lotNumber                 String              @unique
+  startDate                 DateTime
+  endDate                   DateTime?
+  quantity                  Float
+  unit                      String
+  status                    GMPBatchStatus      @default(IN_PROGRESS)
+  facilityId                String
+  operatorId                String
+  qualityData               Json                @default("{}")
+  environmentalConditions   Json                @default("{}")
+  notes                     String?
+  createdAt                 DateTime            @default(now())
+  updatedAt                 DateTime            @updatedAt
+
+  @@index([facilityId])
+  @@index([status])
+  @@index([batchNumber])
+}
+
+model Deviation {
+  id                    String              @id @default(cuid())
+  deviationNumber       String              @unique
+  title                 String
+  description           String
+  severity              DeviationSeverity
+  status                DeviationStatus     @default(OPEN)
+  detectedDate          DateTime
+  facilityId            String
+  reportedById          String
+  assignedToId          String?
+  rootCause             String?
+  correctiveAction      String?
+  preventiveAction      String?
+  targetCloseDate       DateTime?
+  actualCloseDate       DateTime?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+
+  @@index([facilityId])
+  @@index([status])
+  @@index([severity])
+}
+
+model TrainingRecord {
+  id                    String      @id @default(cuid())
+  userId                String
+  trainingTitle         String
+  trainingType          String
+  completionDate        DateTime
+  expiryDate            DateTime?
+  score                 Float?
+  instructorId          String?
+  certificateNumber     String?
+  isValid               Boolean     @default(true)
+  facilityId            String
+
+  @@index([userId])
+  @@index([facilityId])
+  @@index([expiryDate])
+}

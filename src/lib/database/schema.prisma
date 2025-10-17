@@ -1,0 +1,518 @@
+// VibeLux CAD Database Schema
+// Professional-grade database schema for CAD projects and collaboration
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Core Project Management
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  metadata    Json     // ProjectMetadata
+  settings    Json     // ProjectSettings
+  
+  // Relationships
+  models      Model[]
+  drawings    Drawing[]
+  analyses    Analysis[]
+  boms        BOM[]
+  versions    ProjectVersion[]
+  branches    ProjectBranch[]
+  collaborators ProjectCollaborator[]
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  modifiedAt  DateTime @updatedAt
+  
+  // Indices
+  @@index([name])
+  @@index([createdAt])
+  @@map("projects")
+}
+
+// 3D Models
+model Model {
+  id         String   @id @default(cuid())
+  projectId  String
+  name       String
+  parameters Json     // GreenhouseParameters
+  geometry   Json     // ModelGeometry
+  layers     Json     // LayerConfiguration
+  
+  // Relationships
+  project    Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  components Component[]
+  
+  // Timestamps
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  // Indices
+  @@index([projectId])
+  @@index([name])
+  @@map("models")
+}
+
+// Components (structural elements)
+model Component {
+  id          String   @id @default(cuid())
+  modelId     String
+  name        String
+  type        String   // ComponentType
+  category    String
+  geometry    Json     // ComponentGeometry
+  materialId  String
+  material    Json     // MaterialProperties
+  properties  Json     // ComponentProperties
+  connections Json     // ComponentConnections
+  assembly    Json     // AssemblyInstructions
+  layer       String
+  subLayer    String?
+  
+  // Relationships
+  model       Model    @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Indices
+  @@index([modelId])
+  @@index([category])
+  @@index([materialId])
+  @@map("components")
+}
+
+// Technical Drawings
+model Drawing {
+  id          String   @id @default(cuid())
+  projectId   String
+  type        String   // DrawingType
+  name        String
+  description String?
+  scale       Float
+  units       String
+  paperSize   String
+  elements    Json     // DrawingElements
+  dimensions  Json     // DrawingDimensions
+  notes       Json     // DrawingNotes
+  exportData  Json?    // ExportData
+  
+  // Relationships
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Indices
+  @@index([projectId])
+  @@index([type])
+  @@index([name])
+  @@map("drawings")
+}
+
+// Structural Analysis
+model Analysis {
+  id             String   @id @default(cuid())
+  projectId      String
+  modelId        String
+  analysisType   String   // AnalysisType
+  loadConditions Json     // LoadConditions
+  members        Json     // StructuralMembers
+  results        Json     // AnalysisResults
+  codeCompliance Json     // CodeCompliance
+  optimization   Json     // OptimizationResults
+  
+  // Relationships
+  project        Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  
+  // Indices
+  @@index([projectId])
+  @@index([modelId])
+  @@index([analysisType])
+  @@map("analyses")
+}
+
+// Bill of Materials
+model BOM {
+  id            String   @id @default(cuid())
+  projectId     String
+  greenhouseId  String
+  summary       Json     // BOMSummary
+  categories    Json     // BOMCategories
+  lineItems     Json     // BOMLineItems
+  assemblies    Json     // BOMAssemblies
+  
+  // Relationships
+  project       Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Indices
+  @@index([projectId])
+  @@index([greenhouseId])
+  @@map("boms")
+}
+
+// Version Control
+model ProjectVersion {
+  id            String   @id @default(cuid())
+  projectId     String
+  versionNumber Int
+  majorVersion  Int
+  minorVersion  Int
+  patchVersion  Int
+  label         String
+  description   String?
+  changes       Json     // VersionChanges
+  snapshot      Json     // CompressedSnapshot
+  metadata      Json     // VersionMetadata
+  
+  // Relationships
+  project       Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt     DateTime @default(now())
+  
+  // Indices
+  @@index([projectId])
+  @@index([versionNumber])
+  @@index([label])
+  @@unique([projectId, versionNumber])
+  @@map("project_versions")
+}
+
+// Branch Management
+model ProjectBranch {
+  id            String   @id @default(cuid())
+  projectId     String
+  name          String
+  description   String?
+  parentBranch  String?
+  currentVersion String?
+  isDefault     Boolean  @default(false)
+  isProtected   Boolean  @default(false)
+  permissions   Json     // BranchPermissions
+  createdBy     String
+  lastCommit    DateTime
+  
+  // Relationships
+  project       Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt     DateTime @default(now())
+  
+  // Indices
+  @@index([projectId])
+  @@index([name])
+  @@index([createdBy])
+  @@unique([projectId, name])
+  @@map("project_branches")
+}
+
+// Collaboration
+model ProjectCollaborator {
+  id          String   @id @default(cuid())
+  projectId   String
+  userId      String
+  role        String   // CollaboratorRole
+  permissions Json     // CollaboratorPermissions
+  invitedBy   String?
+  invitedAt   DateTime?
+  acceptedAt  DateTime?
+  lastActive  DateTime?
+  
+  // Relationships
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Indices
+  @@index([projectId])
+  @@index([userId])
+  @@index([role])
+  @@unique([projectId, userId])
+  @@map("project_collaborators")
+}
+
+// User Management
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String
+  avatar        String?
+  company       String?
+  role          String   // UserRole
+  preferences   Json     // UserPreferences
+  isActive      Boolean  @default(true)
+  lastLoginAt   DateTime?
+  
+  // Relationships
+  collaborations ProjectCollaborator[]
+  activities    Activity[]
+  
+  // Timestamps
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Indices
+  @@index([email])
+  @@index([company])
+  @@index([role])
+  @@map("users")
+}
+
+// Activity Logging
+model Activity {
+  id          String   @id @default(cuid())
+  userId      String
+  projectId   String?
+  action      String   // ActivityType
+  entityType  String?  // EntityType
+  entityId    String?
+  details     Json     // ActivityDetails
+  ipAddress   String?
+  userAgent   String?
+  
+  // Relationships
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([userId])
+  @@index([projectId])
+  @@index([action])
+  @@index([createdAt])
+  @@map("activities")
+}
+
+// Material Library
+model Material {
+  id              String   @id @default(cuid())
+  name            String
+  manufacturer    String?
+  model           String?
+  category        String
+  properties      Json     // MaterialProperties
+  specifications  Json     // MaterialSpecifications
+  availability    Json     // MaterialAvailability
+  suppliers       Json     // MaterialSuppliers
+  certifications  Json     // MaterialCertifications
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Indices
+  @@index([name])
+  @@index([manufacturer])
+  @@index([category])
+  @@map("materials")
+}
+
+// Export History
+model ExportHistory {
+  id          String   @id @default(cuid())
+  projectId   String
+  userId      String
+  format      String   // ExportFormat
+  type        String   // ExportType
+  options     Json     // ExportOptions
+  result      Json     // ExportResult
+  fileSize    Int
+  duration    Int      // milliseconds
+  status      String   // ExportStatus
+  errorMessage String?
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([projectId])
+  @@index([userId])
+  @@index([format])
+  @@index([createdAt])
+  @@map("export_history")
+}
+
+// System Configuration
+model SystemConfig {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       Json
+  description String?
+  isPublic    Boolean  @default(false)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Indices
+  @@index([key])
+  @@map("system_config")
+}
+
+// Backup Management
+model Backup {
+  id          String   @id @default(cuid())
+  timestamp   DateTime
+  path        String
+  size        BigInt
+  checksum    String
+  storageType String   // BackupStorageType
+  status      String   // BackupStatus
+  metadata    Json?    // BackupMetadata
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([timestamp])
+  @@index([status])
+  @@map("backups")
+}
+
+// Performance Metrics
+model Metric {
+  id          String   @id @default(cuid())
+  name        String
+  value       Float
+  unit        String?
+  tags        Json?    // MetricTags
+  timestamp   DateTime @default(now())
+  
+  // Indices
+  @@index([name])
+  @@index([timestamp])
+  @@map("metrics")
+}
+
+// File Storage
+model FileStorage {
+  id          String   @id @default(cuid())
+  projectId   String?
+  filename    String
+  originalName String
+  mimeType    String
+  size        BigInt
+  path        String
+  bucket      String?
+  metadata    Json?    // FileMetadata
+  uploadedBy  String
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([projectId])
+  @@index([filename])
+  @@index([uploadedBy])
+  @@index([createdAt])
+  @@map("file_storage")
+}
+
+// Audit Log
+model AuditLog {
+  id          String   @id @default(cuid())
+  userId      String?
+  action      String   // AuditAction
+  entityType  String   // EntityType
+  entityId    String
+  oldValues   Json?    // OldValues
+  newValues   Json?    // NewValues
+  ipAddress   String?
+  userAgent   String?
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([userId])
+  @@index([action])
+  @@index([entityType])
+  @@index([entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// Notifications
+model Notification {
+  id          String   @id @default(cuid())
+  userId      String
+  type        String   // NotificationType
+  title       String
+  message     String
+  data        Json?    // NotificationData
+  readAt      DateTime?
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([userId])
+  @@index([type])
+  @@index([readAt])
+  @@index([createdAt])
+  @@map("notifications")
+}
+
+// API Keys
+model ApiKey {
+  id          String   @id @default(cuid())
+  name        String
+  keyHash     String   @unique
+  userId      String
+  permissions Json     // ApiPermissions
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  isActive    Boolean  @default(true)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  
+  // Indices
+  @@index([keyHash])
+  @@index([userId])
+  @@index([isActive])
+  @@map("api_keys")
+}
+
+// Webhooks
+model Webhook {
+  id          String   @id @default(cuid())
+  projectId   String?
+  url         String
+  events      String[] // WebhookEvents
+  secret      String?
+  isActive    Boolean  @default(true)
+  lastTriggered DateTime?
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Indices
+  @@index([projectId])
+  @@index([isActive])
+  @@map("webhooks")
+}

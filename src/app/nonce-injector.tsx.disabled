@@ -1,0 +1,16 @@
+'use client';
+
+import { NonceProvider } from '@/components/NonceProvider';
+import { useEffect, useState } from 'react';
+
+export function NonceInjector({ children }: { children: React.ReactNode }) {
+  const [nonce, setNonce] = useState('');
+  
+  useEffect(() => {
+    // Generate client-side nonce for CSP
+    const clientNonce = Math.random().toString(36).substring(2, 15);
+    setNonce(clientNonce);
+  }, []);
+  
+  return <NonceProvider nonce={nonce}>{children}</NonceProvider>;
+}

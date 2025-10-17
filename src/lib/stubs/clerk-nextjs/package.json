@@ -1,0 +1,8 @@
+{
+  "name": "@clerk/nextjs",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./server": "./server.js"
+  }
+}

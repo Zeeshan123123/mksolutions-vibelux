@@ -1,0 +1,1482 @@
+{
+  "timestamp": "2025-07-26T17:48:16.064Z",
+  "wcagLevel": "AA",
+  "pages": {
+    "Professional Design Report": {
+      "violations": [
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "Heading level skipped: H4 after H2",
+          "element": "Project Summary",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Use proper heading hierarchy and semantic markup"
+        },
+        {
+          "guideline": "2.4.1",
+          "severity": "serious",
+          "description": "No \"skip to main content\" link found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Add a \"skip to main content\" link"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                        Proje...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                        Analy...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                        Proje...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "moderate",
+          "description": "Insufficient line height",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Set line-height to at least 1.2em"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "moderate",
+          "description": "Insufficient line height",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Set line-height to at least 1.2em"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "moderate",
+          "description": "Insufficient line height",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Set line-height to at least 1.2em"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "moderate",
+          "description": "Insufficient line height",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Set line-height to at least 1.2em"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "No screen reader helper text found",
+          "element": "undefined elements",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add screen reader helper text and skip links"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.4.10",
+          "severity": "moderate",
+          "description": "Content causes horizontal scrolling on mobile",
+          "element": "Mobile viewport",
+          "impact": "Mobile users may have difficulty accessing content",
+          "solution": "Use responsive design to prevent horizontal scroll"
+        }
+      ],
+      "summary": {
+        "critical": 0,
+        "serious": 5,
+        "moderate": 7,
+        "minor": 0
+      },
+      "score": 0,
+      "recommendations": []
+    },
+    "Comprehensive Technical Report": {
+      "violations": [
+        {
+          "guideline": "2.4.1",
+          "severity": "serious",
+          "description": "No \"skip to main content\" link found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Add a \"skip to main content\" link"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                    Project I...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                    Analysis ...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                    Total Fix...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.header-item: \"\n                    Facility ...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.chart-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.chart-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "4.1.2",
+          "severity": "moderate",
+          "description": "Interactive element missing role and tabindex",
+          "element": "DIV",
+          "impact": "Assistive technology may not function correctly",
+          "solution": "Add role=\"button\" and tabindex=\"0\""
+        },
+        {
+          "guideline": "4.1.2",
+          "severity": "moderate",
+          "description": "Interactive element missing role and tabindex",
+          "element": "DIV",
+          "impact": "Assistive technology may not function correctly",
+          "solution": "Add role=\"button\" and tabindex=\"0\""
+        },
+        {
+          "guideline": "4.1.2",
+          "severity": "moderate",
+          "description": "Interactive element missing role and tabindex",
+          "element": "DIV",
+          "impact": "Assistive technology may not function correctly",
+          "solution": "Add role=\"button\" and tabindex=\"0\""
+        },
+        {
+          "guideline": "4.1.2",
+          "severity": "moderate",
+          "description": "Interactive element missing role and tabindex",
+          "element": "DIV",
+          "impact": "Assistive technology may not function correctly",
+          "solution": "Add role=\"button\" and tabindex=\"0\""
+        },
+        {
+          "guideline": "4.1.2",
+          "severity": "moderate",
+          "description": "Interactive element missing role and tabindex",
+          "element": "DIV",
+          "impact": "Assistive technology may not function correctly",
+          "solution": "Add role=\"button\" and tabindex=\"0\""
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "No screen reader helper text found",
+          "element": "undefined elements",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add screen reader helper text and skip links"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.4.10",
+          "severity": "moderate",
+          "description": "Content causes horizontal scrolling on mobile",
+          "element": "Mobile viewport",
+          "impact": "Mobile users may have difficulty accessing content",
+          "solution": "Use responsive design to prevent horizontal scroll"
+        }
+      ],
+      "summary": {
+        "critical": 0,
+        "serious": 5,
+        "moderate": 20,
+        "minor": 0
+      },
+      "score": 0,
+      "recommendations": []
+    },
+    "3D Facility Visualization": {
+      "violations": [
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "No ARIA landmarks found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Use proper heading hierarchy and semantic markup"
+        },
+        {
+          "guideline": "2.4.1",
+          "severity": "serious",
+          "description": "No \"skip to main content\" link found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Add a \"skip to main content\" link"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.info-panel: \"\n            \n                ...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.92:1 (required: 4.5:1)",
+          "element": "BUTTON.tab: \"Rooms...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.92:1 (required: 4.5:1)",
+          "element": "BUTTON.tab: \"Electrical...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.progress-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.progress-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "2.4.7",
+          "severity": "moderate",
+          "description": "First focusable element is not a skip link",
+          "element": "BUTTON",
+          "impact": "Keyboard users cannot see which element has focus",
+          "solution": "Add visible focus indicators using CSS :focus pseudo-class"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (141x32)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (116x32)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (138x32)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (129x32)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (133x32)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (115x39)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (115x39)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (115x39)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "No screen reader helper text found",
+          "element": "undefined elements",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add screen reader helper text and skip links"
+        },
+        {
+          "guideline": "1.4.10",
+          "severity": "moderate",
+          "description": "Content causes horizontal scrolling on mobile",
+          "element": "Mobile viewport",
+          "impact": "Mobile users may have difficulty accessing content",
+          "solution": "Use responsive design to prevent horizontal scroll"
+        }
+      ],
+      "summary": {
+        "critical": 0,
+        "serious": 5,
+        "moderate": 13,
+        "minor": 0
+      },
+      "score": 0,
+      "recommendations": []
+    },
+    "Enhanced 3D Professional Analysis": {
+      "violations": [
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "No H1 heading found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Use proper heading hierarchy and semantic markup"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "No ARIA landmarks found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Use proper heading hierarchy and semantic markup"
+        },
+        {
+          "guideline": "2.4.1",
+          "severity": "serious",
+          "description": "No \"skip to main content\" link found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Add a \"skip to main content\" link"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.14:1 (required: 4.5:1)",
+          "element": "DIV.left-panel: \"\n            🏢 Mohave Cannabi...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.viewer-container: \"\n            \n            \n   ...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.4.3",
+          "severity": "serious",
+          "description": "Low color contrast: 1.00:1 (required: 4.5:1)",
+          "element": "DIV.status-overlay: \"\n                📊 System Sta...\"",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase color contrast to meet WCAG AA standards"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.progress-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.progress-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "1.1.1",
+          "severity": "moderate",
+          "description": "Background image without alternative text",
+          "element": "DIV.progress-fill",
+          "impact": "Screen reader users cannot understand image content",
+          "solution": "Add aria-label for background images with meaning"
+        },
+        {
+          "guideline": "2.4.7",
+          "severity": "moderate",
+          "description": "First focusable element is not a skip link",
+          "element": "BUTTON",
+          "impact": "Keyboard users cannot see which element has focus",
+          "solution": "Add visible focus indicators using CSS :focus pseudo-class"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "1.4.12",
+          "severity": "serious",
+          "description": "Text size too small",
+          "element": "DIV",
+          "impact": "Text may be difficult to read for users with visual impairments",
+          "solution": "Increase font size to at least 12px"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (213x41)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (73x34)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (60x34)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (65x34)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (71x34)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "No screen reader helper text found",
+          "element": "undefined elements",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add screen reader helper text and skip links"
+        },
+        {
+          "guideline": "1.4.10",
+          "severity": "moderate",
+          "description": "Touch targets too close together",
+          "element": "66 pairs",
+          "impact": "Mobile users may have difficulty accessing content",
+          "solution": "Increase spacing between touch targets"
+        }
+      ],
+      "summary": {
+        "critical": 0,
+        "serious": 18,
+        "moderate": 18,
+        "minor": 0
+      },
+      "score": 0,
+      "recommendations": []
+    },
+    "White Label Report Builder": {
+      "violations": [
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "No H1 heading found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Use proper heading hierarchy and semantic markup"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "No ARIA landmarks found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Use proper heading hierarchy and semantic markup"
+        },
+        {
+          "guideline": "2.4.1",
+          "severity": "serious",
+          "description": "No \"skip to main content\" link found",
+          "element": "Document",
+          "impact": "Screen readers and keyboard users may have difficulty navigating",
+          "solution": "Add a \"skip to main content\" link"
+        },
+        {
+          "guideline": "2.4.3",
+          "severity": "serious",
+          "description": "32 hidden elements are still focusable",
+          "impact": "Keyboard users may focus on invisible elements",
+          "solution": "Add tabindex=\"-1\" to hidden interactive elements"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "Using placeholder as only label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Use label element instead of relying on placeholder"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"color\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"color\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"tel\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"email\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "TEXTAREA[type=\"textarea\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "TEXTAREA[type=\"textarea\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "TEXTAREA[type=\"textarea\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "Using placeholder as only label",
+          "element": "INPUT[type=\"text\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Use label element instead of relying on placeholder"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "TEXTAREA[type=\"textarea\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "serious",
+          "description": "Using placeholder as only label",
+          "element": "TEXTAREA[type=\"textarea\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Use label element instead of relying on placeholder"
+        },
+        {
+          "guideline": "3.3.2",
+          "severity": "serious",
+          "description": "Form control missing label",
+          "element": "SELECT[type=\"select-one\"]",
+          "impact": "Form may be difficult or impossible to use with assistive technology",
+          "solution": "Add proper label element or aria-label"
+        },
+        {
+          "guideline": "2.4.7",
+          "severity": "moderate",
+          "description": "First focusable element is not a skip link",
+          "element": "BUTTON",
+          "impact": "Keyboard users cannot see which element has focus",
+          "solution": "Add visible focus indicators using CSS :focus pseudo-class"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (84x33)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (84x33)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (84x33)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (14x14)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (301x40)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (301x42)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (301x42)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (301x42)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (301x42)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (48x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (74x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (48x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (74x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (48x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (74x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (48x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (74x29)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "INPUT (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "2.5.5",
+          "severity": "moderate",
+          "description": "Touch target smaller than 44x44 pixels",
+          "element": "BUTTON (0x0)",
+          "impact": "Interactive elements may be difficult to use",
+          "solution": "Increase button size to at least 44x44 pixels"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "No screen reader helper text found",
+          "element": "undefined elements",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add screen reader helper text and skip links"
+        },
+        {
+          "guideline": "1.3.1",
+          "severity": "moderate",
+          "description": "Table missing caption",
+          "element": "TABLE",
+          "impact": "Screen reader users may miss important content structure",
+          "solution": "Add caption element to describe table purpose"
+        },
+        {
+          "guideline": "1.4.10",
+          "severity": "moderate",
+          "description": "Touch targets too close together",
+          "element": "351 pairs",
+          "impact": "Mobile users may have difficulty accessing content",
+          "solution": "Increase spacing between touch targets"
+        }
+      ],
+      "summary": {
+        "critical": 0,
+        "serious": 27,
+        "moderate": 58,
+        "minor": 0
+      },
+      "score": 0,
+      "recommendations": []
+    }
+  },
+  "summary": {
+    "totalViolations": 176,
+    "critical": 0,
+    "serious": 60,
+    "moderate": 116,
+    "minor": 0,
+    "complianceScore": 0
+  },
+  "guidelines": {}
+}

@@ -1,0 +1,27 @@
+version: 0.2
+
+# Enterprise VibeLux Platform - CodeBuild Specification
+# Builds complete platform with Autodesk integration and 3D visualization
+
+phases:
+  pre_build:
+    commands:
+      - echo "=== Enterprise VibeLux Platform Build Starting ==="
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      
+  build:
+    commands:
+      - echo "=== Building Enterprise Docker Image ==="
+      - echo Build started on `date`
+      - echo Building the Docker image with enterprise configuration...
+      - docker build -f Dockerfile.enterprise -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      
+  post_build:
+    commands:
+      - echo "=== Pushing Enterprise Image to ECR ==="
+      - echo Build completed on `date`
+      - echo Pushing the Docker image to ECR...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - echo "=== Enterprise VibeLux Platform Build Complete ==="

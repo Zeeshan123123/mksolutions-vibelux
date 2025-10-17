@@ -1,0 +1,123 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { logger } from '@/lib/logging/production-logger';
+import { auth } from '@clerk/nextjs/server'
+import { prisma } from '@/lib/prisma'
+export const dynamic = 'force-dynamic'
+
+export async function POST(request: NextRequest) {
+  try {
+    const { userId } = await auth()
+    
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const body = await request.json()
+    const { 
+      role, 
+      facilityType, 
+      facilitySize, 
+      goals, 
+      experience,
+      onboardingCompleted 
+    } = body
+
+    // Update user profile with onboarding data
+    const user = await prisma.user.upsert({
+      where: { clerkId: userId },
+      update: {
+        role,
+        facilityType,
+        facilitySize,
+        goals,
+        experience,
+        onboardingCompleted,
+        onboardingCompletedAt: onboardingCompleted ? new Date() : null
+      },
+      create: {
+        clerkId: userId,
+        email: '', // Will be updated by webhook
+        role,
+        facilityType,
+        facilitySize,
+        goals,
+        experience,
+        onboardingCompleted,
+        onboardingCompletedAt: onboardingCompleted ? new Date() : null
+      }
+    })
+
+    // Log onboarding completion
+    if (onboardingCompleted) {
+      await prisma.auditLog.create({
+        data: {
+          userId,
+          action: 'ONBOARDING_COMPLETED',
+          resource: 'user_profile',
+          details: {
+            role,
+            facilityType,
+            facilitySize,
+            goals,
+            experience
+          },
+          ipAddress: request.headers.get('x-forwarded-for') || 'unknown',
+          userAgent: request.headers.get('user-agent') || 'unknown',
+          success: true
+        }
+      }).catch((error) => logger.error('api', 'Failed to create onboarding audit log', error))
+    }
+
+    return NextResponse.json({ 
+      success: true,
+      user: {
+        id: user.id,
+        role: user.role,
+        facilityType: user.facilityType,
+        onboardingCompleted: user.onboardingCompleted
+      }
+    })
+    
+  } catch (error) {
+    logger.error('api', 'Onboarding error:', error )
+    return NextResponse.json(
+      { error: 'Failed to save onboarding data' },
+      { status: 500 }
+    )
+  }
+}
+
+export async function GET(request: NextRequest) {
+  try {
+    const { userId } = await auth()
+    
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { clerkId: userId },
+      select: {
+        role: true,
+        facilityType: true,
+        facilitySize: true,
+        goals: true,
+        experience: true,
+        onboardingCompleted: true,
+        onboardingCompletedAt: true
+      }
+    })
+
+    return NextResponse.json({ 
+      onboardingCompleted: user?.onboardingCompleted || false,
+      data: user
+    })
+    
+  } catch (error) {
+    logger.error('api', 'Get onboarding status error:', error )
+    return NextResponse.json(
+      { error: 'Failed to get onboarding status' },
+      { status: 500 }
+    )
+  }
+}

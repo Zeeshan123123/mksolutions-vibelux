@@ -1,0 +1,29 @@
+{
+  "project": "Lange Commercial Greenhouse - Complete Vibelux Integration",
+  "generatedAt": "2025-07-27T16:21:24.640Z",
+  "vibeluxSystem": {
+    "electricalDesigner": "Integrated",
+    "circuitPlanner": "Automated",
+    "loadCalculations": "Real-time",
+    "voltageDropAnalysis": "NEC Compliant"
+  },
+  "systemStats": {
+    "totalPanels": 10,
+    "totalCircuits": 57,
+    "totalFixtures": 987,
+    "connectedLoad": "4386A",
+    "demandLoad": "4222A",
+    "serviceUtilization": "176%",
+    "voltageDropCompliance": "100%"
+  },
+  "documentation": {
+    "totalSheets": 7,
+    "coverSheet": "System integration summary",
+    "floorPlan": "Zone layout with panel locations",
+    "lightingPlan": "Circuit assignments and homerun indicators",
+    "singleLineDiagram": "Complete electrical hierarchy",
+    "panelSchedules": "Detailed circuit listings",
+    "loadAnalysis": "Automated calculations",
+    "voltageDropAnalysis": "NEC compliance verification"
+  }
+}

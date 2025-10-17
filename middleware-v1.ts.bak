@@ -1,0 +1,59 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+
+// Public routes (marketing/docs) should NOT redirect to sign-in
+const isPublicRoute = createRouteMatcher([
+  '/',
+  '/solutions(.*)',
+  '/features(.*)',
+  '/pricing(.*)',
+  '/docs(.*)',
+  '/demo(.*)',
+  '/cad-integration(.*)',
+  '/sustainability(.*)',
+  '/integrations(.*)',
+  '/marketplace(.*)',
+  '/affiliates(.*)',
+  '/affiliate(.*)',
+  '/how-it-works(.*)',
+  '/changelog(.*)',
+  '/faq(.*)',
+  '/contact(.*)',
+  '/about(.*)',
+  '/blog(.*)'
+])
+
+const isProtectedRoute = createRouteMatcher([
+  '/dashboard(.*)',
+  '/facilities(.*)',
+  '/projects(.*)',
+  '/lighting-designs(.*)',
+  '/energy-savings(.*)',
+  '/revenue-share(.*)',
+  '/settings(.*)'
+])
+
+export default clerkMiddleware(async (auth, req) => {
+  // Simplified middleware - only handle authentication
+  if (!isPublicRoute(req) && isProtectedRoute(req)) {
+    const { userId } = await auth()
+    if (!userId) {
+      // Ensure we redirect to the same domain, not accounts.vibelux.ai
+      const url = new URL(req.url)
+      const signInUrl = new URL('/sign-in', `${url.protocol}//${url.host}`)
+      signInUrl.searchParams.set('redirect_url', req.nextUrl.pathname + req.nextUrl.search)
+      return NextResponse.redirect(signInUrl)
+    }
+  }
+
+  return NextResponse.next()
+})
+
+export const config = {
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
+}

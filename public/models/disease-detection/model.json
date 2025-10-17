@@ -1,0 +1,281 @@
+{
+  "format": "graph-model",
+  "generatedBy": "VibeLux ML Pipeline",
+  "convertedBy": "TensorFlow.js Converter v4.10.0",
+  "signature": {
+    "inputs": {
+      "input": {
+        "name": "input:0",
+        "dtype": "DT_FLOAT",
+        "tensorShape": {
+          "dim": [
+            {
+              "size": -1
+            },
+            {
+              "size": 12
+            }
+          ]
+        }
+      }
+    },
+    "outputs": {
+      "output": {
+        "name": "output:0",
+        "dtype": "DT_FLOAT",
+        "tensorShape": {
+          "dim": [
+            {
+              "size": -1
+            },
+            {
+              "size": 6
+            }
+          ]
+        }
+      }
+    }
+  },
+  "modelTopology": {
+    "node": [
+      {
+        "name": "input",
+        "op": "Placeholder",
+        "attr": {
+          "dtype": {
+            "type": "DT_FLOAT"
+          },
+          "shape": {
+            "shape": {
+              "dim": [
+                {
+                  "size": -1
+                },
+                {
+                  "size": 12
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "dense/kernel",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  {
+                    "size": 12
+                  },
+                  {
+                    "size": 32
+                  }
+                ]
+              }
+            }
+          },
+          "dtype": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "dense/bias",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  {
+                    "size": 32
+                  }
+                ]
+              }
+            }
+          },
+          "dtype": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "dense/MatMul",
+        "op": "MatMul",
+        "input": [
+          "input",
+          "dense/kernel"
+        ],
+        "attr": {
+          "T": {
+            "type": "DT_FLOAT"
+          },
+          "transpose_a": {
+            "b": false
+          },
+          "transpose_b": {
+            "b": false
+          }
+        }
+      },
+      {
+        "name": "dense/BiasAdd",
+        "op": "BiasAdd",
+        "input": [
+          "dense/MatMul",
+          "dense/bias"
+        ],
+        "attr": {
+          "T": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "dense/Relu",
+        "op": "Relu",
+        "input": [
+          "dense/BiasAdd"
+        ],
+        "attr": {
+          "T": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "output/kernel",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  {
+                    "size": 32
+                  },
+                  {
+                    "size": 6
+                  }
+                ]
+              }
+            }
+          },
+          "dtype": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "output/bias",
+        "op": "Const",
+        "attr": {
+          "value": {
+            "tensor": {
+              "dtype": "DT_FLOAT",
+              "tensorShape": {
+                "dim": [
+                  {
+                    "size": 6
+                  }
+                ]
+              }
+            }
+          },
+          "dtype": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "output/MatMul",
+        "op": "MatMul",
+        "input": [
+          "dense/Relu",
+          "output/kernel"
+        ],
+        "attr": {
+          "T": {
+            "type": "DT_FLOAT"
+          },
+          "transpose_a": {
+            "b": false
+          },
+          "transpose_b": {
+            "b": false
+          }
+        }
+      },
+      {
+        "name": "output/BiasAdd",
+        "op": "BiasAdd",
+        "input": [
+          "output/MatMul",
+          "output/bias"
+        ],
+        "attr": {
+          "T": {
+            "type": "DT_FLOAT"
+          }
+        }
+      },
+      {
+        "name": "output",
+        "op": "Sigmoid",
+        "input": [
+          "output/BiasAdd"
+        ],
+        "attr": {
+          "T": {
+            "type": "DT_FLOAT"
+          }
+        }
+      }
+    ]
+  },
+  "weightsManifest": [
+    {
+      "paths": [
+        "group1-shard1of1.bin"
+      ],
+      "weights": [
+        {
+          "name": "dense/kernel",
+          "shape": [
+            12,
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "dense/bias",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "output/kernel",
+          "shape": [
+            32,
+            6
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "output/bias",
+          "shape": [
+            6
+          ],
+          "dtype": "float32"
+        }
+      ]
+    }
+  ]
+}

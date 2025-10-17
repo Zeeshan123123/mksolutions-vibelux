@@ -1,0 +1,70 @@
+import { NextResponse } from 'next/server';
+import { auth, clerkClient } from '@clerk/nextjs/server';
+import { logger } from '@/lib/logging/production-logger';
+import { prisma } from '@/lib/prisma';
+
+export async function DELETE() {
+  try {
+    const { userId } = auth();
+    
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Get user to verify existence
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      include: {
+        projects: true,
+        teamMemberships: true,
+        invitations: true,
+      }
+    });
+
+    if (!user) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
+
+    // Delete user data in transaction
+    await prisma.$transaction(async (tx) => {
+      // Delete related data first (foreign key constraints)
+      await tx.creditTransaction.deleteMany({
+        where: { userId }
+      });
+
+      await tx.creditBalance.deleteMany({
+        where: { userId }
+      });
+
+      await tx.project.deleteMany({
+        where: { userId }
+      });
+
+      await tx.teamMembership.deleteMany({
+        where: { userId }
+      });
+
+      await tx.invitation.deleteMany({
+        where: { userId }
+      });
+
+      await tx.subscription.deleteMany({
+        where: { userId }
+      });
+
+      // Finally delete user
+      await tx.user.delete({
+        where: { id: userId }
+      });
+    });
+
+    // Return success
+    return NextResponse.json({ 
+      message: 'Account deleted successfully',
+      deletedAt: new Date().toISOString()
+    });
+  } catch (error) {
+    logger.error('api', 'Account deletion error:', error );
+    return NextResponse.json({ error: 'Account deletion failed' }, { status: 500 });
+  }
+}

@@ -1,0 +1,736 @@
+{
+  "lights": [
+    {
+      "id": "light-1",
+      "x": 2,
+      "y": 2,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-2",
+      "x": 2,
+      "y": 6,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-3",
+      "x": 2,
+      "y": 10,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-4",
+      "x": 2,
+      "y": 14,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-5",
+      "x": 2,
+      "y": 18,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-6",
+      "x": 2,
+      "y": 22,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-7",
+      "x": 2,
+      "y": 26,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-8",
+      "x": 2,
+      "y": 30,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-9",
+      "x": 2,
+      "y": 34,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-10",
+      "x": 2,
+      "y": 38,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-11",
+      "x": 2,
+      "y": 42,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-12",
+      "x": 2,
+      "y": 46,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-13",
+      "x": 2,
+      "y": 50,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-14",
+      "x": 2,
+      "y": 54,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-15",
+      "x": 2,
+      "y": 58,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-16",
+      "x": 2,
+      "y": 62,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-17",
+      "x": 6,
+      "y": 2,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-18",
+      "x": 6,
+      "y": 6,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-19",
+      "x": 6,
+      "y": 10,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-20",
+      "x": 6,
+      "y": 14,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-21",
+      "x": 6,
+      "y": 18,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-22",
+      "x": 6,
+      "y": 22,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-23",
+      "x": 6,
+      "y": 26,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-24",
+      "x": 6,
+      "y": 30,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-25",
+      "x": 6,
+      "y": 34,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-26",
+      "x": 6,
+      "y": 38,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-27",
+      "x": 6,
+      "y": 42,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-28",
+      "x": 6,
+      "y": 46,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-29",
+      "x": 6,
+      "y": 50,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-30",
+      "x": 6,
+      "y": 54,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-31",
+      "x": 6,
+      "y": 58,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-32",
+      "x": 6,
+      "y": 62,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-33",
+      "x": 10,
+      "y": 2,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-34",
+      "x": 10,
+      "y": 6,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-35",
+      "x": 10,
+      "y": 10,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-36",
+      "x": 10,
+      "y": 14,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-37",
+      "x": 10,
+      "y": 18,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-38",
+      "x": 10,
+      "y": 22,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-39",
+      "x": 10,
+      "y": 26,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-40",
+      "x": 10,
+      "y": 30,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-41",
+      "x": 10,
+      "y": 34,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-42",
+      "x": 10,
+      "y": 38,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-43",
+      "x": 10,
+      "y": 42,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-44",
+      "x": 10,
+      "y": 46,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-45",
+      "x": 10,
+      "y": 50,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-46",
+      "x": 10,
+      "y": 54,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-47",
+      "x": 10,
+      "y": 58,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-48",
+      "x": 10,
+      "y": 62,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-49",
+      "x": 14,
+      "y": 2,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-50",
+      "x": 14,
+      "y": 6,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-51",
+      "x": 14,
+      "y": 10,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-52",
+      "x": 14,
+      "y": 14,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-53",
+      "x": 14,
+      "y": 18,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-54",
+      "x": 14,
+      "y": 22,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-55",
+      "x": 14,
+      "y": 26,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-56",
+      "x": 14,
+      "y": 30,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-57",
+      "x": 14,
+      "y": 34,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-58",
+      "x": 14,
+      "y": 38,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-59",
+      "x": 14,
+      "y": 42,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-60",
+      "x": 14,
+      "y": 46,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-61",
+      "x": 14,
+      "y": 50,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-62",
+      "x": 14,
+      "y": 54,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-63",
+      "x": 14,
+      "y": 58,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-64",
+      "x": 14,
+      "y": 62,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-65",
+      "x": 18,
+      "y": 2,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-66",
+      "x": 18,
+      "y": 6,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-67",
+      "x": 18,
+      "y": 10,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-68",
+      "x": 18,
+      "y": 14,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-69",
+      "x": 18,
+      "y": 18,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-70",
+      "x": 18,
+      "y": 22,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-71",
+      "x": 18,
+      "y": 26,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-72",
+      "x": 18,
+      "y": 30,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-73",
+      "x": 18,
+      "y": 34,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-74",
+      "x": 18,
+      "y": 38,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-75",
+      "x": 18,
+      "y": 42,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-76",
+      "x": 18,
+      "y": 46,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-77",
+      "x": 18,
+      "y": 50,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-78",
+      "x": 18,
+      "y": 54,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-79",
+      "x": 18,
+      "y": 58,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    },
+    {
+      "id": "light-80",
+      "x": 18,
+      "y": 62,
+      "z": 8,
+      "fixture": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700
+    }
+  ],
+  "totalPower": 51600,
+  "metrics": {
+    "averagePPFD": 1355.4666666666665,
+    "uniformity": 0.85,
+    "dli": 58.55615999999999
+  },
+  "financial": {
+    "equipmentCost": 119920,
+    "installationCost": 12000,
+    "annualSavings": 12739.44,
+    "roiYears": 10.355243244601018
+  }
+}

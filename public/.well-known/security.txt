@@ -1,0 +1,12 @@
+Contact: security@vibelux.ai
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://vibelux.ai/.well-known/security.txt
+
+# Our security policy
+We take security seriously at VibeLux. If you discover a security issue, 
+please responsibly disclose it by emailing security@vibelux.ai.
+
+# Response time
+We will acknowledge your email within 48 hours and strive to provide a 
+detailed response within 5 business days.

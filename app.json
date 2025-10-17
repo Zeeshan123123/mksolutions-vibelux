@@ -1,0 +1,13 @@
+{
+  "name": "vibelux-app",
+  "version": "1.0.0",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_TELEMETRY_DISABLED": "1"
+  }
+}

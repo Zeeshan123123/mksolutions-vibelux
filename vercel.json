@@ -1,0 +1,45 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "yarn build",
+  "installCommand": "rm -rf node_modules && yarn install --ignore-platform --ignore-optional",
+  "regions": ["iad1"],
+  "functions": {
+    "app/api/**": {
+      "maxDuration": 300
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/dashboard-old",
+      "destination": "/dashboard"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=6144",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  }
+}

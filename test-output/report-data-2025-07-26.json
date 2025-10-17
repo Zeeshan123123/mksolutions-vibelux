@@ -1,0 +1,159 @@
+{
+  "project": {
+    "name": "Boundary Cone Cultivation Facility",
+    "date": "2025-07-26T01:16:15.841Z",
+    "client": "Mohave Cannabis Co.",
+    "location": "Nevada"
+  },
+  "facility": {
+    "dimensions": {
+      "length": 66,
+      "width": 22,
+      "height": 10,
+      "unit": "feet"
+    },
+    "area": 1452,
+    "roomCount": 1
+  },
+  "layout": {
+    "tables": [
+      {
+        "id": "table-1",
+        "position": {
+          "x": 1,
+          "y": 1
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-2",
+        "position": {
+          "x": 24,
+          "y": 1
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-3",
+        "position": {
+          "x": 47,
+          "y": 1
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-4",
+        "position": {
+          "x": 1,
+          "y": 10
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-5",
+        "position": {
+          "x": 24,
+          "y": 10
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-6",
+        "position": {
+          "x": 47,
+          "y": 10
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-7",
+        "position": {
+          "x": 1,
+          "y": 19
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-8",
+        "position": {
+          "x": 24,
+          "y": 19
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      },
+      {
+        "id": "table-9",
+        "position": {
+          "x": 47,
+          "y": 19
+        },
+        "dimensions": {
+          "width": 20,
+          "depth": 6,
+          "height": 3
+        }
+      }
+    ],
+    "totalCanopyArea": 1080,
+    "utilizationRate": 74.3801652892562
+  },
+  "lighting": {
+    "fixtures": 80,
+    "model": "Fluence SPYDR 2p",
+    "manufacturer": "Fluence",
+    "totalPower": 51600,
+    "powerDensity": 35.53719008264463,
+    "averagePPFD": 1355.4666666666665,
+    "uniformity": 0.85,
+    "dli": 58.55615999999999
+  },
+  "electrical": {
+    "voltage": "480V 3-Phase",
+    "totalLoad": 51600,
+    "breakerSize": 80,
+    "panelRequirement": "100A sub-panel minimum"
+  },
+  "financial": {
+    "equipmentCost": 119920,
+    "installationCost": 12000,
+    "annualSavings": 12739.44,
+    "roiYears": 10.355243244601018
+  },
+  "environmental": {
+    "co2Reduction": 29819.04,
+    "heatLoadReduction": 25248.8,
+    "waterSavings": 1110
+  }
+}

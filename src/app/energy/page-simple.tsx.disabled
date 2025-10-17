@@ -1,0 +1,32 @@
+"use client"
+
+import Link from "next/link"
+
+export default function EnergyPage() {
+  return (
+    <div className="min-h-screen bg-gray-950 text-white">
+      <nav className="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-green-400 to-purple-600 bg-clip-text text-transparent">
+              VibeLux
+            </Link>
+          </div>
+        </div>
+      </nav>
+      <div className="pt-24 pb-16 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+            Energy <span className="bg-gradient-to-r from-green-400 to-purple-600 bg-clip-text text-transparent">Optimization</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+            Comprehensive energy monitoring, optimization, and cost reduction solutions for your agricultural facility.
+          </p>
+          <Link href="/dashboard" className="bg-gradient-to-r from-blue-600 to-purple-700 text-white px-8 py-4 rounded-xl font-semibold">
+            View Energy Dashboard
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}

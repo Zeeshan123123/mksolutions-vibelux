@@ -1,0 +1,65 @@
+{
+  "inputFeatures": [
+    "temperature",
+    "humidity",
+    "ppfd",
+    "co2",
+    "ec",
+    "ph",
+    "vpd",
+    "crop_lettuce",
+    "crop_tomato",
+    "crop_cucumber",
+    "crop_strawberry",
+    "crop_basil",
+    "crop_cannabis",
+    "days_in_stage",
+    "growth_stage_numeric"
+  ],
+  "preprocessing": {
+    "normalization": {
+      "temperature": {
+        "mean": 24,
+        "std": 3.5
+      },
+      "humidity": {
+        "mean": 65,
+        "std": 10
+      },
+      "ppfd": {
+        "mean": 400,
+        "std": 150
+      },
+      "co2": {
+        "mean": 800,
+        "std": 200
+      },
+      "ec": {
+        "mean": 2,
+        "std": 0.5
+      },
+      "ph": {
+        "mean": 6,
+        "std": 0.5
+      },
+      "vpd": {
+        "mean": 1.2,
+        "std": 0.3
+      },
+      "days_in_stage": {
+        "mean": 15,
+        "std": 10
+      },
+      "growth_stage_numeric": {
+        "mean": 2,
+        "std": 1
+      }
+    }
+  },
+  "outputRange": {
+    "min": 0.5,
+    "max": 5
+  },
+  "modelAccuracy": 0.89,
+  "trainingSamples": 10000
+}

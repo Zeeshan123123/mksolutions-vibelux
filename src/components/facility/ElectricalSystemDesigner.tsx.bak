@@ -1,0 +1,1181 @@
+'use client';
+
+import React, { useState, useMemo, useCallback } from 'react';
+import { 
+  Zap, 
+  Battery, 
+  Cable, 
+  AlertTriangle, 
+  Shield, 
+  Power,
+  Settings,
+  Activity,
+  Grid,
+  Gauge,
+  Cpu,
+  Router,
+  Calculator,
+  Flame,
+  Info,
+  TrendingDown
+} from 'lucide-react';
+import { ShortCircuitAnalyzer, ElectricalBus, ElectricalComponent, ShortCircuitResult } from '@/lib/short-circuit-analysis';
+import { MotorCalculator, MotorSpecification, MotorStartingAnalysis, StartingMethod } from '@/lib/motor-calculations';
+import { VoltageDropCalculator, ConductorRun, VoltageDropResult } from '@/lib/voltage-drop-calculations';
+
+interface ElectricalPanel {
+  id: string;
+  name: string;
+  type: 'main' | 'sub' | 'lighting' | 'hvac' | 'irrigation' | 'emergency';
+  amperage: number;
+  voltage: number;
+  position: [number, number];
+  circuits: ElectricalCircuit[];
+  status: 'active' | 'maintenance' | 'error';
+}
+
+interface ElectricalCircuit {
+  id: string;
+  name: string;
+  amperage: number;
+  load: number; // current load as percentage
+  type: 'lighting' | 'hvac' | 'irrigation' | 'receptacle' | 'equipment';
+  protection: 'breaker' | 'fuse' | 'gfci';
+  zone: string;
+  wireGauge: string;
+  conduitType: string;
+}
+
+interface ElectricalEquipment {
+  id: string;
+  name: string;
+  type: 'transformer' | 'generator' | 'ups' | 'meter' | 'disconnect' | 'contactor';
+  capacity: number;
+  position: [number, number];
+  specifications: {
+    voltage?: number;
+    amperage?: number;
+    power?: number; // kW
+    efficiency?: number;
+    fuel?: string;
+    runtime?: number; // hours
+  };
+  status: 'active' | 'standby' | 'maintenance' | 'error';
+}
+
+interface SafetySystem {
+  id: string;
+  type: 'fire_alarm' | 'emergency_lighting' | 'smoke_detector' | 'sprinkler' | 'exit_sign';
+  name: string;
+  position: [number, number];
+  zone: string;
+  status: 'active' | 'test' | 'error';
+  lastTested: string;
+}
+
+interface FacilityConfig {
+  dimensions: { length: number; width: number; height: number };
+}
+
+interface ElectricalSystemDesignerProps {
+  facilityConfig: FacilityConfig;
+  onSystemUpdate?: (system: any) => void;
+}
+
+export function ElectricalSystemDesigner({ 
+  facilityConfig, 
+  onSystemUpdate 
+}: ElectricalSystemDesignerProps) {
+  const [designMode, setDesignMode] = useState<'overview' | 'panels' | 'circuits' | 'safety' | 'monitoring' | 'analysis'>('overview');
+  const [selectedPanel, setSelectedPanel] = useState<string | null>(null);
+  const [selectedEquipment, setSelectedEquipment] = useState<string | null>(null);
+  const [shortCircuitResults, setShortCircuitResults] = useState<ShortCircuitResult[] | null>(null);
+  const [motorAnalysis, setMotorAnalysis] = useState<MotorStartingAnalysis[] | null>(null);
+  const [voltageDropResults, setVoltageDropResults] = useState<VoltageDropResult[] | null>(null);
+  const [selectedAnalysisPoint, setSelectedAnalysisPoint] = useState<string>('main-panel');
+
+  const [electricalPanels, setElectricalPanels] = useState<ElectricalPanel[]>([
+    {
+      id: 'main-panel',
+      name: 'Main Distribution Panel',
+      type: 'main',
+      amperage: 800,
+      voltage: 480,
+      position: [10, 30],
+      circuits: [],
+      status: 'active'
+    },
+    {
+      id: 'lighting-panel-1',
+      name: 'Lighting Panel 1',
+      type: 'lighting',
+      amperage: 225,
+      voltage: 277,
+      position: [20, 35],
+      circuits: [],
+      status: 'active'
+    },
+    {
+      id: 'hvac-panel',
+      name: 'HVAC Distribution Panel',
+      type: 'hvac',
+      amperage: 400,
+      voltage: 480,
+      position: [30, 25],
+      circuits: [],
+      status: 'active'
+    },
+    {
+      id: 'irrigation-panel',
+      name: 'Irrigation Control Panel',
+      type: 'irrigation',
+      amperage: 100,
+      voltage: 240,
+      position: [40, 40],
+      circuits: [],
+      status: 'active'
+    }
+  ]);
+
+  const [electricalCircuits, setElectricalCircuits] = useState<ElectricalCircuit[]>([
+    {
+      id: 'circuit-l1',
+      name: 'LED Lighting Zone 1',
+      amperage: 20,
+      load: 87,
+      type: 'lighting',
+      protection: 'breaker',
+      zone: 'flowering-room-1',
+      wireGauge: '12 AWG',
+      conduitType: 'EMT'
+    },
+    {
+      id: 'circuit-l2',
+      name: 'LED Lighting Zone 2',
+      amperage: 20,
+      load: 82,
+      type: 'lighting',
+      protection: 'breaker',
+      zone: 'vegetative-area',
+      wireGauge: '12 AWG',
+      conduitType: 'EMT'
+    },
+    {
+      id: 'circuit-h1',
+      name: 'HVAC Unit 1',
+      amperage: 60,
+      load: 78,
+      type: 'hvac',
+      protection: 'breaker',
+      zone: 'flowering-room-1',
+      wireGauge: '6 AWG',
+      conduitType: 'RMC'
+    },
+    {
+      id: 'circuit-i1',
+      name: 'Irrigation Pumps',
+      amperage: 30,
+      load: 65,
+      type: 'irrigation',
+      protection: 'gfci',
+      zone: 'pump-room',
+      wireGauge: '10 AWG',
+      conduitType: 'PVC'
+    },
+    {
+      id: 'circuit-r1',
+      name: 'General Receptacles',
+      amperage: 20,
+      load: 45,
+      type: 'receptacle',
+      protection: 'gfci',
+      zone: 'general',
+      wireGauge: '12 AWG',
+      conduitType: 'EMT'
+    }
+  ]);
+
+  const [electricalEquipment, setElectricalEquipment] = useState<ElectricalEquipment[]>([
+    {
+      id: 'main-transformer',
+      name: 'Main Transformer',
+      type: 'transformer',
+      capacity: 750, // kVA
+      position: [5, 25],
+      specifications: {
+        voltage: 480,
+        efficiency: 98.5
+      },
+      status: 'active'
+    },
+    {
+      id: 'backup-generator',
+      name: 'Emergency Generator',
+      type: 'generator',
+      capacity: 500, // kW
+      position: [15, 10],
+      specifications: {
+        voltage: 480,
+        fuel: 'Natural Gas',
+        runtime: 72
+      },
+      status: 'standby'
+    },
+    {
+      id: 'ups-system',
+      name: 'UPS System',
+      type: 'ups',
+      capacity: 50, // kW
+      position: [25, 45],
+      specifications: {
+        voltage: 120,
+        runtime: 2,
+        efficiency: 94
+      },
+      status: 'active'
+    },
+    {
+      id: 'main-meter',
+      name: 'Utility Meter',
+      type: 'meter',
+      capacity: 800, // A
+      position: [2, 30],
+      specifications: {
+        voltage: 480
+      },
+      status: 'active'
+    }
+  ]);
+
+  const [safetyEquipment, setSafetyEquipment] = useState<SafetySystem[]>([
+    {
+      id: 'fire-panel',
+      type: 'fire_alarm',
+      name: 'Fire Alarm Control Panel',
+      position: [12, 20],
+      zone: 'main-entrance',
+      status: 'active',
+      lastTested: '2024-07-15'
+    },
+    {
+      id: 'smoke-1',
+      type: 'smoke_detector',
+      name: 'Smoke Detector - Flowering 1',
+      position: [25, 15],
+      zone: 'flowering-room-1',
+      status: 'active',
+      lastTested: '2024-07-20'
+    },
+    {
+      id: 'emergency-light-1',
+      type: 'emergency_lighting',
+      name: 'Emergency Light - Exit 1',
+      position: [35, 5],
+      zone: 'exit-corridor',
+      status: 'active',
+      lastTested: '2024-07-18'
+    },
+    {
+      id: 'sprinkler-1',
+      type: 'sprinkler',
+      name: 'Fire Sprinkler Head',
+      position: [20, 25],
+      zone: 'flowering-room-1',
+      status: 'active',
+      lastTested: '2024-06-30'
+    }
+  ]);
+
+  const systemMetrics = useMemo(() => {
+    const totalCapacity = electricalPanels.reduce((sum, panel) => sum + panel.amperage, 0);
+    const totalLoad = electricalCircuits.reduce((sum, circuit) => sum + (circuit.amperage * circuit.load / 100), 0);
+    const loadFactor = (totalLoad / totalCapacity) * 100;
+    
+    const totalPower = electricalEquipment
+      .filter(eq => eq.specifications.power)
+      .reduce((sum, eq) => sum + (eq.specifications.power || 0), 0);
+      
+    const criticalCircuits = electricalCircuits.filter(c => c.load > 85).length;
+    const safetyStatus = safetyEquipment.filter(s => s.status === 'active').length / safetyEquipment.length * 100;
+
+    return {
+      totalCapacity,
+      totalLoad: totalLoad.toFixed(1),
+      loadFactor: loadFactor.toFixed(1),
+      totalPower,
+      criticalCircuits,
+      safetyStatus: safetyStatus.toFixed(0),
+      energyEfficiency: 92.3,
+      powerQuality: 'Excellent'
+    };
+  }, [electricalPanels, electricalCircuits, electricalEquipment, safetyEquipment]);
+
+  // Perform short circuit analysis
+  const performShortCircuitAnalysis = useCallback(() => {
+    // Build electrical system model
+    const buses: ElectricalBus[] = [];
+    
+    // Main bus
+    buses.push({
+      id: 'main-bus',
+      name: 'Main Distribution Bus',
+      voltage: 480,
+      phases: 3,
+      frequency: 60,
+      xrRatio: 8,
+      components: [
+        {
+          id: 'utility',
+          type: 'utility',
+          name: 'Utility Connection',
+          downstream: 'main-bus',
+          impedance: {
+            resistance: 0.001,
+            reactance: 0.008,
+            isPerUnit: true,
+            base: { mva: 10, kv: 0.48 }
+          }
+        },
+        {
+          id: 'main-transformer',
+          type: 'transformer',
+          name: 'Main Transformer',
+          upstream: 'main-bus',
+          downstream: 'secondary-bus',
+          impedance: {
+            resistance: 0.01,
+            reactance: 0.06,
+            isPerUnit: true,
+            base: { mva: 0.75, kv: 0.48 }
+          },
+          rating: { mva: 0.75, voltage: 480 }
+        }
+      ]
+    });
+
+    // Sub-distribution buses
+    electricalPanels.forEach(panel => {
+      buses.push({
+        id: panel.id,
+        name: panel.name,
+        voltage: panel.voltage,
+        phases: 3,
+        frequency: 60,
+        xrRatio: 5,
+        components: [
+          {
+            id: `cable-to-${panel.id}`,
+            type: 'cable',
+            name: `Feeder to ${panel.name}`,
+            upstream: 'main-bus',
+            downstream: panel.id,
+            impedance: {
+              resistance: 0.05,
+              reactance: 0.03,
+              isPerUnit: false
+            }
+          }
+        ]
+      });
+    });
+
+    // Perform analysis at key points
+    const results: ShortCircuitResult[] = [];
+    const studyPoints = ['main-bus', ...electricalPanels.map(p => p.id)];
+    
+    studyPoints.forEach(point => {
+      const result = ShortCircuitAnalyzer.analyze(buses, point);
+      results.push(result);
+    });
+
+    setShortCircuitResults(results);
+  }, [electricalPanels]);
+
+  // Perform motor starting analysis
+  const performMotorAnalysis = useCallback(() => {
+    const motors: MotorSpecification[] = [
+      {
+        id: 'hvac-motor-1',
+        hp: 25,
+        voltage: 480,
+        phases: 3,
+        frequency: 60,
+        poles: 4,
+        rpm: 1750,
+        efficiency: 93,
+        powerFactor: 0.88,
+        serviceFactori: 1.15,
+        enclosure: 'TEFC',
+        insulation: 'F',
+        designLetter: 'B',
+        code: 'G'
+      },
+      {
+        id: 'pump-motor-1',
+        hp: 10,
+        voltage: 480,
+        phases: 3,
+        frequency: 60,
+        poles: 2,
+        rpm: 3450,
+        efficiency: 91,
+        powerFactor: 0.85,
+        serviceFactori: 1.15,
+        enclosure: 'TEFC',
+        insulation: 'F',
+        designLetter: 'B',
+        code: 'H'
+      }
+    ];
+
+    const analyses: MotorStartingAnalysis[] = [];
+    
+    motors.forEach(motor => {
+      const startingMethod: StartingMethod = {
+        type: 'acrossTheLine',
+        settings: {}
+      };
+      
+      const analysis = MotorCalculator.analyzeStarting(
+        motor,
+        startingMethod,
+        { r: 0.02, x: 0.1 }, // Source impedance
+        'pump'
+      );
+      
+      analyses.push(analysis);
+    });
+
+    setMotorAnalysis(analyses);
+  }, []);
+
+  // Perform voltage drop analysis
+  const performVoltageDropAnalysis = useCallback(() => {
+    const conductors: ConductorRun[] = [
+      {
+        id: 'feeder-main-to-lighting',
+        fromPanel: 'main-panel',
+        toLoad: 'lighting-panel-1',
+        length: 75,
+        conduitType: 'steel',
+        conductorMaterial: 'copper',
+        conductorSize: '2',
+        insulation: '75C',
+        sets: 1,
+        loadCurrent: 100,
+        loadVoltage: 480,
+        phases: 3,
+        powerFactor: 0.9
+      },
+      {
+        id: 'branch-lighting-zone1',
+        fromPanel: 'lighting-panel-1',
+        toLoad: 'LED-Zone-1',
+        length: 120,
+        conduitType: 'pvc',
+        conductorMaterial: 'copper',
+        conductorSize: '10',
+        insulation: '75C',
+        sets: 1,
+        loadCurrent: 16,
+        loadVoltage: 277,
+        phases: 1,
+        powerFactor: 0.95
+      },
+      {
+        id: 'feeder-main-to-hvac',
+        fromPanel: 'main-panel',
+        toLoad: 'hvac-panel',
+        length: 100,
+        conduitType: 'steel',
+        conductorMaterial: 'copper',
+        conductorSize: '3/0',
+        insulation: '75C',
+        sets: 1,
+        loadCurrent: 150,
+        loadVoltage: 480,
+        phases: 3,
+        powerFactor: 0.85
+      },
+      {
+        id: 'branch-hvac-unit1',
+        fromPanel: 'hvac-panel',
+        toLoad: 'HVAC-Unit-1',
+        length: 50,
+        conduitType: 'pvc',
+        conductorMaterial: 'copper',
+        conductorSize: '6',
+        insulation: '75C',
+        sets: 1,
+        loadCurrent: 48,
+        loadVoltage: 480,
+        phases: 3,
+        powerFactor: 0.88
+      }
+    ];
+
+    const results = conductors.map(conductor => 
+      VoltageDropCalculator.calculate(conductor)
+    );
+
+    const systemAnalysis = VoltageDropCalculator.calculateSystemVoltageDrop(conductors);
+    
+    setVoltageDropResults(results);
+  }, []);
+
+  const renderOverview = () => (
+    <div className="space-y-6">
+      {/* System Metrics */}
+      <div className="grid grid-cols-4 gap-4">
+        <div className="bg-gray-700 rounded-lg p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-gray-400 text-sm">Total Capacity</span>
+            <Zap className="w-4 h-4 text-yellow-500" />
+          </div>
+          <p className="text-2xl font-bold text-white">{systemMetrics.totalCapacity}A</p>
+          <p className="text-xs text-gray-400">Main service capacity</p>
+        </div>
+        <div className="bg-gray-700 rounded-lg p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-gray-400 text-sm">Current Load</span>
+            <Activity className="w-4 h-4 text-blue-500" />
+          </div>
+          <p className="text-2xl font-bold text-white">{systemMetrics.totalLoad}A</p>
+          <p className="text-xs text-green-400">Load factor: {systemMetrics.loadFactor}%</p>
+        </div>
+        <div className="bg-gray-700 rounded-lg p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-gray-400 text-sm">Power Consumption</span>
+            <Power className="w-4 h-4 text-purple-500" />
+          </div>
+          <p className="text-2xl font-bold text-white">{systemMetrics.totalPower}kW</p>
+          <p className="text-xs text-gray-400">Active equipment load</p>
+        </div>
+        <div className="bg-gray-700 rounded-lg p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-gray-400 text-sm">Safety Systems</span>
+            <Shield className="w-4 h-4 text-green-500" />
+          </div>
+          <p className="text-2xl font-bold text-white">{systemMetrics.safetyStatus}%</p>
+          <p className="text-xs text-green-400">All systems operational</p>
+        </div>
+      </div>
+
+      {/* Electrical Distribution Layout */}
+      <div className="bg-gray-700 rounded-lg p-6">
+        <h3 className="text-lg font-semibold text-white mb-4">Electrical Distribution Layout</h3>
+        <div className="relative bg-gray-800 rounded-lg h-96 overflow-hidden">
+          <svg 
+            viewBox={`0 0 ${facilityConfig.dimensions.length} ${facilityConfig.dimensions.width}`}
+            className="w-full h-full"
+          >
+            {/* Facility outline */}
+            <rect
+              x={0}
+              y={0}
+              width={facilityConfig.dimensions.length}
+              height={facilityConfig.dimensions.width}
+              fill="none"
+              stroke="#4B5563"
+              strokeWidth={0.5}
+            />
+            
+            {/* Electrical panels */}
+            {electricalPanels.map((panel) => (
+              <g key={panel.id}>
+                <rect
+                  x={panel.position[0] - 1}
+                  y={panel.position[1] - 1}
+                  width={2}
+                  height={2}
+                  fill={panel.status === 'active' ? '#10B981' : '#EF4444'}
+                  className="cursor-pointer"
+                  onClick={() => setSelectedPanel(panel.id)}
+                />
+                <text
+                  x={panel.position[0]}
+                  y={panel.position[1] - 2}
+                  fill="#E5E7EB"
+                  fontSize="1.5"
+                  textAnchor="middle"
+                  className="pointer-events-none"
+                >
+                  {panel.type === 'main' ? 'M' :
+                   panel.type === 'lighting' ? 'L' :
+                   panel.type === 'hvac' ? 'H' :
+                   panel.type === 'irrigation' ? 'I' : 'P'}
+                </text>
+              </g>
+            ))}
+            
+            {/* Electrical equipment */}
+            {electricalEquipment.map((equipment) => (
+              <g key={equipment.id}>
+                <circle
+                  cx={equipment.position[0]}
+                  cy={equipment.position[1]}
+                  r={1.5}
+                  fill={equipment.status === 'active' ? '#3B82F6' : '#6B7280'}
+                  className="cursor-pointer"
+                  onClick={() => setSelectedEquipment(equipment.id)}
+                />
+                <text
+                  x={equipment.position[0]}
+                  y={equipment.position[1] - 2.5}
+                  fill="#E5E7EB"
+                  fontSize="1.2"
+                  textAnchor="middle"
+                  className="pointer-events-none"
+                >
+                  {equipment.type === 'transformer' ? 'T' :
+                   equipment.type === 'generator' ? 'G' :
+                   equipment.type === 'ups' ? 'U' :
+                   equipment.type === 'meter' ? 'M' : 'E'}
+                </text>
+              </g>
+            ))}
+            
+            {/* Safety equipment */}
+            {safetyEquipment.map((safety) => (
+              <g key={safety.id}>
+                <polygon
+                  points={`${safety.position[0]},${safety.position[1]-1} ${safety.position[0]+1},${safety.position[1]+1} ${safety.position[0]-1},${safety.position[1]+1}`}
+                  fill={safety.status === 'active' ? '#EF4444' : '#6B7280'}
+                  className="cursor-pointer"
+                />
+              </g>
+            ))}
+            
+            {/* Power distribution lines */}
+            <line
+              x1={electricalEquipment.find(e => e.type === 'transformer')?.position[0] || 5}
+              y1={electricalEquipment.find(e => e.type === 'transformer')?.position[1] || 25}
+              x2={electricalPanels.find(p => p.type === 'main')?.position[0] || 10}
+              y2={electricalPanels.find(p => p.type === 'main')?.position[1] || 30}
+              stroke="#F59E0B"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Critical Alerts */}
+      {systemMetrics.criticalCircuits > 0 && (
+        <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+          <div className="flex items-center gap-3">
+            <AlertTriangle className="w-5 h-5 text-yellow-500" />
+            <div>
+              <h4 className="text-yellow-400 font-medium">Electrical Load Warning</h4>
+              <p className="text-yellow-300 text-sm">
+                {systemMetrics.criticalCircuits} circuits are operating above 85% capacity
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  const renderAnalysis = () => (
+    <div className="space-y-6">
+      {/* Analysis Controls */}
+      <div className="bg-gray-700 rounded-lg p-4">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-white">Electrical System Analysis</h3>
+          <div className="flex gap-2">
+            <button
+              onClick={performVoltageDropAnalysis}
+              className="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors"
+            >
+              <TrendingDown className="w-4 h-4" />
+              Voltage Drop
+            </button>
+            <button
+              onClick={performShortCircuitAnalysis}
+              className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            >
+              <Zap className="w-4 h-4" />
+              Short Circuit Analysis
+            </button>
+            <button
+              onClick={performMotorAnalysis}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <Cpu className="w-4 h-4" />
+              Motor Analysis
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Short Circuit Results */}
+      {shortCircuitResults && (
+        <div className="bg-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Short Circuit Analysis Results</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-gray-600">
+                  <th className="pb-2 text-gray-400 font-medium">Location</th>
+                  <th className="pb-2 text-gray-400 font-medium">3-Phase Fault</th>
+                  <th className="pb-2 text-gray-400 font-medium">L-L Fault</th>
+                  <th className="pb-2 text-gray-400 font-medium">L-G Fault</th>
+                  <th className="pb-2 text-gray-400 font-medium">X/R Ratio</th>
+                  <th className="pb-2 text-gray-400 font-medium">PPE Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                {shortCircuitResults.map((result) => (
+                  <tr key={result.bus} className="border-b border-gray-600">
+                    <td className="py-2 text-white">{result.bus}</td>
+                    <td className="py-2 text-gray-300">{result.asymmetrical.threePhaseFault.toFixed(0)} A</td>
+                    <td className="py-2 text-gray-300">{result.asymmetrical.lineToLineFault.toFixed(0)} A</td>
+                    <td className="py-2 text-gray-300">{result.asymmetrical.lineToGroundFault.toFixed(0)} A</td>
+                    <td className="py-2 text-gray-300">{result.asymmetrical.xrRatio.toFixed(1)}</td>
+                    <td className="py-2">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        result.arcFlash.hazardCategory === 0 ? 'bg-green-600' :
+                        result.arcFlash.hazardCategory === 1 ? 'bg-yellow-600' :
+                        result.arcFlash.hazardCategory === 2 ? 'bg-orange-600' :
+                        'bg-red-600'
+                      } text-white`}>
+                        Cat {result.arcFlash.hazardCategory}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Arc Flash Details */}
+          <div className="mt-6 grid grid-cols-2 gap-6">
+            <div className="bg-gray-600 rounded-lg p-4">
+              <h4 className="text-white font-medium mb-3 flex items-center gap-2">
+                <Flame className="w-4 h-4 text-orange-400" />
+                Arc Flash Hazard Details
+              </h4>
+              {shortCircuitResults.map((result) => (
+                <div key={result.bus} className="mb-3 text-sm">
+                  <p className="text-gray-300 font-medium">{result.bus}:</p>
+                  <p className="text-gray-400">Incident Energy: {result.arcFlash.incidentEnergy.toFixed(1)} cal/cm²</p>
+                  <p className="text-gray-400">Arc Flash Boundary: {result.arcFlash.arcFlashBoundary.toFixed(1)}"</p>
+                  <p className="text-gray-400">PPE Required: {result.arcFlash.ppeRequired}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gray-600 rounded-lg p-4">
+              <h4 className="text-white font-medium mb-3 flex items-center gap-2">
+                <Shield className="w-4 h-4 text-blue-400" />
+                Protection Requirements
+              </h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-green-500 rounded"></div>
+                  <span className="text-gray-300">Category 0: No PPE required (< 1.2 cal/cm²)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-yellow-500 rounded"></div>
+                  <span className="text-gray-300">Category 1: 4 cal/cm² rated PPE</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-orange-500 rounded"></div>
+                  <span className="text-gray-300">Category 2: 8 cal/cm² rated PPE</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-red-500 rounded"></div>
+                  <span className="text-gray-300">Category 3/4: 25-40 cal/cm² rated PPE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Motor Analysis Results */}
+      {motorAnalysis && (
+        <div className="bg-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Motor Starting Analysis</h3>
+          <div className="grid grid-cols-1 gap-4">
+            {motorAnalysis.map((analysis) => (
+              <div key={analysis.motor.id} className="bg-gray-600 rounded-lg p-4">
+                <h4 className="text-white font-medium mb-3">Motor: {analysis.motor.id}</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                  <div>
+                    <p className="text-gray-400">HP Rating</p>
+                    <p className="text-white font-medium">{analysis.motor.hp} HP</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Starting Current</p>
+                    <p className="text-white font-medium">{analysis.startingCurrent.toFixed(0)} A</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Starting Time</p>
+                    <p className="text-white font-medium">{analysis.startingTime.toFixed(1)} sec</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Voltage Dip</p>
+                    <p className={`font-medium ${analysis.voltageDip > 10 ? 'text-yellow-400' : 'text-white'}`}>
+                      {analysis.voltageDip.toFixed(1)}%
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Starting Torque</p>
+                    <p className="text-white font-medium">{analysis.startingTorque}%</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Thermal Limit</p>
+                    <p className={`font-medium ${analysis.thermalLimit ? 'text-green-400' : 'text-red-400'}`}>
+                      {analysis.thermalLimit ? 'Pass' : 'Fail'}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Starting Method</p>
+                    <p className="text-white font-medium capitalize">{analysis.startingMethod.type.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Acceleration Torque</p>
+                    <p className="text-white font-medium">{analysis.accelerationTorque}%</p>
+                  </div>
+                </div>
+                
+                {/* Protection Settings */}
+                <div className="mt-4 p-3 bg-gray-700 rounded">
+                  <p className="text-gray-400 text-sm mb-2">Recommended Protection:</p>
+                  <div className="grid grid-cols-3 gap-3 text-sm">
+                    <div>
+                      <p className="text-gray-500">Overload</p>
+                      <p className="text-white">{(analysis.motor.hp * 1.15).toFixed(1)}A</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-500">Short Circuit</p>
+                      <p className="text-white">{(analysis.motor.hp * 2.5).toFixed(0)}A</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-500">Wire Size</p>
+                      <p className="text-white">{analysis.motor.hp > 20 ? '6 AWG' : '10 AWG'}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Voltage Drop Analysis Results */}
+      {voltageDropResults && voltageDropResults.length > 0 && (
+        <div className="bg-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Voltage Drop Analysis</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-gray-600">
+                  <th className="pb-2 text-gray-400 font-medium">Circuit</th>
+                  <th className="pb-2 text-gray-400 font-medium">Voltage Drop</th>
+                  <th className="pb-2 text-gray-400 font-medium">% Drop</th>
+                  <th className="pb-2 text-gray-400 font-medium">End Voltage</th>
+                  <th className="pb-2 text-gray-400 font-medium">Power Loss</th>
+                  <th className="pb-2 text-gray-400 font-medium">NEC 210.19</th>
+                  <th className="pb-2 text-gray-400 font-medium">NEC 215.2</th>
+                  <th className="pb-2 text-gray-400 font-medium">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {voltageDropResults.map((result) => (
+                  <tr key={result.conductorId} className="border-b border-gray-600">
+                    <td className="py-2 text-white">{result.conductorId}</td>
+                    <td className="py-2 text-gray-300">{result.voltageDrop.toFixed(1)} V</td>
+                    <td className="py-2">
+                      <span className={`font-medium ${
+                        result.percentDrop > 5 ? 'text-red-400' :
+                        result.percentDrop > 3 ? 'text-yellow-400' :
+                        'text-green-400'
+                      }`}>
+                        {result.percentDrop.toFixed(2)}%
+                      </span>
+                    </td>
+                    <td className="py-2 text-gray-300">{result.endVoltage.toFixed(0)} V</td>
+                    <td className="py-2 text-gray-300">{result.powerLoss.toFixed(0)} W</td>
+                    <td className="py-2">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        result.nec210_19_compliant 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : 'bg-red-500/20 text-red-400'
+                      }`}>
+                        {result.nec210_19_compliant ? 'Pass' : 'Fail'}
+                      </span>
+                    </td>
+                    <td className="py-2">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        result.nec215_2_compliant 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : 'bg-red-500/20 text-red-400'
+                      }`}>
+                        {result.nec215_2_compliant ? 'Pass' : 'Fail'}
+                      </span>
+                    </td>
+                    <td className="py-2">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        result.percentDrop <= 3 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : result.percentDrop <= 5
+                          ? 'bg-yellow-500/20 text-yellow-400'
+                          : 'bg-red-500/20 text-red-400'
+                      }`}>
+                        {result.percentDrop <= 3 ? 'Good' : result.percentDrop <= 5 ? 'Warning' : 'Critical'}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          {/* Recommendations */}
+          {voltageDropResults.some(r => r.recommendations && r.recommendations.length > 0) && (
+            <div className="mt-4 bg-gray-600 rounded-lg p-4">
+              <h4 className="text-white font-medium mb-2">Recommendations</h4>
+              <div className="space-y-2">
+                {voltageDropResults.filter(r => r.recommendations && r.recommendations.length > 0).map((result) => (
+                  <div key={result.conductorId} className="text-sm">
+                    <p className="text-yellow-400 font-medium">{result.conductorId}:</p>
+                    <ul className="list-disc list-inside text-gray-300 ml-2">
+                      {result.recommendations?.map((rec, index) => (
+                        <li key={index}>{rec}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Analysis Summary */}
+      {(shortCircuitResults || motorAnalysis || voltageDropResults) && (
+        <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <Info className="w-5 h-5 text-blue-400" />
+            <h3 className="text-lg font-semibold text-blue-400">Analysis Summary</h3>
+          </div>
+          <div className="space-y-1 text-sm text-gray-300">
+            {shortCircuitResults && (
+              <p>• Short circuit analysis complete for {shortCircuitResults.length} buses</p>
+            )}
+            {motorAnalysis && (
+              <p>• Motor starting analysis complete for {motorAnalysis.length} motors</p>
+            )}
+            {voltageDropResults && (
+              <p>• Voltage drop analysis complete for {voltageDropResults.length} circuits</p>
+            )}
+            <p>• All protective devices should be coordinated per NEC Article 240</p>
+            <p>• Arc flash labels must be applied per NFPA 70E requirements</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  const renderPanelsDesign = () => (
+    <div className="space-y-6">
+      {/* Electrical Panels */}
+      <div className="bg-gray-700 rounded-lg p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-white">Electrical Panels</h3>
+          <button className="px-3 py-2 bg-green-600 text-white rounded-lg text-sm">
+            Add Panel
+          </button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {electricalPanels.map((panel) => (
+            <div 
+              key={panel.id}
+              className={`bg-gray-600 rounded-lg p-4 cursor-pointer transition-all ${
+                selectedPanel === panel.id ? 'ring-2 ring-blue-500' : ''
+              }`}
+              onClick={() => setSelectedPanel(panel.id)}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <div className={`p-2 rounded-lg ${
+                    panel.type === 'main' ? 'bg-red-500' :
+                    panel.type === 'lighting' ? 'bg-yellow-500' :
+                    panel.type === 'hvac' ? 'bg-blue-500' :
+                    panel.type === 'irrigation' ? 'bg-cyan-500' :
+                    'bg-gray-500'
+                  }`}>
+                    <Zap className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium">{panel.name}</h4>
+                    <p className="text-gray-400 text-sm capitalize">{panel.type} panel</p>
+                  </div>
+                </div>
+                <div className={`w-3 h-3 rounded-full ${
+                  panel.status === 'active' ? 'bg-green-500' :
+                  panel.status === 'error' ? 'bg-red-500' :
+                  'bg-orange-500'
+                }`} />
+              </div>
+              
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Amperage:</span>
+                  <span className="text-white">{panel.amperage}A</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Voltage:</span>
+                  <span className="text-white">{panel.voltage}V</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Position:</span>
+                  <span className="text-white">({panel.position[0]}, {panel.position[1]})</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Circuit Breaker Schedule */}
+      <div className="bg-gray-700 rounded-lg p-6">
+        <h3 className="text-lg font-semibold text-white mb-4">Circuit Schedule</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-gray-400 border-b border-gray-600">
+                <th className="text-left p-3">Circuit</th>
+                <th className="text-left p-3">Type</th>
+                <th className="text-left p-3">Amp Rating</th>
+                <th className="text-left p-3">Current Load</th>
+                <th className="text-left p-3">Wire Size</th>
+                <th className="text-left p-3">Protection</th>
+                <th className="text-left p-3">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {electricalCircuits.map((circuit) => (
+                <tr key={circuit.id} className="text-white border-b border-gray-600 hover:bg-gray-600">
+                  <td className="p-3 font-medium">{circuit.name}</td>
+                  <td className="p-3 capitalize">{circuit.type}</td>
+                  <td className="p-3">{circuit.amperage}A</td>
+                  <td className="p-3">
+                    <div className="flex items-center gap-2">
+                      <span>{circuit.load}%</span>
+                      <div className="w-16 h-2 bg-gray-500 rounded-full">
+                        <div 
+                          className={`h-full rounded-full ${
+                            circuit.load > 85 ? 'bg-red-500' :
+                            circuit.load > 70 ? 'bg-yellow-500' :
+                            'bg-green-500'
+                          }`}
+                          style={{ width: `${circuit.load}%` }}
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td className="p-3">{circuit.wireGauge}</td>
+                  <td className="p-3 uppercase">{circuit.protection}</td>
+                  <td className="p-3">
+                    <span className={`px-2 py-1 rounded-full text-xs ${
+                      circuit.load < 85 ? 'bg-green-500/20 text-green-400' :
+                      'bg-red-500/20 text-red-400'
+                    }`}>
+                      {circuit.load < 85 ? 'Normal' : 'Overloaded'}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="bg-gray-800 rounded-xl p-6">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl">
+            <Zap className="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white">Electrical System Designer</h2>
+            <p className="text-gray-400">Power distribution, safety systems, and electrical infrastructure</p>
+          </div>
+        </div>
+        
+        {/* Mode selector */}
+        <div className="flex items-center gap-2 bg-gray-700 rounded-lg p-1">
+          {[
+            { key: 'overview', label: 'Overview', icon: Activity },
+            { key: 'panels', label: 'Panels', icon: Grid },
+            { key: 'circuits', label: 'Circuits', icon: Cable },
+            { key: 'safety', label: 'Safety', icon: Shield },
+            { key: 'monitoring', label: 'Monitor', icon: Gauge },
+            { key: 'analysis', label: 'Analysis', icon: Calculator }
+          ].map(({ key, label, icon: Icon }) => (
+            <button
+              key={key}
+              onClick={() => setDesignMode(key as any)}
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                designMode === key
+                  ? 'bg-yellow-600 text-white'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-600'
+              }`}
+            >
+              <Icon className="w-4 h-4" />
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content based on design mode */}
+      {designMode === 'overview' && renderOverview()}
+      {designMode === 'panels' && renderPanelsDesign()}
+      {designMode === 'circuits' && (
+        <div className="bg-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Circuit Design & Analysis</h3>
+          <p className="text-gray-400">Advanced circuit design tools coming soon...</p>
+        </div>
+      )}
+      {designMode === 'safety' && (
+        <div className="bg-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Safety & Emergency Systems</h3>
+          <div className="grid grid-cols-2 gap-4">
+            {safetyEquipment.map((safety) => (
+              <div key={safety.id} className="bg-gray-600 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-white font-medium">{safety.name}</h4>
+                  <div className={`w-3 h-3 rounded-full ${
+                    safety.status === 'active' ? 'bg-green-500' :
+                    safety.status === 'error' ? 'bg-red-500' :
+                    'bg-yellow-500'
+                  }`} />
+                </div>
+                <p className="text-gray-400 text-sm capitalize">{safety.type.replace('_', ' ')}</p>
+                <p className="text-gray-400 text-sm">Last tested: {safety.lastTested}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      {designMode === 'monitoring' && (
+        <div className="bg-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Real-time Electrical Monitoring</h3>
+          <p className="text-gray-400">Power monitoring dashboard coming soon...</p>
+        </div>
+      )}
+      {designMode === 'analysis' && renderAnalysis()}
+    </div>
+  );
+}
+
+export default ElectricalSystemDesigner;

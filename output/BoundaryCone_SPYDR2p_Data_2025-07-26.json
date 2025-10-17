@@ -1,0 +1,678 @@
+{
+  "project": {
+    "name": "Boundary Cone Cultivation Facility",
+    "generated": "2025-07-26T01:07:06.604Z",
+    "software": "Vibelux Drawing Import System"
+  },
+  "room": {
+    "name": "Boundary Cone Room",
+    "width": 66,
+    "length": 22,
+    "height": 10,
+    "area": 1452
+  },
+  "tables": [
+    {
+      "id": "T1",
+      "x": 1,
+      "y": 1,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T2",
+      "x": 23,
+      "y": 1,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T3",
+      "x": 45,
+      "y": 1,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T4",
+      "x": 1,
+      "y": 8,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T5",
+      "x": 23,
+      "y": 8,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T6",
+      "x": 45,
+      "y": 8,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T7",
+      "x": 1,
+      "y": 15,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T8",
+      "x": 23,
+      "y": 15,
+      "width": 20,
+      "depth": 6
+    },
+    {
+      "id": "T9",
+      "x": 45,
+      "y": 15,
+      "width": 20,
+      "depth": 6
+    }
+  ],
+  "lighting": {
+    "fixtures": [
+      {
+        "id": "L1",
+        "x": 2,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L2",
+        "x": 2,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L3",
+        "x": 2,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L4",
+        "x": 2,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L5",
+        "x": 2,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L6",
+        "x": 6,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L7",
+        "x": 6,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L8",
+        "x": 6,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L9",
+        "x": 6,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L10",
+        "x": 6,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L11",
+        "x": 10,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L12",
+        "x": 10,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L13",
+        "x": 10,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L14",
+        "x": 10,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L15",
+        "x": 10,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L16",
+        "x": 14,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L17",
+        "x": 14,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L18",
+        "x": 14,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L19",
+        "x": 14,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L20",
+        "x": 14,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L21",
+        "x": 18,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L22",
+        "x": 18,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L23",
+        "x": 18,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L24",
+        "x": 18,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L25",
+        "x": 18,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L26",
+        "x": 22,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L27",
+        "x": 22,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L28",
+        "x": 22,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L29",
+        "x": 22,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L30",
+        "x": 22,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L31",
+        "x": 26,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L32",
+        "x": 26,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L33",
+        "x": 26,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L34",
+        "x": 26,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L35",
+        "x": 26,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L36",
+        "x": 30,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L37",
+        "x": 30,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L38",
+        "x": 30,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L39",
+        "x": 30,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L40",
+        "x": 30,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L41",
+        "x": 34,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L42",
+        "x": 34,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L43",
+        "x": 34,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L44",
+        "x": 34,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L45",
+        "x": 34,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L46",
+        "x": 38,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L47",
+        "x": 38,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L48",
+        "x": 38,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L49",
+        "x": 38,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L50",
+        "x": 38,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L51",
+        "x": 42,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L52",
+        "x": 42,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L53",
+        "x": 42,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L54",
+        "x": 42,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L55",
+        "x": 42,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L56",
+        "x": 46,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L57",
+        "x": 46,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L58",
+        "x": 46,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L59",
+        "x": 46,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L60",
+        "x": 46,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L61",
+        "x": 50,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L62",
+        "x": 50,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L63",
+        "x": 50,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L64",
+        "x": 50,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L65",
+        "x": 50,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L66",
+        "x": 54,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L67",
+        "x": 54,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L68",
+        "x": 54,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L69",
+        "x": 54,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L70",
+        "x": 54,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L71",
+        "x": 58,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L72",
+        "x": 58,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L73",
+        "x": 58,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L74",
+        "x": 58,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L75",
+        "x": 58,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L76",
+        "x": 62,
+        "y": 2,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L77",
+        "x": 62,
+        "y": 6,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L78",
+        "x": 62,
+        "y": 10,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L79",
+        "x": 62,
+        "y": 14,
+        "z": 8,
+        "model": "SPYDR 2p"
+      },
+      {
+        "id": "L80",
+        "x": 62,
+        "y": 18,
+        "z": 8,
+        "model": "SPYDR 2p"
+      }
+    ],
+    "model": {
+      "model": "Fluence SPYDR 2p",
+      "wattage": 645,
+      "ppf": 1700,
+      "efficacy": 2.6,
+      "coverage": 16,
+      "optimalSpacing": 4,
+      "dimensions": {
+        "length": 47,
+        "width": 44,
+        "height": 4
+      },
+      "price": 1499,
+      "mountHeight": 8
+    },
+    "totalCount": 80,
+    "metrics": {
+      "totalPower": 51600,
+      "powerDensity": 35.53719008264463,
+      "averagePPFD": 1355.4666666666665,
+      "uniformity": 0.85,
+      "totalPPF": 136000
+    }
+  },
+  "electrical": {
+    "voltage": "480V 3-Phase",
+    "totalLoad": 51600,
+    "breakerSize": 80
+  },
+  "financial": {
+    "equipmentCost": 119920,
+    "installationCost": 12000,
+    "totalInvestment": 136920,
+    "annualEnergyCost": 27120.96,
+    "paybackYears": 9.8459170078077
+  }
+}

@@ -1,0 +1,54 @@
+// Add these models to your existing schema.prisma file
+
+model PrivaConfiguration {
+  id                String    @id @default(cuid())
+  userId            String    @unique
+  credentials       Json      // Encrypted credentials
+  isDemo            Boolean   @default(false)
+  isActive          Boolean   @default(true)
+  connectionStatus  String    @default("disconnected")
+  lastConnected     DateTime?
+  lastError         String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  @@index([userId])
+}
+
+model PrivaRealtimeData {
+  id            String   @id @default(cuid())
+  compartmentId String
+  timestamp     DateTime
+  climate       Json     // Temperature, humidity, CO2, radiation, VPD
+  setpoints     Json     // Temperature day/night, humidity min/max, CO2 target
+  equipment     Json     // Heating, cooling, vents, screens, lights, irrigation status
+  alarms        String[]
+  createdAt     DateTime @default(now())
+  
+  @@index([compartmentId, timestamp])
+}
+
+model PrivaHistoricalData {
+  id            String   @id @default(cuid())
+  compartmentId String
+  date          DateTime
+  resolution    String   // 'minute', 'hour', 'day'
+  data          Json     // Aggregated climate and equipment data
+  createdAt     DateTime @default(now())
+  
+  @@index([compartmentId, date])
+  @@unique([compartmentId, date, resolution])
+}
+
+model UserSettings {
+  id                   String   @id @default(cuid())
+  userId               String   @unique
+  privaFallbackToDemo  Boolean  @default(true)
+  privaPollingInterval Int      @default(30000) // milliseconds
+  privaAlarmEmail      Boolean  @default(true)
+  privaAlarmSMS        Boolean  @default(false)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  
+  @@index([userId])
+}

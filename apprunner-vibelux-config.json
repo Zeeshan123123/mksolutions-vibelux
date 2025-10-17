@@ -1,0 +1,35 @@
+{
+  "ServiceName": "vibelux-production-apprunner",
+  "SourceConfiguration": {
+    "ImageRepository": {
+      "ImageIdentifier": "node:20-alpine",
+      "ImageConfiguration": {
+        "Port": "3000",
+        "RuntimeEnvironmentVariables": {
+          "NODE_ENV": "production",
+          "NEXT_TELEMETRY_DISABLED": "1",
+          "PORT": "3000",
+          "HOSTNAME": "0.0.0.0"
+        },
+        "StartCommand": "apk add --no-cache aws-cli && cd /tmp && aws s3 cp s3://vibelux-complete-platform-1754447690/vibelux-production-ready.tar.gz . --region us-east-1 && tar -xzf vibelux-production-ready.tar.gz && cd .next/standalone && node server.js"
+      },
+      "ImageRepositoryType": "ECR_PUBLIC"
+    },
+    "AutoDeploymentsEnabled": false
+  },
+  "InstanceConfiguration": {
+    "Cpu": "2 vCPU",
+    "Memory": "4 GB"
+  },
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "VibeLux"
+    },
+    {
+      "Key": "Environment", 
+      "Value": "Production"
+    }
+  ]
+}
+EOF < /dev/null

@@ -1,0 +1,37 @@
+
+TECHNICAL SPECIFICATIONS
+Mohave Cannabis Co. - Flower Room Lighting
+
+FIXTURE SPECIFICATIONS
+Model: Fluence SPYDR 2p
+Manufacturer: Fluence Bioengineering
+Power Consumption: 645W
+PPF Output: 1700 μmol/s
+Efficacy: 2.64 μmol/J
+Spectrum: PhysioSpec™ BROAD R4
+Dimensions: 47" × 43" × 4"
+Weight: 33 lbs
+Warranty: 5 years
+
+QUANTITY: 70 units
+
+ELECTRICAL REQUIREMENTS
+Service Voltage: 480V 3-Phase
+Total Connected Load: 45.1 kW
+Number of Circuits: 4
+Main Breaker Size: 70A
+Wire Size (Feeders): 3/0 AWG
+Panel Capacity Required: 100kW
+
+PHOTOMETRIC PERFORMANCE
+Average PPFD: 850 μmol/m²/s
+Minimum PPFD: 680 μmol/m²/s
+Maximum PPFD: 1020 μmol/m²/s
+Uniformity: 85%
+Daily Light Integral: 36.7 mol/m²/day
+
+INSTALLATION REQUIREMENTS
+• Mounting Height: 6-8 feet above canopy
+• Fixture Spacing: 6.6' × 2.75' grid pattern
+• Control System: 0-10V dimming compatible
+• Environmental Rating: IP66 wet location rated

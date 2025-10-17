@@ -1,0 +1,4 @@
+export const dynamic = 'force-dynamic'
+// This file has been temporarily disabled due to service interface issues
+// Original file moved to route.ts.disabled
+// TODO: Implement proper fluorescence sensor service interfaces

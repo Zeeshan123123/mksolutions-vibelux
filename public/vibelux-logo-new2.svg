@@ -1,0 +1,24 @@
+<svg width="240" height="80" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- V shape with gradient -->
+  <defs>
+    <linearGradient id="v-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14B8A6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Stylized V -->
+  <g>
+    <!-- Left stroke of V (purple) -->
+    <path d="M 10 20 L 20 20 L 35 50 L 30 55 Z" fill="#8B5CF6"/>
+    
+    <!-- Right stroke of V (teal) -->
+    <path d="M 35 50 L 50 20 L 60 20 L 40 55 Z" fill="#14B8A6"/>
+  </g>
+  
+  <!-- Text "ibe" in purple -->
+  <text x="65" y="48" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#8B5CF6">ibe</text>
+  
+  <!-- Text "Lux" in teal -->
+  <text x="135" y="48" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#14B8A6">Lux</text>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "vibelux-site-tests",
+  "version": "1.0.0",
+  "description": "Comprehensive testing suite for Vibelux lighting design pages",
+  "main": "comprehensive-site-test.js",
+  "scripts": {
+    "test": "node comprehensive-site-test.js",
+    "test:headless": "node comprehensive-site-test.js --headless",
+    "test:debug": "node comprehensive-site-test.js --debug"
+  },
+  "dependencies": {
+    "playwright": "^1.54.1"
+  },
+  "keywords": [
+    "testing",
+    "playwright",
+    "vibelux",
+    "lighting",
+    "e2e"
+  ],
+  "author": "Vibelux Testing Team",
+  "license": "ISC"
+}

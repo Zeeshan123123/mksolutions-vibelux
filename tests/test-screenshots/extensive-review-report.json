@@ -1,0 +1,2438 @@
+{
+  "timestamp": "2025-07-26T16:57:08.750Z",
+  "reviewerCount": 50,
+  "totalIssues": 131,
+  "uniqueIssues": 15,
+  "consolidatedIssues": {
+    "CRITICAL": [],
+    "HIGH": [
+      {
+        "category": "HIGH",
+        "type": "Code Quality",
+        "issue": "238 console errors/warnings detected",
+        "location": "JavaScript console",
+        "reviewer": "Senior developer",
+        "page": "Enhanced 3D Professional Analysis",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 48,
+        "reviewers": [
+          "Sarah Chen",
+          "Mike Johnson",
+          "Emma Wilson",
+          "James Liu",
+          "Lisa Martinez"
+        ]
+      },
+      {
+        "category": "HIGH",
+        "type": "Accessibility",
+        "issue": "223 elements may have insufficient color contrast",
+        "location": "Text elements",
+        "reviewer": "Accessibility specialist",
+        "page": "Professional Design Report",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 3,
+        "reviewers": [
+          "Sarah Chen",
+          "Diana Turner",
+          "Noah Torres"
+        ]
+      },
+      {
+        "category": "HIGH",
+        "type": "Accessibility",
+        "issue": "527 elements may have insufficient color contrast",
+        "location": "Text elements",
+        "reviewer": "Accessibility specialist",
+        "page": "Comprehensive Technical Report",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 3,
+        "reviewers": [
+          "Sarah Chen",
+          "Diana Turner",
+          "Noah Torres"
+        ]
+      },
+      {
+        "category": "HIGH",
+        "type": "Accessibility",
+        "issue": "28 elements may have insufficient color contrast",
+        "location": "Text elements",
+        "reviewer": "Accessibility specialist",
+        "page": "3D Facility Visualization",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 3,
+        "reviewers": [
+          "Sarah Chen",
+          "Diana Turner",
+          "Noah Torres"
+        ]
+      },
+      {
+        "category": "HIGH",
+        "type": "Accessibility",
+        "issue": "42 elements may have insufficient color contrast",
+        "location": "Text elements",
+        "reviewer": "Accessibility specialist",
+        "page": "Enhanced 3D Professional Analysis",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 3,
+        "reviewers": [
+          "Sarah Chen",
+          "Diana Turner",
+          "Noah Torres"
+        ]
+      },
+      {
+        "category": "HIGH",
+        "type": "Accessibility",
+        "issue": "220 elements may have insufficient color contrast",
+        "location": "Text elements",
+        "reviewer": "Accessibility specialist",
+        "page": "White Label Report Builder",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 3,
+        "reviewers": [
+          "Sarah Chen",
+          "Diana Turner",
+          "Noah Torres"
+        ]
+      },
+      {
+        "category": "HIGH",
+        "type": "Mobile",
+        "issue": "Horizontal scroll detected on mobile viewport",
+        "location": "Page layout",
+        "reviewer": "Mobile specialist",
+        "page": "Professional Design Report",
+        "reviewerId": 5,
+        "reviewerName": "Lisa Martinez",
+        "reviewerRole": "Frontend Dev",
+        "foundBy": 3,
+        "reviewers": [
+          "Lisa Martinez",
+          "Lisa Martinez",
+          "Lisa Martinez"
+        ]
+      }
+    ],
+    "MEDIUM": [
+      {
+        "category": "MEDIUM",
+        "type": "Data Accuracy",
+        "issue": "Percentage calculations may be incorrect in 1 sections",
+        "location": "Various calculations",
+        "reviewer": "Data analyst",
+        "page": "Comprehensive Technical Report",
+        "reviewerId": 11,
+        "reviewerName": "Alex Thompson",
+        "reviewerRole": "Full-Stack Dev",
+        "foundBy": 8,
+        "reviewers": [
+          "Alex Thompson",
+          "Alex Thompson",
+          "Alex Thompson",
+          "Alex Thompson",
+          "Jessica Lee"
+        ]
+      },
+      {
+        "category": "MEDIUM",
+        "type": "Security",
+        "issue": "1 external scripts loaded. Verify all are trusted sources.",
+        "location": "Script tags",
+        "reviewer": "Security specialist",
+        "page": "3D Facility Visualization",
+        "reviewerId": 12,
+        "reviewerName": "Maria Garcia",
+        "reviewerRole": "Backend Lead",
+        "foundBy": 2,
+        "reviewers": [
+          "Maria Garcia",
+          "Maria Garcia"
+        ]
+      },
+      {
+        "category": "MEDIUM",
+        "type": "Mobile",
+        "issue": "3 touch targets smaller than 44x44px minimum",
+        "location": "Interactive elements",
+        "reviewer": "Mobile UX specialist",
+        "page": "3D Facility Visualization",
+        "reviewerId": 5,
+        "reviewerName": "Lisa Martinez",
+        "reviewerRole": "Frontend Dev",
+        "foundBy": 1,
+        "reviewers": [
+          "Lisa Martinez"
+        ]
+      },
+      {
+        "category": "MEDIUM",
+        "type": "Mobile",
+        "issue": "16 touch targets smaller than 44x44px minimum",
+        "location": "Interactive elements",
+        "reviewer": "Mobile UX specialist",
+        "page": "Enhanced 3D Professional Analysis",
+        "reviewerId": 5,
+        "reviewerName": "Lisa Martinez",
+        "reviewerRole": "Frontend Dev",
+        "foundBy": 1,
+        "reviewers": [
+          "Lisa Martinez"
+        ]
+      },
+      {
+        "category": "MEDIUM",
+        "type": "Mobile",
+        "issue": "39 touch targets smaller than 44x44px minimum",
+        "location": "Interactive elements",
+        "reviewer": "Mobile UX specialist",
+        "page": "White Label Report Builder",
+        "reviewerId": 5,
+        "reviewerName": "Lisa Martinez",
+        "reviewerRole": "Frontend Dev",
+        "foundBy": 1,
+        "reviewers": [
+          "Lisa Martinez"
+        ]
+      },
+      {
+        "category": "MEDIUM",
+        "type": "Color Palette",
+        "issue": "Too many colors (23) in use. Recommend limiting to 8-12 colors.",
+        "location": "Global",
+        "reviewer": "Design specialist",
+        "page": "Enhanced 3D Professional Analysis",
+        "reviewerId": 9,
+        "reviewerName": "Nina Patel",
+        "reviewerRole": "Frontend Dev",
+        "foundBy": 1,
+        "reviewers": [
+          "Nina Patel"
+        ]
+      },
+      {
+        "category": "MEDIUM",
+        "type": "UI Consistency",
+        "issue": "Found 7 different button styles. Should be standardized.",
+        "location": "Global",
+        "reviewer": "UI/UX specialist",
+        "page": "White Label Report Builder",
+        "reviewerId": 9,
+        "reviewerName": "Nina Patel",
+        "reviewerRole": "Frontend Dev",
+        "foundBy": 1,
+        "reviewers": [
+          "Nina Patel"
+        ]
+      }
+    ],
+    "LOW": [
+      {
+        "category": "LOW",
+        "type": "Code Quality",
+        "issue": "Using deprecated features: Vendor prefixes without standard properties",
+        "location": "Various",
+        "reviewer": "Code reviewer",
+        "page": "Professional Design Report",
+        "reviewerId": 1,
+        "reviewerName": "Sarah Chen",
+        "reviewerRole": "Senior Frontend Dev",
+        "foundBy": 50,
+        "reviewers": [
+          "Sarah Chen",
+          "Mike Johnson",
+          "Emma Wilson",
+          "James Liu",
+          "Lisa Martinez"
+        ]
+      }
+    ],
+    "SUGGESTION": []
+  },
+  "reviewerFindings": {
+    "1": {
+      "reviewer": {
+        "id": 1,
+        "name": "Sarah Chen",
+        "role": "Senior Frontend Dev",
+        "expertise": [
+          "React",
+          "CSS",
+          "Accessibility"
+        ],
+        "focus": "UI/UX issues"
+      },
+      "findings": [
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "223 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Professional Design Report",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        },
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "527 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Comprehensive Technical Report",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "28 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "3D Facility Visualization",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "42 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "220 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "White Label Report Builder",
+          "reviewerId": 1,
+          "reviewerName": "Sarah Chen",
+          "reviewerRole": "Senior Frontend Dev"
+        }
+      ]
+    },
+    "2": {
+      "reviewer": {
+        "id": 2,
+        "name": "Mike Johnson",
+        "role": "Frontend Lead",
+        "expertise": [
+          "Performance",
+          "React",
+          "TypeScript"
+        ],
+        "focus": "Performance optimization"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 2,
+          "reviewerName": "Mike Johnson",
+          "reviewerRole": "Frontend Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 2,
+          "reviewerName": "Mike Johnson",
+          "reviewerRole": "Frontend Lead"
+        }
+      ]
+    },
+    "3": {
+      "reviewer": {
+        "id": 3,
+        "name": "Emma Wilson",
+        "role": "UI Developer",
+        "expertise": [
+          "CSS Grid",
+          "Flexbox",
+          "Animations"
+        ],
+        "focus": "Layout issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 3,
+          "reviewerName": "Emma Wilson",
+          "reviewerRole": "UI Developer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 3,
+          "reviewerName": "Emma Wilson",
+          "reviewerRole": "UI Developer"
+        }
+      ]
+    },
+    "4": {
+      "reviewer": {
+        "id": 4,
+        "name": "James Liu",
+        "role": "Frontend Engineer",
+        "expertise": [
+          "JavaScript",
+          "DOM",
+          "Events"
+        ],
+        "focus": "Interactive elements"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 4,
+          "reviewerName": "James Liu",
+          "reviewerRole": "Frontend Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 4,
+          "reviewerName": "James Liu",
+          "reviewerRole": "Frontend Engineer"
+        }
+      ]
+    },
+    "5": {
+      "reviewer": {
+        "id": 5,
+        "name": "Lisa Martinez",
+        "role": "Frontend Dev",
+        "expertise": [
+          "Responsive Design",
+          "Mobile"
+        ],
+        "focus": "Mobile compatibility"
+      },
+      "findings": [
+        {
+          "category": "HIGH",
+          "type": "Mobile",
+          "issue": "Horizontal scroll detected on mobile viewport",
+          "location": "Page layout",
+          "reviewer": "Mobile specialist",
+          "page": "Professional Design Report",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Mobile",
+          "issue": "Horizontal scroll detected on mobile viewport",
+          "location": "Page layout",
+          "reviewer": "Mobile specialist",
+          "page": "Comprehensive Technical Report",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Mobile",
+          "issue": "Horizontal scroll detected on mobile viewport",
+          "location": "Page layout",
+          "reviewer": "Mobile specialist",
+          "page": "3D Facility Visualization",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Mobile",
+          "issue": "3 touch targets smaller than 44x44px minimum",
+          "location": "Interactive elements",
+          "reviewer": "Mobile UX specialist",
+          "page": "3D Facility Visualization",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Mobile",
+          "issue": "16 touch targets smaller than 44x44px minimum",
+          "location": "Interactive elements",
+          "reviewer": "Mobile UX specialist",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Mobile",
+          "issue": "39 touch targets smaller than 44x44px minimum",
+          "location": "Interactive elements",
+          "reviewer": "Mobile UX specialist",
+          "page": "White Label Report Builder",
+          "reviewerId": 5,
+          "reviewerName": "Lisa Martinez",
+          "reviewerRole": "Frontend Dev"
+        }
+      ]
+    },
+    "6": {
+      "reviewer": {
+        "id": 6,
+        "name": "David Kim",
+        "role": "UI Engineer",
+        "expertise": [
+          "Component Architecture",
+          "State Management"
+        ],
+        "focus": "Component structure"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 6,
+          "reviewerName": "David Kim",
+          "reviewerRole": "UI Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 6,
+          "reviewerName": "David Kim",
+          "reviewerRole": "UI Engineer"
+        }
+      ]
+    },
+    "7": {
+      "reviewer": {
+        "id": 7,
+        "name": "Rachel Green",
+        "role": "Frontend Specialist",
+        "expertise": [
+          "Browser Compatibility",
+          "Polyfills"
+        ],
+        "focus": "Cross-browser issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 7,
+          "reviewerName": "Rachel Green",
+          "reviewerRole": "Frontend Specialist"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 7,
+          "reviewerName": "Rachel Green",
+          "reviewerRole": "Frontend Specialist"
+        }
+      ]
+    },
+    "8": {
+      "reviewer": {
+        "id": 8,
+        "name": "Tom Anderson",
+        "role": "Junior Frontend",
+        "expertise": [
+          "HTML",
+          "CSS",
+          "Basic JS"
+        ],
+        "focus": "Basic functionality"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 8,
+          "reviewerName": "Tom Anderson",
+          "reviewerRole": "Junior Frontend"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 8,
+          "reviewerName": "Tom Anderson",
+          "reviewerRole": "Junior Frontend"
+        }
+      ]
+    },
+    "9": {
+      "reviewer": {
+        "id": 9,
+        "name": "Nina Patel",
+        "role": "Frontend Dev",
+        "expertise": [
+          "Forms",
+          "Validation",
+          "UX"
+        ],
+        "focus": "Form handling"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 9,
+          "reviewerName": "Nina Patel",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Color Palette",
+          "issue": "Too many colors (23) in use. Recommend limiting to 8-12 colors.",
+          "location": "Global",
+          "reviewer": "Design specialist",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 9,
+          "reviewerName": "Nina Patel",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 9,
+          "reviewerName": "Nina Patel",
+          "reviewerRole": "Frontend Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "UI Consistency",
+          "issue": "Found 7 different button styles. Should be standardized.",
+          "location": "Global",
+          "reviewer": "UI/UX specialist",
+          "page": "White Label Report Builder",
+          "reviewerId": 9,
+          "reviewerName": "Nina Patel",
+          "reviewerRole": "Frontend Dev"
+        }
+      ]
+    },
+    "10": {
+      "reviewer": {
+        "id": 10,
+        "name": "Chris Walker",
+        "role": "Senior UI Dev",
+        "expertise": [
+          "Design Systems",
+          "Theming"
+        ],
+        "focus": "Design consistency"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 10,
+          "reviewerName": "Chris Walker",
+          "reviewerRole": "Senior UI Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 10,
+          "reviewerName": "Chris Walker",
+          "reviewerRole": "Senior UI Dev"
+        }
+      ]
+    },
+    "11": {
+      "reviewer": {
+        "id": 11,
+        "name": "Alex Thompson",
+        "role": "Full-Stack Dev",
+        "expertise": [
+          "Node.js",
+          "API",
+          "Database"
+        ],
+        "focus": "Data flow issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 11,
+          "reviewerName": "Alex Thompson",
+          "reviewerRole": "Full-Stack Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "Comprehensive Technical Report",
+          "reviewerId": 11,
+          "reviewerName": "Alex Thompson",
+          "reviewerRole": "Full-Stack Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "3D Facility Visualization",
+          "reviewerId": 11,
+          "reviewerName": "Alex Thompson",
+          "reviewerRole": "Full-Stack Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 11,
+          "reviewerName": "Alex Thompson",
+          "reviewerRole": "Full-Stack Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 11,
+          "reviewerName": "Alex Thompson",
+          "reviewerRole": "Full-Stack Dev"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "White Label Report Builder",
+          "reviewerId": 11,
+          "reviewerName": "Alex Thompson",
+          "reviewerRole": "Full-Stack Dev"
+        }
+      ]
+    },
+    "12": {
+      "reviewer": {
+        "id": 12,
+        "name": "Maria Garcia",
+        "role": "Backend Lead",
+        "expertise": [
+          "Security",
+          "Auth",
+          "API"
+        ],
+        "focus": "Security vulnerabilities"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 12,
+          "reviewerName": "Maria Garcia",
+          "reviewerRole": "Backend Lead"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Security",
+          "issue": "1 external scripts loaded. Verify all are trusted sources.",
+          "location": "Script tags",
+          "reviewer": "Security specialist",
+          "page": "3D Facility Visualization",
+          "reviewerId": 12,
+          "reviewerName": "Maria Garcia",
+          "reviewerRole": "Backend Lead"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Security",
+          "issue": "1 external scripts loaded. Verify all are trusted sources.",
+          "location": "Script tags",
+          "reviewer": "Security specialist",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 12,
+          "reviewerName": "Maria Garcia",
+          "reviewerRole": "Backend Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 12,
+          "reviewerName": "Maria Garcia",
+          "reviewerRole": "Backend Lead"
+        }
+      ]
+    },
+    "13": {
+      "reviewer": {
+        "id": 13,
+        "name": "John Davis",
+        "role": "Full-Stack Engineer",
+        "expertise": [
+          "Performance",
+          "Caching",
+          "CDN"
+        ],
+        "focus": "Loading performance"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 13,
+          "reviewerName": "John Davis",
+          "reviewerRole": "Full-Stack Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 13,
+          "reviewerName": "John Davis",
+          "reviewerRole": "Full-Stack Engineer"
+        }
+      ]
+    },
+    "14": {
+      "reviewer": {
+        "id": 14,
+        "name": "Sophie Brown",
+        "role": "Backend Dev",
+        "expertise": [
+          "Data Validation",
+          "Error Handling"
+        ],
+        "focus": "Error handling"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 14,
+          "reviewerName": "Sophie Brown",
+          "reviewerRole": "Backend Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 14,
+          "reviewerName": "Sophie Brown",
+          "reviewerRole": "Backend Dev"
+        }
+      ]
+    },
+    "15": {
+      "reviewer": {
+        "id": 15,
+        "name": "Kevin Zhang",
+        "role": "Senior Full-Stack",
+        "expertise": [
+          "Architecture",
+          "Scalability"
+        ],
+        "focus": "Architectural issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 15,
+          "reviewerName": "Kevin Zhang",
+          "reviewerRole": "Senior Full-Stack"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 15,
+          "reviewerName": "Kevin Zhang",
+          "reviewerRole": "Senior Full-Stack"
+        }
+      ]
+    },
+    "16": {
+      "reviewer": {
+        "id": 16,
+        "name": "Amanda White",
+        "role": "API Developer",
+        "expertise": [
+          "REST",
+          "GraphQL",
+          "WebSockets"
+        ],
+        "focus": "API design"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 16,
+          "reviewerName": "Amanda White",
+          "reviewerRole": "API Developer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 16,
+          "reviewerName": "Amanda White",
+          "reviewerRole": "API Developer"
+        }
+      ]
+    },
+    "17": {
+      "reviewer": {
+        "id": 17,
+        "name": "Robert Taylor",
+        "role": "Full-Stack Dev",
+        "expertise": [
+          "DevOps",
+          "CI/CD",
+          "Testing"
+        ],
+        "focus": "Deployment issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 17,
+          "reviewerName": "Robert Taylor",
+          "reviewerRole": "Full-Stack Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 17,
+          "reviewerName": "Robert Taylor",
+          "reviewerRole": "Full-Stack Dev"
+        }
+      ]
+    },
+    "18": {
+      "reviewer": {
+        "id": 18,
+        "name": "Jessica Lee",
+        "role": "Backend Engineer",
+        "expertise": [
+          "Database",
+          "Query Optimization"
+        ],
+        "focus": "Data efficiency"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 18,
+          "reviewerName": "Jessica Lee",
+          "reviewerRole": "Backend Engineer"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "Comprehensive Technical Report",
+          "reviewerId": 18,
+          "reviewerName": "Jessica Lee",
+          "reviewerRole": "Backend Engineer"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "3D Facility Visualization",
+          "reviewerId": 18,
+          "reviewerName": "Jessica Lee",
+          "reviewerRole": "Backend Engineer"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 18,
+          "reviewerName": "Jessica Lee",
+          "reviewerRole": "Backend Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 18,
+          "reviewerName": "Jessica Lee",
+          "reviewerRole": "Backend Engineer"
+        },
+        {
+          "category": "MEDIUM",
+          "type": "Data Accuracy",
+          "issue": "Percentage calculations may be incorrect in 1 sections",
+          "location": "Various calculations",
+          "reviewer": "Data analyst",
+          "page": "White Label Report Builder",
+          "reviewerId": 18,
+          "reviewerName": "Jessica Lee",
+          "reviewerRole": "Backend Engineer"
+        }
+      ]
+    },
+    "19": {
+      "reviewer": {
+        "id": 19,
+        "name": "Daniel Moore",
+        "role": "Full-Stack Lead",
+        "expertise": [
+          "Microservices",
+          "Docker"
+        ],
+        "focus": "Service architecture"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 19,
+          "reviewerName": "Daniel Moore",
+          "reviewerRole": "Full-Stack Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 19,
+          "reviewerName": "Daniel Moore",
+          "reviewerRole": "Full-Stack Lead"
+        }
+      ]
+    },
+    "20": {
+      "reviewer": {
+        "id": 20,
+        "name": "Michelle Clark",
+        "role": "Backend Specialist",
+        "expertise": [
+          "Logging",
+          "Monitoring"
+        ],
+        "focus": "Observability"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 20,
+          "reviewerName": "Michelle Clark",
+          "reviewerRole": "Backend Specialist"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 20,
+          "reviewerName": "Michelle Clark",
+          "reviewerRole": "Backend Specialist"
+        }
+      ]
+    },
+    "21": {
+      "reviewer": {
+        "id": 21,
+        "name": "Peter Wilson",
+        "role": "QA Lead",
+        "expertise": [
+          "Test Automation",
+          "E2E Testing"
+        ],
+        "focus": "Test coverage"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 21,
+          "reviewerName": "Peter Wilson",
+          "reviewerRole": "QA Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 21,
+          "reviewerName": "Peter Wilson",
+          "reviewerRole": "QA Lead"
+        }
+      ]
+    },
+    "22": {
+      "reviewer": {
+        "id": 22,
+        "name": "Laura Rodriguez",
+        "role": "QA Engineer",
+        "expertise": [
+          "Manual Testing",
+          "Bug Tracking"
+        ],
+        "focus": "User flows"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 22,
+          "reviewerName": "Laura Rodriguez",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 22,
+          "reviewerName": "Laura Rodriguez",
+          "reviewerRole": "QA Engineer"
+        }
+      ]
+    },
+    "23": {
+      "reviewer": {
+        "id": 23,
+        "name": "Brian Hall",
+        "role": "Test Automation",
+        "expertise": [
+          "Selenium",
+          "Playwright",
+          "Cypress"
+        ],
+        "focus": "Automated test gaps"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 23,
+          "reviewerName": "Brian Hall",
+          "reviewerRole": "Test Automation"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 23,
+          "reviewerName": "Brian Hall",
+          "reviewerRole": "Test Automation"
+        }
+      ]
+    },
+    "24": {
+      "reviewer": {
+        "id": 24,
+        "name": "Karen Adams",
+        "role": "QA Specialist",
+        "expertise": [
+          "Performance Testing",
+          "Load Testing"
+        ],
+        "focus": "Performance issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 24,
+          "reviewerName": "Karen Adams",
+          "reviewerRole": "QA Specialist"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 24,
+          "reviewerName": "Karen Adams",
+          "reviewerRole": "QA Specialist"
+        }
+      ]
+    },
+    "25": {
+      "reviewer": {
+        "id": 25,
+        "name": "Steve Mitchell",
+        "role": "Senior QA",
+        "expertise": [
+          "Security Testing",
+          "Penetration"
+        ],
+        "focus": "Security flaws"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 25,
+          "reviewerName": "Steve Mitchell",
+          "reviewerRole": "Senior QA"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 25,
+          "reviewerName": "Steve Mitchell",
+          "reviewerRole": "Senior QA"
+        }
+      ]
+    },
+    "26": {
+      "reviewer": {
+        "id": 26,
+        "name": "Diana Turner",
+        "role": "QA Engineer",
+        "expertise": [
+          "Accessibility Testing",
+          "WCAG"
+        ],
+        "focus": "Accessibility violations"
+      },
+      "findings": [
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "223 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Professional Design Report",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "527 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Comprehensive Technical Report",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "28 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "3D Facility Visualization",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "42 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "220 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "White Label Report Builder",
+          "reviewerId": 26,
+          "reviewerName": "Diana Turner",
+          "reviewerRole": "QA Engineer"
+        }
+      ]
+    },
+    "27": {
+      "reviewer": {
+        "id": 27,
+        "name": "Paul Baker",
+        "role": "Test Lead",
+        "expertise": [
+          "Test Strategy",
+          "Coverage"
+        ],
+        "focus": "Missing test cases"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 27,
+          "reviewerName": "Paul Baker",
+          "reviewerRole": "Test Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 27,
+          "reviewerName": "Paul Baker",
+          "reviewerRole": "Test Lead"
+        }
+      ]
+    },
+    "28": {
+      "reviewer": {
+        "id": 28,
+        "name": "Nancy Hill",
+        "role": "QA Analyst",
+        "expertise": [
+          "Regression Testing",
+          "Smoke Tests"
+        ],
+        "focus": "Regression issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 28,
+          "reviewerName": "Nancy Hill",
+          "reviewerRole": "QA Analyst"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 28,
+          "reviewerName": "Nancy Hill",
+          "reviewerRole": "QA Analyst"
+        }
+      ]
+    },
+    "29": {
+      "reviewer": {
+        "id": 29,
+        "name": "Frank Lopez",
+        "role": "Performance Tester",
+        "expertise": [
+          "JMeter",
+          "LoadRunner"
+        ],
+        "focus": "Load handling"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 29,
+          "reviewerName": "Frank Lopez",
+          "reviewerRole": "Performance Tester"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 29,
+          "reviewerName": "Frank Lopez",
+          "reviewerRole": "Performance Tester"
+        }
+      ]
+    },
+    "30": {
+      "reviewer": {
+        "id": 30,
+        "name": "Carol King",
+        "role": "QA Developer",
+        "expertise": [
+          "Test Framework",
+          "CI Integration"
+        ],
+        "focus": "Test infrastructure"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 30,
+          "reviewerName": "Carol King",
+          "reviewerRole": "QA Developer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 30,
+          "reviewerName": "Carol King",
+          "reviewerRole": "QA Developer"
+        }
+      ]
+    },
+    "31": {
+      "reviewer": {
+        "id": 31,
+        "name": "Oliver Wright",
+        "role": "UX Designer",
+        "expertise": [
+          "User Research",
+          "Wireframing"
+        ],
+        "focus": "UX problems"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 31,
+          "reviewerName": "Oliver Wright",
+          "reviewerRole": "UX Designer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 31,
+          "reviewerName": "Oliver Wright",
+          "reviewerRole": "UX Designer"
+        }
+      ]
+    },
+    "32": {
+      "reviewer": {
+        "id": 32,
+        "name": "Emily Scott",
+        "role": "UI/UX Lead",
+        "expertise": [
+          "Design Systems",
+          "Figma"
+        ],
+        "focus": "Design inconsistencies"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 32,
+          "reviewerName": "Emily Scott",
+          "reviewerRole": "UI/UX Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 32,
+          "reviewerName": "Emily Scott",
+          "reviewerRole": "UI/UX Lead"
+        }
+      ]
+    },
+    "33": {
+      "reviewer": {
+        "id": 33,
+        "name": "Marcus Young",
+        "role": "Product Designer",
+        "expertise": [
+          "User Flows",
+          "Journey Mapping"
+        ],
+        "focus": "User journey issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 33,
+          "reviewerName": "Marcus Young",
+          "reviewerRole": "Product Designer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 33,
+          "reviewerName": "Marcus Young",
+          "reviewerRole": "Product Designer"
+        }
+      ]
+    },
+    "34": {
+      "reviewer": {
+        "id": 34,
+        "name": "Sophia Allen",
+        "role": "UX Researcher",
+        "expertise": [
+          "Usability Testing",
+          "Analytics"
+        ],
+        "focus": "Usability problems"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 34,
+          "reviewerName": "Sophia Allen",
+          "reviewerRole": "UX Researcher"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 34,
+          "reviewerName": "Sophia Allen",
+          "reviewerRole": "UX Researcher"
+        }
+      ]
+    },
+    "35": {
+      "reviewer": {
+        "id": 35,
+        "name": "Ryan Phillips",
+        "role": "Visual Designer",
+        "expertise": [
+          "Typography",
+          "Color Theory"
+        ],
+        "focus": "Visual hierarchy"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 35,
+          "reviewerName": "Ryan Phillips",
+          "reviewerRole": "Visual Designer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 35,
+          "reviewerName": "Ryan Phillips",
+          "reviewerRole": "Visual Designer"
+        }
+      ]
+    },
+    "36": {
+      "reviewer": {
+        "id": 36,
+        "name": "Isabella Martinez",
+        "role": "Interaction Designer",
+        "expertise": [
+          "Micro-interactions",
+          "Animations"
+        ],
+        "focus": "Interaction feedback"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 36,
+          "reviewerName": "Isabella Martinez",
+          "reviewerRole": "Interaction Designer"
+        }
+      ]
+    },
+    "37": {
+      "reviewer": {
+        "id": 37,
+        "name": "Jack Campbell",
+        "role": "UX Engineer",
+        "expertise": [
+          "Prototyping",
+          "Design Implementation"
+        ],
+        "focus": "Design-dev gaps"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 37,
+          "reviewerName": "Jack Campbell",
+          "reviewerRole": "UX Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 37,
+          "reviewerName": "Jack Campbell",
+          "reviewerRole": "UX Engineer"
+        }
+      ]
+    },
+    "38": {
+      "reviewer": {
+        "id": 38,
+        "name": "Victoria Evans",
+        "role": "Design Lead",
+        "expertise": [
+          "Brand Guidelines",
+          "Style Guides"
+        ],
+        "focus": "Brand consistency"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 38,
+          "reviewerName": "Victoria Evans",
+          "reviewerRole": "Design Lead"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 38,
+          "reviewerName": "Victoria Evans",
+          "reviewerRole": "Design Lead"
+        }
+      ]
+    },
+    "39": {
+      "reviewer": {
+        "id": 39,
+        "name": "Nathan Reed",
+        "role": "UX Specialist",
+        "expertise": [
+          "Information Architecture",
+          "Navigation"
+        ],
+        "focus": "Navigation issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 39,
+          "reviewerName": "Nathan Reed",
+          "reviewerRole": "UX Specialist"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 39,
+          "reviewerName": "Nathan Reed",
+          "reviewerRole": "UX Specialist"
+        }
+      ]
+    },
+    "40": {
+      "reviewer": {
+        "id": 40,
+        "name": "Grace Morgan",
+        "role": "UI Designer",
+        "expertise": [
+          "Component Design",
+          "Icons"
+        ],
+        "focus": "UI polish"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 40,
+          "reviewerName": "Grace Morgan",
+          "reviewerRole": "UI Designer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 40,
+          "reviewerName": "Grace Morgan",
+          "reviewerRole": "UI Designer"
+        }
+      ]
+    },
+    "41": {
+      "reviewer": {
+        "id": 41,
+        "name": "Henry Cooper",
+        "role": "3D Graphics Dev",
+        "expertise": [
+          "Three.js",
+          "WebGL",
+          "Shaders"
+        ],
+        "focus": "3D rendering issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 41,
+          "reviewerName": "Henry Cooper",
+          "reviewerRole": "3D Graphics Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 41,
+          "reviewerName": "Henry Cooper",
+          "reviewerRole": "3D Graphics Dev"
+        }
+      ]
+    },
+    "42": {
+      "reviewer": {
+        "id": 42,
+        "name": "Zoe Richardson",
+        "role": "Data Viz Engineer",
+        "expertise": [
+          "D3.js",
+          "Charts",
+          "Canvas"
+        ],
+        "focus": "Data visualization"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 42,
+          "reviewerName": "Zoe Richardson",
+          "reviewerRole": "Data Viz Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 42,
+          "reviewerName": "Zoe Richardson",
+          "reviewerRole": "Data Viz Engineer"
+        }
+      ]
+    },
+    "43": {
+      "reviewer": {
+        "id": 43,
+        "name": "Luke Bailey",
+        "role": "Mobile Dev",
+        "expertise": [
+          "React Native",
+          "PWA",
+          "Mobile Web"
+        ],
+        "focus": "Mobile experience"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 43,
+          "reviewerName": "Luke Bailey",
+          "reviewerRole": "Mobile Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 43,
+          "reviewerName": "Luke Bailey",
+          "reviewerRole": "Mobile Dev"
+        }
+      ]
+    },
+    "44": {
+      "reviewer": {
+        "id": 44,
+        "name": "Ava Murphy",
+        "role": "DevOps Engineer",
+        "expertise": [
+          "AWS",
+          "Docker",
+          "K8s"
+        ],
+        "focus": "Infrastructure issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 44,
+          "reviewerName": "Ava Murphy",
+          "reviewerRole": "DevOps Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 44,
+          "reviewerName": "Ava Murphy",
+          "reviewerRole": "DevOps Engineer"
+        }
+      ]
+    },
+    "45": {
+      "reviewer": {
+        "id": 45,
+        "name": "Ethan Rivera",
+        "role": "Security Engineer",
+        "expertise": [
+          "OWASP",
+          "Pen Testing",
+          "Auth"
+        ],
+        "focus": "Security vulnerabilities"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 45,
+          "reviewerName": "Ethan Rivera",
+          "reviewerRole": "Security Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 45,
+          "reviewerName": "Ethan Rivera",
+          "reviewerRole": "Security Engineer"
+        }
+      ]
+    },
+    "46": {
+      "reviewer": {
+        "id": 46,
+        "name": "Mia Ward",
+        "role": "Performance Engineer",
+        "expertise": [
+          "Web Vitals",
+          "Lighthouse",
+          "CDN"
+        ],
+        "focus": "Performance metrics"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 46,
+          "reviewerName": "Mia Ward",
+          "reviewerRole": "Performance Engineer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 46,
+          "reviewerName": "Mia Ward",
+          "reviewerRole": "Performance Engineer"
+        }
+      ]
+    },
+    "47": {
+      "reviewer": {
+        "id": 47,
+        "name": "Noah Torres",
+        "role": "Accessibility Dev",
+        "expertise": [
+          "ARIA",
+          "Screen Readers",
+          "WCAG"
+        ],
+        "focus": "A11y compliance"
+      },
+      "findings": [
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "223 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Professional Design Report",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        },
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "527 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Comprehensive Technical Report",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "28 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "3D Facility Visualization",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "42 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        },
+        {
+          "category": "HIGH",
+          "type": "Accessibility",
+          "issue": "220 elements may have insufficient color contrast",
+          "location": "Text elements",
+          "reviewer": "Accessibility specialist",
+          "page": "White Label Report Builder",
+          "reviewerId": 47,
+          "reviewerName": "Noah Torres",
+          "reviewerRole": "Accessibility Dev"
+        }
+      ]
+    },
+    "48": {
+      "reviewer": {
+        "id": 48,
+        "name": "Chloe Peterson",
+        "role": "SEO Developer",
+        "expertise": [
+          "Meta Tags",
+          "Schema",
+          "Performance"
+        ],
+        "focus": "SEO issues"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 48,
+          "reviewerName": "Chloe Peterson",
+          "reviewerRole": "SEO Developer"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 48,
+          "reviewerName": "Chloe Peterson",
+          "reviewerRole": "SEO Developer"
+        }
+      ]
+    },
+    "49": {
+      "reviewer": {
+        "id": 49,
+        "name": "William Gray",
+        "role": "Database Expert",
+        "expertise": [
+          "SQL",
+          "NoSQL",
+          "Optimization"
+        ],
+        "focus": "Data structure"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 49,
+          "reviewerName": "William Gray",
+          "reviewerRole": "Database Expert"
+        },
+        {
+          "category": "HIGH",
+          "type": "Code Quality",
+          "issue": "238 console errors/warnings detected",
+          "location": "JavaScript console",
+          "reviewer": "Senior developer",
+          "page": "Enhanced 3D Professional Analysis",
+          "reviewerId": 49,
+          "reviewerName": "William Gray",
+          "reviewerRole": "Database Expert"
+        }
+      ]
+    },
+    "50": {
+      "reviewer": {
+        "id": 50,
+        "name": "Harper Ross",
+        "role": "Integration Specialist",
+        "expertise": [
+          "APIs",
+          "Webhooks",
+          "Third-party"
+        ],
+        "focus": "Integration points"
+      },
+      "findings": [
+        {
+          "category": "LOW",
+          "type": "Code Quality",
+          "issue": "Using deprecated features: Vendor prefixes without standard properties",
+          "location": "Various",
+          "reviewer": "Code reviewer",
+          "page": "Professional Design Report",
+          "reviewerId": 50,
+          "reviewerName": "Harper Ross",
+          "reviewerRole": "Integration Specialist"
+        }
+      ]
+    }
+  },
+  "pageIssueCount": {
+    "Professional Design Report": 54,
+    "Comprehensive Technical Report": 6,
+    "3D Facility Visualization": 8,
+    "Enhanced 3D Professional Analysis": 56,
+    "White Label Report Builder": 7
+  }
+}

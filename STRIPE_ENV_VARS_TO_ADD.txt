@@ -1,0 +1,47 @@
+# Stripe Environment Variables for Vercel
+# Created: 2025-01-20
+# Mode: LIVE
+
+# ===== STRIPE API KEYS =====
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_51RjnrkBs7h78eL7FdQc3dhyryRWB0dkPxtmmSqOGziKo6BrLuTlVUnKxUVCNPTfwOdavY2Kza8QjwhQ1xDMGS30z00JmAXOZuh
+
+# ===== SUBSCRIPTION PRICE IDs =====
+STRIPE_GROWER_MONTHLY_PRICE_ID=price_1RmvgdBs7h78eL7FfRTbL6tf
+STRIPE_GROWER_ANNUAL_PRICE_ID=price_1RmvgdBs7h78eL7F9H9Qp7VA
+STRIPE_PROFESSIONAL_MONTHLY_PRICE_ID=price_1RmvgeBs7h78eL7FLSsWnfOI
+STRIPE_PROFESSIONAL_ANNUAL_PRICE_ID=price_1RmvgeBs7h78eL7F71cO0o81
+STRIPE_BUSINESS_MONTHLY_PRICE_ID=price_1RmvgfBs7h78eL7FHol6bO8K
+STRIPE_BUSINESS_ANNUAL_PRICE_ID=price_1RmvgfBs7h78eL7FT6otwQ7p
+
+# ===== AI QUERY CREDIT PRICE IDs =====
+NEXT_PUBLIC_STRIPE_QUERIES_25_PRICE_ID=price_1RmvgfBs7h78eL7FI4D662U5
+NEXT_PUBLIC_STRIPE_QUERIES_100_PRICE_ID=price_1RmvggBs7h78eL7FakcvTepD
+NEXT_PUBLIC_STRIPE_QUERIES_500_PRICE_ID=price_1RmvggBs7h78eL7FDwYBiMLz
+
+# ===== WEBHOOK COMPATIBILITY =====
+NEXT_PUBLIC_STRIPE_PRICE_ESSENTIAL=price_1RmvgdBs7h78eL7FfRTbL6tf
+NEXT_PUBLIC_STRIPE_PRICE_PROFESSIONAL=price_1RmvgeBs7h78eL7FLSsWnfOI
+NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE=price_1RmvgfBs7h78eL7FHol6bO8K
+
+# ===== HOW TO ADD TO VERCEL =====
+# Option 1: Vercel Dashboard (Recommended)
+# 1. Go to: https://vercel.com/vibelux/vibelux-app/settings/environment-variables
+# 2. Click "Add New" for each variable above
+# 3. Select "Production" environment
+# 4. Save each one
+
+# Option 2: Vercel CLI
+# Run these commands:
+vercel env add NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY production
+vercel env add STRIPE_GROWER_MONTHLY_PRICE_ID production
+vercel env add STRIPE_GROWER_ANNUAL_PRICE_ID production
+vercel env add STRIPE_PROFESSIONAL_MONTHLY_PRICE_ID production
+vercel env add STRIPE_PROFESSIONAL_ANNUAL_PRICE_ID production
+vercel env add STRIPE_BUSINESS_MONTHLY_PRICE_ID production
+vercel env add STRIPE_BUSINESS_ANNUAL_PRICE_ID production
+vercel env add NEXT_PUBLIC_STRIPE_QUERIES_25_PRICE_ID production
+vercel env add NEXT_PUBLIC_STRIPE_QUERIES_100_PRICE_ID production
+vercel env add NEXT_PUBLIC_STRIPE_QUERIES_500_PRICE_ID production
+vercel env add NEXT_PUBLIC_STRIPE_PRICE_ESSENTIAL production
+vercel env add NEXT_PUBLIC_STRIPE_PRICE_PROFESSIONAL production
+vercel env add NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE production

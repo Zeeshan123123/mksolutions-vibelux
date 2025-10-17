@@ -1,0 +1,92 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "tsBuildInfoFile": ".next/cache/tsconfig.tsbuildinfo",
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "disableSourceOfProjectReferenceRedirect": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/app/*": [
+        "./src/app/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ]
+    },
+    "baseUrl": ".",
+    "strictNullChecks": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "out/types/**/*.ts"
+, "middleware-v1.ts.bak"  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "out",
+    "build",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "e2e/**/*",
+    "tests/**/*",
+    "__tests__/**/*",
+    "**/__tests__/**/*",
+    "**/test/**/*",
+    "prisma/seed.ts",
+    "scripts/**/*",
+    "src/tests/**/*",
+    "src/**/*.test.*",
+    "src/**/*.spec.*",
+    "src/app/api/reports/generate/route.ts",
+    "src/components/designer/canvas/SimpleCanvas2D.tsx",
+    "src/components/onboarding/ModuleOnboarding.tsx",
+    "src/lib/plant-science/water-use-optimization.ts",
+    "src/components/CropPlanningSimulator.tsx",
+    "src/lib/plant-science/photobiology-research.ts",
+    "src/lib/plant-science/plant-microbe-interactions.ts"
+  ]
+}

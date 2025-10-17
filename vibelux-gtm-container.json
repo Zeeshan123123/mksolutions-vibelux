@@ -1,0 +1,943 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2025-08-07 13:15:00",
+  "containerVersion": {
+    "path": "accounts/6000000000/containers/80000000/versions/1",
+    "accountId": "6000000000",
+    "containerId": "80000000",
+    "containerVersionId": "1",
+    "name": "VibeLux Complete Setup",
+    "description": "Complete GTM setup for VibeLux - Cannabis Cultivation Management Platform",
+    "container": {
+      "path": "accounts/6000000000/containers/80000000",
+      "accountId": "6000000000",
+      "containerId": "80000000",
+      "name": "VibeLux GTM Container",
+      "publicId": "GTM-VIBELUX",
+      "usageContext": ["WEB"],
+      "fingerprint": "1691414400000",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6000000000/containers/80000000/workspaces?apiLink=container"
+    },
+    "tag": [
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "1",
+        "name": "GA4 Configuration",
+        "type": "googtag",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "tagId",
+            "value": "{{GA4 Measurement ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendPageView",
+            "value": "true"
+          }
+        ],
+        "fingerprint": "1691414401000",
+        "firingTriggerId": ["2345"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "2",
+        "name": "GA4 - Design Tool Started",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "design_tool_started"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "facility_type"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Facility Type}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "facility_size"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Facility Size}}"}
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "1691414402000",
+        "firingTriggerId": ["10"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "3",
+        "name": "GA4 - AI Design Generated",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "ai_design_generated"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "design_complexity"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Design Complexity}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "credits_used"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Credits Used}}"}
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "1691414403000",
+        "firingTriggerId": ["11"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "4",
+        "name": "GA4 - CAD Export",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "cad_export"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "export_format"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Export Format}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "drawing_type"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Drawing Type}}"}
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "1691414404000",
+        "firingTriggerId": ["12"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "5",
+        "name": "GA4 - Purchase Credits",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "purchase"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "currency"},
+                  {"type": "TEMPLATE", "key": "value", "value": "USD"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "value"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Transaction Value}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "transaction_id"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Transaction ID}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "items"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Items}}"}
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "1691414405000",
+        "firingTriggerId": ["13"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "6",
+        "name": "GA4 - Signup",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "sign_up"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "method"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Signup Method}}"}
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "1691414406000",
+        "firingTriggerId": ["14"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "7",
+        "name": "GA4 - ROI Calculator Used",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "roi_calculator_used"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "estimated_savings"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Estimated Savings}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "payback_period"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Payback Period}}"}
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "1691414407000",
+        "firingTriggerId": ["15"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "8",
+        "name": "Google Ads Conversion - Lead",
+        "type": "awct",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "{{Google Ads Conversion ID}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "{{Google Ads Lead Label}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionValue",
+            "value": "{{Lead Value}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "currencyCode",
+            "value": "USD"
+          }
+        ],
+        "fingerprint": "1691414408000",
+        "firingTriggerId": ["16"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "9",
+        "name": "Facebook Pixel",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '{{Facebook Pixel ID}}');\nfbq('track', 'PageView');\n</script>"
+          }
+        ],
+        "fingerprint": "1691414409000",
+        "firingTriggerId": ["2345"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "10",
+        "name": "LinkedIn Insight Tag",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script type=\"text/javascript\">\n_linkedin_partner_id = \"{{LinkedIn Partner ID}}\";\nwindow._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];\nwindow._linkedin_data_partner_ids.push(_linkedin_partner_id);\n</script><script type=\"text/javascript\">\n(function(){var s = document.getElementsByTagName(\"script\")[0];\nvar b = document.createElement(\"script\");\nb.type = \"text/javascript\";b.async = true;\nb.src = \"https://snap.licdn.com/li.lms-analytics/insight.min.js\";\ns.parentNode.insertBefore(b, s);})();\n</script>"
+          }
+        ],
+        "fingerprint": "1691414410000",
+        "firingTriggerId": ["2345"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "tagId": "11",
+        "name": "Hotjar Tracking",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n(function(h,o,t,j,a,r){\nh.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\nh._hjSettings={hjid:{{Hotjar ID}},hjsv:6};\na=o.getElementsByTagName('head')[0];\nr=o.createElement('script');r.async=1;\nr.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\na.appendChild(r);\n})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');\n</script>"
+          }
+        ],
+        "fingerprint": "1691414411000",
+        "firingTriggerId": ["2345"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "2345",
+        "name": "All Pages",
+        "type": "PAGEVIEW",
+        "fingerprint": "1691414420000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "10",
+        "name": "Design Tool Started",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "design_tool_started"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414421000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "11",
+        "name": "AI Design Generated",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "ai_design_generated"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414422000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "12",
+        "name": "CAD Export",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "cad_export"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414423000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "13",
+        "name": "Purchase Complete",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "purchase"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414424000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "14",
+        "name": "User Signup",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "sign_up"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414425000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "15",
+        "name": "ROI Calculator Submit",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "roi_calculator_submit"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414426000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "triggerId": "16",
+        "name": "Lead Form Submit",
+        "type": "FORM_SUBMISSION",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Form ID}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "lead-form"}
+            ]
+          }
+        ],
+        "fingerprint": "1691414427000"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "1",
+        "name": "GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "G-XXXXXXXXXX"
+          }
+        ],
+        "fingerprint": "1691414430000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "2",
+        "name": "Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "AW-XXXXXXXXXX"
+          }
+        ],
+        "fingerprint": "1691414431000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "3",
+        "name": "Google Ads Lead Label",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "XXXXXXXXXXXXX"
+          }
+        ],
+        "fingerprint": "1691414432000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "4",
+        "name": "Facebook Pixel ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "XXXXXXXXXXXXXXXX"
+          }
+        ],
+        "fingerprint": "1691414433000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "5",
+        "name": "LinkedIn Partner ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "XXXXXXX"
+          }
+        ],
+        "fingerprint": "1691414434000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "6",
+        "name": "Hotjar ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "XXXXXXX"
+          }
+        ],
+        "fingerprint": "1691414435000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "7",
+        "name": "Facility Type",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "facility_type"
+          }
+        ],
+        "fingerprint": "1691414436000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "8",
+        "name": "Facility Size",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "facility_size"
+          }
+        ],
+        "fingerprint": "1691414437000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "9",
+        "name": "Design Complexity",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "design_complexity"
+          }
+        ],
+        "fingerprint": "1691414438000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "10",
+        "name": "Credits Used",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "credits_used"
+          }
+        ],
+        "fingerprint": "1691414439000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "11",
+        "name": "Export Format",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "export_format"
+          }
+        ],
+        "fingerprint": "1691414440000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "12",
+        "name": "Drawing Type",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "drawing_type"
+          }
+        ],
+        "fingerprint": "1691414441000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "13",
+        "name": "Transaction Value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "transaction_value"
+          }
+        ],
+        "fingerprint": "1691414442000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "14",
+        "name": "Transaction ID",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "transaction_id"
+          }
+        ],
+        "fingerprint": "1691414443000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "15",
+        "name": "User ID",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "user_id"
+          }
+        ],
+        "fingerprint": "1691414444000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "16",
+        "name": "Page Path",
+        "type": "u",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "component",
+            "value": "PATH"
+          }
+        ],
+        "fingerprint": "1691414445000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "17",
+        "name": "Page URL",
+        "type": "u",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "component",
+            "value": "URL"
+          }
+        ],
+        "fingerprint": "1691414446000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "18",
+        "name": "Click Classes",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "gtm.elementClasses"
+          }
+        ],
+        "fingerprint": "1691414447000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "19",
+        "name": "Click Text",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "gtm.elementText"
+          }
+        ],
+        "fingerprint": "1691414448000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "80000000",
+        "variableId": "20",
+        "name": "Form ID",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "gtm.elementId"
+          }
+        ],
+        "fingerprint": "1691414449000"
+      }
+    ],
+    "folder": [],
+    "permission": [],
+    "fingerprint": "1691414450000",
+    "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6000000000/containers/80000000/versions/1?apiLink=version"
+  }
+}

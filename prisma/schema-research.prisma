@@ -1,0 +1,169 @@
+// Research Suite Database Schema
+
+model ResearchPaper {
+  id              String   @id @default(cuid())
+  title           String
+  authors         String[]
+  abstract        String?  @db.Text
+  fullText        String?  @db.Text
+  source          String   // pubmed, scholar, arxiv
+  sourceId        String   // external ID from source
+  doi             String?
+  pmid            String?
+  arxivId         String?
+  publicationDate DateTime?
+  journal         String?
+  volume          String?
+  issue           String?
+  pages           String?
+  keywords        String[]
+  citations       Citation[] @relation("CitingPaper")
+  citedBy         Citation[] @relation("CitedPaper")
+  experiments     Experiment[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@unique([source, sourceId])
+  @@index([title])
+  @@index([keywords])
+  @@index([publicationDate])
+}
+
+model Citation {
+  id           String       @id @default(cuid())
+  citingPaper  ResearchPaper @relation("CitingPaper", fields: [citingPaperId], references: [id])
+  citingPaperId String
+  citedPaper   ResearchPaper @relation("CitedPaper", fields: [citedPaperId], references: [id])
+  citedPaperId String
+  context      String?       @db.Text
+  createdAt    DateTime     @default(now())
+  
+  @@unique([citingPaperId, citedPaperId])
+  @@index([citingPaperId])
+  @@index([citedPaperId])
+}
+
+model Experiment {
+  id              String   @id @default(cuid())
+  userId          String
+  title           String
+  description     String?  @db.Text
+  type            String   // RCBD, Factorial, etc.
+  design          Json     // Design parameters
+  treatments      Treatment[]
+  blocks          Block[]
+  replications    Int
+  randomization   Json     // Randomization scheme
+  sampleSize      Int?
+  powerAnalysis   Json?    // Power analysis results
+  protocol        String?  @db.Text
+  status          String   @default("planning") // planning, active, completed
+  startDate       DateTime?
+  endDate         DateTime?
+  dataEntries     DataEntry[]
+  analyses        StatisticalAnalysis[]
+  papers          ResearchPaper[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@index([userId])
+  @@index([status])
+  @@index([type])
+}
+
+model Treatment {
+  id           String   @id @default(cuid())
+  experimentId String
+  experiment   Experiment @relation(fields: [experimentId], references: [id])
+  name         String
+  description  String?
+  levels       Json     // For factorial designs
+  dataEntries  DataEntry[]
+  createdAt    DateTime @default(now())
+  
+  @@index([experimentId])
+}
+
+model Block {
+  id           String   @id @default(cuid())
+  experimentId String
+  experiment   Experiment @relation(fields: [experimentId], references: [id])
+  name         String
+  description  String?
+  dataEntries  DataEntry[]
+  createdAt    DateTime @default(now())
+  
+  @@index([experimentId])
+}
+
+model DataEntry {
+  id           String   @id @default(cuid())
+  experimentId String
+  experiment   Experiment @relation(fields: [experimentId], references: [id])
+  treatmentId  String?
+  treatment    Treatment? @relation(fields: [treatmentId], references: [id])
+  blockId      String?
+  block        Block?    @relation(fields: [blockId], references: [id])
+  replication  Int
+  measurements Json      // Flexible measurement data
+  notes        String?
+  photoUrl     String?   // For photo documentation
+  enteredBy    String    // User ID
+  enteredAt    DateTime  @default(now())
+  syncedAt     DateTime? // For offline sync tracking
+  isOffline    Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  
+  @@index([experimentId])
+  @@index([treatmentId])
+  @@index([blockId])
+  @@index([enteredBy])
+  @@index([syncedAt])
+}
+
+model StatisticalAnalysis {
+  id           String   @id @default(cuid())
+  experimentId String
+  experiment   Experiment @relation(fields: [experimentId], references: [id])
+  type         String   // ANOVA, Regression, etc.
+  method       String   // Specific method used
+  parameters   Json     // Analysis parameters
+  results      Json     // Analysis results
+  summary      String?  @db.Text
+  performedBy  String   // User ID
+  performedAt  DateTime @default(now())
+  createdAt    DateTime @default(now())
+  
+  @@index([experimentId])
+  @@index([type])
+  @@index([performedBy])
+}
+
+model ResearchAPIKey {
+  id        String   @id @default(cuid())
+  userId    String
+  service   String   // pubmed, scholar, arxiv
+  apiKey    String?  @db.Text
+  apiSecret String?  @db.Text
+  isActive  Boolean  @default(true)
+  lastUsed  DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([userId, service])
+  @@index([userId])
+}
+
+model ResearchSyncLog {
+  id          String   @id @default(cuid())
+  service     String   // pubmed, scholar, arxiv
+  query       String
+  resultCount Int
+  success     Boolean
+  error       String?
+  syncedAt    DateTime @default(now())
+  
+  @@index([service])
+  @@index([syncedAt])
+}
