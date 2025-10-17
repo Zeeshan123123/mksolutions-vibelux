@@ -409,5 +409,5 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 **VibeLux** - Making professional lighting design accessible through conversation
 
-🌐 [vibelux.ai](https://vibelux.ai) | 📧 blake@vibelux.ai | 💬 [Discord Community](https://discord.gg/vibelux)# Enhanced builds enabled Fri Aug  8 20:51:59 CDT 2025
+🌐 [vibelux.ai](https://vibelux.ai) | 💬 [Discord Community](https://discord.gg/vibelux)# Enhanced builds enabled Fri Aug  8 20:51:59 CDT 2025
 # mksolutions-vibelux
