@@ -5,6 +5,7 @@ import { db } from '../../prisma';
 import { influxDB } from '../../influxdb-client';
 import { Point } from '@influxdata/influxdb-client';
 import { getWebSocketServer } from '../../websocket/scalable-websocket-server';
+import { alertDetector } from '../../sensors/alert-detector';
 
 // Process sensor data in batches
 queues.sensorDataQueue.process('process-sensor-data', 10, async (job: Job<SensorDataJobData>) => {
@@ -98,12 +99,28 @@ queues.sensorDataQueue.process('process-sensor-data', 10, async (job: Job<Sensor
       }
     });
     
-    // Check for alerts
-    const alerts = await checkSensorAlerts(sensor, readings);
-    if (alerts.length > 0) {
-      // Queue alert notifications
-      for (const alert of alerts) {
-        await queues.notificationQueue.add('send-alert', alert);
+    // Check for alerts using the new AlertDetector
+    for (const reading of readings) {
+      try {
+        await alertDetector.detectAlerts({
+          sensorId,
+          value: reading.value,
+          unit: reading.unit,
+          timestamp: reading.timestamp,
+          metadata: {
+            sensorName: sensor.name,
+            location: sensor.location,
+            sensorType: sensor.type,
+            facilityId: sensor.facilityId,
+            batchId
+          }
+        });
+      } catch (error) {
+        logger.error('worker', 'Alert detection failed for reading', error as Error, {
+          sensorId,
+          readingId: reading.id || 'unknown'
+        });
+        // Continue processing other readings
       }
     }
     
@@ -234,55 +251,6 @@ function determineSensorStatus(value: number, sensor: any): string {
   return 'normal';
 }
 
-async function checkSensorAlerts(sensor: any, readings: any[]): Promise<any[]> {
-  const alerts: any[] = [];
-  
-  // Get alert rules for this sensor
-  const alertRules = await db.alertRule.findMany({
-    where: {
-      sensorId: sensor.id,
-      enabled: true
-    }
-  });
-  
-  for (const rule of alertRules) {
-    for (const reading of readings) {
-      if (evaluateAlertRule(rule, reading)) {
-        alerts.push({
-          ruleId: rule.id,
-          sensorId: sensor.id,
-          facilityId: sensor.facilityId,
-          severity: rule.severity,
-          message: rule.message.replace('{{value}}', reading.value.toString()),
-          value: reading.value,
-          timestamp: reading.timestamp
-        });
-      }
-    }
-  }
-  
-  return alerts;
-}
-
-function evaluateAlertRule(rule: any, reading: any): boolean {
-  const { condition, threshold } = rule;
-  
-  switch (condition) {
-    case 'gt':
-      return reading.value > threshold;
-    case 'gte':
-      return reading.value >= threshold;
-    case 'lt':
-      return reading.value < threshold;
-    case 'lte':
-      return reading.value <= threshold;
-    case 'eq':
-      return reading.value === threshold;
-    case 'neq':
-      return reading.value !== threshold;
-    default:
-      return false;
-  }
-}
+// Legacy alert functions removed - now using AlertDetector service
 
 export default queues.sensorDataQueue;

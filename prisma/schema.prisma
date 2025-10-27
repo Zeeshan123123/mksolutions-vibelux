@@ -153,6 +153,10 @@ model User {
   // Greenhouse Design relationships
   greenhouseDesigns   GreenhouseDesign[]
 
+  // Alert Detection relationships
+  acknowledgedAlerts  AlertLog[] @relation("AlertAcknowledger")
+  resolvedAlerts      AlertLog[] @relation("AlertResolver")
+
   // Indexes for common query patterns
   @@index([email]) // Frequent lookups by email
   @@index([clerkId]) // Authentication lookups
@@ -757,6 +761,10 @@ model Facility {
 
   // Greenhouse Design relationships
   greenhouseDesigns GreenhouseDesign[]
+  
+  // Alert Detection relationships
+  alertConfigurations AlertConfiguration[]
+  alertLogs          AlertLog[]
   
   // Chat system relationships
   chatChannels    ChatChannel[]
@@ -6287,6 +6295,8 @@ model ZoneSensor {
   zone          GreenhouseZone @relation(fields: [zoneId], references: [id], onDelete: Cascade)
   readings      SensorReading[]
   alerts        SensorAlert[]
+  alertConfigurations AlertConfiguration[]
+  alertLogs     AlertLog[]
   
   @@index([zoneId])
   @@index([sensorType])
@@ -6377,6 +6387,102 @@ model SensorAlert {
   @@index([status])
   @@index([severity])
   @@index([createdAt])
+}
+
+// Alert Detection System Models
+model AlertConfiguration {
+  id              String        @id @default(cuid())
+  facilityId      String
+  sensorId        String
+  name            String        // Descriptive name for the alert rule
+  enabled         Boolean       @default(true)
+  
+  // Alert type and condition
+  alertType       AlertType
+  condition       AlertCondition // gt, gte, lt, lte, between
+  threshold       Float         // Primary threshold value
+  thresholdMax    Float?        // For 'between' condition (range)
+  
+  // Severity and timing
+  severity        AlertSeverity @default(MEDIUM)
+  duration        Int?          // Minutes condition must persist before triggering
+  cooldownMinutes Int           @default(15) // Prevent alert spam
+  
+  // Actions and notifications
+  actions         Json          // { email: true, sms: false, push: true, webhook: false }
+  notificationMessage String?   // Custom notification message template
+  
+  // Metadata and tracking
+  metadata        Json?         // Additional configuration data
+  lastTriggeredAt DateTime?     // Last time this alert was triggered
+  triggerCount    Int           @default(0) // Total number of times triggered
+  
+  // Timestamps
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  
+  // Relations
+  facility        Facility      @relation(fields: [facilityId], references: [id], onDelete: Cascade)
+  sensor          ZoneSensor    @relation(fields: [sensorId], references: [id], onDelete: Cascade)
+  alertLogs       AlertLog[]
+  
+  @@index([facilityId])
+  @@index([sensorId])
+  @@index([enabled])
+  @@index([alertType])
+  @@index([facilityId, sensorId])
+  @@index([enabled, sensorId])
+}
+
+model AlertLog {
+  id              String             @id @default(cuid())
+  alertConfigId   String
+  sensorId        String
+  facilityId      String
+  
+  // Alert details
+  alertType       AlertType
+  severity        AlertSeverity
+  message         String            // Generated alert message
+  
+  // Values
+  triggeredValue  Float             // The sensor value that triggered the alert
+  thresholdValue  Float             // The threshold that was exceeded
+  unit            String?           // Unit of measurement
+  
+  // Status
+  status          AlertStatus       @default(ACTIVE)
+  acknowledgedBy  String?           // User ID who acknowledged
+  acknowledgedAt  DateTime?
+  resolvedAt      DateTime?
+  resolvedBy      String?           // User ID who resolved
+  resolutionNotes String?           // Notes on how it was resolved
+  
+  // Context and metadata
+  sensorName      String?           // Sensor name at time of alert
+  location        String?           // Sensor location
+  metadata        Json?             // Additional context (historical data, correlations, etc.)
+  
+  // Timestamps
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  
+  // Relations
+  alertConfig     AlertConfiguration @relation(fields: [alertConfigId], references: [id], onDelete: Cascade)
+  sensor          ZoneSensor         @relation(fields: [sensorId], references: [id])
+  facility        Facility           @relation(fields: [facilityId], references: [id], onDelete: Cascade)
+  acknowledger    User?              @relation("AlertAcknowledger", fields: [acknowledgedBy], references: [id])
+  resolver        User?              @relation("AlertResolver", fields: [resolvedBy], references: [id])
+  
+  @@index([alertConfigId])
+  @@index([sensorId])
+  @@index([facilityId])
+  @@index([status])
+  @@index([severity])
+  @@index([createdAt])
+  @@index([facilityId, status])
+  @@index([facilityId, createdAt])
+  @@index([sensorId, status])
 }
 
 model IrrigationZone {
@@ -6664,6 +6770,15 @@ enum AlertType {
   WATER_LEAK
   POWER_FAILURE
   MAINTENANCE_DUE
+}
+
+enum AlertCondition {
+  GT      // greater than
+  GTE     // greater than or equal
+  LT      // less than
+  LTE     // less than or equal
+  BETWEEN // outside range (value < min OR value > max)
+  RATE    // rate of change exceeds threshold
 }
 
 enum AlertSeverity {
