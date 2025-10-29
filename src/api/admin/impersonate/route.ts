@@ -8,6 +8,8 @@ export async function POST(request: NextRequest) {
   );
 }
 
+// Start
+
 export async function GET(request: NextRequest) {
   return NextResponse.json(
     { error: 'User impersonation logs are disabled for security reasons' },

@@ -8,7 +8,7 @@ import { sendPushNotification } from '../../push/push-service';
 
 // Send alert notifications
 queues.notificationQueue.process('send-alert', async (job: Job) => {
-  const { userId, type, severity, title, message, data } = job.data;
+  const { userId, type, severity, title, message, data, alertId, alertType } = job.data;
   
   try {
     logger.info('api', 'Processing alert notification', { userId, type, severity });
@@ -31,10 +31,14 @@ queues.notificationQueue.process('send-alert', async (job: Job) => {
     const notification = await db.notification.create({
       data: {
         userId,
-        type,
+        type: alertType || type,
         title,
         message,
-        data,
+        data: {
+          ...data,
+          alertId,
+          alertType: alertType || type
+        },
         priority: severity,
         category: 'alert'
       }

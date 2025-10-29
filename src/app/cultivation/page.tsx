@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Layers,
   Calendar,
@@ -28,6 +28,8 @@ import { MultiLevelRackControl } from '@/components/cultivation/MultiLevelRackCo
 import { IrrigationControlPanel } from '@/components/cultivation/IrrigationControlPanel';
 import { HVACSystemDashboard } from '@/components/cultivation/HVACSystemDashboard';
 import { CircadianRhythmManager } from '@/components/cultivation/CircadianRhythmManager';
+import { AlertDetectionDashboard } from '@/components/alerts/AlertDetectionDashboard';
+import { Toaster } from 'react-hot-toast';
 import { VerticalFarmingIntegration } from '@/components/cultivation/VerticalFarmingIntegration';
 import { RecipeManager } from '@/components/cultivation/RecipeManager';
 import { CostTrackingDashboard } from '@/components/cultivation/CostTrackingDashboard';
@@ -48,6 +50,15 @@ interface SystemStatus {
 
 export default function CultivationDashboard() {
   const [activeTab, setActiveTab] = useState<TabType>('recipe');
+  const [facilityId, setFacilityId] = useState<string>('cmh5wpg2p0000vdm4hfg2e5q6');
+
+  useEffect(() => {
+    // Get facility ID from localStorage or user context
+    const storedFacilityId = localStorage.getItem('selectedFacilityId');
+    if (storedFacilityId) {
+      setFacilityId(storedFacilityId);
+    }
+  }, []);
 
   const systemStatuses: SystemStatus[] = [
     { name: 'Recipe Control', status: 'active', metric: 'Day', value: '15/45' },
@@ -104,6 +115,18 @@ export default function CultivationDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      {/* Toast notifications for alerts */}
+      <Toaster 
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: '#1f2937',
+            color: '#fff',
+            border: '1px solid #374151'
+          }
+        }}
+      />
+      
       <div className="max-w-[1920px] mx-auto p-6">
         {/* Header */}
         <div className="mb-8">
@@ -186,18 +209,7 @@ export default function CultivationDashboard() {
           {activeTab === 'safety' && <WorkerSafetyModule />}
           
           {activeTab === 'alarms' && (
-            <div className="bg-gray-900 rounded-xl border border-gray-800 p-8">
-              <div className="flex items-center justify-center h-64">
-                <div className="text-center">
-                  <Bell className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Alarm Management System</h3>
-                  <p className="text-gray-500">2 active alarms require attention</p>
-                  <button className="mt-4 px-6 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors">
-                    View Alarms
-                  </button>
-                </div>
-              </div>
-            </div>
+            <AlertDetectionDashboard facilityId={facilityId} />
           )}
           
           {activeTab === 'analytics' && (

@@ -106,3 +106,10 @@ vercel-build.log
 CLERK_SETUP_COMPLETE.md
 CREDENTIAL_ROTATION_CHECKLIST.md
 CREDENTIAL_ROTATION_GUIDE.md
+
+#IDE Files
+.idea
+.idea/*
+.vscode
+.vscode/*
+
