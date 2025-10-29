@@ -30,6 +30,16 @@ model User {
   subscriptionPeriodEnd DateTime?
   subscriptionCancelAt  DateTime?
 
+  //Stripe meter suscription fields
+  stripeSubscriptionStatus     String?
+  stripeSubscriptionItemAI     String?
+  stripeSubscriptionItemAPI    String?
+  stripeSubscriptionItemRender String?
+  stripeSubscriptionItemExport String?
+  usageLogs                    UsageLog[]
+
+  
+
   projects                 Project[]
   savedDesigns             SavedDesign[]
   experiments              Experiment[]
@@ -5841,7 +5851,23 @@ model UsageRecord {
   @@index([timestamp])
   @@index([userId, billingMonth])
 }
+model UsageLog {
+  id               String    @id @default(cuid())
+  userId           String
+  type             String
+  quantity         Float     @default(0)
+  reported         Boolean   @default(false)
+  reportedToStripe Boolean   @default(false)
+  reportedAt       DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  @@index([userId])
+  @@index([type])
+  @@index([reported])
+  @@index([createdAt])
+}
 // GMP Compliance Models
 
 enum GMPDocumentType {

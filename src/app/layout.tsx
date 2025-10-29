@@ -6,7 +6,6 @@ import { Providers } from "./providers";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
-
 // Clerk
 import { ClerkProvider, ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
 
